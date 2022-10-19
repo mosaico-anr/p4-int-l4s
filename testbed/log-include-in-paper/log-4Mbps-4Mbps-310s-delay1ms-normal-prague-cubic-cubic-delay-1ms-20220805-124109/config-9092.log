@@ -1,0 +1,8 @@
+table_set_default ipv4_lpm drop
+
+table_add ipv4_lpm ipv4_forward 10.0.0.11 => 08:00:27:ef:9f:28 08:00:27:ef:9f:28  1
+table_add ipv4_lpm ipv4_forward 10.0.0.12 => 08:00:27:ef:9f:28 08:00:27:ef:9f:28  1
+table_add ipv4_lpm ipv4_forward 10.0.1.11 => 08:00:27:32:3c:0d 08:00:27:66:48:02 2
+table_add ipv4_lpm ipv4_forward 10.0.1.12 => 08:00:27:32:3c:0d 08:00:27:38:99:15 2
+table_add tb_int_config_transit set_transit => 2
+table_add tb_int_config_sink set_sink 2 => 3
