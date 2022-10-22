@@ -12,6 +12,9 @@
 #include <netdb.h>
 #include <sys/time.h>
 
+#define NB_ITERATION 10000
+#define BUFSIZE 1000
+
 /*
  * error - wrapper for perror
  */
@@ -29,32 +32,24 @@ size_t get_latency(int i, const struct timeval *start){
 	gettimeofday( &now, NULL );
 	size_t latency = (now.tv_sec * MICRO + now.tv_usec) - (start->tv_sec*MICRO + start->tv_usec);
 
-	printf("%d, %ld.%06ld, %ld.%06ld, %ld\n", i, start->tv_sec, start->tv_usec, now.tv_sec, now.tv_usec, latency);
+	printf("%d, %ld.%ld, %ld.%ld, %ld\n", i, start->tv_sec, start->tv_usec, now.tv_sec, now.tv_usec, latency);
 	return latency;
 }
 
 int main(int argc, char **argv) {
-	int socket_fd, port_number, n, i, data_size, nb_iteration;
+	int socket_fd, port_number, n, i;
 	struct sockaddr_in server_addr;
 	struct hostent *server;
 	char *host_name;
-	char buf[1400];
+	char buf[BUFSIZE];
 	size_t latencies = 0;
 	/* check command line arguments */
-	if (argc != 5) {
-		fprintf(stderr, "usage: %s <host_name> <port> <data_size> <nb_iteration>\n", argv[0]);
+	if (argc != 3) {
+		fprintf(stderr, "usage: %s <host_name> <port>\n", argv[0]);
 		exit(0);
 	}
-	host_name   = argv[1];
-	port_number = atoi( argv[2] );
-	data_size   = atoi( argv[3] );
-	nb_iteration= atoi( argv[4] );
-
-	//buf must be big enough to contain a timeval
-	if( sizeof(struct timeval) >= data_size ){
-		fprintf(stderr, "data_size must be bigger than %ld", sizeof(struct timeval) );
-		exit( 0 );
-	}
+	host_name = argv[1];
+	port_number = atoi(argv[2]);
 
 	/* socket: create the socket */
 	socket_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -79,30 +74,36 @@ int main(int argc, char **argv) {
 	if (connect(socket_fd, (struct sockaddr*) &server_addr, sizeof(server_addr)) < 0)
 		error("ERROR connecting");
 
-	bzero(buf, data_size);
+	bzero(buf, BUFSIZE);
+
+	//buf must be big enough to contain a timeval
+	if( sizeof(struct timeval) >= BUFSIZE ){
+		fprintf(stderr, "BUFSIZE must be bigger than %ld", sizeof(struct timeval) );
+		exit( 0 );
+	}
 
 	printf("index, start time, end time, latency\n");
 
-	for( i=0; i<nb_iteration; i++){
+	for( i=0; i<NB_ITERATION; i++){
 		//store the current date into buf
 		gettimeofday((struct timeval *) buf, NULL);
 		/* write: send the message line to the server */
-		n = write(socket_fd, buf, data_size);
+		n = write(socket_fd, buf, BUFSIZE);
 		if (n < 0)
 			error("ERROR writing to socket");
 		//fflush( socket_fd );
 
 		/* read: print the server's reply */
-		bzero(buf, data_size);
-		n = read(socket_fd, buf, data_size);
+		bzero(buf, BUFSIZE);
+		n = read(socket_fd, buf, BUFSIZE);
 		if (n < 0)
 			error("ERROR reading from socket");
 
 		latencies += get_latency( i,  (struct timeval *) buf );
 
-		usleep(100000);
+		usleep(10);
 	}
 	close(socket_fd);
-	printf("avg latency: %ld", latencies / nb_iteration );
+	printf("avg latency: %ld", latencies / NB_ITERATION );
 	return 0;
 }

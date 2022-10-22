@@ -7,6 +7,13 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
+# by default, enable INT
+if [ -z "$ENABLE_INT" ]; then
+	export ENABLE_INT=yes
+fi
+
+
+
 #JSON file to run
 FILE="switch-l4s.json"
 if [[ "$#" == "1" ]]; then
@@ -15,13 +22,13 @@ fi
 
 
 # clear old compiled file
-rm *.json *.p4i
-#compile code
-cat <<EOF | parallel -j 3
-	p4c  --target  bmv2  --arch  v1model  switch-l4s.p4
-	p4c  --target  bmv2  --arch  v1model  switch-int.p4
-	p4c  --target  bmv2  --arch  v1model  switch-forward.p4
-EOF
+#rm *.json *.p4i
+##compile code
+#cat <<EOF | parallel -j 3
+#	p4c  --target  bmv2  --arch  v1model  switch-l4s.p4
+#	p4c  --target  bmv2  --arch  v1model  switch-int.p4
+#	p4c  --target  bmv2  --arch  v1model  switch-forward.p4
+#EOF
 
 
 if [ $? != 0 ]
@@ -74,10 +81,10 @@ IFACE_IP=$(get-ip $IFACE)
 REV_IFACE_IP=$(get-ip $REV_IFACE)
 
 # set route on clients/server
-#run-on-host $CLIENT_A sudo ip route add $SERVER_NET via $IFACE_IP
-#run-on-host $CLIENT_B sudo ip route add $SERVER_NET via $IFACE_IP
-#run-on-host $SERVER_A sudo ip route add $CLIENT_NET via $REV_IFACE_IP
-#run-on-host $SERVER_B sudo ip route add $CLIENT_NET via $REV_IFACE_IP
+run-on-host $CLIENT_A sudo ip route add $SERVER_NET via $IFACE_IP
+run-on-host $CLIENT_B sudo ip route add $SERVER_NET via $IFACE_IP
+run-on-host $SERVER_A sudo ip route add $CLIENT_NET via $REV_IFACE_IP
+run-on-host $SERVER_B sudo ip route add $CLIENT_NET via $REV_IFACE_IP
 
 # Disable offload
 run-on-host $CLIENT_A sudo ethtool -K $CLIENT_A_IFACE tso off gso off gro off tx off
@@ -178,6 +185,13 @@ function create-switch(){
 	#/usr/local/bin/simple_switch "$@"
 }
 
+function monitor_cpu_memory(){
+   PID=$1
+   FILE_NAME="log/cpu_mem_int_${ENABLE_INT}_pid_${PID}"
+   #/home/montimage/.local/bin/psrecord "$PID" --plot $FILE_NAME.png --log $FILE_NAME.txt --duration 300 --interval 1 --include-children
+   /home/montimage/.local/bin/psrecord "$PID" --log $FILE_NAME.txt --duration 320 --interval 1 --include-children
+}
+
 #tcpdump -i enp0s10 -w log/enp0s10.pcap &
 
 # ensure no switch is running
@@ -186,6 +200,7 @@ killall simple_switch
 # Betrand modified simple_switch to support L4S
 SIMPLE_SWITCH="/home/montimage/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
 create-switch $IFACE   "$B1_IFACE"   "$SW_A_B_PORT" "1" switch-l4s.json 2>&1 1> log/sw-1-simple.log &
+(monitor_cpu_memory $!) &
 #SIMPLE_SWITCH=/home/montimage/github-behavioral-model/targets/simple_switch/simple_switch
 #create-switch $IFACE   "$B1_IFACE"   "$SW_A_B_PORT" "1" switch-int.json 2>&1 1> log/sw-1-simple.log &
 # Here we do not use L4S => use "standard" simple_switch to avoid debug messages
@@ -233,11 +248,6 @@ cat <<EOF | config_sw_ab
 table_add select_PI2_param set_PI2_param => 1342 13421 15000 14
 table_add select_L4S_param set_L4S_param => 5000 3000 0 1500 21
 EOF
-
-# by default, enable INT
-if [ -z "$ENABLE_INT" ]; then
-	export ENABLE_INT=yes
-fi
 
 if [[ "$ENABLE_INT" == "yes" ]]; then
 # CONFIGURE In-band network telemetry

@@ -26,7 +26,7 @@ function hn-stop-mmt(){
 }
 
 function hn-stop-all-test(){
-	run-on-all-endhost screen -XS hn quit
+	run-on-all-endhost sudo killall -9 iperf3
 	sleep 2
 	run-on-all-endhost screen -XS hn2 quit
 }
@@ -179,15 +179,49 @@ function hn-run-test-overhead-latency(){
 	done
 }
 
-for i in $(seq 1 5); do
-	hn-stop-all-test
-	hn-run-normal-traffic-iperf-on-server
-	hn-stop-all-test
-	hn-run-abnormal-traffic-iperf-on-server
-	hn-stop-all-test
-	hn-run-abnormal-2-traffic-iperf-on-server
-	hn-stop-all-test
-done
+function hn-test-microburst(){
+   #run-on-host $SERVER_A 'screen -S hn -dm  ./client-server/server 12345 '
+   #run-on-host $CLIENT_A 'screen -S hn -dm  ./client-server/client-microburst 10.0.1.11 12345 50 5000'
+   #run-on-host $CLIENT_A 'screen -S hn -dm sudo python client-server/send.py enp0s8 08:00:27:8f:c5:f3 10.0.1.11 4 1000 --timer=gtod'
+   tcpdump -i enp0s8  -G 10 -w log/igress.pcap &
+   tcpdump -i enp0s10 -G 10 -w log/egress.pcap &
+   #start collector
+   cp mmt-probe-microburst.conf log/
+   (mmt-probe -c ./mmt-probe-microburst.conf 2>&1 ) > log/mmt-probe.log &
+   (
+      END=100
+      #for ((i=1;i<=END;i++)); do
+      while true ; do
+         tc -s qdisc show dev enp0s8 | tr -d "\n" >> log/qdisc.txt
+         echo "$i  $(date +%T.%3N)" >> log/qdisc.txt
+         #sleep 0.003
+      done
+   )
+   killall mmt-probe
+   killall tcpdump
+
+}
+
+sleep 5
+echo "start testing"
+hn-test-microburst
+exit 0
+
+#hn-stop-all-test
+#hn-run-normal-traffic-iperf-on-server
+#hn-stop-all-test
+#exit 0
+#
+#
+#for i in $(seq 1 5); do
+#	hn-stop-all-test
+#	hn-run-normal-traffic-iperf-on-server
+#	hn-stop-all-test
+#	hn-run-abnormal-traffic-iperf-on-server
+#	hn-stop-all-test
+#	hn-run-abnormal-2-traffic-iperf-on-server
+#	hn-stop-all-test
+#done
 #hn-run-test-overhead-latency
 
 HISTORY_LOG="bash-history.log"

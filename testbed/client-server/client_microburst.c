@@ -53,7 +53,8 @@ int main(int argc, char **argv) {
 	nb_iteration= atoi( argv[4] );
 
 	//buf must be big enough to contain a timeval
-	data_size = sizeof(struct timeval);
+	data_size = 2;// sizeof(struct timeval);
+
 	//data_size += 8;  //to get 90
 	if( nb_burst > buf_size / data_size ){
 		fprintf(stderr, "nb_burst must not be bigger than %ld\n", buf_size / data_size );
@@ -85,7 +86,7 @@ int main(int argc, char **argv) {
 
 	bzero(buf, sizeof(buf));
 
-	printf("payload size: %d\n", data_size );
+	printf("payload size: %d, max burst: %d\n", data_size, data_size * nb_burst );
 
 	printf("index, start time, end time, latency\n");
 
@@ -98,26 +99,21 @@ int main(int argc, char **argv) {
 		if( i % nb_burst == 0 ){
 			delay_us *= nb_burst/2;
 			data_size_to_send *= nb_burst;
-			printf("  create burst by sending %d payload\n", data_size_to_send);
 		}
 
 		//store the current date into buf
-		gettimeofday((struct timeval *) buf, NULL);
 		/* write: send the message line to the server */
 		n = write(socket_fd, buf, data_size_to_send);
 		if (n < 0)
 			error("ERROR writing to socket");
-		//fflush( socket_fd );
-
 		/* read: print the server's reply */
-		/*
 		bzero(buf, buf_size);
 		n = read(socket_fd, buf, data_size_to_send);
 		if (n < 0)
 			error("ERROR reading from socket");
 
-		latencies += get_latency( i,  (struct timeval *) buf );
-		*/
+		//latencies += get_latency( i,  (struct timeval *) buf );
+
 		gettimeofday( &end_ts, NULL );
 		delay_us -= ( end_ts.tv_sec - begin_ts.tv_sec ) * 1000000000 + ( end_ts.tv_usec - begin_ts.tv_usec );
 
@@ -134,3 +130,4 @@ int main(int argc, char **argv) {
 	printf("avg latency: %ld", latencies / nb_iteration );
 	return 0;
 }
+

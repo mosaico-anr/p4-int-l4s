@@ -67,16 +67,13 @@ int main(int argc, char **argv) {
 	int n; /* message byte size */
 	char client_ip[INET_ADDRSTRLEN + 1];
 	int client_port;
-	int do_echo = 0;
 
 	/* check command line args */
-	if (argc != 2 && argc != 3) {
-		fprintf(stderr, "usage: %s port [do_echo]\n", argv[0]);
+	if (argc != 2) {
+		fprintf(stderr, "usage: %s <port>\n", argv[0]);
 		exit(1);
 	}
 	server_port = atoi(argv[1]);
-	if( argc == 3 )
-		do_echo = 1;
 
 	/* socket: create a socket */
 	server_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -109,7 +106,7 @@ int main(int argc, char **argv) {
 	/* main loop: wait for a connection request, echo input line,
 	 then close connection. */
 	client_len = sizeof(client_addr);
-	//while( 1 ){
+	while( 1 ){
 
 		/* accept: wait for a connection request */
 		client_fd = accept(server_fd, (struct sockaddr*) &client_addr, &client_len);
@@ -135,15 +132,12 @@ int main(int argc, char **argv) {
 				break;
 			}
 			/* write: echo the input string back to the client */
-			if( do_echo ){
-				n = write(client_fd, buf, n);
-				if (n <= 0){
-					error("ERROR writing to socket");
-					break;
-				}
+			n = write(client_fd, buf, n);
+			if (n <= 0){
+				error("ERROR writing to socket");
+				break;
 			}
 		}
 		close(client_fd);
-	//}
-	printf("byte\n");
+	}
 }
