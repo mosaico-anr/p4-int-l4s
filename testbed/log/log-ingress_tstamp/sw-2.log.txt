@@ -1,0 +1,2370 @@
+[11:54:20.415] [bmv2] [I] [thread 4412] Starting Thrift server on port 9092
+[11:54:20.416] [bmv2] [I] [thread 4412] Thrift server was started
+[11:56:48.910] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:56:48.910] [bmv2] [I] [thread 4447] ==ingress_timestamp: 148690410
+[11:56:48.910] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:56:53.913] [bmv2] [I] [thread 4448] ===INT egress, shim: 0, int_node: 0
+[11:56:53.913] [bmv2] [I] [thread 4448] ==INT_depasser: shim valid: 0, shim type: 0
+[11:56:53.913] [bmv2] [I] [thread 4448] ===INT egress, shim: 0, int_node: 0
+[11:56:53.913] [bmv2] [I] [thread 4448] ==INT_depasser: shim valid: 0, shim type: 0
+[11:56:59.152] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:56:59.152] [bmv2] [I] [thread 4447] ==ingress_timestamp: 158932005
+[11:56:59.152] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:09.397] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:09.397] [bmv2] [I] [thread 4447] ==ingress_timestamp: 169177146
+[11:57:09.397] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:19.649] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:19.649] [bmv2] [I] [thread 4447] ==ingress_timestamp: 179428878
+[11:57:19.649] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:24.661] [bmv2] [I] [thread 4448] ===INT egress, shim: 0, int_node: 0
+[11:57:24.661] [bmv2] [I] [thread 4448] ==INT_depasser: shim valid: 0, shim type: 0
+[11:57:24.661] [bmv2] [I] [thread 4448] ===INT egress, shim: 0, int_node: 0
+[11:57:24.661] [bmv2] [I] [thread 4448] ==INT_depasser: shim valid: 0, shim type: 0
+[11:57:29.899] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:29.899] [bmv2] [I] [thread 4447] ==ingress_timestamp: 189679225
+[11:57:29.899] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.012] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.012] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.012] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200792713
+[11:57:41.012] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.012] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.012] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.012] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.012] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.012] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.012] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.012] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.013] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.013] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.013] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200793331
+[11:57:41.013] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.013] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.013] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.013] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.013] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.013] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.013] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.013] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.013] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.013] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200793835
+[11:57:41.013] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.013] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.013] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.013] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.013] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.013] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200793958
+[11:57:41.013] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.014] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.014] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.014] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.014] [bmv2] [I] [thread 4449] ===INT egress, shim: 0, int_node: 0
+[11:57:41.014] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 0
+[11:57:41.014] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.014] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.014] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200794400
+[11:57:41.014] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.014] [bmv2] [I] [thread 4449] ===INT egress, shim: 0, int_node: 0
+[11:57:41.014] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 0
+[11:57:41.014] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.014] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.014] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200794684
+[11:57:41.014] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.014] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.014] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.014] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.014] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.014] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.014] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.014] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.014] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.014] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200794892
+[11:57:41.014] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.015] [bmv2] [I] [thread 4449] ===INT egress, shim: 0, int_node: 0
+[11:57:41.015] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 0
+[11:57:41.015] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.015] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.015] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200795307
+[11:57:41.015] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.015] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.015] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.015] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.015] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.015] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.015] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.015] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.015] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.015] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200795530
+[11:57:41.015] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.015] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.015] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.015] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.015] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.015] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.015] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.016] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.016] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.016] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200796377
+[11:57:41.016] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.016] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.016] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.016] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.016] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.016] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200796411
+[11:57:41.016] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.016] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.016] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.016] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.016] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.016] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.016] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.016] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.016] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.016] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.016] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.016] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.016] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.016] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200796955
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.017] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.017] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.017] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.017] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.017] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.017] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.017] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.017] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.017] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.017] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.017] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200797306
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.017] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.017] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.017] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.017] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.017] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200797787
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.017] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.017] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.017] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200797815
+[11:57:41.017] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.017] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.018] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.018] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.018] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.018] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.018] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.018] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.018] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200798710
+[11:57:41.018] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.018] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.018] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.018] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.018] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.018] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200798730
+[11:57:41.018] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.018] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.018] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.018] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.018] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.019] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.019] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.019] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.019] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.019] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200799220
+[11:57:41.019] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.019] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.019] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.019] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.019] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.019] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.019] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.019] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.019] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.019] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.019] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.019] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.019] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.019] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200799641
+[11:57:41.019] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.019] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.019] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.020] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.020] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.020] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200800097
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.020] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.020] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.020] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200800116
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.020] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.020] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.020] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200800314
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.020] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.020] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.020] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.020] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.020] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.020] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.020] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.020] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.020] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.020] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.020] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.020] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200800783
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.020] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.020] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.020] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200800935
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.020] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.020] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.021] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.021] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.021] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.021] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.021] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200800952
+[11:57:41.021] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.021] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.021] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.021] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.021] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.021] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.021] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.021] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.021] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.021] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.021] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.021] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.021] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200801623
+[11:57:41.021] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.021] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.021] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.022] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.022] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.022] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200802015
+[11:57:41.022] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.022] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.022] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.022] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.022] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.022] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.022] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.022] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.022] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.022] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.022] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.022] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.022] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.022] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200802662
+[11:57:41.022] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.022] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.022] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.022] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.022] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.022] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200802869
+[11:57:41.022] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.022] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.022] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.023] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.023] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.023] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.023] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.023] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.023] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200803598
+[11:57:41.023] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.023] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.023] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.023] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.023] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.023] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200803619
+[11:57:41.023] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.023] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.023] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.023] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.023] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.023] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.023] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.024] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.024] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.024] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200804419
+[11:57:41.024] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.024] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.024] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.024] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.024] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.024] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200804438
+[11:57:41.024] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.024] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.024] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.024] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.024] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.024] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.024] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.024] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.024] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.024] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.024] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.025] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.025] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.025] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200805162
+[11:57:41.025] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.025] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.025] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.025] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.025] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.025] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200805180
+[11:57:41.025] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.025] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.025] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.025] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.025] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.025] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.025] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.025] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.025] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.025] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.025] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.025] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.025] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.025] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200805834
+[11:57:41.025] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.025] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.025] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.025] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200805855
+[11:57:41.025] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.025] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.026] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.026] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.026] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.026] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.026] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.026] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.026] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.026] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.026] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200806530
+[11:57:41.026] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.026] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.026] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.026] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200806647
+[11:57:41.026] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.026] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.026] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.026] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.026] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.026] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.026] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.026] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.026] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.027] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.027] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.027] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200807231
+[11:57:41.027] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.027] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.027] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.027] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.027] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.027] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200807489
+[11:57:41.027] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.027] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.027] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.027] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.027] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.027] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.027] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.027] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.027] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.027] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.027] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.028] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.028] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.028] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200808285
+[11:57:41.028] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.028] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.028] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.028] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.028] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.028] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200808307
+[11:57:41.028] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.028] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.028] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.028] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.028] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.028] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.028] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.028] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.028] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.028] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.028] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.028] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.028] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.029] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200808965
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.029] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.029] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.029] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200808983
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.029] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.029] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.029] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200809202
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.029] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.029] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.029] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.029] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.029] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.029] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.029] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.029] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.029] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.029] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.029] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.029] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200809895
+[11:57:41.029] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.030] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.030] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.030] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200809918
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.030] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.030] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.030] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.030] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.030] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200810085
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.030] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.030] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.030] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.030] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.030] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.030] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.030] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.030] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.030] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.030] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.030] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.030] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.030] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200810843
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.030] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.030] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.030] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200810863
+[11:57:41.030] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.030] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.031] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.031] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.031] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.031] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.031] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.031] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.031] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.031] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.031] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.031] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.031] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.031] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200811606
+[11:57:41.031] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.031] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.031] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.031] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200811737
+[11:57:41.031] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.031] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.031] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.031] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.031] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.031] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.032] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.032] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.032] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.032] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.032] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.032] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.032] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.032] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.032] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.032] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200812645
+[11:57:41.032] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.032] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.032] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.032] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.032] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.033] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200812982
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.033] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.033] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.033] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.033] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.033] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.033] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200813503
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.033] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.033] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.033] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200813705
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.033] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.033] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.033] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.033] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.033] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200813723
+[11:57:41.033] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.033] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.033] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.034] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.034] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.034] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.034] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.034] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.034] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.034] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.034] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200814499
+[11:57:41.034] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.034] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.034] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.034] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200814551
+[11:57:41.034] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.034] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.034] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.034] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.034] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.034] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200814717
+[11:57:41.034] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.034] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.034] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.034] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.034] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.034] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.034] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.034] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.034] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.035] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.035] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.035] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200815212
+[11:57:41.035] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.035] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.035] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.035] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.035] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.035] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200815483
+[11:57:41.035] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.035] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.035] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.035] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.035] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.035] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.035] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.035] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.035] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.035] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.035] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.036] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.036] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.036] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200816066
+[11:57:41.036] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.036] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.036] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.036] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200816198
+[11:57:41.036] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.036] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.036] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.036] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.036] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.036] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.036] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.036] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200816619
+[11:57:41.036] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.036] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.036] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.036] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.036] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.036] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.036] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.036] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.036] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.036] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.037] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.037] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.037] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200817228
+[11:57:41.037] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.037] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.037] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.037] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200817264
+[11:57:41.037] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.037] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.037] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.037] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.037] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200817421
+[11:57:41.037] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.037] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.037] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.037] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.037] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.037] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.037] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.037] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.037] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.037] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.037] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.037] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.037] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.037] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.038] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.038] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.038] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200818184
+[11:57:41.038] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.038] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.038] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.038] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200818332
+[11:57:41.038] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.038] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.038] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.038] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.038] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.038] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.038] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.038] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.038] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.038] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.038] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.038] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.038] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.039] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.039] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.039] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200819074
+[11:57:41.039] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.039] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.039] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.039] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.039] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.039] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200819105
+[11:57:41.039] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.039] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.039] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.039] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.039] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.039] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.039] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.039] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.039] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.039] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.039] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.039] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.039] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.039] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200819859
+[11:57:41.039] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.039] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.040] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.040] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.040] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.040] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200820171
+[11:57:41.040] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.040] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.040] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.040] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.040] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.040] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.040] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.040] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.040] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.040] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.040] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.040] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.040] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.040] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200820871
+[11:57:41.040] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.041] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.041] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.041] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.041] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.041] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200821369
+[11:57:41.041] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.041] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.041] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.041] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.041] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.041] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.041] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.041] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.041] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.041] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.041] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.042] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.042] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.042] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200821945
+[11:57:41.042] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.042] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.042] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.042] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.042] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.042] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200822114
+[11:57:41.042] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.042] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.042] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.042] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.042] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.042] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.042] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.042] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.042] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200822570
+[11:57:41.042] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.042] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.042] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.042] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.042] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.042] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.042] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.042] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.043] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.043] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200822771
+[11:57:41.043] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.043] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.043] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.043] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.043] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.043] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200823149
+[11:57:41.043] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.043] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.043] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.043] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.043] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.043] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.043] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200823444
+[11:57:41.043] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.043] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.043] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.043] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.043] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.043] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.043] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.043] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.043] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.043] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.043] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.043] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.043] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200823923
+[11:57:41.043] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.044] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.044] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.044] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.044] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.044] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200824469
+[11:57:41.044] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.044] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.044] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.044] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.044] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.044] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.044] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.044] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.044] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.044] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.044] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.045] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.045] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.045] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200825064
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.045] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.045] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.045] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.045] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.045] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.045] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.045] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200825268
+[11:57:41.045] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.045] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.045] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.045] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.045] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.045] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.045] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.045] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.045] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200825750
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.045] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.045] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.045] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200825787
+[11:57:41.045] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.046] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.046] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.046] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.046] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.046] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.046] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.046] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.046] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.046] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.046] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.046] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.046] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.046] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200826878
+[11:57:41.046] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.046] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.046] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.047] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.047] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.047] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200826910
+[11:57:41.047] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.047] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.047] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.047] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.047] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.047] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.047] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.047] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.047] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200827141
+[11:57:41.047] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.047] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.047] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.047] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.047] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.047] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.047] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.047] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.047] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.047] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200827729
+[11:57:41.047] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.047] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.047] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.047] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.047] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.047] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200827943
+[11:57:41.047] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.048] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.048] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.048] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.048] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.048] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200827962
+[11:57:41.048] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.048] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.048] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.048] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.048] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.048] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.048] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.048] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.048] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200828636
+[11:57:41.048] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.048] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.048] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.048] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.048] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.048] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200828677
+[11:57:41.048] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.048] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.048] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.048] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.048] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.049] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.049] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.049] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200829052
+[11:57:41.049] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.049] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.049] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.049] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.049] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.049] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.049] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.049] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.049] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.049] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.049] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.049] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.049] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200829378
+[11:57:41.049] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.049] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.049] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.049] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.049] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.049] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.050] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.050] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.050] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200829993
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.050] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.050] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.050] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200830012
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.050] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.050] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.050] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.050] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.050] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.050] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.050] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.050] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200830650
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.050] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.050] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.050] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200830667
+[11:57:41.050] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.050] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.050] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.050] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.050] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.051] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.051] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.051] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.051] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200831159
+[11:57:41.051] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.051] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.051] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.051] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.051] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.051] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.051] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.051] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.051] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.051] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.051] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.051] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.051] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.051] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.051] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200831523
+[11:57:41.051] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.051] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.051] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.052] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.052] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.052] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200831948
+[11:57:41.052] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.052] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.052] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.052] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200832010
+[11:57:41.052] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.052] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.052] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.052] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.052] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.052] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.052] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.052] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.052] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.052] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.052] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.052] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.052] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.052] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.052] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.052] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200832799
+[11:57:41.052] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.053] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.053] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.053] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.053] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.053] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200832849
+[11:57:41.053] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.053] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.053] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.053] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.053] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.053] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.053] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.053] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.053] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.053] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.053] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.053] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.054] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.054] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200833966
+[11:57:41.054] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.054] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.054] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.054] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.054] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.054] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200834236
+[11:57:41.054] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.054] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.054] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.054] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.054] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.054] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.054] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.054] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.054] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.054] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.054] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.055] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.055] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.055] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200835618
+[11:57:41.055] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.055] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.055] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.055] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200835743
+[11:57:41.055] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.056] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.056] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.056] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.056] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.056] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.056] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.056] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.056] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.056] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.056] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.056] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.056] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.057] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.057] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.057] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200836979
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.057] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.057] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.057] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200837010
+[11:57:41.057] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.057] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.057] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.057] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.057] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.057] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.057] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.057] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.057] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.057] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.057] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.057] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.057] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200837775
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.057] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.057] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.057] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200837794
+[11:57:41.057] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.057] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.057] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.058] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.058] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.058] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.058] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.058] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.058] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.058] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.058] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.058] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.058] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.058] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200838577
+[11:57:41.058] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.058] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.058] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.059] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.059] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.059] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200839559
+[11:57:41.059] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.059] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.059] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.059] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.059] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.059] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.059] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.059] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.059] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.059] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.060] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.060] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.060] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.060] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200840624
+[11:57:41.060] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.060] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.060] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.061] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.061] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.061] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200840920
+[11:57:41.061] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.061] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.061] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.061] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.061] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.061] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.061] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.061] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.061] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.061] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.061] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.061] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.061] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.062] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200841968
+[11:57:41.062] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.062] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.062] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.062] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.062] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.062] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200842664
+[11:57:41.062] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.062] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.062] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.062] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.062] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.062] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.062] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.062] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.062] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.063] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.063] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.063] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.063] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.063] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200843621
+[11:57:41.063] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.063] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.063] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.063] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.063] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.063] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200843647
+[11:57:41.063] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.063] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.063] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.063] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.063] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.063] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.063] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200843806
+[11:57:41.063] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.063] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.063] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.063] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.063] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.063] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.064] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.064] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.064] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.064] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.064] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.064] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.064] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.064] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.064] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.064] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.064] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.064] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.064] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.064] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.064] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200844511
+[11:57:41.064] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.064] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.064] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.064] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200844669
+[11:57:41.064] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.064] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.064] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.064] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.064] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.064] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.064] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.064] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200844700
+[11:57:41.064] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.064] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.064] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.064] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.064] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.065] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.065] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.065] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.065] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.065] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.065] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.065] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.065] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.065] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200845540
+[11:57:41.065] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.065] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.065] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.066] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.066] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.066] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200846165
+[11:57:41.066] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.066] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.066] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.066] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.066] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.066] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.066] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.066] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.066] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.066] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.066] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.067] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.067] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.067] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200847060
+[11:57:41.067] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.067] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.067] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.067] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200847083
+[11:57:41.067] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.067] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.067] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.067] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.067] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.067] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.067] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.067] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.067] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.067] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.067] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.067] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.067] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.067] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.067] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.067] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200847768
+[11:57:41.067] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.067] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.067] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.067] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.067] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.067] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.067] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.067] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.068] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.068] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.068] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200848040
+[11:57:41.068] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.068] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.068] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.068] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.068] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.068] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200848532
+[11:57:41.068] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.068] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.068] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.068] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.068] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.068] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200848551
+[11:57:41.068] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.068] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.068] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.068] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.068] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.068] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.068] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.069] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.069] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.069] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200849413
+[11:57:41.069] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.069] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.069] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.069] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.069] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.069] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200849432
+[11:57:41.069] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.069] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.069] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.069] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.069] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.069] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.069] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.069] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.069] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.069] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.069] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.070] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.070] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.070] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200850059
+[11:57:41.070] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.070] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.070] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.070] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.070] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.070] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200850264
+[11:57:41.070] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.070] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.070] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.070] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200850384
+[11:57:41.070] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.070] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.070] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.070] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.070] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.070] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.070] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.070] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.070] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.070] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.070] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.070] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.071] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.071] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.071] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200851396
+[11:57:41.071] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.071] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.071] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.071] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200851435
+[11:57:41.071] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.071] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.071] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.071] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.071] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.071] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.071] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.071] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200851508
+[11:57:41.071] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.071] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.071] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.072] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.072] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.072] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.072] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.072] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.072] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200852619
+[11:57:41.072] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.072] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.072] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.072] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.072] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.072] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200852771
+[11:57:41.072] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.072] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.072] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.072] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.072] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.072] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.073] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.073] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.073] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.073] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200853223
+[11:57:41.073] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.073] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.073] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.073] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.073] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.073] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.073] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.073] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.073] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.073] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.073] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.073] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.073] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.073] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200853610
+[11:57:41.073] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.073] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.073] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.073] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.073] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.074] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200853911
+[11:57:41.074] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.074] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.074] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.074] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.074] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.074] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200854061
+[11:57:41.074] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.074] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.074] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.074] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.074] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.074] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.074] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.074] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.074] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.074] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.074] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.074] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.074] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.074] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200854947
+[11:57:41.074] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.075] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.075] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.075] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.075] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.075] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200854965
+[11:57:41.075] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.075] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.075] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.075] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.075] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.075] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.075] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.075] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.075] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.075] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.075] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.075] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.075] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.075] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200855818
+[11:57:41.075] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.075] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.075] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.075] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.075] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.075] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200855849
+[11:57:41.075] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.076] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.076] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.076] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.076] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.076] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.076] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.076] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.076] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200856627
+[11:57:41.076] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.076] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.076] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.076] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.076] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.076] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.076] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.076] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.076] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200856883
+[11:57:41.076] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.076] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.077] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.077] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.077] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.077] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.077] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.077] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.077] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200857378
+[11:57:41.077] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.077] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.077] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.077] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.077] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.077] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.077] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.077] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.077] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.077] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.077] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.077] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.077] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.077] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200857679
+[11:57:41.077] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.077] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.077] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.078] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.078] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.078] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200858278
+[11:57:41.078] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.078] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.078] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.078] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200858300
+[11:57:41.078] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.078] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.078] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.078] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.078] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.078] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.078] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.078] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.078] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.078] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.078] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.078] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.078] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.079] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.079] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.079] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200859417
+[11:57:41.079] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.079] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.079] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.079] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200859495
+[11:57:41.079] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.079] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.079] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.079] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.079] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.079] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.079] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.079] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.079] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.079] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.079] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.079] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.079] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.080] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.080] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.080] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200860204
+[11:57:41.080] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.080] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.080] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.080] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.080] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.080] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.080] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.080] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.080] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.080] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.080] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.080] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.080] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.080] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200860516
+[11:57:41.080] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.080] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.080] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.080] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200860828
+[11:57:41.080] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.080] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.080] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.080] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.080] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.080] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.081] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.081] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.081] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.081] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.081] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.081] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.081] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.081] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.081] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.081] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200861120
+[11:57:41.081] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.081] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.081] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.081] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.081] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.081] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200861826
+[11:57:41.081] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.081] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.081] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.081] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.082] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.082] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200861857
+[11:57:41.082] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.082] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.082] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.082] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.082] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.082] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.082] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.082] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.082] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.082] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.082] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.082] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.082] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.082] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200862815
+[11:57:41.082] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.082] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.082] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.082] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.082] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.082] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200862834
+[11:57:41.082] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.083] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.083] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.083] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.083] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.083] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.083] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.083] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.083] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.083] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.083] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.083] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.083] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.083] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200863684
+[11:57:41.083] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.083] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.083] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.083] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200863762
+[11:57:41.083] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.083] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.083] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.083] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.084] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.084] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.084] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.084] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.084] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.084] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.084] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.084] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.084] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.084] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.084] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.084] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200864936
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.085] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.085] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.085] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200864965
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.085] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.085] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.085] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.085] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.085] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.085] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.085] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.085] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200865581
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.085] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.085] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.085] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.085] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.085] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.085] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.085] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200865850
+[11:57:41.085] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.085] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.086] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.086] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.086] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.086] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200866587
+[11:57:41.086] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.086] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.086] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.086] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.086] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.086] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200866823
+[11:57:41.086] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.086] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.086] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.087] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.087] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.087] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.087] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.087] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.087] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.087] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.087] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.087] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.087] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.087] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200867802
+[11:57:41.087] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.087] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.087] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.087] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.087] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.087] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200867822
+[11:57:41.087] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.088] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.088] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.088] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.088] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.088] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.088] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.088] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.088] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200868476
+[11:57:41.088] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.088] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.088] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.088] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.088] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.088] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.088] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.088] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.088] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.088] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200868971
+[11:57:41.089] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.089] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.089] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.089] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200869089
+[11:57:41.089] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.089] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.089] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.089] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.089] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.089] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.089] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.089] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.089] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.089] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.089] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.089] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.089] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.089] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.089] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.089] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200869626
+[11:57:41.089] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.089] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.089] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.090] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.090] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.090] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200870203
+[11:57:41.090] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.090] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.090] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.090] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200870291
+[11:57:41.090] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.090] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.090] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.090] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.090] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.090] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.090] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.090] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.090] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.090] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.090] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.090] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.090] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.091] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.091] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.091] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200871188
+[11:57:41.091] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.091] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.091] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.091] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.091] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.091] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.091] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.091] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.091] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.091] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.091] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.091] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.091] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.091] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200871471
+[11:57:41.091] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.091] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.091] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.092] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.092] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.092] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200871942
+[11:57:41.092] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.092] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.092] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.092] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.092] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.092] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.092] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.092] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.092] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200872262
+[11:57:41.092] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.092] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.092] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.092] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.092] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.092] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200872616
+[11:57:41.092] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.092] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.092] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.092] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.092] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.092] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT.sink removes INT header
+[11:57:41.092] [bmv2] [I] [thread 4450] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.092] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.093] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.093] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200872929
+[11:57:41.093] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772427
+[11:57:41.093] [bmv2] [I] [thread 4447] ====TCP data offset = 0
+[11:57:41.093] [bmv2] [I] [thread 4447] 
+
+==INT new packet arrived =============
+[11:57:41.093] [bmv2] [I] [thread 4447] ==ingress_timestamp: 200873203
+[11:57:41.093] [bmv2] [I] [thread 4447] ==INT.parser: parsing 11 words (= 352 bits) of previous data
+[11:57:41.093] [bmv2] [I] [thread 4447] ==INT== __config_source dscp=0, src_ip=167772171
+[11:57:41.093] [bmv2] [I] [thread 4447] ==INT.config_sink: cloned packet
+[11:57:41.093] [bmv2] [I] [thread 4449] ===INT egress, shim: 1, int_node: 0
+[11:57:41.093] [bmv2] [I] [thread 4449] ==INT_depasser: shim valid: 0, shim type: 1
+[11:57:41.093] [bmv2] [I] [thread 4450] ===INT egress, shim: 1, int_node: 6
+[11:57:41.093] [bmv2] [I] [thread 4450] ==L4S mark: 0
+[11:57:41.093] [bmv2] [I] [thread 4450] ==L4S drop: 0
+[11:57:41.093] [bmv2] [I] [thread 4450] ==INT transit, remaining_hop: 3
+[11:57:41.093] [bmv2] [I] [thread 4450] ==INT transit, instruction mask: 65535
+[11:57:41.093] [bmv2] [I] [thread 4450] ==INT== set switch_id
+[11:57:41.093] [bmv2] [I] [thread 4450] ==I
