@@ -1,0 +1,813 @@
+[12:30:25.491] [bmv2] [I] [thread 28141] Starting Thrift server on port 9091
+[12:30:25.492] [bmv2] [I] [thread 28141] Thrift server was started
+[12:30:28.086] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:28.086] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:28.086] [bmv2] [I] [thread 28186] ==ingress_timestamp: 2694554
+[12:30:28.086] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772172
+[12:30:28.086] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:28.086] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:28.086] [bmv2] [I] [thread 28186] ==ingress_timestamp: 2694988
+[12:30:28.086] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772172
+[12:30:30.759] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.759] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.759] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5368127
+[12:30:30.759] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.759] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.760] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.760] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.760] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.760] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.760] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.760] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.760] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.765] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.765] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.765] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5373598
+[12:30:30.765] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.765] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.765] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.777] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.777] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.777] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5385883
+[12:30:30.777] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.777] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.777] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.777] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.777] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.777] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.777] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.777] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.777] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.781] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.781] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.781] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5389505
+[12:30:30.781] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.781] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.781] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.795] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.795] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.795] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5403636
+[12:30:30.795] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.795] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.795] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.795] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.795] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.795] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.795] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.795] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.795] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.798] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.798] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.798] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5406499
+[12:30:30.798] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.798] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.798] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.813] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.813] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.813] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5421625
+[12:30:30.813] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.813] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.813] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.813] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.813] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.813] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.813] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.813] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.813] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.815] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.815] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.815] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5424305
+[12:30:30.815] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.815] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.815] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.830] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.830] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.830] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5439500
+[12:30:30.831] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.831] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.831] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.831] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.831] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.831] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.831] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.831] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.831] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.833] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.833] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.833] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5442121
+[12:30:30.833] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.833] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.833] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.848] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.848] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.848] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5457396
+[12:30:30.848] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.848] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.849] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.849] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.849] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.849] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.849] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.849] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.849] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.852] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.852] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.852] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5460659
+[12:30:30.852] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.852] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.852] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.866] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.866] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.866] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5475061
+[12:30:30.866] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.866] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.866] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.866] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.866] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.866] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.866] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.866] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.866] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.872] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.872] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.872] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5481454
+[12:30:30.872] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.873] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.873] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.884] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.884] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.884] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5493161
+[12:30:30.884] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.884] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.884] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.884] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.884] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.884] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.884] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.884] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.884] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.888] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.888] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.888] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5496624
+[12:30:30.888] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.888] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.888] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.902] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.902] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.902] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5510923
+[12:30:30.902] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.902] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.902] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.902] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.902] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.902] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.902] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.902] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.902] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.904] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.904] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.904] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5513433
+[12:30:30.904] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.905] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.905] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:30.920] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.920] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.920] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5529125
+[12:30:30.920] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:30.920] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:30.920] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:30.920] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:30.920] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:30.920] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:30.920] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:30.920] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:30.920] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:30.923] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:30.923] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:30.923] [bmv2] [I] [thread 28186] ==ingress_timestamp: 5531737
+[12:30:30.923] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:30.923] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:30.923] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.783] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.783] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.783] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7392074
+[12:30:32.783] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.783] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.783] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.783] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.783] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.783] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.783] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.783] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.783] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.787] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.787] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.787] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7395537
+[12:30:32.787] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.787] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.787] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.807] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.807] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.807] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7415731
+[12:30:32.807] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.807] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.807] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.807] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.807] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.807] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.807] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.807] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.807] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.809] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.809] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.809] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7418139
+[12:30:32.809] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.809] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.809] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.828] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.828] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.828] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7436479
+[12:30:32.828] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.828] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.828] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.828] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.828] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.828] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.828] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.828] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.828] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.831] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.831] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.831] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7440228
+[12:30:32.831] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.832] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.832] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.848] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.848] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.848] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7456543
+[12:30:32.848] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.848] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.848] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.848] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.848] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.848] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.848] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.848] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.848] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.851] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.851] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.851] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7459684
+[12:30:32.851] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.851] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.851] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.867] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.867] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.867] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7476398
+[12:30:32.867] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.867] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.867] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.868] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.868] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.868] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.868] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.868] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.868] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.870] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.870] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.870] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7478716
+[12:30:32.870] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.870] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.870] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.886] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.886] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.886] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7495508
+[12:30:32.886] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.886] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.887] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.887] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.887] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.887] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.887] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.887] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.887] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.889] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.889] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.890] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7498549
+[12:30:32.890] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.890] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.890] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.905] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.905] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.905] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7514019
+[12:30:32.905] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.905] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.905] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.905] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.905] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.905] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.905] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.905] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.905] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.908] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.908] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.908] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7516871
+[12:30:32.908] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.908] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.908] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.928] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.928] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.928] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7537036
+[12:30:32.928] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.928] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.928] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.928] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.928] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.928] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.928] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.928] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.928] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.930] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.930] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.930] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7539435
+[12:30:32.930] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.930] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.930] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.950] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.950] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.950] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7559493
+[12:30:32.950] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.950] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.951] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.951] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.951] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.951] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.951] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.951] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.951] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.953] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.953] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.954] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7562574
+[12:30:32.954] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.954] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.954] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:32.974] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.974] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.974] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7583204
+[12:30:32.974] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:32.974] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:32.974] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:32.974] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:32.974] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:32.974] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:32.974] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:32.974] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:32.974] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:32.977] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:32.977] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:32.977] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7586027
+[12:30:32.977] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:32.977] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:32.977] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:33.087] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:33.087] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:33.087] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7695764
+[12:30:33.087] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772172
+[12:30:33.087] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:33.087] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:33.087] [bmv2] [I] [thread 28186] ==ingress_timestamp: 7695970
+[12:30:33.087] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772172
+[12:30:34.232] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.233] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.233] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8841528
+[12:30:34.233] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.233] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.233] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.233] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.233] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.233] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.233] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.233] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.233] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.236] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.236] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.236] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8844339
+[12:30:34.236] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.236] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.236] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.256] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.256] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.256] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8864749
+[12:30:34.256] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.256] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.256] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.256] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.256] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.256] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.256] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.256] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.256] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.259] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.259] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.259] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8867607
+[12:30:34.259] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.259] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.259] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.279] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.279] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.279] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8887867
+[12:30:34.279] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.279] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.279] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.279] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.279] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.279] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.279] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.279] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.279] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.281] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.281] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.281] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8890424
+[12:30:34.281] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.282] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.282] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.300] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.300] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.300] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8909174
+[12:30:34.300] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.300] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.300] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.300] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.300] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.300] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.300] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.300] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.300] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.303] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.303] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.303] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8911739
+[12:30:34.303] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.303] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.303] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.321] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.321] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.321] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8929804
+[12:30:34.321] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.321] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.321] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.321] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.321] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.321] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.321] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.321] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.321] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.324] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.324] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.324] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8932914
+[12:30:34.324] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.324] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.324] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.344] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.344] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.344] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8952581
+[12:30:34.344] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.344] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.344] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.344] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.344] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.344] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.344] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.344] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.344] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.346] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.346] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.346] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8955223
+[12:30:34.346] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.346] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.346] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.365] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.365] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.365] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8974206
+[12:30:34.365] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.365] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.365] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.365] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.365] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.365] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.365] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.365] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.365] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.368] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.368] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.368] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8977390
+[12:30:34.368] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.368] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.369] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.389] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.389] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.389] [bmv2] [I] [thread 28186] ==ingress_timestamp: 8998128
+[12:30:34.389] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.389] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.390] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.390] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.390] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.390] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.390] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.390] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.390] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.392] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.392] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.392] [bmv2] [I] [thread 28186] ==ingress_timestamp: 9001439
+[12:30:34.392] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.393] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.393] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.412] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.412] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.412] [bmv2] [I] [thread 28186] ==ingress_timestamp: 9021167
+[12:30:34.412] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.412] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.412] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.412] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.412] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.413] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.413] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.413] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.413] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.415] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.415] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.415] [bmv2] [I] [thread 28186] ==ingress_timestamp: 9023817
+[12:30:34.415] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.415] [bmv2] [I] [thread 28188] ===INT egress, shim: 1, int_node: 0
+[12:30:34.415] [bmv2] [I] [thread 28188] ==INT_depasser: shim valid: 0, shim type: 1
+[12:30:34.434] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.434] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.434] [bmv2] [I] [thread 28186] ==ingress_timestamp: 9042665
+[12:30:34.434] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772171
+[12:30:34.434] [bmv2] [I] [thread 28186] ==INT== source: max_hop: 4, hop_metadata_len: 10, ins_mask: 65535
+[12:30:34.434] [bmv2] [I] [thread 28189] ===INT egress, shim: 1, int_node: 5
+[12:30:34.434] [bmv2] [I] [thread 28189] ==L4S mark: 0
+[12:30:34.434] [bmv2] [I] [thread 28189] ==L4S drop: 0
+[12:30:34.434] [bmv2] [I] [thread 28189] ==INT transit, remaining_hop: 4
+[12:30:34.434] [bmv2] [I] [thread 28189] ==INT transit, instruction mask: 65535
+[12:30:34.434] [bmv2] [I] [thread 28189] ==INT== set switch_id
+[12:30:34.434] [bmv2] [I] [thread 28189] ==INT_depasser: shim valid: 1, shim type: 1
+[12:30:34.437] [bmv2] [I] [thread 28186] 
+
+================================new packet=====================
+[12:30:34.437] [bmv2] [I] [thread 28186] 
+
+==INT new packet arrived =============
+[12:30:34.437] [bmv2] [I] [thread 28186] ==ingress_timestamp: 9045620
+[12:30:34.437] [bmv2] [I] [thread 28186] ==INT== __config_source dscp=0, src_ip=167772427
+[12:30:34.437] [bmv2] [I] [t

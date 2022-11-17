@@ -1,0 +1,87 @@
+mmt-probe: Must not run debug mode in production environment
+mmt-probe: Loaded configuration from './measure-monitoring-delay/mmt-probe.conf'
+mmt-probe: Start MMT-Security 1.2.14 (d74aea4 - Nov 17 2022 10:33:31)
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:127: security.ip-encapsulation-index = 16
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data ftp'
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data http'
+ /home/montimage/mmt/mmt-security/src/lib/mmt_security.c:192 DEBUG_SEC:  0 <- hash(354,    1) (tcp, src_port)
+mmt-probe: MMT-Probe v1.5.5 (417daa7 - Nov 17 2022 10:34:49) is running on pid 28237
+mmt-probe: Modules: DPI, PCAP, REPORT, SECURITY, debug
+mmt-probe: MMT-DPI 1.7.3 (92ce3808)
+mmt-probe: Starting PCAP mode to analyze 'enp0s10' using the main thread
+mmt-probe: Overridden the security parameter 'input.max_message_size' by 60000
+mmt-probe: Registered 1 proto.atts to process 1 rules: tcp.src_port
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:168: Starting worker 0
+INFO_SEC: MMT-Security 1.2.14 (d74aea4 - Nov 17 2022 10:33:31) is verifying 1 rules having 1 proto.atts using the main thread
+1,3,"enp0s10",1668688229.525085,"1.5.5 (417daa7 - Nov 17 2022 10:34:49)","1.7.3 (92ce3808)","1.2.14 (d74aea4 - Nov 17 2022 10:33:31)"
+measure, 1668688230.768086,     1
+measure, 1668688230.768238,  1234
+measure, 1668688230.779891,     2
+measure, 1668688230.791937,  1234
+measure, 1668688230.804080,     3
+measure, 1668688230.804138,  1234
+measure, 1668688230.815944,     4
+measure, 1668688230.816003,  1234
+measure, 1668688230.831914,     5
+measure, 1668688230.839953,  1234
+measure, 1668688230.851933,     6
+measure, 1668688230.868023,  1234
+measure, 1668688230.868113,     7
+measure, 1668688230.884071,  1234
+measure, 1668688230.896314,     8
+measure, 1668688230.896393,  1234
+measure, 1668688230.908094,     9
+measure, 1668688230.908138,  1234
+measure, 1668688230.923832,    10
+measure, 1668688230.923879,  1234
+measure, 1668688232.806700,     1
+measure, 1668688232.806944,  1234
+measure, 1668688232.827969,     2
+measure, 1668688232.828067,  1234
+measure, 1668688232.840020,     3
+measure, 1668688232.840068,  1234
+measure, 1668688232.852123,     4
+measure, 1668688232.852164,  1234
+measure, 1668688232.880335,     5
+measure, 1668688232.880381,  1234
+measure, 1668688232.891863,     6
+measure, 1668688232.891905,  1234
+measure, 1668688232.908004,     7
+measure, 1668688232.920084,  1234
+measure, 1668688232.931921,     8
+measure, 1668688232.931959,  1234
+measure, 1668688232.961006,     9
+measure, 1668688232.961065,  1234
+measure, 1668688232.985475,    10
+measure, 1668688232.985524,  1234
+measure, 1668688234.240164,     1
+measure, 1668688234.240222,  1234
+measure, 1668688234.263917,     2
+measure, 1668688234.263964,  1234
+measure, 1668688234.288615,     3
+measure, 1668688234.288690,  1234
+measure, 1668688234.312337,     4
+measure, 1668688234.312375,  1234
+measure, 1668688234.324291,     5
+measure, 1668688234.336294,  1234
+measure, 1668688234.347828,     6
+measure, 1668688234.347860,  1234
+measure, 1668688234.372323,     7
+measure, 1668688234.372375,  1234
+measure, 1668688234.399788,     8
+measure, 1668688234.399838,  1234
+measure, 1668688234.420389,     9
+measure, 1668688234.420423,  1234
+measure, 1668688234.444557,    10
+measure, 1668688234.444606,  1234
+200,3,"enp0s10",1668688234.777313,60,0,60,0,4950,0
+mmt-probe: 60,0,60,0,4950,0% dropped by NIC 0.0000, by MMT 0.0000
+60,0,60,0,4950,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 60 packets, dropped 0 packets (0.00%), generated 60 alerts
+MMT processed 60 packets, dropped 0 packets (0.00%), generated 60 alerts
+mmt-probe: System received 60 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 60 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:233: Exited worker 0
+ - rule 202 generated 60 verdicts

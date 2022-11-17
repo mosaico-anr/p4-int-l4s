@@ -1,0 +1,27 @@
+<beginning>
+<!-- Property 201:
+This rule is used to print the timestamp of when we received information from INT 
+-->
+<property value="THEN" delay_units="ms" delay_min="0" delay_max="0" property_id="202" type_property="TEST" 
+    description="This rule to print out information IP/TCP packet"
+    >
+   <event value="COMPUTE" event_id="1" 
+           description=" We got TCP port source "
+           boolean_expression="(#em_print(tcp.src_port, int.queue_occups, ))"/>
+    <event value="COMPUTE" event_id="2" 
+           description="A dummy event"
+           boolean_expression="(true)"/>
+</property>
+
+<embedded_functions><![CDATA[
+	#include <sys/time.h>
+	static inline bool em_print( int port, int nb_pkt_in_queue ){
+		struct timeval now;
+		gettimeofday(&now, NULL); // get current time
+		printf("measure, %ld.%06ld, %5d\n", now.tv_sec, now.tv_usec, port );
+		nb_pkt_in_queue
+		return true;
+	}
+]]>
+</embedded_functions>
+</beginning>
