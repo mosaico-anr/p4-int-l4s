@@ -1,7 +1,7 @@
 # Introduction
 
 - This repository contains an implementaion a monitoring system by using [In-band Network Telemetry](https://p4.org/p4-spec/docs/INT_v2_1.pdf) and [P4](https://p4.org) language.
-- It is to monitor [L4S](https://datatracker.ietf.org/doc/draft-ietf-tsvwg-l4s-arch) P4-based switches.
+- It is to monitor [L4S](https://datatracker.ietf.org/doc/draft-ietf-tsvwg-l4s-arch) P4-based [switches](https://ieeexplore.ieee.org/document/9631539).
 - It has been tested using [BMv2 virtual switches](https://github.com/p4lang/behavioral-model)
 
 <img src=https://raw.githubusercontent.com/mosaico-anr/p4-int-l4s/main/archi_monitoring.jpg width=600px>
