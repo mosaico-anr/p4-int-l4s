@@ -22,4 +22,6 @@
 
 
 
-Made with ❤️ by [@nhnghia](https://github.com/nhnghia)
+Made with ❤️ by [@nhnghia](https://github.com/nhnghia) 
+
+![](https://komarev.com/ghpvc/?username=mosaico-anr-p4-int-l4s&style=flat-square&label=Page+Views)
