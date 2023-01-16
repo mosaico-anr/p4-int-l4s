@@ -49,3 +49,9 @@ The following figure represents the testbed: IPs of clients/servers, port number
 - `int.nb_marked`: number of packets that have been marked by the switch
 - `int.nb_dropped`: number of packets that have been dropped by the switch
 - `int.mark_probability`: number that represents mark probability of that switch at the moment the packet was sent out
+
+
+# Note
+
+- we may need to filter out the SSH traffic which have `tcp.dest_port == 22`
+- TODO: we need to calculate RTT of a packet by using `tcp.tsval` and `tcp.tsecr` (or using its `tcp.ack_nb`, `tcp.seq_nb`)
