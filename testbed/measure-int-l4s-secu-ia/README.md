@@ -17,6 +17,9 @@ The structure of a sub folder is as the following:
 - `sw-simple.log`: log of the L4S switch
 - `data.csv`: statistic data. Its fields are detailed in the next section
 
+The following figure represents the testbed: IPs of clients/servers, port numbers, NICs, etc
+
+![testbed](testbed.jpg)
 
 # CSV Headers
 
