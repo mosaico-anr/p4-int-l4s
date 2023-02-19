@@ -7,15 +7,15 @@ source ~/.bash_profile
 FOLDER="."
 
 
-TARGET=measure-quic
+TARGET=hipnet/measure--picoquic/
 USER=montimage
-IP=192.168.1.106
-PORT=10081
+IP=192.168.1.102
+PORT=22
 
 # -W : disables delta/diff comparisons. When the file time/sizes differ, rsync copies the whole file.
-#rsync -e "ssh -i /Users/nhnghia/.ssh/id_rsa $(ssh-jump-path-mi montimage@192.168.0.235) -p $PORT" -rcav --progress "$USER@$IP:$TARGET/log-*" ./
+rsync -e "ssh -i /Users/nhnghia/.ssh/id_rsa $(ssh-jump-path-mi montimage@192.168.0.235:10081) -p $PORT" -rcav --progress "$USER@$IP:$TARGET/round-*" ./
 #rsync -e "ssh -i /Users/nhnghia/.ssh/id_rsa -J montimage@192.168.0.42 -p $PORT" -rcav --progress "$USER@$IP:$TARGET/log-*" ./
-rsync -e "ssh -i /Users/nhnghia/.ssh/id_rsa -J montimage@192.168.0.235:$PORT" -rcav --progress "$USER@$IP:$TARGET/*" ./
+#rsync -e "ssh -i /Users/nhnghia/.ssh/id_rsa -J montimage@192.168.0.235:$PORT" -rcav --progress "$USER@$IP:$TARGET/*" ./
 
 
 #RUN="cd build && make -j4"
