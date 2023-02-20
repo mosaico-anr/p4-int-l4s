@@ -1,9 +1,5 @@
 #!/bin/bash -x
 
-# This source code is copyrighted by Montimage. It is released under MIT license.
-# It is part of the French National Research Agency (ANR) MOSAICO project, under grant No ANR-19-CE25-0012.
-
-
 set -x
 
 if [ "$EUID" -ne 0 ]
@@ -24,21 +20,27 @@ if [[ "$#" == "1" ]]; then
 	FILE="$1"
 fi
 
-
-# clear old compiled file
-#rm *.json *.p4i
-##compile code
-#cat <<EOF | parallel -j 3
-#	p4c  --target  bmv2  --arch  v1model  switch-l4s.p4
-#	p4c  --target  bmv2  --arch  v1model  switch-int.p4
-#	p4c  --target  bmv2  --arch  v1model  switch-forward.p4
-#EOF
-
-
-if [ $? != 0 ]
+if [ "$NO_COMPILE_P4" == "" ]
 then
-  echo "Could not compile P4" >&2
-  exit 1
+	# clear old compiled file
+	rm *.json *.p4i
+	##compile code
+	#cat <<EOF | parallel -j 3
+	#	p4c  --target  bmv2  --arch  v1model  switch-l4s.p4
+	#	p4c  --target  bmv2  --arch  v1model  switch-int.p4
+	#	p4c  --target  bmv2  --arch  v1model  switch-forward.p4
+	#EOF
+
+
+	p4c  --target  bmv2  --arch  v1model  switch-l4s.p4
+
+	if [ $? != 0 ]
+	then
+	  echo "Could not compile P4" >&2
+	  exit 1
+	fi
+else
+	echo "No need to compile P4 code"
 fi
 
 source environment.sh
@@ -116,78 +118,9 @@ config-nic $REV_IFACE
 sysctl -w net.ipv4.ip_forward=0
 sysctl -w net.ipv4.tcp_ecn=0
 
-function create-virtual-nic(){
-	NIC_1=$1
-	MAC_1=$2
-	NIC_2=$3
-	MAC_2=$4
-
-	ip link add name $NIC_1 type veth peer name $NIC_2
-	config-nic $NIC_1
-	config-nic $NIC_2
-	ip link set dev $NIC_1 address $MAC_1
-	ip link set dev $NIC_2 address $MAC_2
-	ifconfig $NIC_1 up
-	ifconfig $NIC_2 up
-}
-
-B1_IFACE=veth_b1
-B2_IFACE=veth_b2
-B1_IFACE_MAC=00:00:00:00:00:01
-B2_IFACE_MAC=00:00:00:00:00:02
-
-
-function create-dummy-nic(){
-	NIC=$1
-	MAC=$2
-	ip link add name $NIC type dummy
-	config-nic $NIC
-	ip link set dev $NIC address $MAC
-	ifconfig $NIC up
-}
-
-#create-virtual-nic "$B1_IFACE" "$B1_IFACE_MAC" "$B2_IFACE" "$B2_IFACE_MAC"
-
-modprobe dummy
-#use MON_IFACE and a dummy NIC
-B1_IFACE=$MON_IFACE
-B2_IFACE=veth
-B1_IFACE_MAC=$MON_IFACE_MAC
-B2_IFACE_MAC=00:00:00:00:00:0b
-
-#create-dummy-nic $B2_IFACE $B2_IFACE_MAC
-
-
-B1_IFACE=$MON_IFACE
-B2_IFACE=$MON_IFACE
-B1_IFACE_MAC=$MON_IFACE_MAC
-B2_IFACE_MAC=$MON_IFACE_MAC
 
 # increate MTU of Monitoring IFACE to be able to contain additional data for INT
-ip link set $B1_IFACE mtu 2000
-ip link set $B1_IFACE mtu 2000
-
-SW_A_B_PORT=9091
-SW_B_C_PORT=9092
-
-SIMPLE_SWITCH=simple_switch
-function create-switch(){
-	NIC_1=$1
-	NIC_2=$2
-	THRIFT_PORT=$3
-	ID=$4
-	# remove the first 4 parameters
-	shift ; shift ; shift ; shift
-	
-	echo "$(now) Creating a bridge using simple_switch: $@"
-	#/home/montimage/github/behavioral-model/targets/simple_switch/simple_switch   --pcap  --log-console --log-level debug  -i 1@veth_a -i 2@veth_b --thrift-port 9090 $FILE &
-	#DEBUG="--log-file log/sw-$ID.log  --log-level debug --pcap $LOG/" 
-	#disable debug
-	#DEBUG=""
-	$SIMPLE_SWITCH $DEBUG --device-id $ID -i 1@$NIC_1 -i 2@$NIC_2 --thrift-port $THRIFT_PORT "$@"
-	echo "$(now) simple_switch $ID returned code: $?"
-	#/usr/local/bin/simple_switch "$@"
-}
+ip link set $MON_IFACE mtu 2000
 
 function monitor_cpu_memory(){
    PID=$1
@@ -196,59 +129,49 @@ function monitor_cpu_memory(){
    /home/montimage/.local/bin/psrecord "$PID" --log $FILE_NAME.txt --duration 320 --interval 1 --include-children
 }
 
-#tcpdump -i enp0s10 -w log/enp0s10.pcap &
-
 # ensure no switch is running
 killall simple_switch
 
 # Betrand modified simple_switch to support L4S
 SIMPLE_SWITCH="/home/montimage/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
-create-switch $IFACE   "$B1_IFACE"   "$SW_A_B_PORT" "1" switch-l4s.json 2>&1 1> log/sw-1-simple.log &
-(monitor_cpu_memory $!) &
-#SIMPLE_SWITCH=/home/montimage/github-behavioral-model/targets/simple_switch/simple_switch
-#create-switch $IFACE   "$B1_IFACE"   "$SW_A_B_PORT" "1" switch-int.json 2>&1 1> log/sw-1-simple.log &
-# Here we do not use L4S => use "standard" simple_switch to avoid debug messages
-SIMPLE_SWITCH=/home/montimage/github-behavioral-model/targets/simple_switch/simple_switch
-create-switch "$B2_IFACE" $REV_IFACE "$SW_B_C_PORT" "2" switch-int.json 2>&1 1> log/sw-2-simple.log &
+DEBUG="--log-file log/sw.log  --log-level info --pcap log/" 
+#disable debug
+DEBUG=""
+($SIMPLE_SWITCH $DEBUG -i 1@$IFACE -i 2@$REV_IFACE -i 3@$MON_IFACE  switch-l4s.json 2>&1 > log/sw-simple.log )&
+SW_PID=$!
+# change priority of the switch 
+# Priority is a number in the range of -20 to 20. The higher the number, the lower the priority.
+renice -n -10 -p $SW_PID
+# bind the switch process to a cpu
+taskset -c 0-4 -p $SW_PID
+
+( monitor_cpu_memory $SW_PID ) &
 
 
 #wait for simple_switch
 sleep 2
 
-function config_sw_ab(){
-	tee -a log/config-$SW_A_B_PORT.log | /usr/local/bin/simple_switch_CLI --thrift-port "$SW_A_B_PORT" "$@"
+function config_sw(){
+	tee -a log/config.log | /usr/local/bin/simple_switch_CLI "$@"
 }
-function config_sw_bc(){
-	tee -a log/config-$SW_B_C_PORT.log | /usr/local/bin/simple_switch_CLI --thrift-port "$SW_B_C_PORT" "$@"
-}
-#table_add ipv4_lpm ipv4_forward 192.168.109.214 => 00:00:00:00:00:a0 00:00:00:00:00:a1  1
 
 #IP forwarding
 # Syntax:
 # ip_dst => ip_host mac_src mac_dst egress_port
 
 # config le switch A-B
-cat <<EOF  | config_sw_ab
+cat <<EOF  | config_sw
 table_set_default ipv4_lpm drop
 
-table_add ipv4_lpm ipv4_forward $CLIENT_A => $IFACE_MAC $CLIENT_A_MAC    1
-table_add ipv4_lpm ipv4_forward $CLIENT_B => $IFACE_MAC $CLIENT_B_MAC    1
-table_add ipv4_lpm ipv4_forward $SERVER_A => $B1_IFACE_MAC $B2_IFACE_MAC 2
-table_add ipv4_lpm ipv4_forward $SERVER_B => $B1_IFACE_MAC $B2_IFACE_MAC 2
-EOF
-
-cat <<EOF | config_sw_bc
-table_set_default ipv4_lpm drop
-
-table_add ipv4_lpm ipv4_forward $CLIENT_A => $B2_IFACE_MAC $B1_IFACE_MAC  1
-table_add ipv4_lpm ipv4_forward $CLIENT_B => $B2_IFACE_MAC $B1_IFACE_MAC  1
+table_add ipv4_lpm ipv4_forward $CLIENT_A => $IFACE_MAC $CLIENT_A_MAC     1
+table_add ipv4_lpm ipv4_forward $CLIENT_B => $IFACE_MAC $CLIENT_B_MAC     1
 table_add ipv4_lpm ipv4_forward $SERVER_A => $REV_IFACE_MAC $SERVER_A_MAC 2
 table_add ipv4_lpm ipv4_forward $SERVER_B => $REV_IFACE_MAC $SERVER_B_MAC 2
 EOF
 
 
 # L4S
-cat <<EOF | config_sw_ab
+cat <<EOF | config_sw
 table_add select_PI2_param set_PI2_param => 1342 13421 15000 14
 table_add select_L4S_param set_L4S_param => 5000 3000 0 1500 21
 EOF
@@ -257,48 +180,40 @@ if [[ "$ENABLE_INT" == "yes" ]]; then
 # CONFIGURE In-band network telemetry
 # enable INT
 # => set switch ID
-cat <<EOF | config_sw_ab
+cat <<EOF | config_sw
 table_add tb_int_config_transit set_transit => 1
 EOF
 
-cat <<EOF | config_sw_bc
-table_add tb_int_config_transit set_transit => 2
-EOF
-
-#cat <<EOF | simple_switch_CLI
-#table_add swtrace add_swtrace => 1
-#EOF
-
 # set source
 # ip_src ip_dst port_src port_dst => max_hop hop_md_length inst_mask priority
-cat <<EOF | config_sw_ab
-table_add tb_int_config_source set_source $CLIENT_A&&&0xFFFFFF00 5001&&&0x0000 $SERVER_A&&&0xFFFFFF00 5001&&&0x0000 => 4 10 0xFFFF 0
-EOF
-
-#cat <<EOF | config_sw_bc
-#table_add tb_int_config_source set_source 10.0.10.1&&&0xFFFFFF00 5001&&&0x0000 10.0.20.0&&&0xFFFFFF00 5001&&&0x000 => 4 10 0x0000 0
+#cat <<EOF | config_sw
+#table_add tb_int_config_source set_source $CLIENT_A&&&0xFFFFFF00 5001&&&0x0000 $SERVER_A&&&0xFFFFFF00 5001&&&0x0000 => 4 10 0xFFFF 0
 #EOF
+
+# do INT on any packet
+cat <<EOF | config_sw
+table_add tb_int_config_source set_source $CLIENT_A&&&0xFFFF0000 5001&&&0x0000 $SERVER_A&&&0xFFFF0000 5001&&&0x0000 => 4 10 0xFFFF 0
+EOF
 
 # set sink node
 # egress_port => sink_reporting_port
 # sent INT reports to the sink_reporting_port is currently not supported
 # the INT data packet will be copied using mirroring via mirroring_add command
-cat <<EOF | config_sw_ab
+cat <<EOF | config_sw
 table_add tb_int_config_sink set_sink 1 => 3
 EOF
-cat <<EOF | config_sw_bc
-table_add tb_int_config_sink set_sink 2 => 3
-EOF
 
-fi
+
 
 # mirroring port
 # mirroring_add <mirror_id> <egress_port>
 # mirror_id is defined by in int.p4:
-#   const bit<32> REPORT_MIRROR_SESSION_ID = 500;
-#cat <<EOF | config_sw_bc
-#mirroring_add 500 3
-#EOF
+#   const bit<32> REPORT_MIRROR_SESSION_ID = 1;
+cat <<EOF | config_sw
+mirroring_add 1 3
+EOF
+
+fi
 
 # ping does not reply when having this
 #  set_egress_mahimahi 2 33
@@ -306,7 +221,15 @@ fi
 
 #simple_switch_CLI --thrift-port $THRIFT_PORT
 # config_sw_ab
-bash --noprofile --rcfile ./test-suites.sh
+
+if [[ "$TEST_SCRIPT" == "" ]]; then
+	# HN: either show a termnal or run a test-suite
+	bash --noprofile --rcfile ./terminal.sh
+	#bash ./test-suites.sh
+else
+	bash -x "$TEST_SCRIPT"
+fi
+
 # put simple_siwtch to forground
 #fg
 
@@ -315,4 +238,4 @@ killall -2 simple_switch
 sleep 2
 
 
-mv log "log-$(date +%s)"
+#mv log "log-$(date +%s)"
