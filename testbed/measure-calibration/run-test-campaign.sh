@@ -11,8 +11,9 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 # script to be run when the l4s switch is started successfully
 export TEST_SCRIPT="$SCRIPT_PATH/start-monitoring.sh"
 
-ROUND_ID=1
-ROUND_NOTE="LL traffic is classified by using ECN==3"
+ROUND_ID=2
+# we can modify LL traffic classification in the lines 194-202 in "state parse_ipv4" of switch-l4s.p4
+ROUND_NOTE="Limit traffic at the egress ports of the P4 switch using Mahimahi"
 
 DATA_DIR="$SCRIPT_PATH/round-$ROUND_ID"
 rm -rf   "$DATA_DIR"
@@ -25,17 +26,16 @@ cat <<EOF > "$DATA_DIR/README.md"
 This campgaign of test was starting at $(date).
 Each test result is in a folder whose name uses this format: \`type-bandwidth-duration\`
 - \`type\`: either \`legit\` (legitime traffic) or \`unrespECN\` or \`iperf3\`
-- \`bandwidth\`: limit bandwidth at the client side in Kbps. Set to 0Kbps to unlimit.
+- \`bandwidth\`: limit bandwidth at the client side in Mbps.
 - \`duration\`: the duration of request sent by the client before being stopped
 $ROUND_NOTE
 EOF
 
-
-for bw in 5000 10000 20000 50000 100000
+for duration in 60 30
 do
-	for duration in 30 60
+	for bw in 5 10 20 50 100
 	do
-		for type in iperf3 legit unrespECN
+		for type in legit unrespECN iperf3 
 		do
 			#export the varilabes to transfer the parameters to the scripts to be executed
 			export BANDWIDTH=$bw
@@ -62,7 +62,7 @@ do
 			
 			( ./setup-testbed.sh 2>&1 ) |tee log/script.log
 
-			mv log "$DATA_DIR/$type-bw_${bw}Kbps-duration_${duration}s--$(date +%Y%m%d-%H%M%S)"
+			mv log "$DATA_DIR/$type-bw_${bw}Mbps-duration_${duration}s--$(date +%Y%m%d-%H%M%S)"
 			
 			#break 3
 			

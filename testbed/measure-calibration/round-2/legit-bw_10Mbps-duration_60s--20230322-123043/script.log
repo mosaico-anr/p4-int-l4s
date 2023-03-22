@@ -1,0 +1,1263 @@
++++ dirname ./setup-testbed.sh
+++ cd -- .
+++ pwd -P
++ SCRIPT_PATH=/home/montimage/hipnet
++ set -x
++ '[' 0 -ne 0 ']'
++ '[' -z '' ']'
++ export ENABLE_INT=yes
++ ENABLE_INT=yes
++ P4_FILE_PREFIX=switch-l4s
++ [[ 0 == \1 ]]
++ '[' true == '' ']'
++ echo 'No need to compile P4 code'
+No need to compile P4 code
++ source environment.sh
+++ set -x
+++ export IFACE=enp0s8
+++ IFACE=enp0s8
+++ export REV_IFACE=enp0s9
+++ REV_IFACE=enp0s9
+++ export MON_IFACE=enp0s10
+++ MON_IFACE=enp0s10
+++ export SERVER_NET=10.0.1.0/24
+++ SERVER_NET=10.0.1.0/24
+++ export CLIENT_NET=10.0.0.0/24
+++ CLIENT_NET=10.0.0.0/24
+++ export SERVER_A=10.0.1.11
+++ SERVER_A=10.0.1.11
+++ export SERVER_B=10.0.1.12
+++ SERVER_B=10.0.1.12
+++ export CLIENT_A=10.0.0.11
+++ CLIENT_A=10.0.0.11
+++ export CLIENT_B=10.0.0.12
+++ CLIENT_B=10.0.0.12
+++ export CLIENT_A_IFACE=enp0s8
+++ CLIENT_A_IFACE=enp0s8
+++ export CLIENT_B_IFACE=enp0s8
+++ CLIENT_B_IFACE=enp0s8
+++ export SERVER_A_IFACE=enp0s8
+++ SERVER_A_IFACE=enp0s8
+++ export SERVER_B_IFACE=enp0s8
+++ SERVER_B_IFACE=enp0s8
+++ export MMT_IP=10.0.30.2
+++ MMT_IP=10.0.30.2
+++ export MMT_IFACE=enp0s8
+++ MMT_IFACE=enp0s8
+++ export SERVER_A_CTRL=192.168.1.104
+++ SERVER_A_CTRL=192.168.1.104
+++ export SERVER_B_CTRL=192.168.1.105
+++ SERVER_B_CTRL=192.168.1.105
+++ export CLIENT_A_CTRL=192.168.1.100
+++ CLIENT_A_CTRL=192.168.1.100
+++ export CLIENT_B_CTRL=192.168.1.103
+++ CLIENT_B_CTRL=192.168.1.103
++ export LOG=/home/montimage/hipnet/log
++ LOG=/home/montimage/hipnet/log
++ mkdir -p /home/montimage/hipnet/log
+++ get-mac enp0s8
+++ iface=enp0s8
+++ cat /sys/class/net/enp0s8/address
++ export IFACE_MAC=08:00:27:55:c7:75
++ IFACE_MAC=08:00:27:55:c7:75
+++ get-mac enp0s9
+++ iface=enp0s9
+++ cat /sys/class/net/enp0s9/address
++ export REV_IFACE_MAC=08:00:27:32:3c:0d
++ REV_IFACE_MAC=08:00:27:32:3c:0d
+++ get-mac enp0s10
+++ iface=enp0s10
+++ cat /sys/class/net/enp0s10/address
++ export MON_IFACE_MAC=08:00:27:ef:9f:28
++ MON_IFACE_MAC=08:00:27:ef:9f:28
+++ get-remote-mac 192.168.1.100 enp0s8
+++ ip=192.168.1.100
+++ iface=enp0s8
+++ run-on-host 192.168.1.100 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.100
+++ shift
+++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_A_MAC=08:00:27:fe:18:fc
++ CLIENT_A_MAC=08:00:27:fe:18:fc
+++ get-remote-mac 192.168.1.103 enp0s8
+++ ip=192.168.1.103
+++ iface=enp0s8
+++ run-on-host 192.168.1.103 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.103
+++ shift
+++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_B_MAC=08:00:27:72:8a:ae
++ CLIENT_B_MAC=08:00:27:72:8a:ae
+++ get-remote-mac 192.168.1.104 enp0s8
+++ ip=192.168.1.104
+++ iface=enp0s8
+++ run-on-host 192.168.1.104 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.104
+++ shift
+++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- cat /sys/class/net/enp0s8/address
++ export SERVER_A_MAC=08:00:27:66:48:02
++ SERVER_A_MAC=08:00:27:66:48:02
+++ get-remote-mac 192.168.1.105 enp0s8
+++ ip=192.168.1.105
+++ iface=enp0s8
+++ run-on-host 192.168.1.105 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.105
+++ shift
+++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- cat /sys/class/net/enp0s8/address
++ export SERVER_B_MAC=08:00:27:38:99:15
++ SERVER_B_MAC=08:00:27:38:99:15
++ arp -s 10.0.1.11 08:00:27:66:48:02
++ arp -s 10.0.1.12 08:00:27:38:99:15
++ arp -s 10.0.0.11 08:00:27:fe:18:fc
++ arp -s 10.0.0.12 08:00:27:72:8a:ae
+++ get-ip enp0s8
+++ iface=enp0s8
+++ /sbin/ip -o -4 addr list enp0s8
+++ awk '{print $4}'
+++ cut -d/ -f1
++ IFACE_IP=10.0.0.1
+++ get-ip enp0s9
+++ iface=enp0s9
+++ /sbin/ip -o -4 addr list enp0s9
+++ awk '{print $4}'
+++ cut -d/ -f1
++ REV_IFACE_IP=10.0.1.1
++ run-on-host 192.168.1.100 sudo route add -net 10.0.1.0/24 gw 10.0.0.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.103 sudo route add -net 10.0.1.0/24 gw 10.0.0.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.103
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.104 sudo route add -net 10.0.0.0/24 gw 10.0.1.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.105 sudo route add -net 10.0.0.0/24 gw 10.0.1.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.105
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.100 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.103 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.103
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
+Cannot get device udp-fragmentation-offload settings: Operation not supported
+Cannot get device udp-fragmentation-offload settings: Operation not supported
++ run-on-host 192.168.1.104 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.105 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.105
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
+Cannot get device udp-fragmentation-offload settings: Operation not supported
+Cannot get device udp-fragmentation-offload settings: Operation not supported
++ config-nic enp0s8
++ NIC=enp0s8
++ ip link set enp0s8 mtu 1500
++ ethtool -K enp0s8 tso off gso off gro off tx off
++ sysctl net.ipv6.conf.enp0s8.disable_ipv6=1
+net.ipv6.conf.enp0s8.disable_ipv6 = 1
++ config-nic enp0s9
++ NIC=enp0s9
++ ip link set enp0s9 mtu 1500
++ ethtool -K enp0s9 tso off gso off gro off tx off
++ sysctl net.ipv6.conf.enp0s9.disable_ipv6=1
+net.ipv6.conf.enp0s9.disable_ipv6 = 1
++ sysctl -w net.ipv4.ip_forward=0
+net.ipv4.ip_forward = 0
++ ip link set enp0s10 mtu 2000
++ killall simple_switch
+simple_switch: no process found
++ SIMPLE_SWITCH='/home/montimage/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128'
++ DEBUG='--log-file log/sw.log  --log-level info --pcap log/'
++ DEBUG=
++ SW_PID=2274
++ renice -n -10 -p 2274
++ /home/montimage/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2 --ll_queue 64 --BE_queue 128 -i 1@enp0s8 -i 2@enp0s9 -i 3@enp0s10 switch-l4s.json
+2274 (process ID) old priority 0, new priority -10
++ taskset -c 0-4 -p 2274
+taskset: failed to execute -p: No such file or directory
++ sleep 2
++ monitor_cpu_memory 2274
++ PID=2274
++ FILE_NAME=log/cpu_mem_int_yes_pid_2274
++ /home/montimage/.local/bin/psrecord 2274 --log log/cpu_mem_int_yes_pid_2274.txt --duration 320 --interval 1 --include-children
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0b
+action:              ipv4_forward
+runtime data:        08:00:27:55:c7:75	08:00:27:fe:18:fc	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0c
+action:              ipv4_forward
+runtime data:        08:00:27:55:c7:75	08:00:27:72:8a:ae	00:01
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0b
+action:              ipv4_forward
+runtime data:        08:00:27:32:3c:0d	08:00:27:66:48:02	00:02
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0c
+action:              ipv4_forward
+runtime data:        08:00:27:32:3c:0d	08:00:27:38:99:15	00:02
+Entry has been added with handle 3
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to exact match table select_PI2_param
+match key:           
+action:              set_PI2_param
+runtime data:        00:00:05:3e	00:00:34:6d	00:00:3a:98	0e
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table select_L4S_param
+match key:           
+action:              set_L4S_param
+runtime data:        00:00:13:88	00:00:0b:b8	00	00:00:05:dc	15
+Entry has been added with handle 0
+RuntimeCmd: 
++ [[ yes == \y\e\s ]]
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_transit)
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to ternary match table tb_int_config_source
+match key:           TERNARY-0a:00:00:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00	TERNARY-0a:00:01:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00
+action:              set_source
+runtime data:        04	0a	ff:ff
+Entry has been added with handle 0
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_sink)
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
++ . /home/montimage/hipnet/monitoring-mmt-tcpdump.sh
+++++ dirname ./setup-testbed.sh
++++ cd -- .
++++ pwd -P
+++ SCRIPT_PATH=/home/montimage/hipnet
+++ MMT_CONFIG_FILE=/home/montimage/hipnet/mmt-probe.conf
++++ cat
+++ MMT_ATTRIBUTES='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ echo '	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ sed --expression=s/int.hop_tx_utilizes/int.mark_probability/
+++ MMT_ATTRIBUTES_HEADERS='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ ACTION=
+++ [[ '' == \c\o\m\b\i\n\e\-\m\m\t\-\c\s\v\-\f\i\l\e\s ]]
++ start-monitoring
++ cd -- /home/montimage/hipnet/log
++ log 'start pcap dump'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-122908 ' 'start pcap dump'
+20230322-122908  start pcap dump
++ FILTER='tcp or udp'
++ tcpdump --snapshot-length=128 -i enp0s8 -w enp0s8-data.pcap 'tcp or udp'
++ tcpdump --snapshot-length=128 -i enp0s9 -w enp0s9-data.pcap 'tcp or udp'
++ sleep 1
++ tcpdump --snapshot-length=176 -i enp0s10 -w enp0s10-int.pcap 'tcp or udp'
+tcpdump: tcpdump: listening on enp0s9, link-type EN10MB (Ethernet), capture size 128 bytes
+listening on enp0s10, link-type EN10MB (Ethernet), capture size 176 bytes
+tcpdump: listening on enp0s8, link-type EN10MB (Ethernet), capture size 128 bytes
++ cp -- /home/montimage/hipnet/mmt-probe.conf ./mmt-probe.conf
++ generate-monitor-config
++ cat
+++ date
++ log 'start mmt-probe'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-122909 ' 'start mmt-probe'
+20230322-122909  start mmt-probe
++ sleep 2
++ mmt-probe -c ./mmt-probe.conf -i enp0s10
++ echo '*******testbed is ready*******'
+*******testbed is ready*******
++ cd -- /home/montimage/hipnet
++ [[ /home/montimage/hipnet/measure--calibrate/start-monitoring.sh == '' ]]
++ bash -x /home/montimage/hipnet/measure--calibrate/start-monitoring.sh
++ [[ legit == \i\p\e\r\f\3 ]]
++ SERVER_DATA=10.0.1.11
++ CLIENT_DATA=10.0.0.11
++ SERVER_CTRL=192.168.1.104
++ CLIENT_CTRL=192.168.1.100
++ SERVER_IFACE=enp0s8
++ CLIENT_IFACE=enp0s8
++ export FILE_SIZE=1000
++ FILE_SIZE=1000
++ date
+Wed Mar 22 12:29:11 UTC 2023
++ set -x
++++ dirname /home/montimage/hipnet/measure--calibrate/start-monitoring.sh
+++ cd -- /home/montimage/hipnet/measure--calibrate
+++ pwd -P
++ SCRIPT_PATH=/home/montimage/hipnet/measure--calibrate
++ . /home/montimage/hipnet/measure--calibrate/../environment.sh
+++ set -x
+++ export IFACE=enp0s8
+++ IFACE=enp0s8
+++ export REV_IFACE=enp0s9
+++ REV_IFACE=enp0s9
+++ export MON_IFACE=enp0s10
+++ MON_IFACE=enp0s10
+++ export SERVER_NET=10.0.1.0/24
+++ SERVER_NET=10.0.1.0/24
+++ export CLIENT_NET=10.0.0.0/24
+++ CLIENT_NET=10.0.0.0/24
+++ export SERVER_A=10.0.1.11
+++ SERVER_A=10.0.1.11
+++ export SERVER_B=10.0.1.12
+++ SERVER_B=10.0.1.12
+++ export CLIENT_A=10.0.0.11
+++ CLIENT_A=10.0.0.11
+++ export CLIENT_B=10.0.0.12
+++ CLIENT_B=10.0.0.12
+++ export CLIENT_A_IFACE=enp0s8
+++ CLIENT_A_IFACE=enp0s8
+++ export CLIENT_B_IFACE=enp0s8
+++ CLIENT_B_IFACE=enp0s8
+++ export SERVER_A_IFACE=enp0s8
+++ SERVER_A_IFACE=enp0s8
+++ export SERVER_B_IFACE=enp0s8
+++ SERVER_B_IFACE=enp0s8
+++ export MMT_IP=10.0.30.2
+++ MMT_IP=10.0.30.2
+++ export MMT_IFACE=enp0s8
+++ MMT_IFACE=enp0s8
+++ export SERVER_A_CTRL=192.168.1.104
+++ SERVER_A_CTRL=192.168.1.104
+++ export SERVER_B_CTRL=192.168.1.105
+++ SERVER_B_CTRL=192.168.1.105
+++ export CLIENT_A_CTRL=192.168.1.100
+++ CLIENT_A_CTRL=192.168.1.100
+++ export CLIENT_B_CTRL=192.168.1.103
+++ CLIENT_B_CTRL=192.168.1.103
++ MMT_CONFIG_FILE=/home/montimage/hipnet/measure--calibrate/mmt-probe.conf
++ . /home/montimage/hipnet/measure--calibrate/pre-process-mmt-csv.sh
+++ TCP_OR_UDP_ATTRIBUTES='"udp.src_port","udp.dest_port","udp.len"'
+++ [[ legit == \i\p\e\r\f\3 ]]
++++ cat
+++ ATTRIBUTES='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ echo '	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ sed --expression=s/int.hop_tx_utilizes/int.mark_probability/
+++ ATTRIBUTES_HEADERS='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ ACTION=
+++ [[ '' == \c\o\m\b\i\n\e\-\m\m\t\-\c\s\v\-\f\i\l\e\s ]]
++ LOG_DIR=/home/montimage/hipnet/log
++ mkdir -p -- /home/montimage/hipnet/log
++ TCP_OR_UDP_PORT=4433
++ log 'start experiment'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-122911 ' 'start experiment'
+20230322-122911  start experiment
++ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 225132  9104 ?        Ss   Feb19   0:20 /lib/systemd/systemd --system --deserialize 38
+root         2  0.0  0.0      0     0 ?        S    Feb19   0:00 [kthreadd]
+root         4  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/0:0H]
+root         6  0.0  0.0      0     0 ?        I<   Feb19   0:00 [mm_percpu_wq]
+root         7  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/0]
+root         8  0.0  0.0      0     0 ?        I    Feb19  17:06 [rcu_sched]
+root         9  0.0  0.0      0     0 ?        I    Feb19   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/0]
+root        11  0.0  0.0      0     0 ?        S    Feb19   0:19 [watchdog/0]
+root        12  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/0]
+root        13  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/1]
+root        14  0.0  0.0      0     0 ?        S    Feb19   0:22 [watchdog/1]
+root        15  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/1]
+root        16  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/1]
+root        18  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/1:0H]
+root        19  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/2]
+root        20  0.0  0.0      0     0 ?        S    Feb19   0:25 [watchdog/2]
+root        21  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/2]
+root        22  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/2]
+root        24  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/2:0H]
+root        25  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/3]
+root        26  0.0  0.0      0     0 ?        S    Feb19   0:43 [watchdog/3]
+root        27  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/3]
+root        28  0.0  0.0      0     0 ?        S    Feb19   0:01 [ksoftirqd/3]
+root        30  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/3:0H]
+root        31  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/4]
+root        32  0.0  0.0      0     0 ?        S    Feb19   0:49 [watchdog/4]
+root        33  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/4]
+root        34  0.0  0.0      0     0 ?        S    Feb19   0:01 [ksoftirqd/4]
+root        36  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/4:0H]
+root        37  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/5]
+root        38  0.0  0.0      0     0 ?        S    Feb19   0:27 [watchdog/5]
+root        39  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/5]
+root        40  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/5]
+root        42  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/5:0H]
+root        43  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/6]
+root        44  0.0  0.0      0     0 ?        S    Feb19   0:26 [watchdog/6]
+root        45  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/6]
+root        46  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/6]
+root        48  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/6:0H]
+root        49  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/7]
+root        50  0.0  0.0      0     0 ?        S    Feb19   0:28 [watchdog/7]
+root        51  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/7]
+root        52  0.0  0.0      0     0 ?        S    Feb19   0:11 [ksoftirqd/7]
+root        54  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/7:0H]
+root        55  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/8]
+root        56  0.0  0.0      0     0 ?        S    Feb19   0:28 [watchdog/8]
+root        57  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/8]
+root        58  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/8]
+root        60  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/8:0H]
+root        61  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/9]
+root        62  0.0  0.0      0     0 ?        S    Feb19   0:22 [watchdog/9]
+root        63  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/9]
+root        64  0.0  0.0      0     0 ?        S    Feb19   0:06 [ksoftirqd/9]
+root        66  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/9:0H]
+root        67  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/10]
+root        68  0.0  0.0      0     0 ?        S    Feb19   0:21 [watchdog/10]
+root        69  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/10]
+root        70  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/10]
+root        72  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/10:0H]
+root        73  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/11]
+root        74  0.0  0.0      0     0 ?        S    Feb19   0:21 [watchdog/11]
+root        75  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/11]
+root        76  0.0  0.0      0     0 ?        S    Feb19   0:31 [ksoftirqd/11]
+root        78  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/11:0H]
+root        79  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/12]
+root        80  0.0  0.0      0     0 ?        S    Feb19   0:20 [watchdog/12]
+root        81  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/12]
+root        82  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/12]
+root        84  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/12:0H]
+root        85  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/13]
+root        86  0.0  0.0      0     0 ?        S    Feb19   0:23 [watchdog/13]
+root        87  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/13]
+root        88  0.0  0.0      0     0 ?        S    Feb19   0:01 [ksoftirqd/13]
+root        90  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/13:0H]
+root        91  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/14]
+root        92  0.0  0.0      0     0 ?        S    Feb19   0:15 [watchdog/14]
+root        93  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/14]
+root        94  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/14]
+root        96  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/14:0H]
+root        97  0.0  0.0      0     0 ?        S    Feb19   0:00 [cpuhp/15]
+root        98  0.0  0.0      0     0 ?        S    Feb19   0:12 [watchdog/15]
+root        99  0.0  0.0      0     0 ?        S    Feb19   0:00 [migration/15]
+root       100  0.0  0.0      0     0 ?        S    Feb19   0:00 [ksoftirqd/15]
+root       102  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/15:0H]
+root       103  0.0  0.0      0     0 ?        S    Feb19   0:00 [kdevtmpfs]
+root       104  0.0  0.0      0     0 ?        I<   Feb19   0:00 [netns]
+root       105  0.0  0.0      0     0 ?        S    Feb19   0:00 [rcu_tasks_kthre]
+root       106  0.0  0.0      0     0 ?        S    Feb19   0:00 [kauditd]
+root       108  0.0  0.0      0     0 ?        S    Feb19   0:01 [khungtaskd]
+root       109  0.0  0.0      0     0 ?        S    Feb19   0:00 [oom_reaper]
+root       110  0.0  0.0      0     0 ?        I<   Feb19   0:00 [writeback]
+root       111  0.0  0.0      0     0 ?        S    Feb19   0:00 [kcompactd0]
+root       112  0.0  0.0      0     0 ?        SN   Feb19   0:00 [ksmd]
+root       113  0.0  0.0      0     0 ?        SN   Feb19   0:00 [khugepaged]
+root       114  0.0  0.0      0     0 ?        I<   Feb19   0:00 [crypto]
+root       115  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kintegrityd]
+root       116  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kblockd]
+root       117  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ata_sff]
+root       118  0.0  0.0      0     0 ?        I<   Feb19   0:00 [md]
+root       119  0.0  0.0      0     0 ?        I<   Feb19   0:00 [edac-poller]
+root       120  0.0  0.0      0     0 ?        I<   Feb19   0:00 [devfreq_wq]
+root       121  0.0  0.0      0     0 ?        I<   Feb19   0:00 [watchdogd]
+root       125  0.0  0.0      0     0 ?        I    Feb19  12:46 [kworker/4:1]
+root       130  0.0  0.0      0     0 ?        S    Feb19   0:00 [kswapd0]
+root       131  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/u33:0]
+root       132  0.0  0.0      0     0 ?        S    Feb19   0:00 [ecryptfs-kthrea]
+root       174  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kthrotld]
+root       175  0.0  0.0      0     0 ?        I<   Feb19   0:00 [acpi_thermal_pm]
+root       176  0.0  0.0      0     0 ?        S    Feb19   0:00 [scsi_eh_0]
+root       177  0.0  0.0      0     0 ?        I<   Feb19   0:00 [scsi_tmf_0]
+root       178  0.0  0.0      0     0 ?        S    Feb19   0:00 [scsi_eh_1]
+root       179  0.0  0.0      0     0 ?        I<   Feb19   0:00 [scsi_tmf_1]
+root       182  0.0  0.0      0     0 ?        I    Feb19   0:03 [kworker/11:1]
+root       186  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ipv6_addrconf]
+root       197  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kstrp]
+root       215  0.0  0.0      0     0 ?        I<   Feb19   0:00 [charger_manager]
+root       218  0.0  0.0      0     0 ?        I    Feb19   0:06 [kworker/7:1]
+root       343  0.0  0.0      0     0 ?        S    Feb19   0:00 [scsi_eh_2]
+root       344  0.0  0.0      0     0 ?        I<   Feb19   0:00 [scsi_tmf_2]
+root       345  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ttm_swap]
+root       346  0.0  0.0      0     0 ?        S    Feb19   0:00 [irq/18-vmwgfx]
+root       349  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/14:1H]
+root       351  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/5:1H]
+root       354  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/8:1H]
+root       355  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/9:1H]
+root       359  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/2:1H]
+root       360  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kdmflush]
+root       361  0.0  0.0      0     0 ?        I<   Feb19   0:00 [bioset]
+root       365  0.0  0.0      0     0 ?        I<   Feb19   0:02 [kworker/13:1H]
+root       423  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/13:2]
+root       436  0.0  0.0      0     0 ?        I<   Feb19   0:00 [raid5wq]
+root       459  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/11:1H]
+root       460  0.0  0.0      0     0 ?        I<   Feb19   0:12 [kworker/3:1H]
+root       479  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/10:1H]
+root       487  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/15:1H]
+root       489  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/4:1H]
+root       490  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/12:1H]
+root       494  0.0  0.0      0     0 ?        S    Feb19   0:09 [jbd2/dm-0-8]
+root       495  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ext4-rsv-conver]
+root       497  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/6:1H]
+root       498  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/0:1H]
+root       534  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/1:1H]
+root       554  0.0  0.0      0     0 ?        I<   Feb19   0:00 [kworker/7:1H]
+root       589  0.0  0.0      0     0 ?        I<   Feb19   0:00 [iscsi_eh]
+root       592  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ib-comp-wq]
+root       593  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ib-comp-unb-wq]
+root       594  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ib_mcast]
+root       595  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ib_nl_sa_wq]
+root       596  0.0  0.0 105908  1924 ?        Ss   Feb19   0:00 /sbin/lvmetad -f
+root       599  0.0  0.0      0     0 ?        I<   Feb19   0:00 [rdma_cm]
+root       672  0.0  0.0      0     0 ?        I<   Feb19   0:00 [iprt-VBoxWQueue]
+root       680  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/5:1]
+root       697  0.0  0.0      0     0 ?        I<   Mar03   0:00 [xfsalloc]
+root       699  0.0  0.0      0     0 ?        I<   Mar03   0:00 [xfs_mru_cache]
+root       708  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsIO]
+root       709  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       710  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       711  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       712  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       713  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       714  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       715  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       716  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       717  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       718  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       719  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       720  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       721  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       722  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       723  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       724  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsCommit]
+root       725  0.0  0.0      0     0 ?        S    Mar03   0:00 [jfsSync]
+root       842  0.0  0.0      0     0 ?        S    Feb19   0:00 [jbd2/sda2-8]
+root       843  0.0  0.0      0     0 ?        I<   Feb19   0:00 [ext4-rsv-conver]
+root      1067  0.0  0.0      0     0 ?        I    Feb19   0:05 [kworker/14:2]
+root      1205  0.0  0.0 110420  2040 ?        Ssl  Feb19   2:52 /usr/sbin/irqbalance --foreground
+root      1207  0.0  0.0 286364  6972 ?        Ssl  Feb19   0:38 /usr/lib/accountsservice/accounts-daemon
+root      1241  0.0  0.0 169780 17772 ?        Ssl  Feb19   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root      1249  0.0  0.0  70520  5868 ?        Ss   Feb19   0:05 /lib/systemd/systemd-logind
+message+  1251  0.0  0.0  50292  4880 ?        Ss   Feb19   0:04 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+daemon    1297  0.0  0.0  28336  2460 ?        Ss   Feb19   0:00 /usr/sbin/atd -f
+syslog    1325  0.0  0.0 267280  5020 ?        Ssl  Feb19   0:04 /usr/sbin/rsyslogd -n
+root      1335  0.0  0.0 309868  2228 ?        Ssl  Feb19   0:21 /usr/bin/lxcfs /var/lib/lxcfs/
+root      1340  0.0  0.0 185948 20332 ?        Ssl  Feb19   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root      1348  0.0  0.0  68308  4328 pts/7    S+   12:23   0:00 sudo ./run-test-campaign.sh
+root      1349  0.0  0.0  13320  3256 pts/7    S+   12:23   0:00 /bin/bash -x ./run-test-campaign.sh
+root      1357  0.0  0.0  30032  3240 ?        Ss   Feb19   0:06 /usr/sbin/cron -f
+root      1364  0.0  0.2 2385084 42848 ?       Ssl  Feb19   5:03 /usr/bin/containerd
+root      1394  0.0  0.0 288884  6604 ?        Ssl  Feb19   0:01 /usr/lib/policykit-1/polkitd --no-debug
+root      1439  0.0  0.0  14896  2000 tty1     Ss+  Feb19   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root      1517  0.0  0.0  72304  6404 ?        Ss   Feb19   0:00 /usr/sbin/sshd -D
+root      2225  0.2  0.0  13452  3396 pts/7    S+   12:29   0:00 /bin/bash -x ./setup-testbed.sh
+root      2226  0.1  0.0   7936   824 pts/7    S+   12:29   0:00 tee log/script.log
+root      2274 44.3  0.1 383464 22240 pts/7    S<l+ 12:29   0:02 /home/montimage/bertrand-behavioral-model/targets/simple_switch/.libs/simple_switch --queue 2 --ll_queue 64 --BE_queue 128 -i 1@enp0s8 -i 2@enp0s9 -i 3@enp0s10 switch-l4s.json
+root      2280  0.0  0.0  13452  2180 pts/7    S+   12:29   0:00 /bin/bash -x ./setup-testbed.sh
+root      2282  3.8  0.0  52944 13344 pts/7    S+   12:29   0:00 /usr/bin/python /home/montimage/.local/bin/psrecord 2274 --log log/cpu_mem_int_yes_pid_2274.txt --duration 320 --interval 1 --include-children
+root      2352  0.0  0.0  22544  6360 pts/7    S+   12:29   0:00 tcpdump --snapshot-length=128 -i enp0s8 -w enp0s8-data.pcap tcp or udp
+root      2353  0.0  0.0  22544  6392 pts/7    S+   12:29   0:00 tcpdump --snapshot-length=128 -i enp0s9 -w enp0s9-data.pcap tcp or udp
+root      2354  0.0  0.0  22544  6256 pts/7    S+   12:29   0:00 tcpdump --snapshot-length=176 -i enp0s10 -w enp0s10-int.pcap tcp or udp
+root      2361 48.5  0.1 590052 29460 pts/7    S+   12:29   0:00 mmt-probe -c ./mmt-probe.conf -i enp0s10
+root      2363  0.0  0.0  13452  3356 pts/7    S+   12:29   0:00 bash -x /home/montimage/hipnet/measure--calibrate/start-monitoring.sh
+root      2376  0.0  0.0  37804  3288 pts/7    R+   12:29   0:00 ps aux
+montima+  2648  0.0  0.0  49800  3848 ?        Ss   Mar20   0:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      6444  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/14:1]
+root      6545  0.0  0.0      0     0 ?        I    Mar15   0:02 [kworker/12:1]
+root      9607  0.0  0.0      0     0 ?        I    Mar05   0:04 [kworker/6:1]
+root      9978  0.0  0.0      0     0 ?        I    Mar20   0:00 [kworker/12:0]
+root     10854  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/15:1]
+root     12257  0.0  0.0      0     0 ?        I    Mar07   4:52 [kworker/13:1]
+root     12292  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/2:2]
+root     12805  0.0  0.0      0     0 ?        I    Mar07   0:14 [kworker/0:4]
+root     14108  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/9:2]
+root     15434  0.0  0.0  44972  3952 ?        Ss   Mar08   0:03 /lib/systemd/systemd-udevd
+root     18699  0.0  0.0 107988  7164 ?        Ss   Mar21   0:00 sshd: montimage [priv]
+root     18744  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/6:0]
+montima+ 18811  0.0  0.0 107988  3404 ?        S    Mar21   0:00 sshd: montimage@pts/0
+montima+ 18812  0.0  0.0  23204  5476 pts/0    Ss+  Mar21   0:00 -bash
+root     21788  0.0  0.0      0     0 ?        I    Mar03   0:03 [kworker/5:0]
+root     21829  0.0  0.0      0     0 ?        I    Mar03   0:06 [kworker/1:1]
+root     22390  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/8:1]
+root     22703  0.0  0.0      0     0 ?        I    Mar20   0:00 [kworker/7:2]
+root     23320  0.0  0.0      0     0 ?        I    Mar21   0:04 [kworker/3:2]
+montima+ 23406  0.0  0.0  76644  7716 ?        Ss   Feb20   0:00 /lib/systemd/systemd --user
+montima+ 23407  0.0  0.0 259204  2536 ?        S    Feb20   0:00 (sd-pam)
+systemd+ 24261  0.0  0.0  80056  5220 ?        Ss   Mar08   0:06 /lib/systemd/systemd-networkd
+systemd+ 24289  0.0  0.0  70628  5132 ?        Ss   Mar08   0:06 /lib/systemd/systemd-resolved
+systemd+ 24315  0.0  0.0 141788  3136 ?        Ssl  Mar08   0:02 /lib/systemd/systemd-timesyncd
+root     24340  0.0  0.1 130532 33860 ?        S<s  Mar08   0:12 /lib/systemd/systemd-journald
+root     24403  0.0  0.0 107988  7168 ?        Ss   Feb20   0:00 sshd: montimage [priv]
+montima+ 24513  0.0  0.0 107988  3440 ?        S    Feb20   0:00 sshd: montimage@pts/1
+montima+ 24514  0.0  0.0  23204  5464 pts/1    Ss+  Feb20   0:00 -bash
+root     24558  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/1:0]
+root     24953  0.0  0.0      0     0 ?        I    Mar20   0:02 [kworker/9:1]
+montima+ 26408  0.0  0.0  32188  3136 ?        Ss   Mar20   0:03 SCREEN -R hn
+montima+ 26409  0.0  0.0  23244  5328 pts/7    Ss   Mar20   0:00 /bin/bash
+root     27669  0.0  0.0      0     0 ?        I    06:25   0:00 [kworker/11:2]
+root     27856  0.0  0.0      0     0 ?        I    06:46   0:00 [kworker/0:1]
+root     27871  0.0  0.0      0     0 ?        I    07:01   0:03 [kworker/u32:3]
+root     28042  0.0  0.0 107988  7216 ?        Ss   08:47   0:00 sshd: montimage [priv]
+montima+ 28109  0.0  0.0 107988  3548 ?        S    08:47   0:01 sshd: montimage@pts/2
+montima+ 28110  0.0  0.0  23336  5656 pts/2    Ss+  08:47   0:00 -bash
+root     28290  0.0  0.0 107988  7300 ?        Ss   08:48   0:00 sshd: montimage [priv]
+montima+ 28357  0.0  0.0 107988  3700 ?        S    08:48   0:04 sshd: montimage@pts/3
+montima+ 28358  0.0  0.0  23204  5492 pts/3    Ss+  08:48   0:00 -bash
+root     28651  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/10:2]
+root     29484  0.0  0.0      0     0 ?        I    Mar21   0:00 [kworker/15:2]
+root     29763  0.0  0.0      0     0 ?        I    10:01   0:00 [kworker/10:0]
+root     31038  0.0  0.0      0     0 ?        I    10:30   0:00 [kworker/u32:0]
+root     31239  0.0  0.0      0     0 ?        I    10:53   0:00 [kworker/8:2]
+root     31408  0.0  0.0      0     0 ?        I    11:18   0:00 [kworker/2:0]
+root     32015  0.0  0.0      0     0 ?        I    12:05   0:00 [kworker/4:0]
+root     32375  0.0  0.0      0     0 ?        I    12:07   0:00 [kworker/u32:1]
+root     32514  0.0  0.0      0     0 ?        I    12:08   0:00 [kworker/3:0]
++ run-on-host 192.168.1.104 ps aux
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.4 119512  4980 ?        Ss   Jan05   3:02 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    Jan05   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Jan05   0:17 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    Jan05   0:09 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    Jan05   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    Jan05   0:00 [migration/0]
+root        10  0.0  0.0      0     0 ?        S    Jan05   0:32 [watchdog/0]
+root        11  0.0  0.0      0     0 ?        S    Jan05   0:00 [kdevtmpfs]
+root        12  0.0  0.0      0     0 ?        S<   Jan05   0:00 [netns]
+root        13  0.0  0.0      0     0 ?        S<   Jan05   0:00 [perf]
+root        14  0.0  0.0      0     0 ?        S    Jan05   0:01 [khungtaskd]
+root        15  0.0  0.0      0     0 ?        S<   Jan05   0:00 [writeback]
+root        16  0.0  0.0      0     0 ?        SN   Jan05   0:00 [ksmd]
+root        17  0.0  0.0      0     0 ?        SN   Jan05   0:00 [khugepaged]
+root        18  0.0  0.0      0     0 ?        S<   Jan05   0:00 [crypto]
+root        19  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kintegrityd]
+root        20  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        21  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kblockd]
+root        22  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ata_sff]
+root        23  0.0  0.0      0     0 ?        S<   Jan05   0:00 [md]
+root        24  0.0  0.0      0     0 ?        S<   Jan05   0:00 [devfreq_wq]
+root        28  0.0  0.0      0     0 ?        S    Jan05   0:05 [kswapd0]
+root        29  0.0  0.0      0     0 ?        S<   Jan05   0:00 [vmstat]
+root        30  0.0  0.0      0     0 ?        S    Jan05   0:00 [fsnotify_mark]
+root        31  0.0  0.0      0     0 ?        S    Jan05   0:00 [ecryptfs-kthrea]
+root        47  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kthrotld]
+root        48  0.0  0.0      0     0 ?        S<   Jan05   0:00 [acpi_thermal_pm]
+root        49  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        50  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        51  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        52  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        53  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        54  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        55  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        56  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        57  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_0]
+root        58  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_0]
+root        59  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_1]
+root        60  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_1]
+root        66  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ipv6_addrconf]
+root        79  0.0  0.0      0     0 ?        S<   Jan05   0:00 [deferwq]
+root        80  0.0  0.0      0     0 ?        S<   Jan05   0:00 [charger_manager]
+root        81  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root       130  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kpsmoused]
+root       137  0.0  0.0      0     0 ?        S<   Jan05   0:16 [kworker/0:1H]
+root       161  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_2]
+root       162  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_2]
+root       163  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_3]
+root       164  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_3]
+root       165  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ttm_swap]
+root       167  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root       232  0.0  0.0      0     0 ?        S<   Jan05   0:00 [raid5wq]
+root       259  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root       291  0.0  0.0      0     0 ?        S    Jan05   0:09 [jbd2/sda1-8]
+root       292  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ext4-rsv-conver]
+root       356  0.0  0.2  28348  2664 ?        Ss   Jan05   0:39 /lib/systemd/systemd-journald
+root       366  0.0  0.0      0     0 ?        S    Jan05   0:00 [kauditd]
+root       381  0.0  0.0      0     0 ?        S<   Jan05   0:00 [iscsi_eh]
+root       396  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_addr]
+root       404  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_mcast]
+root       405  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_nl_sa_wq]
+root       406  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_cm]
+root       407  0.0  0.0      0     0 ?        S<   Jan05   0:00 [iw_cm_wq]
+root       408  0.0  0.0      0     0 ?        S<   Jan05   0:00 [rdma_cm]
+root       420  0.0  0.0  94768   952 ?        Ss   Jan05   0:00 /sbin/lvmetad -f
+root       446  0.0  0.3  44816  3260 ?        Ss   Jan05   0:05 /lib/systemd/systemd-udevd
+systemd+   470  0.0  0.2 100320  2248 ?        Ssl  Jan05   0:12 /lib/systemd/systemd-timesyncd
+root       570  0.0  0.0      0     0 ?        S<   Jan05   0:00 [iprt-VBoxWQueue]
+root       835  0.0  0.2  16128  2420 ?        Ss   Jan05   0:02 /sbin/dhclient -1 -v -pf /run/dhclient.enp0s3.pid -lf /var/lib/dhcp/dhclient.enp0s3.leases -I -df /var/lib/dhcp/dhclient6.enp0s3.leases enp0s3
+root      1010  0.0  0.2  28632  2508 ?        Ss   Jan05   0:26 /lib/systemd/systemd-logind
+root      1013  0.0  0.3 644644  3068 ?        Ssl  Jan05   0:34 /usr/bin/lxcfs /var/lib/lxcfs/
+root      1019  0.0  0.2  29004  2324 ?        Ss   Jan05   0:10 /usr/sbin/cron -f
+daemon    1020  0.0  0.1  26040  1788 ?        Ss   Jan05   0:00 /usr/sbin/atd -f
+root      1037  0.0  0.1   4392  1272 ?        Ss   Jan05   0:00 /usr/sbin/acpid
+message+  1038  0.0  0.3  42884  3164 ?        Ss   Jan05   0:45 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+root      1044  0.0  0.0   5216   124 ?        Ss   Jan05   2:50 /sbin/iscsid
+root      1045  0.0  0.3   5716  3512 ?        S<Ls Jan05  13:11 /sbin/iscsid
+syslog    1058  0.0  0.3 256388  3380 ?        Ssl  Jan05   0:10 /usr/sbin/rsyslogd -n
+root      1060  0.0  0.3 275848  3660 ?        Ssl  Jan05   1:43 /usr/lib/accountsservice/accounts-daemon
+root      1082  0.0  0.5 177036  5284 ?        Ssl  Jan05   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root      1134  0.0  0.1  15932  1508 tty1     Ss+  Jan05   0:00 /sbin/agetty --noclear tty1 linux
+root      1157  0.0  0.3 277084  3544 ?        Ssl  Jan05   0:10 /usr/lib/policykit-1/polkitd --no-debug
+root      1158  0.0  0.0  13368   164 ?        Ss   Jan05   0:00 /sbin/mdadm --monitor --pid-file /run/mdadm/monitor.pid --daemonise --scan --syslog
+root      1196  0.0  0.3  65508  3488 ?        Ss   Jan05   0:04 /usr/sbin/sshd -D
+root      1768  0.0  0.0      0     0 ?        S<   Feb19   0:00 [loop4]
+root      3401  0.0  0.0      0     0 ?        S<   Mar21   0:00 [loop0]
+root      3930  0.0  0.6  92800  6528 ?        Ss   09:48   0:00 sshd: montimage [priv]
+montima+  3932  0.0  0.4  45060  4856 ?        Ss   09:48   0:00 /lib/systemd/systemd --user
+montima+  3933  0.0  0.1 142964  1724 ?        S    09:48   0:00 (sd-pam)
+montima+  3976  0.0  0.2  92800  2804 ?        S    09:48   0:00 sshd: montimage@pts/0
+montima+  3977  0.0  0.4  22580  5072 pts/0    Ss+  09:48   0:00 -bash
+root      5463  0.0  0.0      0     0 ?        S    12:44   0:00 [kworker/u2:0]
+root      6186  0.0  0.0      0     0 ?        S    13:12   0:00 [kworker/0:0]
+root      6273  0.0  0.0      0     0 ?        S    13:12   0:00 [kworker/u2:2]
+root      6572  0.0  0.0      0     0 ?        S<   Mar06   0:00 [loop5]
+root      7079  0.0  0.0      0     0 ?        S    13:23   0:00 [kworker/0:2]
+root      8047  0.0  0.0      0     0 ?        S    13:27   0:00 [kworker/u2:1]
+root      8051  0.0  0.0      0     0 ?        S    13:29   0:00 [kworker/0:1]
+root      8179  0.0  0.6  92804  6712 ?        Ss   13:29   0:00 sshd: montimage [priv]
+montima+  8219  0.0  0.3  92804  3516 ?        S    13:29   0:00 sshd: montimage@notty
+montima+  8220  0.0  0.3  37516  3340 ?        Rs   13:29   0:00 ps aux
+root      8676  0.0  0.0      0     0 ?        S<   Mar09   0:00 [loop1]
+root     12692  0.0  0.0      0     0 ?        S<   Mar15   0:00 [loop6]
+root     15082  0.0  0.0      0     0 ?        S<   Mar21   0:00 [loop2]
+root     15094  0.0  3.5 420460 36092 ?        Ssl  Mar21   0:06 /usr/lib/snapd/snapd
++ run-on-host 192.168.1.100 ps aux
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.4 119528  4820 ?        Ss   Jan05   1:05 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    Jan05   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Jan05   0:16 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    Jan05   0:08 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    Jan05   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    Jan05   0:00 [migration/0]
+root        10  0.0  0.0      0     0 ?        S    Jan05   0:32 [watchdog/0]
+root        11  0.0  0.0      0     0 ?        S    Jan05   0:00 [kdevtmpfs]
+root        12  0.0  0.0      0     0 ?        S<   Jan05   0:00 [netns]
+root        13  0.0  0.0      0     0 ?        S<   Jan05   0:00 [perf]
+root        14  0.0  0.0      0     0 ?        S    Jan05   0:01 [khungtaskd]
+root        15  0.0  0.0      0     0 ?        S<   Jan05   0:00 [writeback]
+root        16  0.0  0.0      0     0 ?        SN   Jan05   0:00 [ksmd]
+root        17  0.0  0.0      0     0 ?        SN   Jan05   0:00 [khugepaged]
+root        18  0.0  0.0      0     0 ?        S<   Jan05   0:00 [crypto]
+root        19  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kintegrityd]
+root        20  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        21  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kblockd]
+root        22  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ata_sff]
+root        23  0.0  0.0      0     0 ?        S<   Jan05   0:00 [md]
+root        24  0.0  0.0      0     0 ?        S<   Jan05   0:00 [devfreq_wq]
+root        28  0.0  0.0      0     0 ?        S    Jan05   0:04 [kswapd0]
+root        29  0.0  0.0      0     0 ?        S<   Jan05   0:00 [vmstat]
+root        30  0.0  0.0      0     0 ?        S    Jan05   0:00 [fsnotify_mark]
+root        31  0.0  0.0      0     0 ?        S    Jan05   0:00 [ecryptfs-kthrea]
+root        47  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kthrotld]
+root        48  0.0  0.0      0     0 ?        S<   Jan05   0:00 [acpi_thermal_pm]
+root        49  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        50  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        51  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        52  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        53  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        54  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        55  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        56  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root        57  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_0]
+root        58  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_0]
+root        59  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_1]
+root        60  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_1]
+root        66  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ipv6_addrconf]
+root        79  0.0  0.0      0     0 ?        S<   Jan05   0:00 [deferwq]
+root        80  0.0  0.0      0     0 ?        S<   Jan05   0:00 [charger_manager]
+root        81  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root       120  0.0  0.0      0     0 ?        S<   Jan05   0:00 [kpsmoused]
+root       123  0.0  0.0      0     0 ?        S<   Jan05   0:13 [kworker/0:1H]
+root       151  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_2]
+root       152  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_2]
+root       153  0.0  0.0      0     0 ?        S    Jan05   0:00 [scsi_eh_3]
+root       154  0.0  0.0      0     0 ?        S<   Jan05   0:00 [scsi_tmf_3]
+root       155  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ttm_swap]
+root       157  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root       222  0.0  0.0      0     0 ?        S<   Jan05   0:00 [raid5wq]
+root       250  0.0  0.0      0     0 ?        S<   Jan05   0:00 [bioset]
+root       280  0.0  0.0      0     0 ?        S    Jan05   0:08 [jbd2/sda1-8]
+root       281  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ext4-rsv-conver]
+root       347  0.0  0.2  28348  2904 ?        Ss   Jan05   0:33 /lib/systemd/systemd-journald
+root       354  0.0  0.0      0     0 ?        S    Jan05   0:00 [kauditd]
+root       374  0.0  0.0      0     0 ?        S<   Jan05   0:00 [iscsi_eh]
+root       392  0.0  0.0  94768   896 ?        Ss   Jan05   0:00 /sbin/lvmetad -f
+root       395  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_addr]
+root       397  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_mcast]
+root       398  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_nl_sa_wq]
+root       401  0.0  0.0      0     0 ?        S<   Jan05   0:00 [ib_cm]
+root       403  0.0  0.0      0     0 ?        S<   Jan05   0:00 [iw_cm_wq]
+root       404  0.0  0.0      0     0 ?        S<   Jan05   0:00 [rdma_cm]
+root       416  0.0  0.3  44812  3628 ?        Ss   Jan05   0:05 /lib/systemd/systemd-udevd
+systemd+   457  0.0  0.2 100320  2132 ?        Ssl  Jan05   0:12 /lib/systemd/systemd-timesyncd
+root       519  0.0  0.0      0     0 ?        S<   Jan05   0:00 [iprt-VBoxWQueue]
+daemon     681  0.0  0.1  26040  1876 ?        Ss   Jan05   0:00 /usr/sbin/atd -f
+root       683  0.0  0.2  28628  2792 ?        Ss   Jan05   0:22 /lib/systemd/systemd-logind
+root       693  0.0  0.4 275848  4272 ?        Ssl  Jan05   1:38 /usr/lib/accountsservice/accounts-daemon
+syslog     696  0.0  0.3 256388  3388 ?        Ssl  Jan05   0:08 /usr/sbin/rsyslogd -n
+root       700  0.0  0.2 636172  2988 ?        Ssl  Jan05   0:31 /usr/bin/lxcfs /var/lib/lxcfs/
+root       709  0.0  0.2  29004  2484 ?        Ss   Jan05   0:10 /usr/sbin/cron -f
+message+   710  0.0  0.3  43020  3428 ?        Ss   Jan05   0:38 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+root       802  0.0  0.2  16128  2588 ?        Ss   Jan05   0:02 /sbin/dhclient -1 -v -pf /run/dhclient.enp0s3.pid -lf /var/lib/dhcp/dhclient.enp0s3.leases -I -df /var/lib/dhcp/dhclient6.enp0s3.leases enp0s3
+root       842  0.0  0.1   4392  1312 ?        Ss   Jan05   0:00 /usr/sbin/acpid
+root       851  0.0  0.4 277084  4128 ?        Ssl  Jan05   0:09 /usr/lib/policykit-1/polkitd --no-debug
+root       957  0.0  0.0  13368   164 ?        Ss   Jan05   0:00 /sbin/mdadm --monitor --pid-file /run/mdadm/monitor.pid --daemonise --scan --syslog
+root       979  0.0  0.0   5216   116 ?        Ss   Jan05   2:46 /sbin/iscsid
+root       980  0.0  0.3   5716  3516 ?        S<Ls Jan05  13:05 /sbin/iscsid
+root      1029  0.0  0.1  15932  1512 tty1     Ss+  Jan05   0:00 /sbin/agetty --noclear tty1 linux
+root      1040  0.0  0.3  65508  3948 ?        Ss   Jan05   0:04 /usr/sbin/sshd -D
+root      1514  0.0  0.0      0     0 ?        S<   Mar06   0:00 [loop5]
+root      3339  0.0  0.0      0     0 ?        S<   Mar09   0:00 [loop1]
+root      7423  0.0  0.0      0     0 ?        S<   Mar15   0:00 [loop6]
+root      9126  0.0  0.0      0     0 ?        S<   Mar20   0:00 [loop2]
+root      9139  0.0  2.5 420460 26340 ?        Ssl  Mar20   0:10 /usr/lib/snapd/snapd
+root     20875  0.0  0.0      0     0 ?        S<   Feb18   0:00 [loop3]
+root     22867  0.0  0.5  92800  5816 ?        Ss   Mar21   0:00 sshd: montimage [priv]
+montima+ 22869  0.0  0.3  45128  3872 ?        Ss   Mar21   0:00 /lib/systemd/systemd --user
+montima+ 22870  0.0  0.1 142980  1800 ?        S    Mar21   0:00 (sd-pam)
+montima+ 22898  0.0  0.3  92800  3640 ?        S    Mar21   0:00 sshd: montimage@pts/0
+montima+ 22899  0.0  0.5  22744  5384 pts/0    Ss+  Mar21   0:00 -bash
+root     23796  0.0  0.0      0     0 ?        S<   Mar21   0:00 [loop0]
+root     24292  0.0  0.6  92800  6620 ?        Ss   09:49   0:00 sshd: montimage [priv]
+montima+ 24316  0.0  0.3  92800  3436 ?        S    09:49   0:00 sshd: montimage@pts/1
+montima+ 24317  0.0  0.5  22588  5148 pts/1    Ss+  09:49   0:00 -bash
+root     25287  0.0  0.0      0     0 ?        S    12:55   0:00 [kworker/u2:0]
+root     26005  0.0  0.0      0     0 ?        S    13:14   0:00 [kworker/0:2]
+root     26354  0.0  0.0      0     0 ?        S    13:20   0:00 [kworker/u2:2]
+root     26358  0.0  0.0      0     0 ?        S    13:23   0:00 [kworker/0:1]
+root     26973  0.0  0.0      0     0 ?        S    13:28   0:00 [kworker/u2:1]
+root     26977  0.0  0.0      0     0 ?        S    13:29   0:00 [kworker/0:0]
+root     27061  0.0  0.6  92800  6892 ?        Ss   13:29   0:00 sshd: montimage [priv]
+montima+ 27085  0.0  0.3  92800  3320 ?        S    13:29   0:00 sshd: montimage@notty
+montima+ 27086  0.0  0.3  37516  3428 ?        Rs   13:29   0:00 ps aux
+++ print-parameters
+++ cat
++ log '{
+	"SERVER":     "10.0.1.11",
+	"CLIENT":     "10.0.0.11",
+	"bandwidth":  "10 Mbps",
+	"type":       "legit",
+	"file-size":  "1000 MB"
+}'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-122911 ' '{
+	"SERVER":     "10.0.1.11",
+	"CLIENT":     "10.0.0.11",
+	"bandwidth":  "10 Mbps",
+	"type":       "legit",
+	"file-size":  "1000 MB"
+}'
+20230322-122911  {
+	"SERVER":     "10.0.1.11",
+	"CLIENT":     "10.0.0.11",
+	"bandwidth":  "10 Mbps",
+	"type":       "legit",
+	"file-size":  "1000 MB"
+}
++ print-parameters
++ cat
++ limit-bandwidth
++ cp /home/montimage/hipnet/measure--calibrate/../mahimahi/10Mbps.txt /home/montimage/hipnet/measure--calibrate/../mahimahi.txt
++ echo 'set_egress_mahimahi 1 10000'
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
++ echo 'set_egress_mahimahi 2 10000'
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
++ sleep 2
++ [[ legit == \i\p\e\r\f\3 ]]
++ create-dummy-files-on-servers
++ run-on-host 192.168.1.104 truncate -s 1000MB picoquic/picoquic/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- truncate -s 1000MB picoquic/picoquic/server_files/index-1000MB.htm
++ start-picoquic-servers
++ log 'run picoquic servers'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-122914 ' 'run picoquic servers'
+20230322-122914  run picoquic servers
++ run-on-host 192.168.1.104 'rm -rf picoquic/picoquic/*log; rm -rf picoquic/picoquic/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- 'rm -rf picoquic/picoquic/*log; rm -rf picoquic/picoquic/screenlog*'
++ duration=70
++ run-on-host 192.168.1.104 'cd picoquic/picoquic && screen -S hn -L -dm timeout 70 ./launchquic.sh srv l4s 4433  verbose'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- 'cd picoquic/picoquic && screen -S hn -L -dm timeout 70 ./launchquic.sh srv l4s 4433  verbose'
++ start-picoquic-clients-and-wait-for-finish
++ log 'begin picoquic clients'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-122914 ' 'begin picoquic clients'
+20230322-122914  begin picoquic clients
++ run-on-host 192.168.1.100 'rm -rf picoquic/picoquic/*log; rm -rf picoquic/picoquic/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- 'rm -rf picoquic/picoquic/*log; rm -rf picoquic/picoquic/screenlog*'
++ sleep 5
++ run-on-host 192.168.1.100 'cd picoquic/picoquic && screen -S hn -L -dm timeout 60 ./launchquic.sh cli 10.0.1.11 4433 legit 1000 verbose'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- 'cd picoquic/picoquic && screen -S hn -L -dm timeout 60 ./launchquic.sh cli 10.0.1.11 4433 legit 1000 verbose'
++ sleep 60
++ sleep 5
++ run-on-host 192.168.1.100 'cat picoquic/picoquic/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- 'cat picoquic/picoquic/screenlog*'
+D       picolog/picolog.c
+D       picolog/picolog.filters
+D       picolog/picolog.vcxproj
+D       picolog/picolog.vcxproj.filters
+Already on 'picoquic-RFC9000'
+Your branch is ahead of 'origin/picoquic-RFC9000' by 1 commit.
+  (use "git push" to publish your local commits)
+rm: cannot remove 'output.log': No such file or directory
+[1;40ml4s-client-a[0m:[32m./launchquic.sh[0m: Launching command: ./build/picoquic_sample client 10.0.1.11 4433 /tmp index-1000MB.htm 
+From directory: picoquic-RFC9000
+Starting connection to 10.0.1.11, port 4433
+Initial connection ID: ed8958d7af19dbca
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
++ run-on-host 192.168.1.104 'cat picoquic/picoquic/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- 'cat picoquic/picoquic/screenlog*'
+D       picolog/picolog.c
+D       picolog/picolog.filters
+D       picolog/picolog.vcxproj
+D       picolog/picolog.vcxproj.filters
+Already on 'picoquic-RFC9000'
+Your branch is ahead of 'origin/picoquic-RFC9000' by 1 commit.
+  (use "git push" to publish your local commits)
+[1;40ml4s-server-a[0m:[32m./launchquic.sh[0m: Launched command: ./start_picoserver.sh 4433  
+From directory: picoquic-RFC9000
++ log 'end picoquic clients'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-123026 ' 'end picoquic clients'
+20230322-123026  end picoquic clients
++ get-qlogs
++ copy-qlog 192.168.1.100 10.0.0.11
++ HOST_CTRL=192.168.1.100
++ HOST_DATA=10.0.0.11
++ output=10.0.0.11.qlog
++ log 'copy qlog file from 10.0.0.11 to 10.0.0.11.qlog'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-123026 ' 'copy qlog file from 10.0.0.11 to 10.0.0.11.qlog'
+20230322-123026  copy qlog file from 10.0.0.11 to 10.0.0.11.qlog
++ cd -- /home/montimage/hipnet/log
++ run-on-host 192.168.1.100 'cat picoquic/picoquic/*qlog'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- 'cat picoquic/picoquic/*qlog'
+cat: 'picoquic/picoquic/*qlog': No such file or directory
++ [[ -s 10.0.0.11.qlog ]]
++ rm -rf -- 10.0.0.11.qlog
++ output=10.0.0.11.log
++ run-on-host 192.168.1.100 'cat picoquic/picoquic/*.log'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- 'cat picoquic/picoquic/*.log'
++ tar -czf 10.0.0.11.log.tar.gz 10.0.0.11.log
++ rm -rf -- 10.0.0.11.log
++ copy-qlog 192.168.1.104 10.0.1.11
++ HOST_CTRL=192.168.1.104
++ HOST_DATA=10.0.1.11
++ output=10.0.1.11.qlog
++ log 'copy qlog file from 10.0.1.11 to 10.0.1.11.qlog'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-123027 ' 'copy qlog file from 10.0.1.11 to 10.0.1.11.qlog'
+20230322-123027  copy qlog file from 10.0.1.11 to 10.0.1.11.qlog
++ cd -- /home/montimage/hipnet/log
++ run-on-host 192.168.1.104 'cat picoquic/picoquic/*qlog'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ ssh -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- 'cat picoquic/picoquic/*qlog'
++ [[ -s 10.0.1.11.qlog ]]
++ echo 'no qlog'
+no qlog
++ tar -czf 10.0.1.11.qlog.tar.gz 10.0.1.11.qlog
++ rm -rf -- 10.0.1.11.qlog
++ log 'end experiment'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-123028 ' 'end experiment'
+20230322-123028  end experiment
++ killall -2 simple_switch
++ sleep 2
+Attaching to process 2274
++ stop-monitoring
++ cd -- /home/montimage/hipnet/log
++ log 'stop tcpdump and mmt-probe'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-123030 ' 'stop tcpdump and mmt-probe'
+20230322-123030  stop tcpdump and mmt-probe
++ killall --signal SIGINT tcpdump
+60571 packets captured
+60571 packets received by filter
+0 packets dropped by kernel
+60571 packets captured
+60571 packets received by filter
+0 packets dropped by kernel
+60571 packets captured
+60571 packets received by filter
+0 packets dropped by kernel
++ killall --signal SIGINT mmt-probe
++ sleep 2
++ tar -czf pcap.tar.gz enp0s8-data.pcap enp0s9-data.pcap enp0s10-int.pcap
++ rm enp0s8-data.pcap enp0s9-data.pcap enp0s10-int.pcap
++ log 'processing MMT files ...'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230322-123033 ' 'processing MMT files ...'
+20230322-123033  processing MMT files ...
++ combine-mmt-csv-files data.csv
++ OUTPUT=data.csv
+++ echo 'report-id,probe-id,source,timestamp,report-name,meta.packet_index,	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ tr -d '"'
+++ tr -d '\n'
+++ tr -d '[:blank:]'
++ HEADER=report-id,probe-id,source,timestamp,report-name,meta.packet_index,meta.packet_len,ip.src,ip.dst,ip.proto_tos,ip.ecn,ip.identification,udp.src_port,udp.dest_port,udp.len,tcp.src_port,tcp.dest_port,tcp.payload_len,tcp.seq_nb,tcp.ack_nb,tcp.tsval,tcp.tsecr,quic_ietf.header_form,quic_ietf.spin_bit,quic_ietf.rtt,int.hop_queue_ids,int.hop_latencies,int.hop_queue_occups,int.hop_ingress_times,int.hop_egress_times,int.hop_l4s_mark,int.hop_l4s_drop,int.mark_probability
++ echo report-id,probe-id,source,timestamp,report-name,meta.packet_index,meta.packet_len,ip.src,ip.dst,ip.proto_tos,ip.ecn,ip.identification,udp.src_port,udp.dest_port,udp.len,tcp.src_port,tcp.dest_port,tcp.payload_len,tcp.seq_nb,tcp.ack_nb,tcp.tsval,tcp.tsecr,quic_ietf.header_form,quic_ietf.spin_bit,quic_ietf.rtt,int.hop_queue_ids,int.hop_latencies,int.hop_queue_occups,int.hop_ingress_times,int.hop_egress_times,int.hop_l4s_mark,int.hop_l4s_drop,int.mark_probability
+++ find . -name '1*.csv'
++ for f in $(find . -name '1*.csv')
++ echo ' ./1679488149.911933_0_data-int.csv'
+ ./1679488149.911933_0_data-int.csv
++ cat ./1679488149.911933_0_data-int.csv
++ grep '^1000,'
++ rm -- ./1679488149.911933_0_data-int.csv
++ tar -czf data.csv.tar.gz data.csv
++ python3 /home/montimage/hipnet/monitoring-mmt-tcpdump.plot.py data.csv
+no display found. Using non-interactive Agg backend
+Processing data.csv
+number of ticks: 5857
+write to data.csv.png
++ rm data.csv

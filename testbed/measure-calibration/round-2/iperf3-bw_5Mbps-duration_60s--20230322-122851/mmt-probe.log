@@ -1,0 +1,63 @@
+mmt-probe: Must not run debug mode in production environment
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: MMT-Probe v1.5.5 (417daa7 - Nov 17 2022 10:34:49) is running on pid 2099
+mmt-probe: Modules: DPI, PCAP, REPORT, SECURITY, debug
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'enp0s10' using the main thread
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:127: security.ip-encapsulation-index = 16
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data ftp'
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data http'
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:168: Starting worker 0
+1,3,"enp0s10",1679488044.372242,"1.5.5 (417daa7 - Nov 17 2022 10:34:49)","1.7.6 (45ca61e6)","1.2.14 (d74aea4 - Nov 17 2022 10:33:31)"
+200,3,"enp0s10",1679488049.573394,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488054.573497,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488059.573599,3069,0,3057,0,2664586,0
+mmt-probe: 3069,0,3057,0,2664586,0% dropped by NIC 0.0000, by MMT 0.0000
+3069,0,3057,0,2664586,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488064.573863,6415,0,6413,0,5577786,0
+mmt-probe: 6415,0,6413,0,5577786,0% dropped by NIC 0.0000, by MMT 0.0000
+6415,0,6413,0,5577786,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488069.574416,8779,0,8771,0,7645934,0
+mmt-probe: 8779,0,8771,0,7645934,0% dropped by NIC 0.0000, by MMT 0.0000
+8779,0,8771,0,7645934,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488074.574306,10737,0,10734,0,9361716,0
+mmt-probe: 10737,0,10734,0,9361716,0% dropped by NIC 0.0000, by MMT 0.0000
+10737,0,10734,0,9361716,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488079.574412,12725,0,12719,0,11110606,0
+mmt-probe: 12725,0,12719,0,11110606,0% dropped by NIC 0.0000, by MMT 0.0000
+12725,0,12719,0,11110606,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488084.595890,14073,0,14066,0,12287444,0
+mmt-probe: 14073,0,14066,0,12287444,0% dropped by NIC 0.0000, by MMT 0.0000
+14073,0,14066,0,12287444,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488089.595964,15833,0,15831,0,13839870,0
+mmt-probe: 15833,0,15831,0,13839870,0% dropped by NIC 0.0000, by MMT 0.0000
+15833,0,15831,0,13839870,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488094.596284,17109,0,17106,0,14955220,0
+mmt-probe: 17109,0,17106,0,14955220,0% dropped by NIC 0.0000, by MMT 0.0000
+17109,0,17106,0,14955220,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488099.598678,18508,0,18507,0,16176654,0
+mmt-probe: 18508,0,18507,0,16176654,0% dropped by NIC 0.0000, by MMT 0.0000
+18508,0,18507,0,16176654,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488104.599923,19817,0,19816,0,17326760,0
+mmt-probe: 19817,0,19816,0,17326760,0% dropped by NIC 0.0000, by MMT 0.0000
+19817,0,19816,0,17326760,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488109.599984,20554,0,20553,0,17965482,0
+mmt-probe: 20554,0,20553,0,17965482,0% dropped by NIC 0.0000, by MMT 0.0000
+20554,0,20553,0,17965482,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488114.611133,21829,0,21827,0,19089278,0
+mmt-probe: 21829,0,21827,0,19089278,0% dropped by NIC 0.0000, by MMT 0.0000
+21829,0,21827,0,19089278,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679488119.611553,22010,0,22010,0,19235045,0
+mmt-probe: 22010,0,22010,0,19235045,0% dropped by NIC 0.0000, by MMT 0.0000
+22010,0,22010,0,19235045,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: pcap_breakloop() is called
+mmt-probe: MMT processed 22010 packets, dropped 0 packets (0.00%), generated 0 alerts
+MMT processed 22010 packets, dropped 0 packets (0.00%), generated 0 alerts
+mmt-probe: System received 22010 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 22010 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:233: Exited worker 0

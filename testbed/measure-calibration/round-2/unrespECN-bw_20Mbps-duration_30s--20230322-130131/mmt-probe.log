@@ -1,0 +1,45 @@
+mmt-probe: Must not run debug mode in production environment
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: MMT-Probe v1.5.5 (417daa7 - Nov 17 2022 10:34:49) is running on pid 7597
+mmt-probe: Modules: DPI, PCAP, REPORT, SECURITY, debug
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'enp0s10' using the main thread
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:127: security.ip-encapsulation-index = 16
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data ftp'
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data http'
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:168: Starting worker 0
+1,3,"enp0s10",1679490031.386951,"1.5.5 (417daa7 - Nov 17 2022 10:34:49)","1.7.6 (45ca61e6)","1.2.14 (d74aea4 - Nov 17 2022 10:33:31)"
+200,3,"enp0s10",1679490036.613176,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490041.613243,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490046.613370,7715,0,7711,0,9022710,0
+mmt-probe: 7715,0,7711,0,9022710,0% dropped by NIC 0.0000, by MMT 0.0000
+7715,0,7711,0,9022710,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490051.613531,16122,0,16110,0,18877917,0
+mmt-probe: 16122,0,16110,0,18877917,0% dropped by NIC 0.0000, by MMT 0.0000
+16122,0,16110,0,18877917,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490056.613678,24504,0,24493,0,28750286,0
+mmt-probe: 24504,0,24493,0,28750286,0% dropped by NIC 0.0000, by MMT 0.0000
+24504,0,24493,0,28750286,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490061.613742,33022,0,33003,0,38815211,0
+mmt-probe: 33022,0,33003,0,38815211,0% dropped by NIC 0.0000, by MMT 0.0000
+33022,0,33003,0,38815211,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490066.613758,41491,0,41471,0,48800305,0
+mmt-probe: 41491,0,41471,0,48800305,0% dropped by NIC 0.0000, by MMT 0.0000
+41491,0,41471,0,48800305,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490071.613869,49747,0,49740,0,58519502,0
+mmt-probe: 49747,0,49740,0,58519502,0% dropped by NIC 0.0000, by MMT 0.0000
+49747,0,49740,0,58519502,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679490076.614085,50271,0,50271,0,59147956,0
+mmt-probe: 50271,0,50271,0,59147956,0% dropped by NIC 0.0000, by MMT 0.0000
+50271,0,50271,0,59147956,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 50273 packets, dropped 0 packets (0.00%), generated 0 alerts
+MMT processed 50273 packets, dropped 0 packets (0.00%), generated 0 alerts
+mmt-probe: System received 50273 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 50273 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:233: Exited worker 0

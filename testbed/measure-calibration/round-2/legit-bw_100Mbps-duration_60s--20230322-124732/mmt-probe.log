@@ -1,0 +1,66 @@
+mmt-probe: Must not run debug mode in production environment
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: MMT-Probe v1.5.5 (417daa7 - Nov 17 2022 10:34:49) is running on pid 4812
+mmt-probe: Modules: DPI, PCAP, REPORT, SECURITY, debug
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'enp0s10' using the main thread
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:127: security.ip-encapsulation-index = 16
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data ftp'
+DEBUG /home/montimage/mmt/mmt-probe/src/configure.c:988: Parsing block 'reconstruct-data http'
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:168: Starting worker 0
+1,3,"enp0s10",1679489150.024167,"1.5.5 (417daa7 - Nov 17 2022 10:34:49)","1.7.6 (45ca61e6)","1.2.14 (d74aea4 - Nov 17 2022 10:33:31)"
+200,3,"enp0s10",1679489155.262288,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489160.262495,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489165.262667,14476,0,14453,0,19189251,0
+mmt-probe: 14476,0,14453,0,19189251,0% dropped by NIC 0.0000, by MMT 0.0000
+14476,0,14453,0,19189251,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489170.263176,29886,0,29876,0,39638235,0
+mmt-probe: 29886,0,29876,0,39638235,0% dropped by NIC 0.0000, by MMT 0.0000
+29886,0,29876,0,39638235,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489175.263513,45314,0,45312,0,60148983,0
+mmt-probe: 45314,0,45312,0,60148983,0% dropped by NIC 0.0000, by MMT 0.0000
+45314,0,45312,0,60148983,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489180.263632,61230,0,61210,0,81393832,0
+mmt-probe: 61230,0,61210,0,81393832,0% dropped by NIC 0.0000, by MMT 0.0000
+61230,0,61210,0,81393832,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489185.263705,77961,0,77927,0,103949548,0
+mmt-probe: 77961,0,77927,0,103949548,0% dropped by NIC 0.0000, by MMT 0.0000
+77961,0,77927,0,103949548,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489190.264068,94440,0,94435,0,126171247,0
+mmt-probe: 94440,0,94435,0,126171247,0% dropped by NIC 0.0000, by MMT 0.0000
+94440,0,94435,0,126171247,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489195.264222,111142,0,111137,0,148714973,0
+mmt-probe: 111142,0,111137,0,148714973,0% dropped by NIC 0.0000, by MMT 0.0000
+111142,0,111137,0,148714973,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489200.264255,127255,0,127238,0,170323171,0
+mmt-probe: 127255,0,127238,0,170323171,0% dropped by NIC 0.0000, by MMT 0.0000
+127255,0,127238,0,170323171,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489205.264398,143357,0,143336,0,191900550,0
+mmt-probe: 143357,0,143336,0,191900550,0% dropped by NIC 0.0000, by MMT 0.0000
+143357,0,143336,0,191900550,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489210.264516,159737,0,159703,0,213904116,0
+mmt-probe: 159737,0,159703,0,213904116,0% dropped by NIC 0.0000, by MMT 0.0000
+159737,0,159703,0,213904116,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489215.264731,176117,0,176095,0,235948792,0
+mmt-probe: 176117,0,176095,0,235948792,0% dropped by NIC 0.0000, by MMT 0.0000
+176117,0,176095,0,235948792,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489220.265027,192425,0,192403,0,257896241,0
+mmt-probe: 192425,0,192403,0,257896241,0% dropped by NIC 0.0000, by MMT 0.0000
+192425,0,192403,0,257896241,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489225.265092,193404,0,193404,0,259233705,0
+mmt-probe: 193404,0,193404,0,259233705,0% dropped by NIC 0.0000, by MMT 0.0000
+193404,0,193404,0,259233705,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"enp0s10",1679489230.265291,193404,0,193404,0,259233705,0
+mmt-probe: 193404,0,193404,0,259233705,0% dropped by NIC 0.0000, by MMT 0.0000
+193404,0,193404,0,259233705,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 193404 packets, dropped 0 packets (0.00%), generated 0 alerts
+MMT processed 193404 packets, dropped 0 packets (0.00%), generated 0 alerts
+mmt-probe: System received 193404 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 193404 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+DEBUG /home/montimage/mmt/mmt-probe/src/worker.c:233: Exited worker 0
