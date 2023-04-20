@@ -18,6 +18,7 @@ fi
 #P4 file to run
 P4_FILE_PREFIX="switch-l4s"
 #P4_FILE_PREFIX="switch-forward-clone"
+#P4_FILE_PREFIX="switch-forward"
 if [[ "$#" == "1" ]]; then
 	P4_FILE_PREFIX="$1"
 fi
@@ -71,16 +72,20 @@ export MON_IFACE_MAC=$(get-mac $MON_IFACE)
 
 export CLIENT_A_MAC=$(get-remote-mac $CLIENT_A_CTRL $CLIENT_A_IFACE)
 export CLIENT_B_MAC=$(get-remote-mac $CLIENT_B_CTRL $CLIENT_B_IFACE)
-                                                
+export CLIENT_C_MAC=$(get-remote-mac $CLIENT_C_CTRL $CLIENT_C_IFACE)
+
 export SERVER_A_MAC=$(get-remote-mac $SERVER_A_CTRL $SERVER_A_IFACE)
 export SERVER_B_MAC=$(get-remote-mac $SERVER_B_CTRL $SERVER_B_IFACE)
+export SERVER_C_MAC=$(get-remote-mac $SERVER_C_CTRL $SERVER_C_IFACE)
 
 #fixed in arp cache
 #arp -s           10.0.0.3 00:00:00:00:00:a0
 arp -s $SERVER_A $SERVER_A_MAC
 arp -s $SERVER_B $SERVER_B_MAC
+arp -s $SERVER_C $SERVER_C_MAC
 arp -s $CLIENT_A $CLIENT_A_MAC
 arp -s $CLIENT_B $CLIENT_B_MAC
+arp -s $CLIENT_C $CLIENT_C_MAC
 
 function get-ip(){
 	iface=$1
@@ -93,14 +98,18 @@ REV_IFACE_IP=$(get-ip $REV_IFACE)
 # set route on clients/server
 run-on-host $CLIENT_A_CTRL sudo route add -net $SERVER_NET gw  $IFACE_IP
 run-on-host $CLIENT_B_CTRL sudo route add -net $SERVER_NET gw  $IFACE_IP
+run-on-host $CLIENT_C_CTRL sudo route add -net $SERVER_NET gw  $IFACE_IP
 run-on-host $SERVER_A_CTRL sudo route add -net $CLIENT_NET gw  $REV_IFACE_IP
 run-on-host $SERVER_B_CTRL sudo route add -net $CLIENT_NET gw  $REV_IFACE_IP
+run-on-host $SERVER_C_CTRL sudo route add -net $CLIENT_NET gw  $REV_IFACE_IP
 
 # Disable offload
 run-on-host $CLIENT_A_CTRL sudo ethtool -K $CLIENT_A_IFACE tso off gso off gro off tx off
 run-on-host $CLIENT_B_CTRL sudo ethtool -K $CLIENT_A_IFACE tso off gso off gro off tx off
+run-on-host $CLIENT_C_CTRL sudo ethtool -K $CLIENT_C_IFACE tso off gso off gro off tx off
 run-on-host $SERVER_A_CTRL sudo ethtool -K $SERVER_A_IFACE tso off gso off gro off tx off
 run-on-host $SERVER_B_CTRL sudo ethtool -K $SERVER_B_IFACE tso off gso off gro off tx off
+run-on-host $SERVER_C_CTRL sudo ethtool -K $SERVER_C_IFACE tso off gso off gro off tx off
 
 # create new virtual NIC to test P4
 #https://opennetworking.org/news-and-events/blog/getting-started-with-p4/
@@ -137,20 +146,31 @@ function monitor_cpu_memory(){
 killall simple_switch
 
 # Betrand modified simple_switch to support L4S
-SIMPLE_SWITCH="/home/montimage/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
+#SIMPLE_SWITCH="/home/montimage/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
+
+# exclude CPU 2, 4, .., 10 from kernel SMP. This is to avoid the kernel from attribute these CPUs to other processes
+for i in $(seq 2 2 10); do echo 0 > /sys/devices/system/cpu/cpu$i/online; done
+
+# in bare metal
+#SIMPLE_SWITCH="/home/montimage/huunghia/mosaico/bertrand-behavioral-model/targets/simple_switch/simple_switch_no_debug --queue 2  --ll_queue 64 --BE_queue 128"
+SIMPLE_SWITCH="/home/montimage/huunghia/mosaico/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
+#SIMPLE_SWITCH="simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
+
 # normal simple_switch
-#SIMPLE_SWITCH="/usr/local/bin/simple_switch"
+#SIMPLE_SWITCH="simple_switch"
 
 DEBUG="--log-file log/sw.log  --log-level info --pcap log/" 
+DEBUG="--log-file /dev/null   --log-level error" 
 #disable debug
-DEBUG=""
-($SIMPLE_SWITCH $DEBUG -i 1@$IFACE -i 2@$REV_IFACE -i 3@$MON_IFACE  $P4_FILE_PREFIX.json 2>&1 > log/sw-simple.log )&
+#DEBUG=""
+# taskset: fix process on a list of cores
+(taskset 0x55555555 $SIMPLE_SWITCH $DEBUG -i 1@$IFACE -i 2@$REV_IFACE -i 3@$MON_IFACE  $P4_FILE_PREFIX.json 2>&1 > log/sw-simple.log )&
 SW_PID=$!
 # change priority of the switch 
 # Priority is a number in the range of -20 to 20. The higher the number, the lower the priority.
 renice -n -10 -p $SW_PID
 # bind the switch process to a cpu
-taskset -c 0-4 -p $SW_PID
+#taskset -c 0-4 -p $SW_PID
 
 ( monitor_cpu_memory $SW_PID ) &
 
@@ -168,8 +188,10 @@ table_set_default ipv4_lpm drop
 
 table_add ipv4_lpm ipv4_forward $CLIENT_A => $IFACE_MAC $CLIENT_A_MAC     1
 table_add ipv4_lpm ipv4_forward $CLIENT_B => $IFACE_MAC $CLIENT_B_MAC     1
+table_add ipv4_lpm ipv4_forward $CLIENT_C => $IFACE_MAC $CLIENT_C_MAC     1
 table_add ipv4_lpm ipv4_forward $SERVER_A => $REV_IFACE_MAC $SERVER_A_MAC 2
 table_add ipv4_lpm ipv4_forward $SERVER_B => $REV_IFACE_MAC $SERVER_B_MAC 2
+table_add ipv4_lpm ipv4_forward $SERVER_C => $REV_IFACE_MAC $SERVER_C_MAC 2
 EOF
 
 
@@ -214,6 +236,18 @@ EOF
 #   const bit<32> REPORT_MIRROR_SESSION_ID = 1;
 cat <<EOF | config_sw
 mirroring_add 1 3
+EOF
+
+fi
+
+# limit bandwith of the switch using Mahimahi if its configuration file is avail
+if [ -f "mahimahi.txt" ]; then
+
+	echo "Loading mahimahi.txt"
+
+cat <<EOF | config_sw
+set_egress_mahimahi 1 10000000
+set_egress_mahimahi 2 10000000
 EOF
 
 fi

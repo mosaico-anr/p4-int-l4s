@@ -12,9 +12,9 @@ import re
 import json
 import os
 import matplotlib as mpl
-if os.environ.get('DISPLAY','') == '':
+#if os.environ.get('DISPLAY','') == '':
     #print('no display found. Using non-interactive Agg backend')
-    mpl.use('Agg')
+mpl.use('Agg')
 
 from matplotlib import pyplot as plt
 from matplotlib.dates import DateFormatter
@@ -103,6 +103,9 @@ def is_tcp_data( data ):
     whether data contain TCP (iperf3) instead of UDP (quic)
     '''
     for row in data:
+        if "tcp.tsval" not in row:
+            return False
+
         if row["tcp.tsval"] != "0" and row["tcp.tsval"] != None:
             return True
     return False
@@ -255,13 +258,14 @@ maxX=0
 print("number of avail ticks: {0}".format(len(dic)) )
 # get min and max timestamp
 for i in dic:
-    val = dic[i]["meta.packet_index"]
+    val = dic[i]["meta.packet_index"]["total"]
+    
     #ignore leading zero
     if maxX == 0 and val == 0:
         continue
         
     i = int(i)
-    
+    #init
     if maxX == 0:
         minX = i
         maxX = i
@@ -280,8 +284,8 @@ if maxX - minX > 60*TICKS_PER_SECOND:
 elif maxX - minX > 30*TICKS_PER_SECOND:
     maxX = minX + 30*TICKS_PER_SECOND
 else:
-    print("axis Ox is not available")
-    sys.exit(0)
+    # print("axis Ox is not available")
+    None
 
 
 # x Axis is a range from min - max
@@ -324,6 +328,17 @@ for col in COLS:
     ax.grid()
     ax.legend(loc="upper left")
 
+
+# Save as pdf
+#plt.savefig( "{0}-{1}-pps.pdf".format(FILE_NAME, TS_COL_INDEX), dpi=60, format='pdf', bbox_inches='tight')
+output =  "{0}.png".format(FILE_PATH)
+print("write to {0}".format( output ))
+plt.savefig( output, dpi=70, format='png', bbox_inches='tight')
+
+#if os.environ.get('DISPLAY','') != '':
+#    plt.show()
+
+
 #print("{0}".format( json.dumps(result, indent=2 )))
 
 
@@ -332,8 +347,12 @@ print("\n")
 # FILE_PATH = ".../unrespECN-bw_50Mbps-duration_60s--20230322-124338/data.csv"
 match = re.search(r"(?P<type>(unrespECN|iperf3|legit))-bw_(?P<bw>\d+)Mbps-duration_(?P<duration>\d+)s", FILE_PATH)
 
-print("traffic type | limited bw (Mbps) | mean bw (Mbps) | duration (s) | nb step mark | mean queue delay (ms) | median queue delay (ms) | mean total delay (ms)")
-print("{0:>12} | {1:>17} | {2:>14} | {3:>12} | {4:>12} | {5:>21} | {6:>23} | {7:>21}".format(
+# if we cannot guess the traffic type and limited bandwidth
+if not match:
+    match = {"type": "?", "bw": "?"}
+
+print("| traffic type | limited bw (Mbps) | mean bw (Mbps) | duration (s) | nb step mark | mean queue delay (ms) | median queue delay (ms) | mean total delay (ms) |")
+print("| {0:>12} | {1:>17} | {2:>14} | {3:>12} | {4:>12} | {5:>21} | {6:>23} | {7:>21} |".format(
     match["type"],
     match["bw"],
     round( result["meta.packet_len"]["total"]["mean"] * 8 * TICKS_PER_SECOND / 1000000, 2),
@@ -345,11 +364,3 @@ print("{0:>12} | {1:>17} | {2:>14} | {3:>12} | {4:>12} | {5:>21} | {6:>23} | {7:
 ))
 print("\n")
 
-# Save as pdf
-#plt.savefig( "{0}-{1}-pps.pdf".format(FILE_NAME, TS_COL_INDEX), dpi=60, format='pdf', bbox_inches='tight')
-output =  "{0}.png".format(FILE_PATH)
-print("write to {0}".format( output ))
-plt.savefig( output, dpi=70, format='png', bbox_inches='tight')
-
-#if os.environ.get('DISPLAY','') != '':
-#    plt.show()
