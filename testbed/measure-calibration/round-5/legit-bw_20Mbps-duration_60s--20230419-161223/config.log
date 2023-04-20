@@ -1,0 +1,107 @@
+table_set_default ipv4_lpm drop
+
+table_add ipv4_lpm ipv4_forward 10.0.0.11 => 24:6e:96:37:81:a8 08:00:27:fe:18:fc     1
+table_add ipv4_lpm ipv4_forward 10.0.0.12 => 24:6e:96:37:81:a8 08:00:27:72:8a:ae     1
+table_add ipv4_lpm ipv4_forward 10.0.0.13 => 24:6e:96:37:81:a8 08:00:27:09:27:51     1
+table_add ipv4_lpm ipv4_forward 10.0.1.11 => 24:6e:96:37:81:ac 08:00:27:66:48:02 2
+table_add ipv4_lpm ipv4_forward 10.0.1.12 => 24:6e:96:37:81:ac 08:00:27:38:99:15 2
+table_add ipv4_lpm ipv4_forward 10.0.1.13 => 24:6e:96:37:81:ac 08:00:27:b8:ce:67 2
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0b
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:fe:18:fc	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0c
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:72:8a:ae	00:01
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0d
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:09:27:51	00:01
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0b
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:66:48:02	00:02
+Entry has been added with handle 3
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0c
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:38:99:15	00:02
+Entry has been added with handle 4
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0d
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:b8:ce:67	00:02
+Entry has been added with handle 5
+RuntimeCmd: 
+table_add select_PI2_param set_PI2_param => 1342 13421 15000 14
+table_add select_L4S_param set_L4S_param => 5000 3000 0 1500 21
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to exact match table select_PI2_param
+match key:           
+action:              set_PI2_param
+runtime data:        00:00:05:3e	00:00:34:6d	00:00:3a:98	0e
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table select_L4S_param
+match key:           
+action:              set_L4S_param
+runtime data:        00:00:13:88	00:00:0b:b8	00	00:00:05:dc	15
+Entry has been added with handle 0
+RuntimeCmd: 
+table_add tb_int_config_transit set_transit => 1
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_transit)
+RuntimeCmd: 
+table_add tb_int_config_source set_source 10.0.0.11&&&0x00000000 5001&&&0x0000 10.0.1.11&&&0x00000000 5001&&&0x0000 => 4 10 0xFFFF 0
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to ternary match table tb_int_config_source
+match key:           TERNARY-0a:00:00:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00	TERNARY-0a:00:01:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00
+action:              set_source
+runtime data:        04	0a	ff:ff
+Entry has been added with handle 0
+RuntimeCmd: 
+table_add tb_int_config_sink set_sink 1 => 3
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_sink)
+RuntimeCmd: 
+mirroring_add 1 3
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
+set_egress_mahimahi 1 10000000
+set_egress_mahimahi 2 10000000
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: RuntimeCmd: 
+set_egress_mahimahi 1 20000
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
+set_egress_mahimahi 2 20000
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
