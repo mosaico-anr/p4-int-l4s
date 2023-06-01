@@ -1,0 +1,64 @@
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: Create a new sub-process 14091 for main processing
+mmt-probe: MMT-Probe v1.5.9 (6dc9afc - Apr  4 2023 10:43:35) is running on pid 14091
+mmt-probe: Modules: DPI, PCAP, REPORT
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+1,3,"l4s-mon-nic",1685613640.079664,"1.5.9 (6dc9afc - Apr  4 2023 10:43:35)","1.7.6 (45ca61e6)"
+200,3,"l4s-mon-nic",1685613645.228354,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613650.228405,2,0,2,0,214,0
+mmt-probe: 2,0,2,0,214,0% dropped by NIC 0.0000, by MMT 0.0000
+2,0,2,0,214,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613655.228462,112,0,110,0,75261,0
+mmt-probe: 112,0,110,0,75261,0% dropped by NIC 0.0000, by MMT 0.0000
+112,0,110,0,75261,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613660.228588,938,0,938,0,780717,0
+mmt-probe: 938,0,938,0,780717,0% dropped by NIC 0.0000, by MMT 0.0000
+938,0,938,0,780717,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613665.228604,1766,0,1764,0,1484469,0
+mmt-probe: 1766,0,1764,0,1484469,0% dropped by NIC 0.0000, by MMT 0.0000
+1766,0,1764,0,1484469,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613670.228619,2594,0,2594,0,2191629,0
+mmt-probe: 2594,0,2594,0,2191629,0% dropped by NIC 0.0000, by MMT 0.0000
+2594,0,2594,0,2191629,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613675.228662,3422,0,3422,0,2897085,0
+mmt-probe: 3422,0,3422,0,2897085,0% dropped by NIC 0.0000, by MMT 0.0000
+3422,0,3422,0,2897085,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613680.228705,4255,0,4254,0,3602969,0
+mmt-probe: 4255,0,4254,0,3602969,0% dropped by NIC 0.0000, by MMT 0.0000
+4255,0,4254,0,3602969,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613685.228827,5086,0,5084,0,4308717,0
+mmt-probe: 5086,0,5084,0,4308717,0% dropped by NIC 0.0000, by MMT 0.0000
+5086,0,5084,0,4308717,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613690.228864,5916,0,5914,0,5013013,0
+mmt-probe: 5916,0,5914,0,5013013,0% dropped by NIC 0.0000, by MMT 0.0000
+5916,0,5914,0,5013013,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613695.228977,6746,0,6746,0,5720409,0
+mmt-probe: 6746,0,6746,0,5720409,0% dropped by NIC 0.0000, by MMT 0.0000
+6746,0,6746,0,5720409,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613700.228983,7574,0,7572,0,6424161,0
+mmt-probe: 7574,0,7572,0,6424161,0% dropped by NIC 0.0000, by MMT 0.0000
+7574,0,7572,0,6424161,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613705.229089,8404,0,8404,0,7131535,0
+mmt-probe: 8404,0,8404,0,7131535,0% dropped by NIC 0.0000, by MMT 0.0000
+8404,0,8404,0,7131535,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613710.229220,9232,0,9232,0,7836991,0
+mmt-probe: 9232,0,9232,0,7836991,0% dropped by NIC 0.0000, by MMT 0.0000
+9232,0,9232,0,7836991,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613715.229260,9995,0,9995,0,8471036,0
+mmt-probe: 9995,0,9995,0,8471036,0% dropped by NIC 0.0000, by MMT 0.0000
+9995,0,9995,0,8471036,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685613720.229336,9995,0,9995,0,8471036,0
+mmt-probe: 9995,0,9995,0,8471036,0% dropped by NIC 0.0000, by MMT 0.0000
+9995,0,9995,0,8471036,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 9995 packets, dropped 0 packets (0.00%)
+MMT processed 9995 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 9995 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 9995 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 14091 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye

@@ -1,0 +1,64 @@
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: Create a new sub-process 7258 for main processing
+mmt-probe: MMT-Probe v1.5.9 (6dc9afc - Apr  4 2023 10:43:35) is running on pid 7258
+mmt-probe: Modules: DPI, PCAP, REPORT
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+1,3,"l4s-mon-nic",1685611358.145252,"1.5.9 (6dc9afc - Apr  4 2023 10:43:35)","1.7.6 (45ca61e6)"
+200,3,"l4s-mon-nic",1685611363.284974,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611368.285033,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611373.285139,578,0,578,0,522022,0
+mmt-probe: 578,0,578,0,522022,0% dropped by NIC 0.0000, by MMT 0.0000
+578,0,578,0,522022,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611378.285280,1906,0,1903,0,1611550,0
+mmt-probe: 1906,0,1903,0,1611550,0% dropped by NIC 0.0000, by MMT 0.0000
+1906,0,1903,0,1611550,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611383.285353,3536,0,3534,0,2828234,0
+mmt-probe: 3536,0,3534,0,2828234,0% dropped by NIC 0.0000, by MMT 0.0000
+3536,0,3534,0,2828234,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611388.285416,5166,0,5165,0,4044918,0
+mmt-probe: 5166,0,5165,0,4044918,0% dropped by NIC 0.0000, by MMT 0.0000
+5166,0,5165,0,4044918,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611393.285520,6793,0,6790,0,5259522,0
+mmt-probe: 6793,0,6790,0,5259522,0% dropped by NIC 0.0000, by MMT 0.0000
+6793,0,6790,0,5259522,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611398.285660,8232,0,8230,0,6444624,0
+mmt-probe: 8232,0,8230,0,6444624,0% dropped by NIC 0.0000, by MMT 0.0000
+8232,0,8230,0,6444624,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611403.285673,9477,0,9476,0,7609620,0
+mmt-probe: 9477,0,9476,0,7609620,0% dropped by NIC 0.0000, by MMT 0.0000
+9477,0,9476,0,7609620,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611408.285754,10712,0,10710,0,8757219,0
+mmt-probe: 10712,0,10710,0,8757219,0% dropped by NIC 0.0000, by MMT 0.0000
+10712,0,10710,0,8757219,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611413.285775,11965,0,11963,0,9923286,0
+mmt-probe: 11965,0,11963,0,9923286,0% dropped by NIC 0.0000, by MMT 0.0000
+11965,0,11963,0,9923286,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611418.285922,13376,0,13374,0,11109936,0
+mmt-probe: 13376,0,13374,0,11109936,0% dropped by NIC 0.0000, by MMT 0.0000
+13376,0,13374,0,11109936,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611423.285944,14668,0,14665,0,12273264,0
+mmt-probe: 14668,0,14665,0,12273264,0% dropped by NIC 0.0000, by MMT 0.0000
+14668,0,14665,0,12273264,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611428.286061,16296,0,16294,0,13489642,0
+mmt-probe: 16296,0,16294,0,13489642,0% dropped by NIC 0.0000, by MMT 0.0000
+16296,0,16294,0,13489642,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611433.286108,17192,0,17192,0,14195929,0
+mmt-probe: 17192,0,17192,0,14195929,0% dropped by NIC 0.0000, by MMT 0.0000
+17192,0,17192,0,14195929,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685611438.286139,17192,0,17192,0,14195929,0
+mmt-probe: 17192,0,17192,0,14195929,0% dropped by NIC 0.0000, by MMT 0.0000
+17192,0,17192,0,14195929,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 17192 packets, dropped 0 packets (0.00%)
+MMT processed 17192 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 17192 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 17192 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 7258 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye

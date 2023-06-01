@@ -1,0 +1,64 @@
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: Create a new sub-process 10589 for main processing
+mmt-probe: MMT-Probe v1.5.9 (6dc9afc - Apr  4 2023 10:43:35) is running on pid 10589
+mmt-probe: Modules: DPI, PCAP, REPORT
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+1,3,"l4s-mon-nic",1685612448.324836,"1.5.9 (6dc9afc - Apr  4 2023 10:43:35)","1.7.6 (45ca61e6)"
+200,3,"l4s-mon-nic",1685612453.469510,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612458.469598,2,0,2,0,214,0
+mmt-probe: 2,0,2,0,214,0% dropped by NIC 0.0000, by MMT 0.0000
+2,0,2,0,214,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612463.469669,98,0,98,0,65037,0
+mmt-probe: 98,0,98,0,65037,0% dropped by NIC 0.0000, by MMT 0.0000
+98,0,98,0,65037,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612468.469712,928,0,926,0,769003,0
+mmt-probe: 928,0,926,0,769003,0% dropped by NIC 0.0000, by MMT 0.0000
+928,0,926,0,769003,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612473.469830,1756,0,1754,0,1474459,0
+mmt-probe: 1756,0,1754,0,1474459,0% dropped by NIC 0.0000, by MMT 0.0000
+1756,0,1754,0,1474459,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612478.469990,2584,0,2582,0,2179915,0
+mmt-probe: 2584,0,2582,0,2179915,0% dropped by NIC 0.0000, by MMT 0.0000
+2584,0,2582,0,2179915,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612483.470066,3412,0,3412,0,2887075,0
+mmt-probe: 3412,0,3412,0,2887075,0% dropped by NIC 0.0000, by MMT 0.0000
+3412,0,3412,0,2887075,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612488.470139,4240,0,4238,0,3590827,0
+mmt-probe: 4240,0,4238,0,3590827,0% dropped by NIC 0.0000, by MMT 0.0000
+4240,0,4238,0,3590827,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612493.470219,5070,0,5070,0,4298201,0
+mmt-probe: 5070,0,5070,0,4298201,0% dropped by NIC 0.0000, by MMT 0.0000
+5070,0,5070,0,4298201,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612498.470336,5896,0,5896,0,5001953,0
+mmt-probe: 5896,0,5896,0,5001953,0% dropped by NIC 0.0000, by MMT 0.0000
+5896,0,5896,0,5001953,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612503.470412,6726,0,6725,0,5707489,0
+mmt-probe: 6726,0,6725,0,5707489,0% dropped by NIC 0.0000, by MMT 0.0000
+6726,0,6725,0,5707489,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612508.470457,7556,0,7554,0,6413079,0
+mmt-probe: 7556,0,7554,0,6413079,0% dropped by NIC 0.0000, by MMT 0.0000
+7556,0,7554,0,6413079,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612513.470535,8386,0,8384,0,7118749,0
+mmt-probe: 8386,0,8384,0,7118749,0% dropped by NIC 0.0000, by MMT 0.0000
+8386,0,8384,0,7118749,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612518.470707,9216,0,9214,0,7824419,0
+mmt-probe: 9216,0,9214,0,7824419,0% dropped by NIC 0.0000, by MMT 0.0000
+9216,0,9214,0,7824419,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612523.470799,9979,0,9979,0,8461657,0
+mmt-probe: 9979,0,9979,0,8461657,0% dropped by NIC 0.0000, by MMT 0.0000
+9979,0,9979,0,8461657,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685612528.470831,9979,0,9979,0,8461657,0
+mmt-probe: 9979,0,9979,0,8461657,0% dropped by NIC 0.0000, by MMT 0.0000
+9979,0,9979,0,8461657,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 9979 packets, dropped 0 packets (0.00%)
+MMT processed 9979 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 9979 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 9979 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 10589 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye

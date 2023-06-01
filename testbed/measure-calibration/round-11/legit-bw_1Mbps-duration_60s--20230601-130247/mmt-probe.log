@@ -1,0 +1,64 @@
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: Create a new sub-process 17772 for main processing
+mmt-probe: MMT-Probe v1.5.9 (6dc9afc - Apr  4 2023 10:43:35) is running on pid 17772
+mmt-probe: Modules: DPI, PCAP, REPORT
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+1,3,"l4s-mon-nic",1685617275.478626,"1.5.9 (6dc9afc - Apr  4 2023 10:43:35)","1.7.6 (45ca61e6)"
+200,3,"l4s-mon-nic",1685617280.616560,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617285.616705,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617290.616854,365,0,365,0,265828,0
+mmt-probe: 365,0,365,0,265828,0% dropped by NIC 0.0000, by MMT 0.0000
+365,0,365,0,265828,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617295.616879,1140,0,1138,0,869987,0
+mmt-probe: 1140,0,1138,0,869987,0% dropped by NIC 0.0000, by MMT 0.0000
+1140,0,1138,0,869987,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617300.617020,1794,0,1793,0,1462169,0
+mmt-probe: 1794,0,1793,0,1462169,0% dropped by NIC 0.0000, by MMT 0.0000
+1794,0,1793,0,1462169,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617305.617122,2567,0,2567,0,2067770,0
+mmt-probe: 2567,0,2567,0,2067770,0% dropped by NIC 0.0000, by MMT 0.0000
+2567,0,2567,0,2067770,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617310.617194,3234,0,3234,0,2657000,0
+mmt-probe: 3234,0,3234,0,2657000,0% dropped by NIC 0.0000, by MMT 0.0000
+3234,0,3234,0,2657000,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617315.617335,3885,0,3884,0,3247220,0
+mmt-probe: 3885,0,3884,0,3247220,0% dropped by NIC 0.0000, by MMT 0.0000
+3885,0,3884,0,3247220,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617320.617494,4566,0,4566,0,3837548,0
+mmt-probe: 4566,0,4566,0,3837548,0% dropped by NIC 0.0000, by MMT 0.0000
+4566,0,4566,0,3837548,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617325.617519,5242,0,5241,0,4428002,0
+mmt-probe: 5242,0,5241,0,4428002,0% dropped by NIC 0.0000, by MMT 0.0000
+5242,0,5241,0,4428002,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617330.617589,5915,0,5915,0,5021802,0
+mmt-probe: 5915,0,5915,0,5021802,0% dropped by NIC 0.0000, by MMT 0.0000
+5915,0,5915,0,5021802,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617335.617603,6567,0,6567,0,5612328,0
+mmt-probe: 6567,0,6567,0,5612328,0% dropped by NIC 0.0000, by MMT 0.0000
+6567,0,6567,0,5612328,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617340.617627,7214,0,7213,0,6201936,0
+mmt-probe: 7214,0,7213,0,6201936,0% dropped by NIC 0.0000, by MMT 0.0000
+7214,0,7213,0,6201936,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617345.617754,7889,0,7889,0,6797331,0
+mmt-probe: 7889,0,7889,0,6797331,0% dropped by NIC 0.0000, by MMT 0.0000
+7889,0,7889,0,6797331,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617350.617791,8269,0,8269,0,7152680,0
+mmt-probe: 8269,0,8269,0,7152680,0% dropped by NIC 0.0000, by MMT 0.0000
+8269,0,8269,0,7152680,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1685617355.617840,8279,0,8279,0,7165476,0
+mmt-probe: 8279,0,8279,0,7165476,0% dropped by NIC 0.0000, by MMT 0.0000
+8279,0,8279,0,7165476,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 8279 packets, dropped 0 packets (0.00%)
+MMT processed 8279 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 8279 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 8279 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 17772 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye
