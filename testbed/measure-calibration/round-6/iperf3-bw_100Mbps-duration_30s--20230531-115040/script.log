@@ -1,0 +1,1780 @@
++++ dirname ./setup-testbed.sh
+++ cd -- .
+++ pwd -P
++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed
++ set -x
++ '[' 0 -ne 0 ']'
++ '[' -z '' ']'
++ export ENABLE_INT=yes
++ ENABLE_INT=yes
++ P4_FILE_PREFIX=switch-l4s
++ [[ 0 == \1 ]]
++ '[' true == '' ']'
++ echo 'No need to compile P4 code'
+No need to compile P4 code
++ source environment.sh
+++ set -x
+++++ dirname ./setup-testbed.sh
++++ cd -- .
++++ pwd -P
+++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed
+++ . /home/montimage/huunghia/mosaico/testbed/environment-param-bare-metal.sh
++++ export IFACE=eno1
++++ IFACE=eno1
++++ export REV_IFACE=eno3
++++ REV_IFACE=eno3
++++ export MON_IFACE=l4s-mon-nic
++++ MON_IFACE=l4s-mon-nic
++++ export SERVER_NET=10.0.1.0/24
++++ SERVER_NET=10.0.1.0/24
++++ export CLIENT_NET=10.0.0.0/24
++++ CLIENT_NET=10.0.0.0/24
++++ export SERVER_A=10.0.1.11
++++ SERVER_A=10.0.1.11
++++ export SERVER_B=10.0.1.12
++++ SERVER_B=10.0.1.12
++++ export SERVER_C=10.0.1.13
++++ SERVER_C=10.0.1.13
++++ export CLIENT_A=10.0.0.11
++++ CLIENT_A=10.0.0.11
++++ export CLIENT_B=10.0.0.12
++++ CLIENT_B=10.0.0.12
++++ export CLIENT_C=10.0.0.13
++++ CLIENT_C=10.0.0.13
++++ export CLIENT_A_IFACE=enp0s8
++++ CLIENT_A_IFACE=enp0s8
++++ export CLIENT_B_IFACE=enp0s8
++++ CLIENT_B_IFACE=enp0s8
++++ export CLIENT_C_IFACE=enp0s8
++++ CLIENT_C_IFACE=enp0s8
++++ export SERVER_A_IFACE=enp0s8
++++ SERVER_A_IFACE=enp0s8
++++ export SERVER_B_IFACE=enp0s8
++++ SERVER_B_IFACE=enp0s8
++++ export SERVER_C_IFACE=enp0s8
++++ SERVER_C_IFACE=enp0s8
++++ export MMT_IP=10.0.30.2
++++ MMT_IP=10.0.30.2
++++ export MMT_IFACE=enp0s8
++++ MMT_IFACE=enp0s8
++++ export CLIENT_A_CTRL=192.168.1.100
++++ CLIENT_A_CTRL=192.168.1.100
++++ export SERVER_A_CTRL=192.168.1.104
++++ SERVER_A_CTRL=192.168.1.104
++++ export SERVER_C_CTRL=192.168.1.111
++++ SERVER_C_CTRL=192.168.1.111
++++ export SERVER_B_CTRL=192.168.1.105
++++ SERVER_B_CTRL=192.168.1.105
++++ export CLIENT_B_CTRL=192.168.1.103
++++ CLIENT_B_CTRL=192.168.1.103
++++ export CLIENT_C_CTRL=192.168.1.110
++++ CLIENT_C_CTRL=192.168.1.110
++ export LOG=/home/montimage/huunghia/mosaico/testbed/log
++ LOG=/home/montimage/huunghia/mosaico/testbed/log
++ mkdir -p /home/montimage/huunghia/mosaico/testbed/log
+++ get-mac eno1
+++ iface=eno1
+++ cat /sys/class/net/eno1/address
++ export IFACE_MAC=24:6e:96:37:81:a8
++ IFACE_MAC=24:6e:96:37:81:a8
+++ get-mac eno3
+++ iface=eno3
+++ cat /sys/class/net/eno3/address
++ export REV_IFACE_MAC=24:6e:96:37:81:ac
++ REV_IFACE_MAC=24:6e:96:37:81:ac
+++ get-mac l4s-mon-nic
+++ iface=l4s-mon-nic
+++ cat /sys/class/net/l4s-mon-nic/address
++ export MON_IFACE_MAC=1a:a6:68:e5:d9:89
++ MON_IFACE_MAC=1a:a6:68:e5:d9:89
+++ get-remote-mac 192.168.1.100 enp0s8
+++ ip=192.168.1.100
+++ iface=enp0s8
+++ run-on-host 192.168.1.100 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.100
+++ shift
+++ [[ 192.168.1.100 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_A_MAC=08:00:27:fe:18:fc
++ CLIENT_A_MAC=08:00:27:fe:18:fc
+++ get-remote-mac 192.168.1.103 enp0s8
+++ ip=192.168.1.103
+++ iface=enp0s8
+++ run-on-host 192.168.1.103 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.103
+++ shift
+++ [[ 192.168.1.103 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_B_MAC=08:00:27:72:8a:ae
++ CLIENT_B_MAC=08:00:27:72:8a:ae
+++ get-remote-mac 192.168.1.110 enp0s8
+++ ip=192.168.1.110
+++ iface=enp0s8
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_C_MAC=08:00:27:09:27:51
++ CLIENT_C_MAC=08:00:27:09:27:51
+++ get-remote-mac 192.168.1.104 enp0s8
+++ ip=192.168.1.104
+++ iface=enp0s8
+++ run-on-host 192.168.1.104 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.104
+++ shift
+++ [[ 192.168.1.104 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- cat /sys/class/net/enp0s8/address
++ export SERVER_A_MAC=08:00:27:66:48:02
++ SERVER_A_MAC=08:00:27:66:48:02
+++ get-remote-mac 192.168.1.105 enp0s8
+++ ip=192.168.1.105
+++ iface=enp0s8
+++ run-on-host 192.168.1.105 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.105
+++ shift
+++ [[ 192.168.1.105 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- cat /sys/class/net/enp0s8/address
++ export SERVER_B_MAC=08:00:27:38:99:15
++ SERVER_B_MAC=08:00:27:38:99:15
+++ get-remote-mac 192.168.1.111 enp0s8
+++ ip=192.168.1.111
+++ iface=enp0s8
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/address
++ export SERVER_C_MAC=08:00:27:b8:ce:67
++ SERVER_C_MAC=08:00:27:b8:ce:67
++ arp -s 10.0.1.11 08:00:27:66:48:02
++ arp -s 10.0.1.12 08:00:27:38:99:15
++ arp -s 10.0.1.13 08:00:27:b8:ce:67
++ arp -s 10.0.0.11 08:00:27:fe:18:fc
++ arp -s 10.0.0.12 08:00:27:72:8a:ae
++ arp -s 10.0.0.13 08:00:27:09:27:51
+++ get-ip eno1
+++ iface=eno1
+++ /sbin/ip -o -4 addr list eno1
+++ awk '{print $4}'
+++ cut -d/ -f1
++ IFACE_IP=10.0.0.1
+++ get-ip eno3
+++ iface=eno3
+++ /sbin/ip -o -4 addr list eno3
+++ awk '{print $4}'
+++ cut -d/ -f1
++ REV_IFACE_IP=10.0.1.1
++ run-on-host 192.168.1.100 sudo route add -net 10.0.1.0/24 gw 10.0.0.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ [[ 192.168.1.100 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.103 sudo route add -net 10.0.1.0/24 gw 10.0.0.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.103
++ shift
++ [[ 192.168.1.103 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.110 sudo route add -net 10.0.1.0/24 gw 10.0.0.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.104 sudo route add -net 10.0.0.0/24 gw 10.0.1.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ [[ 192.168.1.104 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.105 sudo route add -net 10.0.0.0/24 gw 10.0.1.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.105
++ shift
++ [[ 192.168.1.105 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.111 sudo route add -net 10.0.0.0/24 gw 10.0.1.1
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.1
+SIOCADDRT: File exists
++ run-on-host 192.168.1.100 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ [[ 192.168.1.100 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.103 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.103
++ shift
++ [[ 192.168.1.103 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.110 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.104 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ [[ 192.168.1.104 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.105 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.105
++ shift
++ [[ 192.168.1.105 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.111 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ config-nic eno1
++ NIC=eno1
++ ip link set eno1 mtu 1500
++ ethtool -K eno1 tso off gso off gro off tx off
++ sysctl net.ipv6.conf.eno1.disable_ipv6=1
+net.ipv6.conf.eno1.disable_ipv6 = 1
++ config-nic eno3
++ NIC=eno3
++ ip link set eno3 mtu 1500
++ ethtool -K eno3 tso off gso off gro off tx off
++ sysctl net.ipv6.conf.eno3.disable_ipv6=1
+net.ipv6.conf.eno3.disable_ipv6 = 1
++ sysctl -w net.ipv4.ip_forward=0
+net.ipv4.ip_forward = 0
++ ip link set l4s-mon-nic mtu 2000
++ killall simple_switch
+simple_switch: no process found
+++ seq 2 2 10
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ SIMPLE_SWITCH='/home/montimage/huunghia/mosaico/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128'
++ SIMPLE_SWITCH='/home/montimage/huunghia/mosaico/bmv2/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128'
++ DEBUG='--log-file log/sw.log  --log-level info --pcap log/'
++ DEBUG='--log-file /dev/null   --log-level error'
++ SW_PID=42102
++ renice -n -10 -p 42102
++ taskset 0x55555555 /home/montimage/huunghia/mosaico/bmv2/targets/simple_switch/simple_switch --queue 2 --ll_queue 64 --BE_queue 128 --log-file /dev/null --log-level error -i 1@eno1 -i 2@eno3 -i 3@l4s-mon-nic switch-l4s.json
+42102 (process ID) old priority 0, new priority -10
++ sleep 2
++ monitor_cpu_memory 42102
++ PID=42102
++ FILE_NAME=log/cpu_mem_int_yes_pid_42102
++ /home/montimage/.local/bin/psrecord 42102 --log log/cpu_mem_int_yes_pid_42102.txt --duration 320 --interval 1 --include-children
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0b
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:fe:18:fc	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0c
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:72:8a:ae	00:01
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0d
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:09:27:51	00:01
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0b
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:66:48:02	00:02
+Entry has been added with handle 3
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0c
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:38:99:15	00:02
+Entry has been added with handle 4
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0d
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:b8:ce:67	00:02
+Entry has been added with handle 5
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to exact match table select_PI2_param
+match key:           
+action:              set_PI2_param
+runtime data:        00:00:05:3e	00:00:34:6d	00:00:3a:98	0e
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table select_L4S_param
+match key:           
+action:              set_L4S_param
+runtime data:        00:00:13:88	00:00:0b:b8	00	00:00:05:dc	15
+Entry has been added with handle 0
+RuntimeCmd: 
++ [[ yes == \y\e\s ]]
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_transit)
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to ternary match table tb_int_config_source
+match key:           TERNARY-0a:00:00:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00	TERNARY-0a:00:01:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00
+action:              set_source
+runtime data:        04	0a	ff:ff
+Entry has been added with handle 0
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_sink)
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
++ '[' -f mahimahi.txt ']'
++ echo 'Loading mahimahi.txt'
+Loading mahimahi.txt
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: RuntimeCmd: 
++ . /home/montimage/huunghia/mosaico/testbed/monitoring-mmt-tcpdump.sh
+++++ dirname ./setup-testbed.sh
++++ cd -- .
++++ pwd -P
+++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed
+++ MMT_CONFIG_FILE=/home/montimage/huunghia/mosaico/testbed/mmt-probe.conf
++++ cat
+++ MMT_ATTRIBUTES='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ echo '	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ sed --expression=s/int.hop_tx_utilizes/int.mark_probability/
+++ MMT_ATTRIBUTES_HEADERS='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ ACTION=
+++ [[ '' == \c\o\m\b\i\n\e\-\m\m\t\-\c\s\v\-\f\i\l\e\s ]]
++ start-monitoring
++ cd -- /home/montimage/huunghia/mosaico/testbed/log
++ log 'start pcap dump'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114931 ' 'start pcap dump'
+20230531-114931  start pcap dump
++ FILTER='tcp or udp'
++ tcpdump --snapshot-length=128 -i eno1 -w eno1-data.pcap 'tcp or udp'
++ sleep 1
++ tcpdump --snapshot-length=128 -i eno3 -w eno3-data.pcap 'tcp or udp'
++ tcpdump --snapshot-length=176 -i l4s-mon-nic -w l4s-mon-nic-int.pcap 'tcp or udp'
+tcpdump: listening on eno3, link-type EN10MB (Ethernet), capture size 128 bytes
+tcpdump: listening on eno1, link-type EN10MB (Ethernet), capture size 128 bytes
+tcpdump: listening on l4s-mon-nic, link-type EN10MB (Ethernet), capture size 176 bytes
++ cp -- /home/montimage/huunghia/mosaico/testbed/mmt-probe.conf ./mmt-probe.conf
++ generate-monitor-config
++ cat
+++ date
++ log 'start mmt-probe'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114932 ' 'start mmt-probe'
+20230531-114932  start mmt-probe
++ sleep 2
++ mmt-probe -c ./mmt-probe.conf -i l4s-mon-nic
++ echo '*******testbed is ready*******'
+*******testbed is ready*******
++ cd -- /home/montimage/huunghia/mosaico/testbed
++ [[ /home/montimage/huunghia/mosaico/testbed/measure--calibrate/start-monitoring.sh == '' ]]
++ bash -x /home/montimage/huunghia/mosaico/testbed/measure--calibrate/start-monitoring.sh
++ SERVER_DATA=10.0.1.13
++ CLIENT_DATA=10.0.0.13
++ SERVER_CTRL=192.168.1.111
++ CLIENT_CTRL=192.168.1.110
++ SERVER_IFACE=enp0s8
++ CLIENT_IFACE=enp0s8
++ export FILE_SIZE=1000
++ FILE_SIZE=1000
++ date
+mercredi 31 mai 2023, 11:49:34 (UTC+0200)
++ set -x
++++ dirname /home/montimage/huunghia/mosaico/testbed/measure--calibrate/start-monitoring.sh
+++ cd -- /home/montimage/huunghia/mosaico/testbed/measure--calibrate
+++ pwd -P
++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed/measure--calibrate
++ . /home/montimage/huunghia/mosaico/testbed/measure--calibrate/../environment.sh
+++ set -x
+++++ dirname /home/montimage/huunghia/mosaico/testbed/measure--calibrate/start-monitoring.sh
++++ cd -- /home/montimage/huunghia/mosaico/testbed/measure--calibrate
++++ pwd -P
+++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed/measure--calibrate
+++ . /home/montimage/huunghia/mosaico/testbed/measure--calibrate/environment-param-bare-metal.sh
+/home/montimage/huunghia/mosaico/testbed/measure--calibrate/../environment.sh: line 7: /home/montimage/huunghia/mosaico/testbed/measure--calibrate/environment-param-bare-metal.sh: No such file or directory
++ MMT_CONFIG_FILE=/home/montimage/huunghia/mosaico/testbed/measure--calibrate/mmt-probe.conf
++ . /home/montimage/huunghia/mosaico/testbed/measure--calibrate/pre-process-mmt-csv.sh
+++ TCP_OR_UDP_ATTRIBUTES='"udp.src_port","udp.dest_port","udp.len"'
+++ [[ iperf3 == \i\p\e\r\f\3 ]]
+++ TCP_OR_UDP_ATTRIBUTES='"tcp.src_port","tcp.dest_port","tcp.payload_len"'
++++ cat
+++ ATTRIBUTES='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"tcp.src_port","tcp.dest_port","tcp.payload_len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ echo '	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"tcp.src_port","tcp.dest_port","tcp.payload_len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ sed --expression=s/int.hop_tx_utilizes/int.mark_probability/
+++ ATTRIBUTES_HEADERS='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"tcp.src_port","tcp.dest_port","tcp.payload_len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ ACTION=
+++ [[ '' == \c\o\m\b\i\n\e\-\m\m\t\-\c\s\v\-\f\i\l\e\s ]]
++ LOG_DIR=/home/montimage/huunghia/mosaico/testbed/log
++ mkdir -p -- /home/montimage/huunghia/mosaico/testbed/log
++ TCP_OR_UDP_PORT=4433
++ log 'start experiment'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114934 ' 'start experiment'
+20230531-114934  start experiment
++ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 225784  9264 ?        Ss   avril13   0:43 /sbin/init splash
+root         2  0.0  0.0      0     0 ?        S    avril13   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   avril13   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   avril13   0:00 [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/0:0H]
+root         9  0.0  0.0      0     0 ?        I<   avril13   0:00 [mm_percpu_wq]
+root        10  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/0]
+root        11  0.0  0.0      0     0 ?        I    avril13   1:50 [rcu_sched]
+root        12  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/0]
+root        13  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/0]
+root        15  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/0]
+root        16  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/1]
+root        17  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/1]
+root        18  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/1]
+root        19  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/1]
+root        21  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/1:0H-kb]
+root        23  0.0  0.0      0     0 ?        P    avril13   0:00 [cpuhp/2]
+root        24  0.0  0.0      0     0 ?        P    avril13   0:00 [idle_inject/2]
+root        25  0.0  0.0      0     0 ?        P    avril13   0:01 [migration/2]
+root        26  0.0  0.0      0     0 ?        P    avril13   0:00 [ksoftirqd/2]
+root        27  0.0  0.0      0     0 ?        I    avril13   0:00 [kworker/2:0-eve]
+root        28  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/2:0H-kb]
+root        29  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/3]
+root        30  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/3]
+root        31  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/3]
+root        32  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/3]
+root        34  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/3:0H-kb]
+root        35  0.0  0.0      0     0 ?        P    avril13   0:00 [cpuhp/4]
+root        36  0.0  0.0      0     0 ?        P    avril13   0:00 [idle_inject/4]
+root        37  0.0  0.0      0     0 ?        P    avril13   0:01 [migration/4]
+root        38  0.0  0.0      0     0 ?        P    avril13   0:00 [ksoftirqd/4]
+root        40  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/4:0H-kb]
+root        41  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/5]
+root        42  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/5]
+root        43  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/5]
+root        44  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/5]
+root        46  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/5:0H-kb]
+root        47  0.0  0.0      0     0 ?        P    avril13   0:00 [cpuhp/6]
+root        48  0.0  0.0      0     0 ?        P    avril13   0:00 [idle_inject/6]
+root        49  0.0  0.0      0     0 ?        P    avril13   0:01 [migration/6]
+root        50  0.0  0.0      0     0 ?        P    avril13   0:00 [ksoftirqd/6]
+root        51  0.0  0.0      0     0 ?        I    avril13   0:00 [kworker/6:0-rcu]
+root        52  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/6:0H-kb]
+root        53  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/7]
+root        54  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/7]
+root        55  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/7]
+root        56  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/7]
+root        58  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/7:0H-kb]
+root        59  0.0  0.0      0     0 ?        P    avril13   0:00 [cpuhp/8]
+root        60  0.0  0.0      0     0 ?        P    avril13   0:00 [idle_inject/8]
+root        61  0.0  0.0      0     0 ?        P    avril13   0:01 [migration/8]
+root        62  0.0  0.0      0     0 ?        P    avril13   0:00 [ksoftirqd/8]
+root        64  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/8:0H-kb]
+root        65  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/9]
+root        66  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/9]
+root        67  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/9]
+root        68  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/9]
+root        70  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/9:0H-kb]
+root        71  0.0  0.0      0     0 ?        P    avril13   0:00 [cpuhp/10]
+root        72  0.0  0.0      0     0 ?        P    avril13   0:00 [idle_inject/10]
+root        73  0.0  0.0      0     0 ?        P    avril13   0:01 [migration/10]
+root        74  0.0  0.0      0     0 ?        P    avril13   0:00 [ksoftirqd/10]
+root        76  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/10:0H]
+root        77  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/11]
+root        78  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/11]
+root        79  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/11]
+root        80  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/11]
+root        82  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/11:0H-k]
+root        83  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/12]
+root        84  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/12]
+root        85  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/12]
+root        86  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/12]
+root        88  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/12:0H-k]
+root        89  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/13]
+root        90  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/13]
+root        91  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/13]
+root        92  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/13]
+root        94  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/13:0H]
+root        95  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/14]
+root        96  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/14]
+root        97  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/14]
+root        98  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/14]
+root       100  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/14:0H-k]
+root       101  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/15]
+root       102  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/15]
+root       103  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/15]
+root       104  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/15]
+root       106  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/15:0H]
+root       107  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/16]
+root       108  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/16]
+root       109  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/16]
+root       110  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/16]
+root       112  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/16:0H-k]
+root       113  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/17]
+root       114  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/17]
+root       115  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/17]
+root       116  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/17]
+root       118  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/17:0H-k]
+root       119  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/18]
+root       120  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/18]
+root       121  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/18]
+root       122  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/18]
+root       124  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/18:0H-k]
+root       125  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/19]
+root       126  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/19]
+root       127  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/19]
+root       128  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/19]
+root       130  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/19:0H-k]
+root       131  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/20]
+root       132  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/20]
+root       133  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/20]
+root       134  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/20]
+root       136  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/20:0H-k]
+root       137  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/21]
+root       138  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/21]
+root       139  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/21]
+root       140  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/21]
+root       142  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/21:0H]
+root       143  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/22]
+root       144  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/22]
+root       145  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/22]
+root       146  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/22]
+root       148  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/22:0H-k]
+root       149  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/23]
+root       150  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/23]
+root       151  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/23]
+root       152  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/23]
+root       154  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/23:0H]
+root       155  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/24]
+root       156  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/24]
+root       157  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/24]
+root       158  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/24]
+root       160  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/24:0H-k]
+root       161  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/25]
+root       162  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/25]
+root       163  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/25]
+root       164  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/25]
+root       166  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/25:0H-k]
+root       167  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/26]
+root       168  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/26]
+root       169  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/26]
+root       170  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/26]
+root       172  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/26:0H-k]
+root       173  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/27]
+root       174  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/27]
+root       175  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/27]
+root       176  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/27]
+root       178  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/27:0H-k]
+root       179  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/28]
+root       180  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/28]
+root       181  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/28]
+root       182  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/28]
+root       184  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/28:0H-k]
+root       185  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/29]
+root       186  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/29]
+root       187  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/29]
+root       188  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/29]
+root       190  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/29:0H-e]
+root       191  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/30]
+root       192  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/30]
+root       193  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/30]
+root       194  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/30]
+root       196  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/30:0H-k]
+root       197  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/31]
+root       198  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/31]
+root       199  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/31]
+root       200  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/31]
+root       202  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/31:0H-k]
+root       203  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/32]
+root       204  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/32]
+root       205  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/32]
+root       206  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/32]
+root       208  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/32:0H-k]
+root       209  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/33]
+root       210  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/33]
+root       211  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/33]
+root       212  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/33]
+root       214  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/33:0H-k]
+root       215  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/34]
+root       216  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/34]
+root       217  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/34]
+root       218  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/34]
+root       220  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/34:0H-k]
+root       221  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/35]
+root       222  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/35]
+root       223  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/35]
+root       224  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/35]
+root       226  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/35:0H-k]
+root       227  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/36]
+root       228  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/36]
+root       229  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/36]
+root       230  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/36]
+root       232  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/36:0H-k]
+root       233  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/37]
+root       234  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/37]
+root       235  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/37]
+root       236  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/37]
+root       238  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/37:0H]
+root       239  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/38]
+root       240  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/38]
+root       241  0.0  0.0      0     0 ?        S    avril13   0:10 [migration/38]
+root       242  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/38]
+root       244  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/38:0H-k]
+root       245  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/39]
+root       246  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/39]
+root       247  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/39]
+root       248  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/39]
+root       250  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/39:0H]
+root       251  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/40]
+root       252  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/40]
+root       253  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/40]
+root       254  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/40]
+root       256  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/40:0H-k]
+root       257  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/41]
+root       258  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/41]
+root       259  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/41]
+root       260  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/41]
+root       262  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/41:0H]
+root       263  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/42]
+root       264  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/42]
+root       265  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/42]
+root       266  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/42]
+root       268  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/42:0H-k]
+root       269  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/43]
+root       270  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/43]
+root       271  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/43]
+root       272  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/43]
+root       274  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/43:0H-k]
+root       275  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/44]
+root       276  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/44]
+root       277  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/44]
+root       278  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/44]
+root       280  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/44:0H-k]
+root       281  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/45]
+root       282  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/45]
+root       283  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/45]
+root       284  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/45]
+root       286  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/45:0H]
+root       287  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/46]
+root       288  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/46]
+root       289  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/46]
+root       290  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/46]
+root       292  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/46:0H-k]
+root       293  0.0  0.0      0     0 ?        S    avril13   0:00 [cpuhp/47]
+root       294  0.0  0.0      0     0 ?        S    avril13   0:00 [idle_inject/47]
+root       295  0.0  0.0      0     0 ?        S    avril13   0:11 [migration/47]
+root       296  0.0  0.0      0     0 ?        S    avril13   0:00 [ksoftirqd/47]
+root       298  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/47:0H-k]
+root       299  0.0  0.0      0     0 ?        S    avril13   0:00 [kdevtmpfs]
+root       300  0.0  0.0      0     0 ?        I<   avril13   0:00 [netns]
+root       301  0.0  0.0      0     0 ?        S    avril13   0:00 [rcu_tasks_kthre]
+root       302  0.0  0.0      0     0 ?        S    avril13   0:00 [kauditd]
+root       303  0.0  0.0      0     0 ?        I    avril13   0:00 [kworker/2:1-eve]
+root       305  0.0  0.0      0     0 ?        I    avril13   0:02 [kworker/4:1-eve]
+root       307  0.0  0.0      0     0 ?        S    avril13   0:03 [khungtaskd]
+root       308  0.0  0.0      0     0 ?        S    avril13   0:00 [oom_reaper]
+root       309  0.0  0.0      0     0 ?        I<   avril13   0:00 [writeback]
+root       310  0.0  0.0      0     0 ?        S    avril13   0:00 [kcompactd0]
+root       311  0.0  0.0      0     0 ?        S    avril13   0:00 [kcompactd1]
+root       312  0.0  0.0      0     0 ?        SN   avril13   0:00 [ksmd]
+root       313  0.0  0.0      0     0 ?        SN   avril13   0:08 [khugepaged]
+root       359  0.0  0.0      0     0 ?        I<   avril13   0:00 [kintegrityd]
+root       360  0.0  0.0      0     0 ?        I<   avril13   0:00 [kblockd]
+root       361  0.0  0.0      0     0 ?        I<   avril13   0:00 [blkcg_punt_bio]
+root       362  0.0  0.0      0     0 ?        I<   avril13   0:00 [tpm_dev_wq]
+root       363  0.0  0.0      0     0 ?        I<   avril13   0:00 [ata_sff]
+root       364  0.0  0.0      0     0 ?        I<   avril13   0:00 [md]
+root       365  0.0  0.0      0     0 ?        I<   avril13   0:00 [edac-poller]
+root       366  0.0  0.0      0     0 ?        I<   avril13   0:00 [devfreq_wq]
+root       367  0.0  0.0      0     0 ?        S    avril13   0:00 [watchdogd]
+root       415  0.0  0.0      0     0 ?        S    avril13   0:00 [kswapd0]
+root       416  0.0  0.0      0     0 ?        S    avril13   0:00 [kswapd1]
+root       417  0.0  0.0      0     0 ?        S    avril13   0:00 [ecryptfs-kthrea]
+root       419  0.0  0.0      0     0 ?        I<   avril13   0:00 [kthrotld]
+root       420  0.0  0.0      0     0 ?        I<   avril13   0:00 [acpi_thermal_pm]
+root       421  0.0  0.0      0     0 ?        I<   avril13   0:00 [vfio-irqfd-clea]
+root       423  0.0  0.0      0     0 ?        I<   avril13   0:00 [ipv6_addrconf]
+root       432  0.0  0.0      0     0 ?        I<   avril13   0:00 [kstrp]
+root       436  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/u99:0]
+root       437  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/u100:0]
+root       438  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/u101:0]
+root       451  0.0  0.0      0     0 ?        I<   avril13   0:00 [charger_manager]
+root       517  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_0]
+root       518  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_0]
+root       519  0.0  0.0      0     0 ?        I<   avril13   0:00 [i40e]
+root       521  0.0  0.0      0     0 ?        I<   avril13   0:00 [ixgbe]
+root       524  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_1]
+root       525  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_1]
+root       526  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_2]
+root       527  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_2]
+root       528  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_3]
+root       529  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_3]
+root       530  0.0  0.0      0     0 ?        I<   avril13   0:00 [poll_megasas0_s]
+root       531  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_4]
+root       532  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_4]
+root       537  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_5]
+root       538  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_5]
+root       539  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_6]
+root       540  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/2:1H-kb]
+root       541  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_6]
+root       542  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_7]
+root       543  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_7]
+root       544  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_8]
+root       545  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_8]
+root       546  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_9]
+root       547  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_9]
+root       548  0.0  0.0      0     0 ?        S    avril13   0:00 [scsi_eh_10]
+root       549  0.0  0.0      0     0 ?        I<   avril13   0:00 [scsi_tmf_10]
+root       556  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/26:1H-k]
+root       636  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/14:1H-k]
+root       637  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/16:1H-k]
+root       641  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/1:1H-kb]
+root       642  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/33:1H-k]
+root       661  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/36:1H-k]
+root       664  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/18:1H-k]
+root       665  0.0  0.0      0     0 ?        S    avril13   0:05 [jbd2/sda1-8]
+root       666  0.0  0.0      0     0 ?        I<   avril13   0:00 [ext4-rsv-conver]
+root       676  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/34:1H-k]
+root       681  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/28:1H-k]
+root       684  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/8:1H-kb]
+root       690  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/0:1H-kb]
+root       691  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/20:1H-k]
+root       701  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/38:1H-k]
+root       702  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/46:1H-k]
+root       703  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/31:1H-k]
+root       704  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/42:1H-k]
+root       706  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/40:1H-k]
+root       707  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/4:1H-kb]
+root       712  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/30:1H-k]
+root       718  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/12:1H-k]
+root       720  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/10:1H-k]
+root       726  0.0  0.0 115028 28452 ?        S<s  avril13   0:18 /lib/systemd/systemd-journald
+root       729  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/22:1H-k]
+root       733  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/44:1H-k]
+root       743  0.0  0.0  34944  4888 ?        Ss   avril13   0:04 /lib/systemd/systemd-udevd
+root       744  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/24:1H-k]
+root       819  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop1]
+root       866  0.0  0.0      0     0 ?        I    avril19   0:14 [kworker/16:0-rc]
+root       877  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/21:1H-k]
+root       879  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/47:1H-k]
+root       881  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop2]
+root       882  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/11:1H-k]
+root       884  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/39:1H-k]
+root       885  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/17:1H-k]
+root       888  0.0  0.0      0     0 ?        I<   avril13   0:00 [ipmi-msghandler]
+root       889  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/23:1H-k]
+root       890  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/5:1H-kb]
+root       891  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/32:1H-k]
+root       892  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/6:1H-kb]
+root       916  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop4]
+root       927  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/43:1H-k]
+root       928  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/41:1H-k]
+root       930  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/3:1H-kb]
+root       932  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/45:1H-k]
+root       933  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/37:1H-k]
+root       934  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/7:1H-kb]
+root       935  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/25:1H-k]
+root       937  0.0  0.0      0     0 ?        I<   avril13   0:00 [cryptd]
+root       946  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/15:1H-k]
+root       961  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/13:1H-k]
+root       964  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop6]
+root       968  0.0  0.0      0     0 ?        I<   avril13   0:00 [ttm_swap]
+root       984  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop7]
+root      1003  0.0  0.0      0     0 ?        I    avril13   0:00 [kworker/8:2-rcu]
+root      1016  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/9:1H-kb]
+root      1058  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop9]
+root      1062  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/35:1H-k]
+root      1064  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop13]
+root      1065  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop14]
+root      1068  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop17]
+root      1069  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop18]
+root      1070  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop19]
+root      1072  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop21]
+root      1073  0.0  0.0      0     0 ?        S<   avril13   0:00 [loop22]
+systemd+  1096  0.0  0.0 145968  5404 ?        Ssl  avril13   0:05 /lib/systemd/systemd-timesyncd
+message+  1283  0.0  0.0  51848  6376 ?        Rs   avril13   0:26 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      1286  0.0  0.0 111024  4152 ?        Ssl  avril13  49:24 /usr/sbin/irqbalance --foreground
+root      1287  0.0  0.0 700864 17656 ?        Ssl  avril13   1:23 /usr/sbin/NetworkManager --no-daemon
+root      1288  0.0  0.0   4560   848 ?        Ss   avril13   0:00 /usr/sbin/acpid
+root      1289  0.0  0.0  31328  3228 ?        Ss   avril13   0:04 /usr/sbin/cron -f
+root      1293  0.0  0.0 171096 17540 ?        Ssl  avril13   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root      1295  0.0  0.0 360596  9204 ?        Ssl  avril13   0:00 /usr/sbin/ModemManager --filter-policy=strict
+root      1297  0.0  0.0  70848  6396 ?        Ss   avril13   0:06 /lib/systemd/systemd-logind
+root      1300  0.0  0.0  45244  5320 ?        Ss   avril13   0:11 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi     1301  0.0  0.0  47548  4016 ?        Ss   avril13   0:45 avahi-daemon: running [server-24cores.local]
+syslog    1303  0.0  0.0 263048  5812 ?        Ssl  avril13   0:05 /usr/sbin/rsyslogd -n
+root      1305  0.0  0.0 503724 12340 ?        Ssl  avril13   5:57 /usr/lib/udisks2/udisksd
+root      1306  0.0  0.0 287660  7084 ?        Ssl  avril13   0:45 /usr/lib/accountsservice/accounts-daemon
+avahi     1351  0.0  0.0  47084   340 ?        S    avril13   0:00 avahi-daemon: chroot helper
+root      1369  0.0  0.0 296704 10360 ?        Ssl  avril13   0:11 /usr/lib/policykit-1/polkitd --no-debug
+root      1390  0.0  0.0 187260 20040 ?        Ssl  avril13   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root      1404  0.0  0.0 301088  8360 ?        Ssl  avril13   0:00 /usr/sbin/gdm3
+root      1415  0.0  0.0  72304  6532 ?        Ss   avril13   0:00 /usr/sbin/sshd -D
+root      1424  0.0  0.0 264768  8552 ?        Sl   avril13   0:00 gdm-session-worker [pam/gdm-autologin]
+montima+  1430  0.0  0.0  76988  8116 ?        Ss   avril13   0:00 /lib/systemd/systemd --user
+montima+  1431  0.0  0.0 113972  2584 ?        S    avril13   0:00 (sd-pam)
+montima+  1449  0.0  0.0 281288  6900 ?        SLl  avril13   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+montima+  1453  0.0  0.0 205032  5932 tty1     Ssl+ avril13   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+montima+  1455  0.0  0.0 2849876 100160 tty1   Sl+  avril13   0:24 /usr/lib/xorg/Xorg vt1 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+root      1469  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/19:1H-k]
+root      1559  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/27:1H-k]
+montima+  1607  0.0  0.0  50756  5308 ?        Ss   avril13   0:01 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+montima+  1626  0.0  0.0 551984 13880 tty1     Sl+  avril13   0:00 /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+montima+  1737  0.0  0.0  11316   320 ?        Ss   avril13   0:10 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+montima+  1783  0.0  0.0 349292  6204 ?        Ssl  avril13   0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+montima+  1788  0.0  0.0  49932  4172 ?        S    avril13   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+montima+  1790  0.0  0.0 220784  6836 ?        Sl   avril13   0:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+montima+  1869  0.0  0.0 284872  6972 ?        Ssl  avril13   0:00 /usr/lib/gvfs/gvfsd
+montima+  1875  0.0  0.0 416116  5352 ?        Sl   avril13   0:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+montima+  1890  0.0  0.2 9434744 297280 tty1   Sl+  avril13  44:16 /usr/bin/gnome-shell
+root      1896  0.0  0.0 315224  8240 ?        Ssl  avril13   0:00 /usr/lib/upower/upowerd
+montima+  2002  0.0  0.0 1188000 13156 ?       S<l  avril13   0:00 /usr/bin/pulseaudio --start --log-target=syslog
+rtkit     2003  0.0  0.0 183516  2928 ?        SNsl avril13   0:53 /usr/lib/rtkit/rtkit-daemon
+colord    2066  0.0  0.0 932708 14820 ?        Ssl  avril13   0:00 /usr/lib/colord/colord
+montima+  2075  0.0  0.0 354412  7796 tty1     Sl   avril13   0:00 ibus-daemon --xim --panel disable
+montima+  2078  0.0  0.0 264460  5052 ?        Ssl  avril13   0:00 /usr/libexec/xdg-permission-store
+montima+  2080  0.0  0.0 273644  6628 tty1     Sl   avril13   0:00 /usr/lib/ibus/ibus-dconf
+montima+  2085  0.0  0.0 337452 21520 tty1     Sl   avril13   0:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+montima+  2087  0.0  0.0 271456  6072 ?        Sl   avril13   0:00 /usr/lib/ibus/ibus-portal
+montima+  2098  0.0  0.0 690320 21576 ?        Sl   avril13   0:00 /usr/lib/gnome-shell/gnome-shell-calendar-server
+montima+  2104  0.0  0.0 1365092 26400 ?       Ssl  avril13   0:00 /usr/lib/evolution/evolution-source-registry
+root      2105  0.0  0.0 289772  6768 ?        Ssl  avril13   0:00 /usr/lib/x86_64-linux-gnu/boltd
+montima+  2116  0.0  0.0 299708  9912 ?        Ssl  avril13   2:25 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+montima+  2120  0.0  0.0 371728  7756 ?        Ssl  avril13   0:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+montima+  2125  0.0  0.0 268772  4792 ?        Ssl  avril13   0:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+montima+  2129  0.0  0.0 281700  6576 ?        Ssl  avril13   0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+montima+  2132  0.0  0.0 783872 33868 ?        Sl   avril13   0:01 /usr/lib/gnome-online-accounts/goa-daemon
+montima+  2136  0.0  0.0 266944  5876 ?        Ssl  avril13   0:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+montima+  2147  0.0  0.0 296260  8128 ?        Sl   avril13   0:03 /usr/lib/gnome-online-accounts/goa-identity-service
+montima+  2152  0.0  0.0 510508 23268 tty1     Sl+  avril13   0:03 /usr/lib/gnome-settings-daemon/gsd-power
+root      2153  0.0  0.0 441492 41796 ?        Ssl  avril13   0:45 /usr/lib/packagekit/packagekitd
+montima+  2155  0.0  0.0 342260 10160 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-print-notifications
+montima+  2156  0.0  0.0 416244  5904 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-rfkill
+montima+  2157  0.0  0.0 268632  4800 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+montima+  2162  0.0  0.0 445880  9840 tty1     Sl+  avril13   0:06 /usr/lib/gnome-settings-daemon/gsd-sharing
+montima+  2169  0.0  0.0 370968  9164 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-smartcard
+montima+  2173  0.0  0.0 327876  8036 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-sound
+montima+  2175  0.0  0.0 421756 21664 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-wacom
+montima+  2182  0.0  0.0 487408 22284 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-xsettings
+montima+  2194  0.0  0.0 337076 20888 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-clipboard
+montima+  2195  0.0  0.0 271056  5836 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+montima+  2196  0.0  0.0 462640 13828 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-datetime
+montima+  2201  0.1  0.0 601308 36748 tty1     Sl+  avril13 103:21 /usr/lib/gnome-settings-daemon/gsd-color
+montima+  2204  0.0  0.0 500112 22344 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-keyboard
+montima+  2205  0.0  0.0 357344  7476 tty1     Sl+  avril13   1:25 /usr/lib/gnome-settings-daemon/gsd-housekeeping
+montima+  2207  0.0  0.0 271056  5880 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-mouse
+montima+  2212  0.0  0.0 1075180 24020 tty1    Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-media-keys
+montima+  2241  0.0  0.0 501680 12424 tty1     Sl+  avril13   0:00 /usr/lib/gnome-settings-daemon/gsd-printer
+montima+  2247  0.0  0.0 3872784 111140 tty1   Sl+  avril13   0:03 /usr/lib/gnome-initial-setup/gnome-initial-setup --existing-user
+montima+  2253  0.0  0.0 271936  7008 tty1     Sl+  avril13   0:03 /usr/lib/gnome-disk-utility/gsd-disk-utility-notify
+montima+  2270  0.0  0.0 892424 51404 tty1     Sl+  avril13   0:01 nautilus-desktop
+montima+  2285  0.0  0.0 885316 67436 ?        Ssl  avril13   0:00 /usr/lib/evolution/evolution-calendar-factory
+montima+  2296  0.0  0.0 361140  7644 ?        Sl   avril13   0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.21 /org/gtk/gvfs/exec_spaw/0
+montima+  2346  0.0  0.0 187908  5156 ?        Sl   avril13   0:00 /usr/lib/dconf/dconf-service
+montima+  2358  0.0  0.0 1129008 62456 ?       Sl   avril13   0:02 /usr/lib/evolution/evolution-calendar-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx2285x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/2285/2
+montima+  2362  0.0  0.0 197788  6604 tty1     Sl   avril13   0:00 /usr/lib/ibus/ibus-engine-simple
+montima+  2377  0.0  0.0 725624 24128 ?        Ssl  avril13   0:00 /usr/lib/evolution/evolution-addressbook-factory
+montima+  2387  0.0  0.0 1010144 27052 ?       Sl   avril13   0:01 /usr/lib/evolution/evolution-addressbook-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.AddressBookx2377x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/AddressBook/2377/2
+whoopsie  2419  0.0  0.0 390608 12904 ?        Ssl  avril13   0:05 /usr/bin/whoopsie -f
+kernoops  2420  0.0  0.0  56944  2500 ?        Ss   avril13   3:04 /usr/sbin/kerneloops --test
+kernoops  2422  0.0  0.0  56944  2436 ?        Ss   avril13   3:04 /usr/sbin/kerneloops
+root      2729  0.0  0.0      0     0 ?        I<   avril13   0:00 [kworker/29:1H-k]
+montima+  2866  0.0  0.3 1412312 462396 tty1   SLl+ avril13   2:24 /usr/bin/gnome-software --gapplication-service
+montima+  2869  0.0  0.0 590396 27236 tty1     Sl+  avril13   0:53 update-notifier
+root      4296  0.0  0.0 110080  7368 ?        Ss   mai22   0:00 sshd: montimage [priv]
+montima+  4372  0.0  0.0 110080  3584 ?        S    mai22   0:00 sshd: montimage@pts/0
+montima+  4373  0.0  0.0  24436  5332 pts/0    Ss+  mai22   0:00 -bash
+root      4907  0.0  0.0      0     0 ?        S<   mai22   0:00 [loop23]
+montima+  5009  0.0  0.0  33580  3224 ?        Rs   avril19   0:01 SCREEN -R hn
+montima+  5010  0.0  0.0  24548  5704 pts/4    Ss   avril19   0:00 /bin/bash
+montima+  5290  0.0  0.0 797216 34716 tty1     Sl+  avril13   0:01 /usr/lib/deja-dup/deja-dup-monitor
+montima+  5328  0.0  0.1 998900 175760 tty1    SNl+ avril13   0:35 /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map
+root      5472  0.0  0.0      0     0 ?        S<   mai22   0:00 [loop5]
+root      6118  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/41:0-mm]
+root      8434  0.0  0.0      0     0 ?        I    avril13   0:00 [kworker/4:0-cgr]
+root      8462  0.0  0.0      0     0 ?        I    mai24   0:01 [kworker/47:4-mm]
+systemd+  8941  0.0  0.0  70832  6260 ?        Ss   avril13   0:39 /lib/systemd/systemd-resolved
+root      8948  0.0  0.0  26000  3424 ?        Ss   avril13   0:01 dhclient eno4
+root     10748  0.0  0.0      0     0 ?        I    avril13   0:01 [kworker/8:0-eve]
+root     12168  0.0  0.0      0     0 ?        I    avril19   0:13 [kworker/40:2-rc]
+root     13100  0.0  0.0      0     0 ?        I    avril19   0:14 [kworker/22:2-rc]
+root     13261  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/21:0-rc]
+root     13262  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/30:1-rc]
+root     13404  0.0  0.0      0     0 ?        I    mai25   0:02 [kworker/45:0-mm]
+root     13594  0.0  0.0      0     0 ?        I    avril13   0:19 [kworker/12:0-rc]
+root     14781  0.0  0.0      0     0 ?        S<   mai02   0:00 [loop10]
+root     14801  0.0  0.0      0     0 ?        I    avril13   0:00 [kworker/6:2-eve]
+root     16257  0.0  0.0      0     0 ?        I    mai25   0:03 [kworker/36:0-rc]
+root     17177  0.0  0.0      0     0 ?        S<   mai03   0:00 [loop11]
+root     17224  0.0  0.0 3337748 54980 ?       Ssl  mai03   5:15 /usr/lib/snapd/snapd
+root     18646  0.0  0.0      0     0 ?        I    mai04   0:00 [kworker/16:1-rc]
+root     18716  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/29:0-rc]
+root     18954  0.0  0.0      0     0 ?        I    mai04   0:12 [kworker/46:2-mm]
+root     18959  0.0  0.0      0     0 ?        I    mai25   0:01 [kworker/30:2-mm]
+root     19200  0.0  0.0      0     0 ?        I    mai25   0:01 [kworker/42:1-mm]
+root     19436  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/25:1-mm]
+root     19717  0.0  0.0      0     0 ?        S<   mai04   0:00 [loop15]
+root     19731  0.0  0.0      0     0 ?        I    mai25   0:01 [kworker/38:0-mm]
+root     19904  0.0  0.0      0     0 ?        I    mai25   0:03 [kworker/35:0-rc]
+root     20440  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/1:2-cgr]
+root     20605  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/27:0-ev]
+root     21277  0.0  0.0      0     0 ?        I    mai26   0:00 [kworker/13:1-rc]
+root     23200  0.0  0.0      0     0 ?        I    mai27   0:00 [kworker/5:0-rcu]
+root     23431  0.0  0.0      0     0 ?        S<   mai06   0:00 [loop3]
+root     23440  0.0  0.0      0     0 ?        I    mai27   0:00 [kworker/19:2-rc]
+root     23471  0.0  0.0      0     0 ?        I    mai06   0:00 [kworker/0:2]
+root     23646  0.0  0.0      0     0 ?        I    mai27   0:00 [kworker/43:2-rc]
+root     24658  0.0  0.0      0     0 ?        I<   avril20   0:00 [xfsalloc]
+root     24659  0.0  0.0      0     0 ?        I<   avril20   0:00 [xfs_mru_cache]
+root     24671  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsIO]
+root     24672  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24673  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24674  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24675  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24676  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24677  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24678  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24679  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24680  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24681  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24682  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24683  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24684  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24685  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24686  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24687  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24688  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24689  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24690  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24691  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24692  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24693  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24694  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24695  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24696  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24697  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24698  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24699  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24700  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24701  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24702  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24703  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24704  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24705  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24706  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24707  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24708  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24709  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24710  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24711  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24712  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24713  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24714  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsCommit]
+root     24715  0.0  0.0      0     0 ?        S    avril20   0:00 [jfsSync]
+root     25628  0.0  0.0      0     0 ?        I    mai28   0:00 [kworker/9:2-rcu]
+root     25710  0.0  0.0 110080  7312 ?        Ss   avril20   0:00 sshd: montimage [priv]
+montima+ 25757  0.0  0.0 110080  3576 ?        S    avril20   0:00 sshd: montimage@pts/3
+montima+ 25758  0.0  0.0  24436  5476 pts/3    Ss+  avril20   0:00 -bash
+root     27070  0.0  0.0      0     0 ?        I    avril16   0:00 [kworker/10:1-rc]
+root     27141  0.0  0.0      0     0 ?        I    mai29   0:00 [kworker/31:1-mm]
+root     27403  0.0  0.0      0     0 ?        I    mai29   0:00 [kworker/15:1-mm]
+root     27593  0.0  0.0      0     0 ?        I    avril21   0:10 [kworker/44:1-mm]
+root     27824  0.0  0.0      0     0 ?        I    avril16   0:00 [kworker/10:0-ev]
+montima+ 28186  0.0  0.0   4636   868 tty1     S+   mai08   0:00 /bin/sh -c /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+montima+ 28187  0.0  0.0 525768 55960 tty1     Sl+  mai08   0:00 /usr/bin/python3 /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+root     28580  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/42:2-cg]
+root     29127  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/17:2-mm]
+root     29678  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/34:0-mm]
+root     30103  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/23:2-ev]
+root     30189  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/44:0-cg]
+root     30281  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/37:1-cg]
+root     31075  0.0  0.0      0     0 ?        S<   mai30   0:00 [loop16]
+root     31076  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/33:4-rc]
+root     31096  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/19:0-mm]
+root     31097  0.0  0.0      0     0 ?        S<   mai09   0:00 [loop20]
+root     31124  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/39:4-mm]
+root     31125  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/39:5-rc]
+root     31234  0.0  0.0      0     0 ?        I    mai25   0:00 [kworker/37:0-mm]
+root     31504  0.0  0.0      0     0 ?        I    mai30   0:00 [kworker/15:0-cg]
+root     31707  0.0  0.0 110080  7244 ?        Ss   mai25   0:00 sshd: montimage [priv]
+root     31717  0.0  0.0 100604  8124 ?        Ss   00:09   0:00 /usr/sbin/cupsd -l
+root     31718  0.0  0.0 303544 11000 ?        Ssl  00:09   0:00 /usr/sbin/cups-browsed
+montima+ 31783  0.0  0.0 110560  4736 ?        S    mai25   0:02 sshd: montimage@pts/2
+montima+ 31784  0.0  0.0  24700  5696 pts/2    Ss+  mai25   0:00 -bash
+root     31918  0.0  0.0      0     0 ?        I    03:28   0:00 [kworker/23:1-cg]
+root     32049  0.0  0.0      0     0 ?        I    06:14   0:00 [kworker/1:1-mm_]
+root     32174  0.0  0.0      0     0 ?        I    06:34   0:00 [kworker/u96:2-p]
+root     32588  0.0  0.0      0     0 ?        I    07:12   0:00 [kworker/17:1-cg]
+root     32619  0.0  0.0      0     0 ?        I    07:17   0:00 [kworker/25:2-cg]
+root     32694  0.0  0.0      0     0 ?        I    08:28   0:00 [kworker/31:0-cg]
+root     32719  0.0  0.0      0     0 ?        I    09:12   0:00 [kworker/29:1-mm]
+root     32810  0.0  0.0 110080  7348 ?        Ss   10:32   0:00 sshd: montimage [priv]
+montima+ 32886  0.0  0.0 110080  3484 ?        S    10:32   0:00 sshd: montimage@pts/5
+montima+ 32887  0.0  0.0  24568  5708 pts/5    Ss   10:32   0:00 -bash
+root     33034  0.0  0.0      0     0 ?        I    10:59   0:00 [kworker/47:1]
+root     33042  0.0  0.0  67324  4624 pts/4    S+   10:59   0:00 sudo ./run-test-campaign.sh
+root     33043  0.0  0.0  14616  3608 pts/4    S+   10:59   0:00 /bin/bash -x ./run-test-campaign.sh
+montima+ 33584  0.4  0.0  26264  3928 pts/5    S+   11:02   0:12 bmon -bU -p eno1
+root     33621  0.0  0.0      0     0 ?        I    11:03   0:00 [kworker/21:1-ev]
+root     33623  0.0  0.0      0     0 ?        I    11:03   0:00 [kworker/41:1]
+root     33903  0.0  0.0      0     0 ?        I    11:04   0:00 [kworker/27:2-cg]
+root     34272  0.0  0.0      0     0 ?        I    11:07   0:00 [kworker/45:2]
+root     34274  0.0  0.0      0     0 ?        I    11:07   0:00 [kworker/5:1-mm_]
+root     34528  0.0  0.0      0     0 ?        I    11:07   0:00 [kworker/u97:0-e]
+montima+ 34678  0.0  0.0   4636   792 tty1     S+   avril24   0:00 /bin/sh -c /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+montima+ 34679  0.0  0.0 524952 55480 tty1     Sl+  avril24   0:00 /usr/bin/python3 /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+root     34877  0.0  0.0      0     0 ?        I    11:11   0:00 [kworker/26:1-ev]
+root     35144  0.0  0.0      0     0 ?        S<   mai11   0:00 [loop12]
+root     35184  0.0  0.0      0     0 ?        I    11:13   0:00 [kworker/18:1-mm]
+root     35490  0.0  0.0      0     0 ?        I    11:15   0:00 [kworker/14:2]
+root     35577  0.0  0.0      0     0 ?        I    11:15   0:00 [kworker/u97:2-e]
+root     35787  0.0  0.0      0     0 ?        I    11:17   0:00 [kworker/24:0-rc]
+root     36093  0.0  0.0      0     0 ?        I    11:19   0:00 [kworker/46:0]
+root     36094  0.0  0.0      0     0 ?        I    11:19   0:00 [kworker/36:1-mm]
+root     36399  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/38:1]
+root     36744  0.0  0.0      0     0 ?        I    11:22   0:00 [kworker/43:0-mm]
+root     36746  0.0  0.0      0     0 ?        I    11:22   0:00 [kworker/32:2-mm]
+root     37053  0.0  0.0      0     0 ?        I    11:25   0:00 [kworker/28:0-rc]
+root     37102  0.0  0.0      0     0 ?        S<   avril18   0:00 [loop26]
+root     37359  0.0  0.0      0     0 ?        I    11:27   0:00 [kworker/3:1-rcu]
+root     37361  0.0  0.0      0     0 ?        I    11:27   0:00 [kworker/20:0-ev]
+root     37652  0.0  0.0      0     0 ?        I    11:28   0:00 [kworker/34:1]
+root     37957  0.0  0.0      0     0 ?        I    11:30   0:00 [kworker/18:0]
+root     37959  0.0  0.0      0     0 ?        I    11:30   0:00 [kworker/22:1-mm]
+root     38262  0.0  0.0      0     0 ?        I    11:32   0:00 [kworker/35:1-mm]
+root     38263  0.0  0.0      0     0 ?        I    11:32   0:00 [kworker/9:0-mm_]
+root     38556  0.0  0.0      0     0 ?        I    11:33   0:00 [kworker/3:0-mm_]
+root     38557  0.0  0.0      0     0 ?        I    11:33   0:00 [kworker/33:1-mm]
+root     38786  0.0  0.0      0     0 ?        I    11:33   0:00 [kworker/7:2-rcu]
+root     39167  0.0  0.0      0     0 ?        I    11:36   0:00 [kworker/12:1-mm]
+root     39169  0.0  0.0      0     0 ?        I    11:36   0:00 [kworker/40:1-mm]
+root     39447  0.0  0.0      0     0 ?        I    11:37   0:00 [kworker/u98:2-e]
+root     39459  0.0  0.0      0     0 ?        S<   avril26   0:00 [loop27]
+root     39461  0.0  0.0      0     0 ?        I    11:37   0:00 [kworker/13:0-mm]
+root     39524  0.0  0.0      0     0 ?        S<   avril26   0:00 [loop28]
+root     39767  0.0  0.0      0     0 ?        I    11:39   0:00 [kworker/24:1-ev]
+root     39768  0.0  0.0      0     0 ?        I    11:39   0:00 [kworker/28:1-ev]
+root     40005  0.0  0.0      0     0 ?        I    11:39   0:00 [kworker/u96:0-p]
+root     40074  0.0  0.0      0     0 ?        I    11:40   0:00 [kworker/20:2]
+root     40303  0.0  0.0      0     0 ?        I    11:40   0:00 [kworker/11:2]
+root     40304  0.0  0.0      0     0 ?        I    11:40   0:00 [kworker/7:1-eve]
+root     40637  0.0  0.0      0     0 ?        I    11:42   0:00 [kworker/u98:0-e]
+root     40673  0.0  0.0      0     0 ?        I    11:43   0:00 [kworker/32:0]
+root     40675  0.0  0.0      0     0 ?        I    11:43   0:00 [kworker/26:0]
+root     40744  0.0  0.0      0     0 ?        S<   avril26   0:00 [loop29]
+root     40825  0.0  0.0      0     0 ?        S<   avril26   0:00 [loop30]
+root     40980  0.0  0.0      0     0 ?        I    11:44   0:00 [kworker/30:0]
+root     41038  0.0  0.0      0     0 ?        I    avril26   0:13 [kworker/14:1-ev]
+root     41123  0.0  0.0      0     0 ?        I    avril26   8:20 [kworker/0:1-eve]
+root     41274  0.0  0.0      0     0 ?        I    11:46   0:00 [kworker/16:2-mm]
+root     41619  0.0  0.0      0     0 ?        I    11:47   0:00 [kworker/u96:1-p]
+root     41620  0.0  0.0      0     0 ?        I    11:47   0:00 [kworker/u97:1-e]
+root     41652  0.0  0.0      0     0 ?        I    11:47   0:00 [kworker/39:0]
+root     41926  0.0  0.0      0     0 ?        I    11:48   0:00 [kworker/1:0]
+root     42039  0.2  0.0  14748  3720 pts/4    S+   11:49   0:00 /bin/bash -x ./setup-testbed.sh
+root     42040  0.0  0.0   9196   756 pts/4    S+   11:49   0:00 tee log/script.log
+root     42102  1.0  0.0 383928 22400 pts/4    S<l+ 11:49   0:00 /home/montimage/huunghia/mosaico/bmv2/targets/simple_switch/.libs/simple_switch --queue 2 --ll_queue 64 --BE_queue 128 --log-file /dev/null --log-level error -i 1@eno1 -i 2@eno3 -i 3@l4s-mon-nic switch-l4s.json
+root     42104  0.0  0.0  14748  2140 pts/4    S+   11:49   0:00 /bin/bash -x ./setup-testbed.sh
+root     42106  3.2  0.0  45088 13236 pts/4    S+   11:49   0:00 /usr/bin/python3 /home/montimage/.local/bin/psrecord 42102 --log log/cpu_mem_int_yes_pid_42102.txt --duration 320 --interval 1 --include-children
+root     42185  0.0  0.0  22544  6356 pts/4    S+   11:49   0:00 tcpdump --snapshot-length=128 -i eno1 -w eno1-data.pcap tcp or udp
+root     42186  0.0  0.0  22544  6276 pts/4    S+   11:49   0:00 tcpdump --snapshot-length=128 -i eno3 -w eno3-data.pcap tcp or udp
+root     42187  0.0  0.0  22544  6156 pts/4    S+   11:49   0:00 tcpdump --snapshot-length=176 -i l4s-mon-nic -w l4s-mon-nic-int.pcap tcp or udp
+root     42194  0.0  0.0  23076  3320 pts/4    S+   11:49   0:00 mmt-probe -c ./mmt-probe.conf -i l4s-mon-nic
+root     42196 23.0  0.0 541736 25568 pts/4    S+   11:49   0:00 mmt-probe -c ./mmt-probe.conf -i l4s-mon-nic
+root     42197  0.0  0.0  14748  3724 pts/4    S+   11:49   0:00 bash -x /home/montimage/huunghia/mosaico/testbed/measure--calibrate/start-monitoring.sh
+root     42213  0.0  0.0  41360  3888 pts/4    R+   11:49   0:00 ps aux
+root     42740  0.0  0.0      0     0 ?        I    mai16   0:02 [kworker/11:0-mm]
+root     42932  0.0  0.0 110080  7312 ?        Ss   avril19   0:00 sshd: montimage [priv]
+montima+ 42978  0.0  0.0 110080  3560 ?        S    avril19   0:00 sshd: montimage@pts/1
+montima+ 42979  0.0  0.0  24568  5680 pts/1    Ss+  avril19   0:00 -bash
+root     44773  0.0  0.0      0     0 ?        S<   avril27   0:00 [loop8]
++ run-on-host 192.168.1.111 ps aux
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.3 169440 12792 ?        Ss   Apr19   1:55 /sbin/init maybe-ubiquity
+root           2  0.0  0.0      0     0 ?        S    Apr19   0:02 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Apr19   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Apr19   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   Apr19   0:00 [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   Apr19   0:00 [netns]
+root           8  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/0:0H-events_highpri]
+root          10  0.0  0.0      0     0 ?        I<   Apr19   2:05 [kworker/0:1H-events_highpri]
+root          11  0.0  0.0      0     0 ?        I<   Apr19   0:00 [mm_percpu_wq]
+root          12  0.0  0.0      0     0 ?        S    Apr19   0:10 [ksoftirqd/0]
+root          13  0.0  0.0      0     0 ?        I    Apr19   1:47 [rcu_sched]
+root          14  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/0]
+root          15  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/0]
+root          16  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/1]
+root          17  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/1]
+root          18  0.0  0.0      0     0 ?        S    Apr19   0:07 [ksoftirqd/1]
+root          20  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/1:0H-events_highpri]
+root          21  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/2]
+root          22  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/2]
+root          23  0.0  0.0      0     0 ?        S    Apr19   0:00 [ksoftirqd/2]
+root          25  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/2:0H-events_highpri]
+root          26  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/3]
+root          27  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/3]
+root          28  0.0  0.0      0     0 ?        S    Apr19   0:05 [ksoftirqd/3]
+root          30  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/3:0H-kblockd]
+root          31  0.0  0.0      0     0 ?        S    Apr19   0:00 [kdevtmpfs]
+root          32  0.0  0.0      0     0 ?        I<   Apr19   0:00 [inet_frag_wq]
+root          33  0.0  0.0      0     0 ?        S    Apr19   0:00 [kauditd]
+root          35  0.0  0.0      0     0 ?        S    Apr19   0:00 [oom_reaper]
+root          36  0.0  0.0      0     0 ?        I<   Apr19   0:00 [writeback]
+root          37  0.0  0.0      0     0 ?        S    Apr19   3:08 [kcompactd0]
+root          61  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kblockd]
+root          63  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ata_sff]
+root          64  0.0  0.0      0     0 ?        I<   Apr19   0:00 [md]
+root          66  0.0  0.0      0     0 ?        I<   Apr19   0:00 [rpciod]
+root          67  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/u9:0]
+root          68  0.0  0.0      0     0 ?        I<   Apr19   0:00 [xprtiod]
+root          69  0.0  0.0      0     0 ?        I<   Apr19   0:00 [cfg80211]
+root          70  0.0  0.0      0     0 ?        S    Apr19   0:00 [kswapd0]
+root          71  0.0  0.0      0     0 ?        I<   Apr19   0:00 [nfsiod]
+root          73  0.0  0.0      0     0 ?        I<   Apr19   0:00 [acpi_thermal_pm]
+root          75  0.0  0.0      0     0 ?        S    Apr19   0:00 [scsi_eh_0]
+root          76  0.0  0.0      0     0 ?        I<   Apr19   0:00 [scsi_tmf_0]
+root          77  0.0  0.0      0     0 ?        S    Apr19   0:00 [scsi_eh_1]
+root          78  0.0  0.0      0     0 ?        I<   Apr19   0:00 [scsi_tmf_1]
+root          79  0.0  0.0      0     0 ?        S    Apr19   0:00 [scsi_eh_2]
+root          80  0.0  0.0      0     0 ?        I<   Apr19   0:00 [scsi_tmf_2]
+root          82  0.0  0.0      0     0 ?        I<   Apr19   0:09 [kworker/2:1H-kblockd]
+root          84  0.0  0.0      0     0 ?        I<   Apr19   1:58 [kworker/3:1H-events_highpri]
+root          86  0.0  0.0      0     0 ?        I<   Apr19   2:07 [kworker/1:1H-events_highpri]
+root          88  0.0  0.0      0     0 ?        I<   Apr19   0:00 [mld]
+root          89  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ipv6_addrconf]
+root         170  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kdmflush]
+root         243  0.0  0.0      0     0 ?        S    Apr19   0:23 [jbd2/dm-0-8]
+root         244  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ext4-rsv-conver]
+root         318  0.0  0.8  68548 35652 ?        S<s  Apr19   0:34 /lib/systemd/systemd-journald
+root         351  0.0  0.1  19596  5672 ?        Ss   Apr19   0:50 /lib/systemd/systemd-udevd
+root         587  0.0  0.0      0     0 ?        S    Apr19   0:00 [jbd2/sda2-8]
+root         588  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ext4-rsv-conver]
+systemd+     598  0.0  0.1  90888  6000 ?        Ssl  Apr19   0:12 /lib/systemd/systemd-timesyncd
+systemd+     606  0.0  0.1  19204  7768 ?        Ss   Apr19   0:27 /lib/systemd/systemd-networkd
+systemd+     608  0.0  0.3  24552 13000 ?        Ss   Apr19   0:38 /lib/systemd/systemd-resolved
+root         619  0.0  0.2 236548  9112 ?        Ssl  Apr19   1:37 /usr/lib/accountsservice/accounts-daemon
+root         622  0.0  0.0   3932  2692 ?        Ss   Apr19   0:07 /usr/sbin/cron -f
+message+     623  0.0  0.1   7776  4888 ?        Ss   Apr19   0:48 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         630  0.0  0.0  81832  3776 ?        Ssl  Apr19   2:45 /usr/sbin/irqbalance --foreground
+root         631  0.0  0.4  26976 18196 ?        Ss   Apr19   0:06 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         632  0.0  0.2 236432  8944 ?        Ssl  Apr19   0:02 /usr/lib/policykit-1/polkitd --no-debug
+syslog       635  0.0  0.1 224352  5352 ?        Ssl  Apr19   0:08 /usr/sbin/rsyslogd -n -iNONE
+root         636  0.0  1.2 1170968 50412 ?       Ssl  Apr19   7:28 /usr/lib/snapd/snapd
+root         638  0.0  0.1  17484  7888 ?        Ss   Apr19   0:22 /lib/systemd/systemd-logind
+root         642  0.0  0.3 395584 13460 ?        Ssl  Apr19   1:04 /usr/lib/udisks2/udisksd
+daemon       644  0.0  0.0   3804  2240 ?        Ss   Apr19   0:00 /usr/sbin/atd -f
+root         662  0.0  0.0   2972  1708 tty1     Ss+  Apr19   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         668  0.0  0.5 105280 20476 ?        Ssl  Apr19   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         681  0.0  0.1  12188  7396 ?        Ss   Apr19   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         685  0.0  0.3 245080 13356 ?        Ssl  Apr19   0:02 /usr/sbin/ModemManager
+root      263660  0.0  0.2  13808  8956 ?        Ss   May25   0:00 sshd: montimage [priv]
+montima+  263663  0.0  0.2  18904  9344 ?        Ss   May25   0:03 /lib/systemd/systemd --user
+montima+  263664  0.0  0.1 170516  4588 ?        S    May25   0:00 (sd-pam)
+montima+  263744  0.0  0.1  13944  5784 ?        S    May25   0:00 sshd: montimage@pts/0
+montima+  263745  0.0  0.1   7176  5180 pts/0    Ss   May25   0:00 -bash
+montima+  263751  0.0  0.0   5784  3144 pts/0    S+   May25   3:01 iperf3 -s
+root      298166  0.0  0.0      0     0 ?        I    08:38   0:02 [kworker/1:0-events]
+root      299267  0.0  0.2  13808  8724 ?        Ss   09:00   0:00 sshd: montimage [priv]
+montima+  299344  0.0  0.1  13944  5376 ?        S    09:00   0:00 sshd: montimage@pts/3
+montima+  299345  0.0  0.1   7176  5044 pts/3    Ss+  09:00   0:00 -bash
+root      304455  0.0  0.0      0     0 ?        I    09:13   0:01 [kworker/0:2-events]
+root      307532  0.0  0.0      0     0 ?        I    09:21   0:00 [kworker/2:2-events]
+root      310440  0.0  0.0      0     0 ?        I    09:27   0:00 [kworker/u8:2-writeback]
+root      314409  0.0  0.0      0     0 ?        I    09:36   0:00 [kworker/3:1-cgroup_destroy]
+root      315699  0.0  0.0      0     0 ?        I    09:38   0:00 [kworker/0:1-cgroup_destroy]
+root      316028  0.0  0.0      0     0 ?        I    09:39   0:00 [kworker/u8:0-writeback]
+root      317556  0.0  0.0      0     0 ?        I    09:41   0:00 [kworker/1:2-cgroup_destroy]
+root      317955  0.0  0.0      0     0 ?        I    09:42   0:00 [kworker/3:0-events]
+root      318373  0.0  0.0      0     0 ?        I    09:43   0:00 [kworker/2:1-ata_sff]
+root      319338  0.0  0.0      0     0 ?        I    09:45   0:00 [kworker/u8:1]
+root      320141  0.0  0.0      0     0 ?        I    09:46   0:00 [kworker/0:0-cgroup_destroy]
+root      320958  0.0  0.0      0     0 ?        I    09:48   0:00 [kworker/1:1-events]
+root      321367  0.0  0.0      0     0 ?        I    09:48   0:00 [kworker/2:0-ata_sff]
+root      321844  2.0  0.2  13808  9012 ?        Ss   09:49   0:00 sshd: montimage [priv]
+montima+  321921  0.0  0.1  13944  6008 ?        S    09:49   0:00 sshd: montimage@notty
+montima+  321922  0.0  0.0   6004  2992 ?        Rs   09:49   0:00 ps aux
++ run-on-host 192.168.1.110 ps aux
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.3 169424 12592 ?        Ss   Apr19   1:54 /sbin/init maybe-ubiquity
+root           2  0.0  0.0      0     0 ?        S    Apr19   0:02 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Apr19   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Apr19   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   Apr19   0:00 [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   Apr19   0:00 [netns]
+root           8  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/0:0H-events_highpri]
+root          10  0.0  0.0      0     0 ?        I<   Apr19   2:07 [kworker/0:1H-events_highpri]
+root          11  0.0  0.0      0     0 ?        I<   Apr19   0:00 [mm_percpu_wq]
+root          12  0.0  0.0      0     0 ?        S    Apr19   0:10 [ksoftirqd/0]
+root          13  0.0  0.0      0     0 ?        I    Apr19   1:10 [rcu_sched]
+root          14  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/0]
+root          15  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/0]
+root          16  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/1]
+root          17  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/1]
+root          18  0.0  0.0      0     0 ?        S    Apr19   0:05 [ksoftirqd/1]
+root          20  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/1:0H-events_highpri]
+root          21  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/2]
+root          22  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/2]
+root          23  0.0  0.0      0     0 ?        S    Apr19   0:00 [ksoftirqd/2]
+root          25  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/2:0H-events_highpri]
+root          26  0.0  0.0      0     0 ?        S    Apr19   0:00 [cpuhp/3]
+root          27  0.0  0.0      0     0 ?        S    Apr19   0:00 [migration/3]
+root          28  0.0  0.0      0     0 ?        S    Apr19   0:09 [ksoftirqd/3]
+root          30  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/3:0H-events_highpri]
+root          31  0.0  0.0      0     0 ?        S    Apr19   0:00 [kdevtmpfs]
+root          32  0.0  0.0      0     0 ?        I<   Apr19   0:00 [inet_frag_wq]
+root          33  0.0  0.0      0     0 ?        S    Apr19   0:00 [kauditd]
+root          35  0.0  0.0      0     0 ?        S    Apr19   0:00 [oom_reaper]
+root          36  0.0  0.0      0     0 ?        I<   Apr19   0:00 [writeback]
+root          37  0.0  0.0      0     0 ?        S    Apr19   2:59 [kcompactd0]
+root          62  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kblockd]
+root          63  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ata_sff]
+root          64  0.0  0.0      0     0 ?        I<   Apr19   0:00 [md]
+root          66  0.0  0.0      0     0 ?        I<   Apr19   0:00 [rpciod]
+root          67  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kworker/u9:0]
+root          68  0.0  0.0      0     0 ?        I<   Apr19   0:00 [xprtiod]
+root          69  0.0  0.0      0     0 ?        I<   Apr19   0:00 [cfg80211]
+root          70  0.0  0.0      0     0 ?        S    Apr19   0:00 [kswapd0]
+root          71  0.0  0.0      0     0 ?        I<   Apr19   0:00 [nfsiod]
+root          73  0.0  0.0      0     0 ?        I<   Apr19   0:00 [acpi_thermal_pm]
+root          74  0.0  0.0      0     0 ?        S    Apr19   0:00 [scsi_eh_0]
+root          75  0.0  0.0      0     0 ?        I<   Apr19   0:00 [scsi_tmf_0]
+root          76  0.0  0.0      0     0 ?        S    Apr19   0:00 [scsi_eh_1]
+root          77  0.0  0.0      0     0 ?        I<   Apr19   0:00 [scsi_tmf_1]
+root          78  0.0  0.0      0     0 ?        S    Apr19   0:00 [scsi_eh_2]
+root          79  0.0  0.0      0     0 ?        I<   Apr19   0:00 [scsi_tmf_2]
+root          82  0.0  0.0      0     0 ?        I<   Apr19   0:07 [kworker/2:1H-kblockd]
+root          85  0.0  0.0      0     0 ?        I<   Apr19   1:57 [kworker/1:1H-events_highpri]
+root          87  0.0  0.0      0     0 ?        I<   Apr19   0:00 [mld]
+root          88  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ipv6_addrconf]
+root         133  0.0  0.0      0     0 ?        I<   Apr19   1:40 [kworker/3:1H-events_highpri]
+root         161  0.0  0.0      0     0 ?        I<   Apr19   0:00 [kdmflush]
+root         235  0.0  0.0      0     0 ?        S    Apr19   0:21 [jbd2/dm-0-8]
+root         236  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ext4-rsv-conver]
+root         310  0.0  0.8  68524 33720 ?        S<s  Apr19   0:33 /lib/systemd/systemd-journald
+root         342  0.0  0.1  19596  5832 ?        Ss   Apr19   0:51 /lib/systemd/systemd-udevd
+root         576  0.0  0.0      0     0 ?        S    Apr19   0:00 [jbd2/sda2-8]
+root         577  0.0  0.0      0     0 ?        I<   Apr19   0:00 [ext4-rsv-conver]
+systemd+     589  0.0  0.1  90888  6016 ?        Ssl  Apr19   0:14 /lib/systemd/systemd-timesyncd
+systemd+     597  0.0  0.1  19204  7944 ?        Ss   Apr19   0:29 /lib/systemd/systemd-networkd
+systemd+     599  0.0  0.3  24552 12968 ?        Ss   Apr19   0:48 /lib/systemd/systemd-resolved
+root         610  0.0  0.2 236540  9136 ?        Ssl  Apr19   1:31 /usr/lib/accountsservice/accounts-daemon
+root         614  0.0  0.0   3932  2508 ?        Ss   Apr19   0:08 /usr/sbin/cron -f
+message+     615  0.0  0.1   7780  4892 ?        Ss   Apr19   0:48 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         624  0.0  0.0  81832  3640 ?        Ssl  Apr19   2:46 /usr/sbin/irqbalance --foreground
+root         625  0.0  0.4  26976 18124 ?        Ss   Apr19   0:06 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         626  0.0  0.2 236432  9004 ?        Ssl  Apr19   0:02 /usr/lib/policykit-1/polkitd --no-debug
+syslog       628  0.0  0.1 224352  5272 ?        Ssl  Apr19   0:08 /usr/sbin/rsyslogd -n -iNONE
+root         630  0.0  1.2 1170968 50756 ?       Ssl  Apr19   7:13 /usr/lib/snapd/snapd
+root         636  0.0  0.1  17512  7616 ?        Ss   Apr19   0:23 /lib/systemd/systemd-logind
+root         638  0.0  0.3 395592 13444 ?        Ssl  Apr19   1:03 /usr/lib/udisks2/udisksd
+daemon       639  0.0  0.0   3804  2152 ?        Ss   Apr19   0:00 /usr/sbin/atd -f
+root         650  0.0  0.0   2972  1932 tty1     Ss+  Apr19   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         663  0.0  0.5 105280 20524 ?        Ssl  Apr19   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         664  0.0  0.1  12188  7408 ?        Ss   Apr19   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         680  0.0  0.3 245076 13100 ?        Ssl  Apr19   0:02 /usr/sbin/ModemManager
+root      238537  0.0  0.2  13804  8684 ?        Ss   May25   0:00 sshd: montimage [priv]
+montima+  238540  0.0  0.2  18944  9556 ?        Ss   May25   0:03 /lib/systemd/systemd --user
+montima+  238541  0.0  0.1 170640  4680 ?        S    May25   0:00 (sd-pam)
+montima+  238621  0.0  0.1  13940  5988 ?        S    May25   0:00 sshd: montimage@pts/0
+montima+  238622  0.0  0.1   7176  5120 pts/0    Ss+  May25   0:00 -bash
+root      270921  0.0  0.0      0     0 ?        I    May29   0:00 [kworker/3:0-events]
+root      281417  0.0  0.2  13804  8968 ?        Ss   08:34   0:00 sshd: montimage [priv]
+montima+  281541  0.0  0.1  13940  6088 ?        S    08:34   0:00 sshd: montimage@pts/1
+montima+  281542  0.0  0.1   7308  5424 pts/1    Ss+  08:34   0:00 -bash
+root      285034  0.0  0.0      0     0 ?        I    09:07   0:01 [kworker/1:1-events]
+root      286948  0.0  0.0      0     0 ?        I    09:13   0:00 [kworker/u8:1-ext4-rsv-conversion]
+root      289633  0.0  0.0      0     0 ?        I    09:20   0:00 [kworker/u8:2-flush-253:0]
+root      291818  0.0  0.0      0     0 ?        I    09:25   0:00 [kworker/u8:0-ext4-rsv-conversion]
+root      292217  0.0  0.0      0     0 ?        I    09:27   0:00 [kworker/2:0-ata_sff]
+root      296225  0.0  0.0      0     0 ?        I    09:36   0:00 [kworker/0:1-events]
+root      297909  0.0  0.0      0     0 ?        I    09:39   0:00 [kworker/1:0-events]
+root      298407  0.0  0.0      0     0 ?        I    09:40   0:00 [kworker/3:1-cgroup_destroy]
+root      299851  0.0  0.0      0     0 ?        I    09:43   0:00 [kworker/0:0-events]
+root      300381  0.0  0.0      0     0 ?        I    09:43   0:00 [kworker/2:1-events]
+root      300580  0.0  0.0      0     0 ?        I    09:44   0:00 [kworker/1:2-events]
+root      300585  0.1  0.7 385020 31880 ?        Ssl  09:44   0:00 /usr/libexec/fwupd/fwupd
+root      302144  0.0  0.0      0     0 ?        I    09:47   0:00 [kworker/3:2]
+root      302871  0.0  0.0      0     0 ?        I    09:48   0:00 [kworker/0:2-mm_percpu_wq]
+root      303030  0.0  0.0      0     0 ?        I    09:49   0:00 [kworker/2:2-ata_sff]
+root      303270  0.0  0.2  13800  9000 ?        Ss   09:49   0:00 sshd: montimage [priv]
+montima+  303347  0.0  0.1  13940  6056 ?        S    09:49   0:00 sshd: montimage@notty
+montima+  303348  0.0  0.0   6004  2912 ?        Rs   09:49   0:00 ps aux
+++ print-parameters
+++ cat
++ log '{
+	"SERVER":     "10.0.1.13",
+	"CLIENT":     "10.0.0.13",
+	"bandwidth":  "100 Mbps",
+	"type":       "iperf3",
+	"file-size":  "1000 MB"
+}'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114936 ' '{
+	"SERVER":     "10.0.1.13",
+	"CLIENT":     "10.0.0.13",
+	"bandwidth":  "100 Mbps",
+	"type":       "iperf3",
+	"file-size":  "1000 MB"
+}'
+20230531-114936  {
+	"SERVER":     "10.0.1.13",
+	"CLIENT":     "10.0.0.13",
+	"bandwidth":  "100 Mbps",
+	"type":       "iperf3",
+	"file-size":  "1000 MB"
+}
++ print-parameters
++ cat
++ [[ iperf3 == \i\p\e\r\f\3 ]]
++ start-iperf3-servers
++ log 'configuration 192.168.1.111 VM'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114936 ' 'configuration 192.168.1.111 VM'
+20230531-114936  configuration 192.168.1.111 VM
++ run-on-host 192.168.1.111 'rm -rf /tmp/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'rm -rf /tmp/screenlog*'
++ run-on-host 192.168.1.111 sudo sysctl -w net.ipv4.tcp_congestion_control=prague
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- sudo sysctl -w net.ipv4.tcp_congestion_control=prague
+net.ipv4.tcp_congestion_control = prague
++ run-on-host 192.168.1.111 sudo sysctl -w net.ipv4.tcp_ecn=3
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- sudo sysctl -w net.ipv4.tcp_ecn=3
+net.ipv4.tcp_ecn = 3
++ log 'start iperf3 192.168.1.111'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114938 ' 'start iperf3 192.168.1.111'
+20230531-114938  start iperf3 192.168.1.111
++ duration=40
++ run-on-host 192.168.1.111 'cd /tmp/ && screen -S hn -L -dm timeout 40 iperf3 -s --one-off --port 4433'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd /tmp/ && screen -S hn -L -dm timeout 40 iperf3 -s --one-off --port 4433'
++ start-iperf3-clients-and-wait-for-finish
++ run-on-host 192.168.1.110 'rm -rf /tmp/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'rm -rf /tmp/screenlog*'
++ log 'configuration iperf3 192.168.1.110 VM'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114939 ' 'configuration iperf3 192.168.1.110 VM'
+20230531-114939  configuration iperf3 192.168.1.110 VM
++ run-on-host 192.168.1.110 sudo sysctl -w net.ipv4.tcp_congestion_control=prague
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- sudo sysctl -w net.ipv4.tcp_congestion_control=prague
+net.ipv4.tcp_congestion_control = prague
++ run-on-host 192.168.1.110 sudo sysctl -w net.ipv4.tcp_ecn=3
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- sudo sysctl -w net.ipv4.tcp_ecn=3
+net.ipv4.tcp_ecn = 3
++ log 'begin iperf3 clients'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-114941 ' 'begin iperf3 clients'
+20230531-114941  begin iperf3 clients
++ sleep 5
++ run-on-host 192.168.1.110 'cd /tmp/ && screen -S hn -L -dm iperf3 -c 10.0.1.13  --set-mss 1500 --length 1500 --time 30 --port 4433'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd /tmp/ && screen -S hn -L -dm iperf3 -c 10.0.1.13  --set-mss 1500 --length 1500 --time 30 --port 4433'
++ sleep 30
++ sleep 5
++ run-on-host 192.168.1.110 'cat /tmp/screenlog*; rm -rf /tmp/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cat /tmp/screenlog*; rm -rf /tmp/screenlog*'
+Connecting to host 10.0.1.13, port 4433
+[  5] local 10.0.0.13 port 52438 connected to 10.0.1.13 port 4433
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  6.37 MBytes  53.4 Mbits/sec    0   36.8 KBytes       
+[  5]   1.00-2.00   sec  6.31 MBytes  52.9 Mbits/sec    0   32.5 KBytes       
+[  5]   2.00-3.00   sec  6.28 MBytes  52.7 Mbits/sec    0   26.9 KBytes       
+[  5]   3.00-4.00   sec  6.29 MBytes  52.8 Mbits/sec    0   29.7 KBytes       
+[  5]   4.00-5.00   sec  6.29 MBytes  52.8 Mbits/sec    0   29.7 KBytes       
+[  5]   5.00-6.00   sec  6.31 MBytes  52.9 Mbits/sec    0   28.3 KBytes       
+[  5]   6.00-7.00   sec  6.29 MBytes  52.8 Mbits/sec    0   29.7 KBytes       
+[  5]   7.00-8.00   sec  6.34 MBytes  53.2 Mbits/sec    0   29.7 KBytes       
+[  5]   8.00-9.00   sec  6.31 MBytes  52.9 Mbits/sec    0   28.3 KBytes       
+[  5]   9.00-10.00  sec  6.29 MBytes  52.8 Mbits/sec    0   28.3 KBytes       
+[  5]  10.00-11.00  sec  6.34 MBytes  53.2 Mbits/sec    0   28.3 KBytes       
+[  5]  11.00-12.00  sec  6.29 MBytes  52.8 Mbits/sec    0   29.7 KBytes       
+[  5]  12.00-13.00  sec  6.34 MBytes  53.2 Mbits/sec    0   29.7 KBytes       
+[  5]  13.00-14.00  sec  6.25 MBytes  52.4 Mbits/sec    0   28.3 KBytes       
+[  5]  14.00-15.00  sec  5.91 MBytes  49.5 Mbits/sec    0   28.3 KBytes       
+[  5]  15.00-16.00  sec  6.11 MBytes  51.3 Mbits/sec    0   28.3 KBytes       
+[  5]  16.00-17.00  sec  6.12 MBytes  51.3 Mbits/sec    0   29.7 KBytes       
+[  5]  17.00-18.00  sec  6.12 MBytes  51.4 Mbits/sec    0   29.7 KBytes       
+[  5]  18.00-19.00  sec  6.08 MBytes  51.0 Mbits/sec    0   31.1 KBytes       
+[  5]  19.00-20.00  sec  6.15 MBytes  51.6 Mbits/sec    0   31.1 KBytes       
+[  5]  20.00-21.00  sec  6.28 MBytes  52.7 Mbits/sec    0   31.1 KBytes       
+[  5]  21.00-22.00  sec  6.28 MBytes  52.7 Mbits/sec    0   32.5 KBytes       
+[  5]  22.00-23.00  sec  6.22 MBytes  52.2 Mbits/sec    0   32.5 KBytes       
+[  5]  23.00-24.00  sec  6.21 MBytes  52.1 Mbits/sec    0   31.1 KBytes       
+[  5]  24.00-25.00  sec  6.17 MBytes  51.7 Mbits/sec    0   31.1 KBytes       
+[  5]  25.00-26.00  sec  6.22 MBytes  52.1 Mbits/sec    0   31.1 KBytes       
+[  5]  26.00-27.00  sec  6.14 MBytes  51.5 Mbits/sec    0   31.1 KBytes       
+[  5]  27.00-28.00  sec  6.25 MBytes  52.5 Mbits/sec    0   31.1 KBytes       
+[  5]  28.00-29.00  sec  6.17 MBytes  51.7 Mbits/sec    0   31.1 KBytes       
+[  5]  29.00-30.00  sec  6.21 MBytes  52.1 Mbits/sec    0   31.1 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-30.00  sec   187 MBytes  52.3 Mbits/sec    0             sender
+[  5]   0.00-30.00  sec   187 MBytes  52.2 Mbits/sec                  receiver
+
+iperf Done.
++ run-on-host 192.168.1.111 'cat /tmp/screenlog*; rm -rf /tmp/screenlog*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cat /tmp/screenlog*; rm -rf /tmp/screenlog*'
+-----------------------------------------------------------
+Server listening on 4433
+-----------------------------------------------------------
+Accepted connection from 10.0.0.13, port 52426
+[  5] local 10.0.1.13 port 4433 connected to 10.0.0.13 port 52438
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  6.20 MBytes  52.0 Mbits/sec                  
+[  5]   1.00-2.00   sec  6.31 MBytes  52.9 Mbits/sec                  
+[  5]   2.00-3.00   sec  6.27 MBytes  52.6 Mbits/sec                  
+[  5]   3.00-4.00   sec  6.30 MBytes  52.9 Mbits/sec                  
+[  5]   4.00-5.00   sec  6.29 MBytes  52.8 Mbits/sec                  
+[  5]   5.00-6.00   sec  6.30 MBytes  52.9 Mbits/sec                  
+[  5]   6.00-7.00   sec  6.31 MBytes  52.9 Mbits/sec                  
+[  5]   7.00-8.00   sec  6.32 MBytes  53.0 Mbits/sec                  
+[  5]   8.00-9.00   sec  6.30 MBytes  52.9 Mbits/sec                  
+[  5]   9.00-10.00  sec  6.30 MBytes  52.8 Mbits/sec                  
+[  5]  10.00-11.00  sec  6.33 MBytes  53.1 Mbits/sec                  
+[  5]  11.00-12.00  sec  6.30 MBytes  52.8 Mbits/sec                  
+[  5]  12.00-13.00  sec  6.34 MBytes  53.2 Mbits/sec                  
+[  5]  13.00-14.00  sec  6.24 MBytes  52.3 Mbits/sec                  
+[  5]  14.00-15.00  sec  5.91 MBytes  49.6 Mbits/sec                  
+[  5]  15.00-16.00  sec  6.11 MBytes  51.2 Mbits/sec                  
+[  5]  16.00-17.00  sec  6.12 MBytes  51.3 Mbits/sec                  
+[  5]  17.00-18.00  sec  6.13 MBytes  51.5 Mbits/sec                  
+[  5]  18.00-19.00  sec  6.08 MBytes  51.0 Mbits/sec                  
+[  5]  19.00-20.00  sec  6.15 MBytes  51.6 Mbits/sec                  
+[  5]  20.00-21.00  sec  6.28 MBytes  52.6 Mbits/sec                  
+[  5]  21.00-22.00  sec  6.28 MBytes  52.7 Mbits/sec                  
+[  5]  22.00-23.00  sec  6.22 MBytes  52.2 Mbits/sec                  
+[  5]  23.00-24.00  sec  6.21 MBytes  52.0 Mbits/sec                  
+[  5]  24.00-25.00  sec  6.17 MBytes  51.8 Mbits/sec                  
+[  5]  25.00-26.00  sec  6.21 MBytes  52.1 Mbits/sec                  
+[  5]  26.00-27.00  sec  6.15 MBytes  51.5 Mbits/sec                  
+[  5]  27.00-28.00  sec  6.24 MBytes  52.5 Mbits/sec                  
+[  5]  28.00-29.00  sec  6.17 MBytes  51.8 Mbits/sec                  
+[  5]  29.00-30.00  sec  6.20 MBytes  52.0 Mbits/sec                  
+[  5]  30.00-30.00  sec  25.2 KBytes  54.9 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-30.00  sec   187 MBytes  52.2 Mbits/sec                  receiver
++ log 'end iperf3 clients'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-115023 ' 'end iperf3 clients'
+20230531-115023  end iperf3 clients
++ log 'end experiment'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-115023 ' 'end experiment'
+20230531-115023  end experiment
++ killall -2 simple_switch
++ sleep 2
+Attaching to process 42102
++ stop-monitoring
++ cd -- /home/montimage/huunghia/mosaico/testbed/log
++ log 'stop tcpdump and mmt-probe'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-115025 ' 'stop tcpdump and mmt-probe'
+20230531-115025  stop tcpdump and mmt-probe
++ killall --signal SIGINT tcpdump
+217420 packets captured217420 packets captured
+
+217420 packets captured217420 packets received by filter217420 packets received by filter
+
+
+217420 packets received by filter0 packets dropped by kernel0 packets dropped by kernel
+
+
+0 packets dropped by kernel
++ killall --signal SIGINT mmt-probe
++ sleep 2
++ tar -czf pcap.tar.gz eno1-data.pcap eno3-data.pcap l4s-mon-nic-int.pcap
++ rm eno1-data.pcap eno3-data.pcap l4s-mon-nic-int.pcap
++ log 'processing MMT files ...'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230531-115031 ' 'processing MMT files ...'
+20230531-115031  processing MMT files ...
++ combine-mmt-csv-files data.csv
++ OUTPUT=data.csv
+++ echo 'report-id,probe-id,source,timestamp,report-name,meta.packet_index,	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ tr -d '"'
+++ tr -d '\n'
+++ tr -d '[:blank:]'
++ HEADER=report-id,probe-id,source,timestamp,report-name,meta.packet_index,meta.packet_len,ip.src,ip.dst,ip.proto_tos,ip.ecn,ip.identification,udp.src_port,udp.dest_port,udp.len,tcp.src_port,tcp.dest_port,tcp.payload_len,tcp.seq_nb,tcp.ack_nb,tcp.tsval,tcp.tsecr,quic_ietf.header_form,quic_ietf.spin_bit,quic_ietf.rtt,int.hop_queue_ids,int.hop_latencies,int.hop_queue_occups,int.hop_ingress_times,int.hop_egress_times,int.hop_l4s_mark,int.hop_l4s_drop,int.mark_probability
++ echo report-id,probe-id,source,timestamp,report-name,meta.packet_index,meta.packet_len,ip.src,ip.dst,ip.proto_tos,ip.ecn,ip.identification,udp.src_port,udp.dest_port,udp.len,tcp.src_port,tcp.dest_port,tcp.payload_len,tcp.seq_nb,tcp.ack_nb,tcp.tsval,tcp.tsecr,quic_ietf.header_form,quic_ietf.spin_bit,quic_ietf.rtt,int.hop_queue_ids,int.hop_latencies,int.hop_queue_occups,int.hop_ingress_times,int.hop_egress_times,int.hop_l4s_mark,int.hop_l4s_drop,int.mark_probability
+++ find . -name '1*.csv'
++ for f in $(find . -name '1*.csv')
++ echo ' ./1685526572.778255_0_data-int.csv'
+ ./1685526572.778255_0_data-int.csv
++ cat ./1685526572.778255_0_data-int.csv
++ grep '^1000,'
++ rm -- ./1685526572.778255_0_data-int.csv
++ tar -czf data.csv.tar.gz data.csv
++ python3 /home/montimage/huunghia/mosaico/testbed/monitoring-mmt-tcpdump.plot.py data.csv
+Processing data.csv
+number of avail ticks: 3006
+number of ticks to draw: 3000
+write to data.csv.png
+
+
+| traffic type | limited bw (Mbps) | mean bw (Mbps) | duration (s) | nb step mark | mean queue delay (ms) | median queue delay (ms) | mean total delay (ms) |
+|            ? |                 ? |          59.94 |         30.0 |         1305 |                   2.0 |                    2.02 |                  2.83 |
+
+
++ rm data.csv
