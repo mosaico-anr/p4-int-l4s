@@ -3,5 +3,5 @@
 	"client":       "10.0.0.13",
 	"bandwidth":    "1 Mbps",
 	"power-attack": 0.1,
-	"flows":        [{"type":"unrespECN", "start_time": 30", "duration": 60, "serer_port": 10000},{"type":"ll_legit", "start_time": 0", "duration": 120, "serer_port": 3000}]
+	"flows":        [{"type":"unrespECN", "start_time": 30, "duration": 60, "serer_port": 10000},{"type":"ll_legit", "start_time": 0", "duration": 120, "serer_port": 3000}]
 }
