@@ -1,0 +1,106 @@
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: Create a new sub-process 26865 for main processing
+mmt-probe: MMT-Probe v1.5.9 (6dc9afc - Apr  4 2023 10:43:35) is running on pid 26865
+mmt-probe: Modules: DPI, PCAP, REPORT
+mmt-probe: MMT-DPI 1.7.6 (45ca61e6)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+1,3,"l4s-mon-nic",1689707615.282282,"1.5.9 (6dc9afc - Apr  4 2023 10:43:35)","1.7.6 (45ca61e6)"
+200,3,"l4s-mon-nic",1689707620.423717,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707625.423812,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707630.423825,0,0,0,0,0,0
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707635.423840,1035,0,1035,0,899424,0
+mmt-probe: 1035,0,1035,0,899424,0% dropped by NIC 0.0000, by MMT 0.0000
+1035,0,1035,0,899424,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707640.423912,4612,0,4608,0,3809984,0
+mmt-probe: 4612,0,4608,0,3809984,0% dropped by NIC 0.0000, by MMT 0.0000
+4612,0,4608,0,3809984,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707645.423959,7651,0,7651,0,6662381,0
+mmt-probe: 7651,0,7651,0,6662381,0% dropped by NIC 0.0000, by MMT 0.0000
+7651,0,7651,0,6662381,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707650.423970,11135,0,11127,0,9563072,0
+mmt-probe: 11135,0,11127,0,9563072,0% dropped by NIC 0.0000, by MMT 0.0000
+11135,0,11127,0,9563072,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707655.423975,14160,0,14157,0,12403904,0
+mmt-probe: 14160,0,14157,0,12403904,0% dropped by NIC 0.0000, by MMT 0.0000
+14160,0,14157,0,12403904,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707660.423985,17192,0,17192,0,15250289,0
+mmt-probe: 17192,0,17192,0,15250289,0% dropped by NIC 0.0000, by MMT 0.0000
+17192,0,17192,0,15250289,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707665.424043,20340,0,20336,0,18106295,0
+mmt-probe: 20340,0,20336,0,18106295,0% dropped by NIC 0.0000, by MMT 0.0000
+20340,0,20336,0,18106295,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707670.424067,23130,0,23127,0,20932014,0
+mmt-probe: 23130,0,23127,0,20932014,0% dropped by NIC 0.0000, by MMT 0.0000
+23130,0,23127,0,20932014,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707675.424086,25691,0,25690,0,23725335,0
+mmt-probe: 25691,0,25690,0,23725335,0% dropped by NIC 0.0000, by MMT 0.0000
+25691,0,25690,0,23725335,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707680.424198,28153,0,28149,0,26500350,0
+mmt-probe: 28153,0,28149,0,26500350,0% dropped by NIC 0.0000, by MMT 0.0000
+28153,0,28149,0,26500350,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707685.424353,30562,0,30560,0,29272717,0
+mmt-probe: 30562,0,30560,0,29272717,0% dropped by NIC 0.0000, by MMT 0.0000
+30562,0,30560,0,29272717,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707690.424363,32939,0,32939,0,32041477,0
+mmt-probe: 32939,0,32939,0,32041477,0% dropped by NIC 0.0000, by MMT 0.0000
+32939,0,32939,0,32041477,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707695.424514,35299,0,35294,0,34800488,0
+mmt-probe: 35299,0,35294,0,34800488,0% dropped by NIC 0.0000, by MMT 0.0000
+35299,0,35294,0,34800488,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707700.424542,37633,0,37630,0,37562669,0
+mmt-probe: 37633,0,37630,0,37562669,0% dropped by NIC 0.0000, by MMT 0.0000
+37633,0,37630,0,37562669,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707705.424548,39970,0,39969,0,40324112,0
+mmt-probe: 39970,0,39969,0,40324112,0% dropped by NIC 0.0000, by MMT 0.0000
+39970,0,39969,0,40324112,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707710.424687,42312,0,42307,0,43081729,0
+mmt-probe: 42312,0,42307,0,43081729,0% dropped by NIC 0.0000, by MMT 0.0000
+42312,0,42307,0,43081729,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707715.424711,44643,0,44641,0,45843569,0
+mmt-probe: 44643,0,44641,0,45843569,0% dropped by NIC 0.0000, by MMT 0.0000
+44643,0,44641,0,45843569,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707720.424862,46985,0,46984,0,48606694,0
+mmt-probe: 46985,0,46984,0,48606694,0% dropped by NIC 0.0000, by MMT 0.0000
+46985,0,46984,0,48606694,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707725.424994,49224,0,49219,0,51261809,0
+mmt-probe: 49224,0,49219,0,51261809,0% dropped by NIC 0.0000, by MMT 0.0000
+49224,0,49219,0,51261809,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707730.425008,51452,0,51449,0,53508646,0
+mmt-probe: 51452,0,51449,0,53508646,0% dropped by NIC 0.0000, by MMT 0.0000
+51452,0,51449,0,53508646,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707735.425060,54977,0,54975,0,56424554,0
+mmt-probe: 54977,0,54975,0,56424554,0% dropped by NIC 0.0000, by MMT 0.0000
+54977,0,54975,0,56424554,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707740.425152,57996,0,57989,0,59265332,0
+mmt-probe: 57996,0,57989,0,59265332,0% dropped by NIC 0.0000, by MMT 0.0000
+57996,0,57989,0,59265332,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707745.425262,61375,0,61370,0,62151488,0
+mmt-probe: 61375,0,61370,0,62151488,0% dropped by NIC 0.0000, by MMT 0.0000
+61375,0,61370,0,62151488,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707750.425389,64453,0,64452,0,65002578,0
+mmt-probe: 64453,0,64452,0,65002578,0% dropped by NIC 0.0000, by MMT 0.0000
+64453,0,64452,0,65002578,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707755.425495,66560,0,66560,0,66988710,0
+mmt-probe: 66560,0,66560,0,66988710,0% dropped by NIC 0.0000, by MMT 0.0000
+66560,0,66560,0,66988710,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707760.425646,66577,0,66577,0,67009724,0
+mmt-probe: 66577,0,66577,0,67009724,0% dropped by NIC 0.0000, by MMT 0.0000
+66577,0,66577,0,67009724,0% dropped by NIC 0.0000, by MMT 0.0000
+200,3,"l4s-mon-nic",1689707765.425774,66578,0,66578,0,67009842,0
+mmt-probe: 66578,0,66578,0,67009842,0% dropped by NIC 0.0000, by MMT 0.0000
+66578,0,66578,0,67009842,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 66578 packets, dropped 0 packets (0.00%)
+MMT processed 66578 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 66578 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+System received 66578 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 26865 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye
