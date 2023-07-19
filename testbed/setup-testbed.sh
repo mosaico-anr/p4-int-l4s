@@ -53,6 +53,12 @@ export LOG="$SCRIPT_PATH/log"
 
 mkdir -p "$LOG"  2> /dev/null
 
+#set up monitoring NIC
+ip link add name "$MON_IFACE" type dummy
+ip link set dev  "$MON_IFACE" up
+ifconfig "$MON_IFACE" up
+ifconfig "$MON_IFACE" "$MON_IFACE_IP"
+
 function get-mac(){
 	iface=$1
 	cat /sys/class/net/$iface/address
@@ -92,8 +98,8 @@ function get-ip(){
 	/sbin/ip -o -4 addr list $iface | awk '{print $4}' | cut -d/ -f1
 }
 
-IFACE_IP=$(get-ip $IFACE)
-REV_IFACE_IP=$(get-ip $REV_IFACE)
+#IFACE_IP=$(get-ip $IFACE)
+#REV_IFACE_IP=$(get-ip $REV_IFACE)
 
 # set route on clients/server
 run-on-host $CLIENT_A_CTRL sudo route add -net $SERVER_NET gw  $IFACE_IP
@@ -115,17 +121,19 @@ run-on-host $SERVER_C_CTRL sudo ethtool -K $SERVER_C_IFACE tso off gso off gro o
 #https://opennetworking.org/news-and-events/blog/getting-started-with-p4/
 function config-nic(){
 	NIC=$1
+	IP=$2
 
 	ip link set $NIC mtu 1500
 	ethtool -K $NIC tso off gso off gro off tx off
 	sysctl net.ipv6.conf.$NIC.disable_ipv6=1
+	ifconfig $NIC $IP
 }
 
 #to delete virtual NIC:
 #ip link delete veth_a
 
-config-nic $IFACE
-config-nic $REV_IFACE
+config-nic $IFACE      $IFACE_IP
+config-nic $REV_IFACE  $REV_IFACE_IP
 
 # disable ip forward
 sysctl -w net.ipv4.ip_forward=0
@@ -154,6 +162,7 @@ for i in $(seq 2 2 10); do echo 0 > /sys/devices/system/cpu/cpu$i/online; done
 # in bare metal
 #SIMPLE_SWITCH="/home/montimage/huunghia/mosaico/bertrand-behavioral-model/targets/simple_switch/simple_switch_no_debug --queue 2  --ll_queue 64 --BE_queue 128"
 SIMPLE_SWITCH="/home/montimage/huunghia/mosaico/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
+SIMPLE_SWITCH="/home/montimage/huunghia/mosaico/bmv2/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
 #SIMPLE_SWITCH="simple_switch --queue 2  --ll_queue 64 --BE_queue 128"
 
 # normal simple_switch

@@ -24,6 +24,8 @@ from matplotlib.ticker import MaxNLocator
 from matplotlib.lines import Line2D
 from datetime import datetime
 import numpy as np
+import matplotlib.colors as mcolors
+import matplotlib.dates as md
 
 # number of ticks per second, e.g.,
 # 100 => group by each 10 millisecond
@@ -41,51 +43,6 @@ def calcul( func, arr ):
         return len(arr)
 
 
-def get_tcp_rtt(current_pkt, all_pkts):
-    '''
-    Get RTT in microsecond of TCP packets using tcp.tsval and tcp.tsecr
-    '''
-    ONE_M = 1000000 #microsecond
-    
-    # init "static" variables
-    if len( get_tcp_rtt.tsval ) == 0:
-        for pkt in all_pkts:
-            ts = int(float(pkt["timestamp"]) * ONE_M)
-            tsval = pkt["tcp.tsval"]
-            tsecr = pkt["tcp.tsecr"]
-            # get lattest tsval
-            if (tsval not in get_tcp_rtt.tsval) or (get_tcp_rtt.tsval[ tsval ] < ts): 
-                get_tcp_rtt.tsval[ tsval ] = ts
-            # get oldest tsecr
-            if (tsecr not in get_tcp_rtt.tsecr) or (get_tcp_rtt.tsecr[ tsecr ] > ts):
-                get_tcp_rtt.tsecr[ tsecr ] = ts
-
-
-    tsval = current_pkt["tcp.tsval"]
-    tsecr = current_pkt["tcp.tsecr"]
-    ts    = int(float(current_pkt["timestamp"]) * ONE_M)
-
-    delta1 = 0
-    #search packet which is echoed
-    if tsecr in get_tcp_rtt.tsval:
-        delta1 = ts - get_tcp_rtt.tsval[tsecr]
-
-    delta2 = 0
-    #search packet which echos the current packet
-    if tsval in get_tcp_rtt.tsecr:
-        delta2 = get_tcp_rtt.tsecr[tsval] - ts
-
-    if delta1 > 0 and delta2 > 0:
-        return delta1 + delta2
-    elif delta1 < 0 or delta2 < 0:
-        #print("unordered packet")
-        None
-
-    return 0
-# global variables to cache tcp.tsval and tsecr
-get_tcp_rtt.tsval = {}
-get_tcp_rtt.tsecr = {}
-
 
 def read_csv(file_name = "data.csv"):
     '''
@@ -98,29 +55,21 @@ def read_csv(file_name = "data.csv"):
     return data
 
 
-def is_tcp_data( data ):
-    '''
-    whether data contain TCP (iperf3) instead of UDP (quic)
-    '''
-    for row in data:
-        if "tcp.tsval" not in row:
-            return False
-
-        if row["tcp.tsval"] != "0" and row["tcp.tsval"] != None:
-            return True
-    return False
-
-
 def process_data(data, ts_col="timestamp", cols=[]):
     '''
     Read data from a csv file. For each line in the csv, extract only the fields naming in `cols`
     return a dict whose keys are timestamp
     '''
+    # end-to-end latency: either tcp.rtt or quic_ietf.rtt
+    global LATENCY_FIELD
     dic={}
     keys=["total"]
 
     #max of 4 bytes
     MAX_PROBABILITY = 0xFFFFFFFF
+
+    
+    # for each row in the csv file
     for row in data:
         # round the timestamp to millisecond
         ts = int(float(row[ts_col])*TICKS_PER_SECOND)
@@ -134,30 +83,29 @@ def process_data(data, ts_col="timestamp", cols=[]):
         #remember timestamp
         item[ts_col] = ts
 
+
+        #for each metric we want to process:
+        #  we will create an array for each metric
+        #   then append the value into the array
+        #  The array will be used later to calculate MEAN, MEDIAN, etc
         #group elements in an array
+        
         for i in cols:
             #for the first time => init the array
             if i not in item:
                 item[i] = {"total": []}
 
-            val = 0
-            # specific traitment for TCP rtt
-            if i == "tcp.rtt":
-                val = get_tcp_rtt(row, data)
-            elif i == "int.mark_probability":
-                val = int(int(row[i])*100/ MAX_PROBABILITY)
-            elif i in row:
+            val = -1
+            if i in row:
                 val = int(row[i])
 
             # ignore zero value that represent a "not available" avlue
-            if val == 0:
+            if val == -1:
                 continue
             
-            # empty IP?
-            if row["ip.src"] == "" or row["ip.dst"] == "":
-                continue
-
-            key = "{0} -> {1}".format( row["ip.src"], row["ip.dst"] )
+            #key = "{0} -> {1}".format( row["src-ip"], row["dst-ip"] )
+            key = "{0}:{1} -> {2}:{3}".format( row["src-ip"], row["src-port"], row["dst-ip"], row["dst-port"] )
+            #key = "{0}:{1} -> {2}:{3}".format( row["ip.src"], row["udp.src_port"], row["ip.dst"], row["udp.dest_port"] )
             # remember the set of keys
             if key not in keys:
                 keys.append( key )
@@ -167,6 +115,10 @@ def process_data(data, ts_col="timestamp", cols=[]):
 
             item[i][key].append( val )
             item[i]["total"].append( val )
+
+        # special traitement for w0-latency: delais total en excluant le delais de la file faible latence
+        
+        #first time: init the array
 
     #get final value of each row
     for ts in dic:
@@ -205,11 +157,19 @@ def stats(dic, x, index, key):
         if i in dic and key in dic[i][index]:
             #print(dic[i])
             arr.append( dic[i][index][key] )
-
+    if len( arr ) == 0:
+        return {
+            "mean"  : 0,
+            "median": 0,
+            "sum"   : 0,
+            "max"   : 0
+        }
+        
     return {
         "mean"  : round( np.mean( arr ), 2),
         "median": round( np.median( arr ), 2),
-        "sum"   : np.sum( arr )
+        "sum"   : np.sum( arr ),
+        "max"   : np.max( arr )
     }
 
 
@@ -225,45 +185,23 @@ DATA = read_csv( FILE_PATH )
 
 COLS={
     #key : function of calcul
-    "meta.packet_index":    {"fun": "COUNT", "unit": "packets"},
-    "meta.packet_len" :     {"fun": "SUM",   "unit": "bytes"},
-    "quic_ietf.spin_bit":   {"fun": "SUM",   "unit": "packets"}, 
-    "quic_ietf.rtt":        {"fun": "AVG",   "unit": "microseconds"},
-    "int.hop_latencies":    {"fun": "AVG",   "unit": "microseconds"},
-    "int.hop_queue_occups": {"fun": "AVG",   "unit": "packets"},
-    "int.hop_l4s_mark":     {"fun": "SUM",   "unit": "packets"},
-    # LL does not drop packets => always zero
-    #"int.hop_l4s_drop": "SUM",
-    "int.mark_probability": {"fun": "AVG",   "unit": "percentage"}
+    "index":         {"fun": "COUNT", "label": "throughput",    "unit": "packets/ms"},
+    "packet-len" :   {"fun": "SUM",   "label": "bandwidth",     "unit": "bytes/ms"},
+    "total-delay":   {"fun": "AVG",   "label": "total-delay",   "unit": "microseconds"},
+    "queue-delay":   {"fun": "AVG",   "label": "queue-latency", "unit": "microseconds"},
+    "queue-occups":  {"fun": "AVG",   "label": "queue-occups",  "unit": "packets"},
+    "step-mark":     {"fun": "SUM",   "label": "step-mark",     "unit": "packets"},
+    "mark-proba":    {"fun": "AVG",   "label": "mark-proba",    "unit": "percentage"}
 }
-
-LATENCY_FIELD="quic_ietf.rtt"
-
-# use tcp
-if is_tcp_data( DATA ):
-    # remove QUIC or UDP
-    # use list() to avoid "RuntimeError: dictionary changed size during iteration"
-    # https://stackoverflow.com/questions/11941817
-    for i in list(COLS):
-        if i.startswith("quic") or i.startswith("udp"):
-            del COLS[i]
-    # add TCP
-    COLS["tcp.rtt"] = {"fun": "AVG", "unit": "microseconds"}
-    LATENCY_FIELD="tcp.rtt"
 
 dic, keys = process_data( DATA, cols=COLS )
 minX=0
 maxX=0
 
 print("number of avail ticks: {0}".format(len(dic)) )
+print(keys)
 # get min and max timestamp
 for i in dic:
-    val = dic[i]["meta.packet_index"]["total"]
-    
-    #ignore leading zero
-    if maxX == 0 and val == 0:
-        continue
-        
     i = int(i)
     #init
     if maxX == 0:
@@ -276,26 +214,29 @@ for i in dic:
             minX = i
 
 # limit distance between min-max
-# 60 seconds
-
-if maxX - minX > 60*TICKS_PER_SECOND:
-    maxX = minX + 60*TICKS_PER_SECOND
-# 30 second
-elif maxX - minX > 30*TICKS_PER_SECOND:
-    maxX = minX + 30*TICKS_PER_SECOND
-else:
-    # print("axis Ox is not available")
-    None
+#if maxX - minX > 70*TICKS_PER_SECOND:
+#    #maxX = minX + 60*TICKS_PER_SECOND
+#    None
+## 60 seconds
+#elif maxX - minX > 60*TICKS_PER_SECOND:
+#    maxX = minX + 60*TICKS_PER_SECOND
+## 30 second
+#elif maxX - minX > 30*TICKS_PER_SECOND:
+#    maxX = minX + 30*TICKS_PER_SECOND
+#else:
+#    # print("axis Ox is not available")
+#    None
 
 
 # x Axis is a range from min - max
 x = range(int(minX), int(maxX))
-xDate = [ datetime.fromtimestamp(ts*1.0/TICKS_PER_SECOND) for ts in x]
+xDate = [ datetime.fromtimestamp(ts*1.0/TICKS_PER_SECOND) for ts in range(0, int(maxX-minX))]
 
 print("number of ticks to draw: {0}".format(len(x)) )
 
+number_of_plots = len(COLS)*len(keys)
 plt.rcParams['axes.xmargin'] = 0
-plt.rcParams["figure.figsize"] = (30,3*len(COLS) )
+plt.rcParams["figure.figsize"] = (30,2*number_of_plots )
 # space between subplot
 #plt.rcParams['figure.constrained_layout.use'] = True
 #plt.subplots_adjust( hspace=100 )
@@ -304,30 +245,55 @@ plt.locator_params(axis='y', nbins=5)
 #plt.rcParams['axes.titlepad'] = -14 #push title down (inside the chart) 
 
 #global x_cl, x_ll
-fig,axs=plt.subplots( len(COLS)  )
+fig,axs=plt.subplots( number_of_plots  )
+
+xfmt = md.DateFormatter('%M:%S')
 
 counter=0
-COLORS=["black", "red", "blue", "magenta"]
+COLORS=["black", "red", "blue", "magenta", "pink", "green", "purple", "brown", "gray", "olive", "cyan", "plum", "violet" ]
+#COLORS=mcolors.TABLEAU_COLORS
 
+last_col=""
 result = {}
 for col in COLS:
-    ax = axs[counter]
-    counter += 1
     color = 0
     result[col] = {}
 
     for key in keys:
+
         stat_val = stats(dic, x, col, key)
         stat_val["unit"] = COLS[col]["unit"]
         result[col][key] = stat_val
 
+        #do not draw total, but only each flow
+        #if key == "total":
+        #    continue
+
+        ax = axs[counter]
+        counter += 1
+
+
         label = "{0} (mean={1}, median={2} {3})".format( key, stat_val["mean"], stat_val["median"], COLS[col]["unit"])
         ax.plot( xDate, get(dic, x, col, key), label=label, color=COLORS[ color ] )
-        color += 1
-    ax.set_title( "{0} ({1} of each 10 millisecond))".format( col, COLS[col]["fun"] ))
-    ax.grid()
-    ax.legend(loc="upper left")
+        
 
+        #draw title only on the first plot in the serie
+        if color == 0:
+            ax.set_title( "{0} ({1} - {2} of each 10 millisecond))".format( col,  COLS[col]["label"], COLS[col]["fun"] ))
+        ax.grid()
+        ax.legend(loc="upper left")
+        ax.xaxis.set_major_formatter(xfmt)
+        
+        xticks = ax.xaxis.get_major_ticks()
+        xticks[0].label1.set_visible(False) #hide the first ax tick
+        #xticks[-1].label1.set_visible(False) #hide the last ax tick
+        ax.margins(x=0,y=0)
+
+        #repeat color
+        color += 1
+        if color >= len(COLORS):
+            color = 0
+            
 
 # Save as pdf
 #plt.savefig( "{0}-{1}-pps.pdf".format(FILE_NAME, TS_COL_INDEX), dpi=60, format='pdf', bbox_inches='tight')
@@ -339,10 +305,14 @@ plt.savefig( output, dpi=70, format='png', bbox_inches='tight')
 #    plt.show()
 
 
+print(result["packet-len"])
 #print("{0}".format( json.dumps(result, indent=2 )))
 
-
 print("\n")
+
+def _round(val):
+    return ('%.3f' % (val))
+    #return round(val, n)
 
 # FILE_PATH = ".../unrespECN-bw_50Mbps-duration_60s--20230322-124338/data.csv"
 match = re.search(r"(?P<type>(unrespECN|iperf3|legit))-bw_(?P<bw>\d+)Mbps-duration_(?P<duration>\d+)s", FILE_PATH)
@@ -351,16 +321,24 @@ match = re.search(r"(?P<type>(unrespECN|iperf3|legit))-bw_(?P<bw>\d+)Mbps-durati
 if not match:
     match = {"type": "?", "bw": "?"}
 
-print("| traffic type | limited bw (Mbps) | mean bw (Mbps) | duration (s) | nb step mark | mean queue delay (ms) | median queue delay (ms) | mean total delay (ms) |")
-print("| {0:>12} | {1:>17} | {2:>14} | {3:>12} | {4:>12} | {5:>21} | {6:>23} | {7:>21} |".format(
+#      |    0       |     1     |     2      |   3  |   4      |    5           |     6        |         7         |        8        |     9          |     10        |     11      |  12     |
+print("|traffic type|lim bw-Mbps|mean bw-Mbps|  dura-s|# stepmark|mean lq delay-ms|med lq dlay-ms|mean w0 lq delay-ms|med w0 lq dlay-ms|mean tot dlay-ms|med tot dlay-ms|mean pkt-byte|# packets|")
+print("|{0:>11} |{1:>10} |{2:>11} |{3:>5} |{4:>9} |{5:>15} |{6:>13} |{7:>18} |{8:>16} |{9:>15} |{10:>14} |{11:>13}|{12:>8} |".format(
     match["type"],
     match["bw"],
-    round( result["meta.packet_len"]["total"]["mean"] * 8 * TICKS_PER_SECOND / 1000000, 2),
-    (maxX - minX) / TICKS_PER_SECOND,
-    result["int.hop_l4s_mark"]["total"]["sum"],
-    round(result["int.hop_latencies"]["total"]["mean"]   / 1000, 2),
-    round(result["int.hop_latencies"]["total"]["median"] / 1000, 2),
-    round(result[LATENCY_FIELD]["total"]["mean"] / 1000, 2),
+    _round( result["packet-len"]["total"]["mean"] * 8 * TICKS_PER_SECOND / 1000000),
+    _round( (maxX - minX) / TICKS_PER_SECOND ),
+    result["step-mark"]["total"]["sum"],
+    _round(result["queue-delay"]["total"]["mean"]   / 1000),
+    _round(result["queue-delay"]["total"]["median"] / 1000),
+    
+    _round((result["total-delay"]["total"]["mean"]  - result["queue-delay"]["total"]["mean"] )   / 1000),
+    _round((result["total-delay"]["total"]["median"]- result["queue-delay"]["total"]["median"] ) / 1000),
+    
+    _round(result["total-delay"]["total"]["mean"]   / 1000),
+    _round(result["total-delay"]["total"]["median"] / 1000),
+    _round(result["packet-len"]["total"]["sum"] / result["index"]["total"]["sum"]),
+    result["index"]["total"]["sum"]
 ))
 print("\n")
 

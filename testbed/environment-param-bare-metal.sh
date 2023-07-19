@@ -2,10 +2,13 @@
 
 # The interface facing the clients
 export IFACE="eno1"
+export IFACE_IP="10.0.0.10"
 # The interface facing the servers
 export REV_IFACE="eno3"
+export REV_IFACE_IP="10.0.1.10"
 # The interface to export INT reports
 export MON_IFACE="l4s-mon-nic"
+export MON_IFACE_IP="10.1.0.1"
 # The IP prefix of the servers
 export SERVER_NET="10.0.1.0/24"
 export CLIENT_NET="10.0.0.0/24"

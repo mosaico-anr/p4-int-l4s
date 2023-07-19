@@ -197,9 +197,12 @@ parser MyParser(packet_in packet,
    state parse_ipv4{
       packet.extract(hdr.ipv4);
 
-      if( true )
+      //if( true )
       //if( hdr.ipv4.ecn ==  3)
-      //if( hdr.ipv4.ecn !=  0)
+      // #define PICOQUIC_ECN_ECT_0 0x02  <-- classic ECN
+      // #define PICOQUIC_ECN_ECT_1 0x01  <-- L4S ECN
+      // #define PICOQUIC_ECN_CE 0x03     <-- congestion
+      if( hdr.ipv4.ecn ==  1)
       //10.0.0.11 or 10.0.1.11
       //if( hdr.ipv4.srcAddr ==  0x0a00000b || hdr.ipv4.srcAddr ==  0x0a00010b )
       //if( hdr.ipv4.identification ==  0)

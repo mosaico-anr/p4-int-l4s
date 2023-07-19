@@ -7,6 +7,7 @@ MMT_CONFIG_FILE="$SCRIPT_PATH/mmt-probe.conf"
 
 # attributes to collect. They must be in syntax: proto.att_name as being defined by MMT
 MMT_ATTRIBUTES=$(cat <<EOF
+	"meta.packet_index",
 	"meta.packet_len",
 	"ip.src", 
 	"ip.dst", 
@@ -18,7 +19,6 @@ MMT_ATTRIBUTES=$(cat <<EOF
 	"quic_ietf.header_form",
 	"quic_ietf.spin_bit",
 	"quic_ietf.rtt",
-	"int.hop_queue_ids",
 	"int.hop_latencies", 
 	"int.hop_queue_occups",
 	"int.hop_ingress_times", 
@@ -41,7 +41,7 @@ MMT_ATTRIBUTES_HEADERS=$(
 	
 function combine-mmt-csv-files(){
 	OUTPUT=$1
-	HEADER=$(echo "report-id,probe-id,source,timestamp,report-name,meta.packet_index,$MMT_ATTRIBUTES_HEADERS" | tr -d '"' | tr -d "\n" | tr -d "[:blank:]" )
+	HEADER=$(echo "report-id,probe-id,source,timestamp,report-name,int.hop_queue_ids,$MMT_ATTRIBUTES_HEADERS" | tr -d '"' | tr -d "\n" | tr -d "[:blank:]" )
 	echo "$HEADER" > "$OUTPUT"
 
 	for f in $(find . -name '1*.csv'); do
@@ -58,7 +58,7 @@ function generate-monitor-config(){
 event-report int {
 	enable = true
 	# only capture UDP packet
-	event  =  "meta.packet_index"
+	event  =  "int.hop_queue_ids"
 	delta-cond = {}
 	attributes = { $MMT_ATTRIBUTES }
 	output-channel = {file}
@@ -75,10 +75,10 @@ function start-monitoring(){
 	FILTER="tcp or udp"
 	
 	# store only first 128 bytes that should be nought for ETH/IP/UDP/QUIC-header
-	tcpdump --snapshot-length=128 -i enp0s8  -w enp0s8-data.pcap "$FILTER" &
-	tcpdump --snapshot-length=128 -i enp0s9  -w enp0s9-data.pcap "$FILTER" &
+	tcpdump --snapshot-length=128 -i "$IFACE"      -w "$IFACE-data.pcap"     "$FILTER" &
+	tcpdump --snapshot-length=128 -i "$REV_IFACE"  -w "$REV_IFACE-data.pcap" "$FILTER" &
 	# store only the first 176 bytes that should be enougth for ETH/IP/UDP/INT/QUIC-header
-	tcpdump --snapshot-length=176 -i enp0s10 -w enp0s10-int.pcap "$FILTER" &
+	tcpdump --snapshot-length=176 -i "$MON_IFACE"  -w "$MON_IFACE-int.pcap"  "$FILTER" &
 	sleep 1
 
 	# generate config file
@@ -86,7 +86,7 @@ function start-monitoring(){
 	generate-monitor-config >> mmt-probe.conf
 
 	log "start mmt-probe"
-	(mmt-probe -c ./mmt-probe.conf -i enp0s10 > mmt-probe.log 2>&1) &
+	(mmt-probe -c ./mmt-probe.conf -i "$MON_IFACE" > mmt-probe.log 2>&1) &
 	sleep 2
 }
 
@@ -101,18 +101,23 @@ function stop-monitoring(){
 	
 	sleep 2
 
-	tar -czf pcap.tar.gz enp0s8-data.pcap enp0s9-data.pcap enp0s10-int.pcap
+	tar -czf pcap.tar.gz "$IFACE-data.pcap" "$REV_IFACE-data.pcap" "$MON_IFACE-int.pcap"
 	# test to run mmt offline
 	#mmt-probe -t enp0s10-int.pcap
 	
-	rm enp0s8-data.pcap enp0s9-data.pcap enp0s10-int.pcap
+	rm "$IFACE-data.pcap" "$REV_IFACE-data.pcap" "$MON_IFACE-int.pcap"
 
 	log "processing MMT files ..."
 	combine-mmt-csv-files data.csv
 	tar -czf data.csv.tar.gz data.csv
+	
+	# extract interested metrics from data.csv, then write to new_data.csv
+	python3 "$SCRIPT_PATH/monitoring-mmt-tcpdump.processing.py" data.csv
+	tar -czf new_data.csv.tar.gz new_data.csv
+	
 	#plot graph
-	python3 "$SCRIPT_PATH/monitoring-mmt-tcpdump.plot.py" data.csv
-	rm data.csv
+	python3 "$SCRIPT_PATH/monitoring-mmt-tcpdump.plot.py" new_data.csv
+	rm data.csv new_data.csv
 }
 
 
