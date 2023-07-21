@@ -16,7 +16,6 @@ CLIENT_DATA_IP=$CLIENT_C
 SERVER_CTRL_IP=$SERVER_C_CTRL
 CLIENT_CTRL_IP=$CLIENT_C_CTRL
 
-
 date
 set -x
 #set -e
@@ -66,8 +65,8 @@ function copy_log(){
 	picoquic_path=$(get_picoquic_path $flow_type)
 	
 	mkdir -p "$LOG_DIR/qlog/$flow_type"
-	run-on-host "$SERVER_CTRL_IP" "cd $picoquic_path && tar -czf - *.qlog *.log " | server.tar.gz
-	run-on-host "$CLIENT_CTRL_IP" "cd $picoquic_path && tar -czf - *.qlog *.log " | client.tar.gz
+	run-on-host "$SERVER_CTRL_IP" "cd $picoquic_path && tar -czf - *.qlog *.log " > "$LOG_DIR/qlog/$flow_type"/server.tar.gz
+	run-on-host "$CLIENT_CTRL_IP" "cd $picoquic_path && tar -czf - *.qlog *.log " > "$LOG_DIR/qlog/$flow_type"/client.tar.gz
 	
 	# delete log files
 	run-on-host "$SERVER_CTRL_IP" "cd $picoquic_path && rm -rf *.qlog *.log "
@@ -170,7 +169,7 @@ function start-flows-and-wait-to-finish(){
 		[[ $duration == ?(-)+([0-9]) ]]   || (echo "duration is not a number: $conf"   && exit 1)
 
 		# remeber the configuration
-		FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time\", \"duration\": $duration, \"serer_port\": $port}")
+		FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
 		
 		#start the flow
 		( start_flow "$index" "$flow_type" "$start_time" "$duration" "$port" ) &

@@ -61,9 +61,9 @@ done <<EOF
 # - flux cl legitime starts immediately, and keeps during 120 seconds
 #
 # 3x 1/0
-#unrespECN,0,60,10000
-#cl_legit,0,60,2000
-#ll_legit,0,60,3000
+unrespECN,0,60,10000
+cl_legit,0,60,2000
+ll_legit,0,60,3000
 #
 # 2x 1/1
 unrespECN,30,60,10000;cl_legit,0,120,2000
@@ -85,7 +85,7 @@ EOF
 
 # 1. round ID
 # for each round
-for ROUND_ID in 2
+for ROUND_ID in 2 3 4 5
 do
 
 DATA_DIR="$SCRIPT_PATH/round-$ROUND_ID"
@@ -121,6 +121,7 @@ for traffic_types in "${TRAFFIC_CFG[@]}"
 do
 			TEST_INDEX=$((TEST_INDEX+1))
 
+			echo "Start Test $TEST_INDEX: $traffic_types "
 			#export the varilabes to transfer the parameters to the scripts to be executed
 			export BANDWIDTH=$bw
 			export TRAFFIC_TYPES=$traffic_types
@@ -150,11 +151,11 @@ do
 			( ./setup-testbed.sh 2>&1 ) | tee log/script.log
 
 			# move "log" to a folder whose name represents the tested parameters
-			DIR_NAME=$(echo "bw_${bw}Mbps-power_${POWER_ATTACK}-flows_${TRAFFIC_TYPES}--$(date +%Y%m%d-%H%M%S)" | sed -r 's/[\.\$;,]+/\./g')
-			mv log "$DATA_DIR/$TEST_INDEX-$DIR_NAME"
+			DIR_NAME=$(echo "bw_${bw}Mbps-power_${POWER_ATTACK}-flows_${TRAFFIC_TYPES}" | sed -r 's/[\.\$;,]+/\./g' | head -c 220) #avoid filename too long > 255 characters
+			mv log "$DATA_DIR/${TEST_INDEX}-${DIR_NAME}--$(date +%Y%m%d-%H%M%S)"
 			
 			# sleep a little before going to the next test
-			echo "Test $TEST_INDEX: Sleep 10 seconds before going to the next test..."
+			echo "End Test $TEST_INDEX: Sleep 10 seconds before going to the next test..."
 			sleep 2
 done #end traffic_types
 #break 3
