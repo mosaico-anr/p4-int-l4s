@@ -1,0 +1,2895 @@
++++ dirname ./setup-testbed.sh
+++ cd -- .
+++ pwd -P
++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed
++ set -x
++ '[' 0 -ne 0 ']'
++ '[' -z '' ']'
++ export ENABLE_INT=yes
++ ENABLE_INT=yes
++ P4_FILE_PREFIX=switch-l4s
++ [[ 0 == \1 ]]
++ '[' true == '' ']'
++ echo 'No need to compile P4 code'
+No need to compile P4 code
++ source environment.sh
+++ set -x
+++++ dirname ./setup-testbed.sh
++++ cd -- .
++++ pwd -P
+++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed
+++ . /home/montimage/huunghia/mosaico/testbed/environment-param-bare-metal.sh
++++ export IFACE=eno1
++++ IFACE=eno1
++++ export IFACE_IP=10.0.0.10
++++ IFACE_IP=10.0.0.10
++++ export REV_IFACE=eno3
++++ REV_IFACE=eno3
++++ export REV_IFACE_IP=10.0.1.10
++++ REV_IFACE_IP=10.0.1.10
++++ export MON_IFACE=l4s-mon-nic
++++ MON_IFACE=l4s-mon-nic
++++ export MON_IFACE_IP=10.1.0.1
++++ MON_IFACE_IP=10.1.0.1
++++ export SERVER_NET=10.0.1.0/24
++++ SERVER_NET=10.0.1.0/24
++++ export CLIENT_NET=10.0.0.0/24
++++ CLIENT_NET=10.0.0.0/24
++++ export SERVER_A=10.0.1.11
++++ SERVER_A=10.0.1.11
++++ export SERVER_B=10.0.1.12
++++ SERVER_B=10.0.1.12
++++ export SERVER_C=10.0.1.13
++++ SERVER_C=10.0.1.13
++++ export CLIENT_A=10.0.0.11
++++ CLIENT_A=10.0.0.11
++++ export CLIENT_B=10.0.0.12
++++ CLIENT_B=10.0.0.12
++++ export CLIENT_C=10.0.0.13
++++ CLIENT_C=10.0.0.13
++++ export CLIENT_A_IFACE=enp0s8
++++ CLIENT_A_IFACE=enp0s8
++++ export CLIENT_B_IFACE=enp0s8
++++ CLIENT_B_IFACE=enp0s8
++++ export CLIENT_C_IFACE=enp0s8
++++ CLIENT_C_IFACE=enp0s8
++++ export SERVER_A_IFACE=enp0s8
++++ SERVER_A_IFACE=enp0s8
++++ export SERVER_B_IFACE=enp0s8
++++ SERVER_B_IFACE=enp0s8
++++ export SERVER_C_IFACE=enp0s8
++++ SERVER_C_IFACE=enp0s8
++++ export MMT_IP=10.0.30.2
++++ MMT_IP=10.0.30.2
++++ export MMT_IFACE=enp0s8
++++ MMT_IFACE=enp0s8
++++ export CLIENT_A_CTRL=192.168.1.100
++++ CLIENT_A_CTRL=192.168.1.100
++++ export SERVER_A_CTRL=192.168.1.104
++++ SERVER_A_CTRL=192.168.1.104
++++ export SERVER_C_CTRL=192.168.1.111
++++ SERVER_C_CTRL=192.168.1.111
++++ export SERVER_B_CTRL=192.168.1.105
++++ SERVER_B_CTRL=192.168.1.105
++++ export CLIENT_B_CTRL=192.168.1.103
++++ CLIENT_B_CTRL=192.168.1.103
++++ export CLIENT_C_CTRL=192.168.1.110
++++ CLIENT_C_CTRL=192.168.1.110
++ export LOG=/home/montimage/huunghia/mosaico/testbed/log
++ LOG=/home/montimage/huunghia/mosaico/testbed/log
++ mkdir -p /home/montimage/huunghia/mosaico/testbed/log
++ ip link add name l4s-mon-nic type dummy
+RTNETLINK answers: File exists
++ ip link set dev l4s-mon-nic up
++ ifconfig l4s-mon-nic up
++ ifconfig l4s-mon-nic 10.1.0.1
+++ get-mac eno1
+++ iface=eno1
+++ cat /sys/class/net/eno1/address
++ export IFACE_MAC=24:6e:96:37:81:a8
++ IFACE_MAC=24:6e:96:37:81:a8
+++ get-mac eno3
+++ iface=eno3
+++ cat /sys/class/net/eno3/address
++ export REV_IFACE_MAC=24:6e:96:37:81:ac
++ REV_IFACE_MAC=24:6e:96:37:81:ac
+++ get-mac l4s-mon-nic
+++ iface=l4s-mon-nic
+++ cat /sys/class/net/l4s-mon-nic/address
++ export MON_IFACE_MAC=d6:94:d6:f3:48:a7
++ MON_IFACE_MAC=d6:94:d6:f3:48:a7
+++ get-remote-mac 192.168.1.100 enp0s8
+++ ip=192.168.1.100
+++ iface=enp0s8
+++ run-on-host 192.168.1.100 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.100
+++ shift
+++ [[ 192.168.1.100 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_A_MAC=08:00:27:fe:18:fc
++ CLIENT_A_MAC=08:00:27:fe:18:fc
+++ get-remote-mac 192.168.1.103 enp0s8
+++ ip=192.168.1.103
+++ iface=enp0s8
+++ run-on-host 192.168.1.103 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.103
+++ shift
+++ [[ 192.168.1.103 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_B_MAC=08:00:27:72:8a:ae
++ CLIENT_B_MAC=08:00:27:72:8a:ae
+++ get-remote-mac 192.168.1.110 enp0s8
+++ ip=192.168.1.110
+++ iface=enp0s8
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/address
++ export CLIENT_C_MAC=08:00:27:09:27:51
++ CLIENT_C_MAC=08:00:27:09:27:51
+++ get-remote-mac 192.168.1.104 enp0s8
+++ ip=192.168.1.104
+++ iface=enp0s8
+++ run-on-host 192.168.1.104 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.104
+++ shift
+++ [[ 192.168.1.104 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- cat /sys/class/net/enp0s8/address
++ export SERVER_A_MAC=08:00:27:66:48:02
++ SERVER_A_MAC=08:00:27:66:48:02
+++ get-remote-mac 192.168.1.105 enp0s8
+++ ip=192.168.1.105
+++ iface=enp0s8
+++ run-on-host 192.168.1.105 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.105
+++ shift
+++ [[ 192.168.1.105 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- cat /sys/class/net/enp0s8/address
++ export SERVER_B_MAC=08:00:27:38:99:15
++ SERVER_B_MAC=08:00:27:38:99:15
+++ get-remote-mac 192.168.1.111 enp0s8
+++ ip=192.168.1.111
+++ iface=enp0s8
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/address
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/address
++ export SERVER_C_MAC=08:00:27:b8:ce:67
++ SERVER_C_MAC=08:00:27:b8:ce:67
++ arp -s 10.0.1.11 08:00:27:66:48:02
++ arp -s 10.0.1.12 08:00:27:38:99:15
++ arp -s 10.0.1.13 08:00:27:b8:ce:67
++ arp -s 10.0.0.11 08:00:27:fe:18:fc
++ arp -s 10.0.0.12 08:00:27:72:8a:ae
++ arp -s 10.0.0.13 08:00:27:09:27:51
++ run-on-host 192.168.1.100 sudo route add -net 10.0.1.0/24 gw 10.0.0.10
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ [[ 192.168.1.100 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.10
+SIOCADDRT: File exists
++ run-on-host 192.168.1.103 sudo route add -net 10.0.1.0/24 gw 10.0.0.10
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.103
++ shift
++ [[ 192.168.1.103 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.10
+SIOCADDRT: File exists
++ run-on-host 192.168.1.110 sudo route add -net 10.0.1.0/24 gw 10.0.0.10
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- sudo route add -net 10.0.1.0/24 gw 10.0.0.10
+SIOCADDRT: File exists
++ run-on-host 192.168.1.104 sudo route add -net 10.0.0.0/24 gw 10.0.1.10
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ [[ 192.168.1.104 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.10
+SIOCADDRT: File exists
++ run-on-host 192.168.1.105 sudo route add -net 10.0.0.0/24 gw 10.0.1.10
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.105
++ shift
++ [[ 192.168.1.105 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.10
+SIOCADDRT: File exists
++ run-on-host 192.168.1.111 sudo route add -net 10.0.0.0/24 gw 10.0.1.10
++ '[' 8 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- sudo route add -net 10.0.0.0/24 gw 10.0.1.10
+SIOCADDRT: File exists
++ run-on-host 192.168.1.100 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.100
++ shift
++ [[ 192.168.1.100 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.100 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.103 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.103
++ shift
++ [[ 192.168.1.103 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.103 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.110 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.104 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.104
++ shift
++ [[ 192.168.1.104 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.104 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.105 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.105
++ shift
++ [[ 192.168.1.105 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.105 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ run-on-host 192.168.1.111 sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ '[' 13 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- sudo ethtool -K enp0s8 tso off gso off gro off tx off
++ config-nic eno1 10.0.0.10
++ NIC=eno1
++ IP=10.0.0.10
++ ip link set eno1 mtu 1500
++ ethtool -K eno1 tso off gso off gro off tx off
++ sysctl net.ipv6.conf.eno1.disable_ipv6=1
+net.ipv6.conf.eno1.disable_ipv6 = 1
++ ifconfig eno1 10.0.0.10
++ config-nic eno3 10.0.1.10
++ NIC=eno3
++ IP=10.0.1.10
++ ip link set eno3 mtu 1500
++ ethtool -K eno3 tso off gso off gro off tx off
++ sysctl net.ipv6.conf.eno3.disable_ipv6=1
+net.ipv6.conf.eno3.disable_ipv6 = 1
++ ifconfig eno3 10.0.1.10
++ sysctl -w net.ipv4.ip_forward=0
+net.ipv4.ip_forward = 0
++ ip link set l4s-mon-nic mtu 2000
++ killall simple_switch
+simple_switch: no process found
+++ seq 2 2 10
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ for i in $(seq 2 2 10)
++ echo 0
++ SIMPLE_SWITCH='/home/montimage/huunghia/mosaico/bertrand-behavioral-model/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128'
++ SIMPLE_SWITCH='/home/montimage/huunghia/mosaico/bmv2/targets/simple_switch/simple_switch --queue 2  --ll_queue 64 --BE_queue 128'
++ DEBUG='--log-file log/sw.log  --log-level info --pcap log/'
++ DEBUG='--log-file /dev/null   --log-level error'
++ SW_PID=32145
++ renice -n -10 -p 32145
++ taskset 0x55555555 /home/montimage/huunghia/mosaico/bmv2/targets/simple_switch/simple_switch --queue 2 --ll_queue 64 --BE_queue 128 --log-file /dev/null --log-level error -i 1@eno1 -i 2@eno3 -i 3@l4s-mon-nic switch-l4s.json
+32145 (process ID) old priority 0, new priority -10
++ monitor_cpu_memory 32145
++ sleep 2
++ PID=32145
++ FILE_NAME=log/cpu_mem_int_yes_pid_32145
++ /home/montimage/.local/bin/psrecord 32145 --log log/cpu_mem_int_yes_pid_32145.txt --duration 320 --interval 1 --include-children
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Setting default action of ipv4_lpm
+action:              drop
+runtime data:        
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0b
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:fe:18:fc	00:01
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0c
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:72:8a:ae	00:01
+Entry has been added with handle 1
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:00:0d
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:a8	08:00:27:09:27:51	00:01
+Entry has been added with handle 2
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0b
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:66:48:02	00:02
+Entry has been added with handle 3
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0c
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:38:99:15	00:02
+Entry has been added with handle 4
+RuntimeCmd: Adding entry to exact match table ipv4_lpm
+match key:           EXACT-0a:00:01:0d
+action:              ipv4_forward
+runtime data:        24:6e:96:37:81:ac	08:00:27:b8:ce:67	00:02
+Entry has been added with handle 5
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to exact match table select_PI2_param
+match key:           
+action:              set_PI2_param
+runtime data:        00:00:05:3e	00:00:34:6d	00:00:3a:98	0e
+Entry has been added with handle 0
+RuntimeCmd: Adding entry to exact match table select_L4S_param
+match key:           
+action:              set_L4S_param
+runtime data:        00:00:13:88	00:00:0b:b8	00	00:00:05:dc	15
+Entry has been added with handle 0
+RuntimeCmd: 
++ [[ yes == \y\e\s ]]
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_transit)
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Adding entry to ternary match table tb_int_config_source
+match key:           TERNARY-0a:00:00:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00	TERNARY-0a:00:01:0b &&& 00:00:00:00	TERNARY-13:89 &&& 00:00
+action:              set_source
+runtime data:        04	0a	ff:ff
+Entry has been added with handle 0
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: Error: Invalid table name (tb_int_config_sink)
+RuntimeCmd: 
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: 
++ '[' -f mahimahi.txt ']'
++ echo 'Loading mahimahi.txt'
+Loading mahimahi.txt
++ cat
++ config_sw
++ tee -a log/config.log
++ /usr/local/bin/simple_switch_CLI
++ tee -a log/config.log
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: RuntimeCmd: RuntimeCmd: 
++ . /home/montimage/huunghia/mosaico/testbed/monitoring-mmt-tcpdump.sh
+++++ dirname ./setup-testbed.sh
++++ cd -- .
++++ pwd -P
+++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed
+++ MMT_CONFIG_FILE=/home/montimage/huunghia/mosaico/testbed/mmt-probe.conf
++++ cat
+++ MMT_ATTRIBUTES='	"meta.packet_index",
+	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ echo '	"meta.packet_index",
+	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ sed --expression=s/int.hop_tx_utilizes/int.mark_probability/
+++ MMT_ATTRIBUTES_HEADERS='	"meta.packet_index",
+	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ ACTION=
+++ [[ '' == \c\o\m\b\i\n\e\-\m\m\t\-\c\s\v\-\f\i\l\e\s ]]
++ start-monitoring
++ cd -- /home/montimage/huunghia/mosaico/testbed/log
++ log 'start pcap dump'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230721-052923 ' 'start pcap dump'
+20230721-052923  start pcap dump
++ FILTER='tcp or udp'
++ tcpdump --snapshot-length=128 -i eno1 -w eno1-data.pcap 'tcp or udp'
++ sleep 1
++ tcpdump --snapshot-length=128 -i eno3 -w eno3-data.pcap 'tcp or udp'
++ tcpdump --snapshot-length=176 -i l4s-mon-nic -w l4s-mon-nic-int.pcap 'tcp or udp'
+tcpdump: listening on eno1, link-type EN10MB (Ethernet), capture size 128 bytes
+tcpdump: listening on eno3, link-type EN10MB (Ethernet), capture size 128 bytes
+tcpdump: listening on l4s-mon-nic, link-type EN10MB (Ethernet), capture size 176 bytes
++ cp -- /home/montimage/huunghia/mosaico/testbed/mmt-probe.conf ./mmt-probe.conf
++ generate-monitor-config
++ cat
+++ date
++ log 'start mmt-probe'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230721-052924 ' 'start mmt-probe'
+20230721-052924  start mmt-probe
++ sleep 2
++ mmt-probe -c ./mmt-probe.conf -i l4s-mon-nic
++ echo '*******testbed is ready*******'
+*******testbed is ready*******
++ cd -- /home/montimage/huunghia/mosaico/testbed
++ [[ /home/montimage/huunghia/mosaico/testbed/measure--picoquic/start-monitoring.sh == '' ]]
++ bash -x /home/montimage/huunghia/mosaico/testbed/measure--picoquic/start-monitoring.sh
++ SERVER_DATA_IP=10.0.1.13
++ CLIENT_DATA_IP=10.0.0.13
++ SERVER_CTRL_IP=192.168.1.111
++ CLIENT_CTRL_IP=192.168.1.110
++ date
+vendredi 21 juillet 2023, 05:29:26 (UTC+0200)
++ set -x
++++ dirname /home/montimage/huunghia/mosaico/testbed/measure--picoquic/start-monitoring.sh
+++ cd -- /home/montimage/huunghia/mosaico/testbed/measure--picoquic
+++ pwd -P
++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed/measure--picoquic
++ MMT_CONFIG_FILE=/home/montimage/huunghia/mosaico/testbed/measure--picoquic/mmt-probe.conf
++ . /home/montimage/huunghia/mosaico/testbed/measure--picoquic/../environment.sh
+++ set -x
+++++ dirname /home/montimage/huunghia/mosaico/testbed/measure--picoquic/start-monitoring.sh
++++ cd -- /home/montimage/huunghia/mosaico/testbed/measure--picoquic
++++ pwd -P
+++ SCRIPT_PATH=/home/montimage/huunghia/mosaico/testbed/measure--picoquic
+++ . /home/montimage/huunghia/mosaico/testbed/environment-param-bare-metal.sh
++++ export IFACE=eno1
++++ IFACE=eno1
++++ export IFACE_IP=10.0.0.10
++++ IFACE_IP=10.0.0.10
++++ export REV_IFACE=eno3
++++ REV_IFACE=eno3
++++ export REV_IFACE_IP=10.0.1.10
++++ REV_IFACE_IP=10.0.1.10
++++ export MON_IFACE=l4s-mon-nic
++++ MON_IFACE=l4s-mon-nic
++++ export MON_IFACE_IP=10.1.0.1
++++ MON_IFACE_IP=10.1.0.1
++++ export SERVER_NET=10.0.1.0/24
++++ SERVER_NET=10.0.1.0/24
++++ export CLIENT_NET=10.0.0.0/24
++++ CLIENT_NET=10.0.0.0/24
++++ export SERVER_A=10.0.1.11
++++ SERVER_A=10.0.1.11
++++ export SERVER_B=10.0.1.12
++++ SERVER_B=10.0.1.12
++++ export SERVER_C=10.0.1.13
++++ SERVER_C=10.0.1.13
++++ export CLIENT_A=10.0.0.11
++++ CLIENT_A=10.0.0.11
++++ export CLIENT_B=10.0.0.12
++++ CLIENT_B=10.0.0.12
++++ export CLIENT_C=10.0.0.13
++++ CLIENT_C=10.0.0.13
++++ export CLIENT_A_IFACE=enp0s8
++++ CLIENT_A_IFACE=enp0s8
++++ export CLIENT_B_IFACE=enp0s8
++++ CLIENT_B_IFACE=enp0s8
++++ export CLIENT_C_IFACE=enp0s8
++++ CLIENT_C_IFACE=enp0s8
++++ export SERVER_A_IFACE=enp0s8
++++ SERVER_A_IFACE=enp0s8
++++ export SERVER_B_IFACE=enp0s8
++++ SERVER_B_IFACE=enp0s8
++++ export SERVER_C_IFACE=enp0s8
++++ SERVER_C_IFACE=enp0s8
++++ export MMT_IP=10.0.30.2
++++ MMT_IP=10.0.30.2
++++ export MMT_IFACE=enp0s8
++++ MMT_IFACE=enp0s8
++++ export CLIENT_A_CTRL=192.168.1.100
++++ CLIENT_A_CTRL=192.168.1.100
++++ export SERVER_A_CTRL=192.168.1.104
++++ SERVER_A_CTRL=192.168.1.104
++++ export SERVER_C_CTRL=192.168.1.111
++++ SERVER_C_CTRL=192.168.1.111
++++ export SERVER_B_CTRL=192.168.1.105
++++ SERVER_B_CTRL=192.168.1.105
++++ export CLIENT_B_CTRL=192.168.1.103
++++ CLIENT_B_CTRL=192.168.1.103
++++ export CLIENT_C_CTRL=192.168.1.110
++++ CLIENT_C_CTRL=192.168.1.110
++ . /home/montimage/huunghia/mosaico/testbed/measure--picoquic/pre-process-mmt-csv.sh
+++ TCP_OR_UDP_ATTRIBUTES='"udp.src_port","udp.dest_port","udp.len"'
+++ [[ '' == \i\p\e\r\f\3 ]]
++++ cat
+++ ATTRIBUTES='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ echo '	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.hop_tx_utilizes"'
++++ sed --expression=s/int.hop_tx_utilizes/int.mark_probability/
+++ ATTRIBUTES_HEADERS='	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_queue_ids",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ ACTION=
+++ [[ '' == \c\o\m\b\i\n\e\-\m\m\t\-\c\s\v\-\f\i\l\e\s ]]
++ LOG_DIR=/home/montimage/huunghia/mosaico/testbed/measure--picoquic/../log
++ mkdir -p -- /home/montimage/huunghia/mosaico/testbed/measure--picoquic/../log
++ TCP_OR_UDP_PORT=4433
++ FILE_SIZE=1000
++ REBUILD_SEM_DIR=/tmp/rebuild
++ mkdir -p /tmp/rebuild
++ log 'start experiment'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230721-052926 ' 'start experiment'
+20230721-052926  start experiment
++ date
+vendredi 21 juillet 2023, 05:29:26 (UTC+0200)
++ ps auxf
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         2  0.0  0.0      0     0 ?        S    juil.03   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/0:0H-kb]
+root         9  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [mm_percpu_wq]
+root        10  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/0]
+root        11  0.0  0.0      0     0 ?        I    juil.03   7:43  \_ [rcu_sched]
+root        12  0.0  0.0      0     0 ?        S    juil.03   0:03  \_ [migration/0]
+root        13  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/0]
+root        15  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/0]
+root        16  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/1]
+root        17  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/1]
+root        18  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/1]
+root        19  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/1]
+root        21  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/1:0H]
+root        23  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [cpuhp/2]
+root        24  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [idle_inject/2]
+root        25  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [migration/2]
+root        26  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [ksoftirqd/2]
+root        27  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/2:0-rcu]
+root        28  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/2:0H]
+root        29  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/3]
+root        30  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/3]
+root        31  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/3]
+root        32  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/3]
+root        34  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/3:0H]
+root        35  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [cpuhp/4]
+root        36  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [idle_inject/4]
+root        37  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [migration/4]
+root        38  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [ksoftirqd/4]
+root        39  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/4:0-rcu]
+root        40  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/4:0H-kb]
+root        41  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/5]
+root        42  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/5]
+root        43  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/5]
+root        44  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/5]
+root        46  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/5:0H]
+root        47  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [cpuhp/6]
+root        48  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [idle_inject/6]
+root        49  0.0  0.0      0     0 ?        P    juil.03   0:01  \_ [migration/6]
+root        50  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [ksoftirqd/6]
+root        52  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/6:0H-kb]
+root        53  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/7]
+root        54  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/7]
+root        55  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/7]
+root        56  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/7]
+root        58  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/7:0H]
+root        59  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [cpuhp/8]
+root        60  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [idle_inject/8]
+root        61  0.0  0.0      0     0 ?        P    juil.03   0:01  \_ [migration/8]
+root        62  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [ksoftirqd/8]
+root        64  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/8:0H-kb]
+root        65  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/9]
+root        66  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/9]
+root        67  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/9]
+root        68  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/9]
+root        70  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/9:0H-kb]
+root        71  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [cpuhp/10]
+root        72  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [idle_inject/10]
+root        73  0.0  0.0      0     0 ?        P    juil.03   0:01  \_ [migration/10]
+root        74  0.0  0.0      0     0 ?        P    juil.03   0:00  \_ [ksoftirqd/10]
+root        76  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/10:0H]
+root        77  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/11]
+root        78  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/11]
+root        79  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/11]
+root        80  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/11]
+root        82  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/11:0H-k]
+root        83  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/12]
+root        84  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/12]
+root        85  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/12]
+root        86  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/12]
+root        88  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/12:0H]
+root        89  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/13]
+root        90  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/13]
+root        91  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/13]
+root        92  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/13]
+root        94  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/13:0H-k]
+root        95  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/14]
+root        96  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/14]
+root        97  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/14]
+root        98  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/14]
+root       100  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/14:0H-k]
+root       101  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/15]
+root       102  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/15]
+root       103  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/15]
+root       104  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/15]
+root       106  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/15:0H-k]
+root       107  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/16]
+root       108  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/16]
+root       109  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/16]
+root       110  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/16]
+root       112  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/16:0H-k]
+root       113  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/17]
+root       114  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/17]
+root       115  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/17]
+root       116  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/17]
+root       118  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/17:0H-k]
+root       119  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/18]
+root       120  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/18]
+root       121  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/18]
+root       122  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/18]
+root       124  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/18:0H-k]
+root       125  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/19]
+root       126  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/19]
+root       127  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/19]
+root       128  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/19]
+root       130  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/19:0H-k]
+root       131  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/20]
+root       132  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/20]
+root       133  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/20]
+root       134  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/20]
+root       136  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/20:0H]
+root       137  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/21]
+root       138  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/21]
+root       139  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/21]
+root       140  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/21]
+root       142  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/21:0H-k]
+root       143  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/22]
+root       144  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/22]
+root       145  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/22]
+root       146  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/22]
+root       148  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/22:0H-k]
+root       149  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/23]
+root       150  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/23]
+root       151  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/23]
+root       152  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/23]
+root       154  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/23:0H-k]
+root       155  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/24]
+root       156  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/24]
+root       157  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/24]
+root       158  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/24]
+root       160  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/24:0H-k]
+root       161  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/25]
+root       162  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/25]
+root       163  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/25]
+root       164  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/25]
+root       166  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/25:0H-k]
+root       167  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/26]
+root       168  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/26]
+root       169  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/26]
+root       170  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/26]
+root       172  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/26:0H-k]
+root       173  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/27]
+root       174  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/27]
+root       175  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/27]
+root       176  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/27]
+root       178  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/27:0H-k]
+root       179  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/28]
+root       180  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/28]
+root       181  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/28]
+root       182  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/28]
+root       184  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/28:0H]
+root       185  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/29]
+root       186  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/29]
+root       187  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/29]
+root       188  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/29]
+root       190  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/29:0H]
+root       191  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/30]
+root       192  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/30]
+root       193  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/30]
+root       194  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/30]
+root       196  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/30:0H-k]
+root       197  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/31]
+root       198  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/31]
+root       199  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/31]
+root       200  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/31]
+root       202  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/31:0H-k]
+root       203  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/32]
+root       204  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/32]
+root       205  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/32]
+root       206  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/32]
+root       208  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/32:0H-k]
+root       209  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/33]
+root       210  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/33]
+root       211  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/33]
+root       212  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/33]
+root       214  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/33:0H]
+root       215  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/34]
+root       216  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/34]
+root       217  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/34]
+root       218  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/34]
+root       220  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/34:0H]
+root       221  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/35]
+root       222  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/35]
+root       223  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/35]
+root       224  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/35]
+root       226  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/35:0H-k]
+root       227  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/36]
+root       228  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/36]
+root       229  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/36]
+root       230  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/36]
+root       232  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/36:0H-k]
+root       233  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/37]
+root       234  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/37]
+root       235  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/37]
+root       236  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/37]
+root       238  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/37:0H-k]
+root       239  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/38]
+root       240  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/38]
+root       241  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/38]
+root       242  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/38]
+root       244  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/38:0H]
+root       245  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/39]
+root       246  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/39]
+root       247  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/39]
+root       248  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/39]
+root       250  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/39:0H-k]
+root       251  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/40]
+root       252  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/40]
+root       253  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/40]
+root       254  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/40]
+root       256  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/40:0H-k]
+root       257  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/41]
+root       258  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/41]
+root       259  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/41]
+root       260  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/41]
+root       262  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/41:0H-k]
+root       263  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/42]
+root       264  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/42]
+root       265  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/42]
+root       266  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/42]
+root       268  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/42:0H-k]
+root       269  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/43]
+root       270  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/43]
+root       271  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/43]
+root       272  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/43]
+root       274  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/43:0H-k]
+root       275  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/44]
+root       276  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/44]
+root       277  0.0  0.0      0     0 ?        S    juil.03   0:05  \_ [migration/44]
+root       278  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/44]
+root       280  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/44:0H-k]
+root       281  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/45]
+root       282  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/45]
+root       283  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/45]
+root       284  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/45]
+root       286  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/45:0H-k]
+root       287  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/46]
+root       288  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/46]
+root       289  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/46]
+root       290  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/46]
+root       292  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/46:0H]
+root       293  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [cpuhp/47]
+root       294  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [idle_inject/47]
+root       295  0.0  0.0      0     0 ?        S    juil.03   0:04  \_ [migration/47]
+root       296  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ksoftirqd/47]
+root       298  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/47:0H-k]
+root       299  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [kdevtmpfs]
+root       300  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [netns]
+root       301  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [rcu_tasks_kthre]
+root       302  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [kauditd]
+root       303  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/2:1-eve]
+root       305  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/4:1-eve]
+root       307  0.0  0.0      0     0 ?        S    juil.03   0:01  \_ [khungtaskd]
+root       308  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [oom_reaper]
+root       309  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [writeback]
+root       310  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [kcompactd0]
+root       311  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [kcompactd1]
+root       312  0.0  0.0      0     0 ?        SN   juil.03   0:00  \_ [ksmd]
+root       313  0.0  0.0      0     0 ?        SN   juil.03   0:04  \_ [khugepaged]
+root       359  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kintegrityd]
+root       360  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kblockd]
+root       361  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [blkcg_punt_bio]
+root       362  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [tpm_dev_wq]
+root       363  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [ata_sff]
+root       364  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [md]
+root       365  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [edac-poller]
+root       366  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [devfreq_wq]
+root       367  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [watchdogd]
+root       374  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/6:1-eve]
+root       375  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/8:1-eve]
+root       377  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/10:1-ev]
+root       415  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [kswapd0]
+root       416  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [kswapd1]
+root       417  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [ecryptfs-kthrea]
+root       419  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kthrotld]
+root       420  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [acpi_thermal_pm]
+root       421  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [vfio-irqfd-clea]
+root       423  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [ipv6_addrconf]
+root       432  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kstrp]
+root       436  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/u99:0]
+root       437  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/u100:0]
+root       438  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/u101:0]
+root       451  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [charger_manager]
+root       514  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_0]
+root       515  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [i40e]
+root       516  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_0]
+root       517  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [ixgbe]
+root       523  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_1]
+root       524  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_1]
+root       525  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_2]
+root       526  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_2]
+root       527  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_3]
+root       528  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_3]
+root       529  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_4]
+root       530  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_4]
+root       533  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [poll_megasas0_s]
+root       536  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/8:1H-kb]
+root       537  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_5]
+root       538  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_5]
+root       539  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_6]
+root       540  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_6]
+root       541  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_7]
+root       542  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_7]
+root       543  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_8]
+root       544  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_8]
+root       545  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_9]
+root       546  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_9]
+root       547  0.0  0.0      0     0 ?        S    juil.03   0:00  \_ [scsi_eh_10]
+root       548  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [scsi_tmf_10]
+root       555  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/26:1H-k]
+root       637  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/4:1H-kb]
+root       638  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/10:1H-k]
+root       642  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/1:1H-kb]
+root       643  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/19:1H-k]
+root       662  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/30:1H-k]
+root       665  0.0  0.0      0     0 ?        S    juil.03   0:10  \_ [jbd2/sda1-8]
+root       666  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [ext4-rsv-conver]
+root       668  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/42:1H-k]
+root       677  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/40:1H-k]
+root       681  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/18:1H-k]
+root       684  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/20:1H-k]
+root       687  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/22:1H-k]
+root       702  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/0:1H-kb]
+root       703  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/38:1H-k]
+root       704  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/2:1H-kb]
+root       705  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/28:1H-k]
+root       706  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/34:1H-k]
+root       708  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/32:1H-k]
+root       720  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/46:1H-k]
+root       722  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/44:1H-k]
+root       726  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/16:1H-k]
+root       729  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/6:1H-kb]
+root       731  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/24:1H-k]
+root       736  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/36:1H-k]
+root       737  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/12:1H-k]
+root       869  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop1]
+root       871  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/27:1H-k]
+root       881  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/3:1H-kb]
+root       882  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/37:1H-k]
+root       883  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/31:1H-k]
+root       885  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop2]
+root       886  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/47:1H-k]
+root       887  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/7:1H-kb]
+root       888  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [ipmi-msghandler]
+root       914  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/43:1H-k]
+root       917  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/29:1H-k]
+root       918  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/21:1H-k]
+root       920  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/15:1H-k]
+root       922  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/5:1H-kb]
+root       924  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/39:1H-k]
+root       930  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/33:1H-k]
+root       931  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/17:1H-k]
+root       935  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/25:1H-k]
+root       936  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop5]
+root       937  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [cryptd]
+root       971  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop6]
+root       975  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [ttm_swap]
+root       980  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop7]
+root      1019  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/11:1H-k]
+root      1020  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/35:1H-k]
+root      1025  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop8]
+root      1027  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop9]
+root      1044  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/41:1H-k]
+root      1045  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop10]
+root      1046  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/9:1H-kb]
+root      1047  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/13:1H-k]
+root      1058  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop11]
+root      1059  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/45:1H-k]
+root      1060  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop12]
+root      1061  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/23:1H-k]
+root      1062  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop13]
+root      1070  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop15]
+root      1071  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop16]
+root      1073  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop18]
+root      1074  0.0  0.0      0     0 ?        I<   juil.03   0:00  \_ [kworker/14:1H-k]
+root      1077  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop21]
+root      1079  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop23]
+root      1080  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop24]
+root      1081  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop25]
+root      1082  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop26]
+root      1123  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/6:2-rcu]
+root      1204  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/8:2-mm_]
+root      1385  0.0  0.0      0     0 ?        I    juil.03   0:00  \_ [kworker/10:2-cg]
+root      5113  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop27]
+root      5948  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop4]
+root      6551  0.0  0.0      0     0 ?        S<   juil.03   0:00  \_ [loop19]
+root      4495  0.0  0.0      0     0 ?        S<   juil.04   0:00  \_ [loop17]
+root      5593  0.0  0.0      0     0 ?        S<   juil.06   0:00  \_ [loop20]
+root      8874  0.0  0.0      0     0 ?        S<   juil.07   0:00  \_ [loop3]
+root     44836  0.0  0.0      0     0 ?        S<   juil.11   0:00  \_ [loop14]
+root     39415  0.0  0.0      0     0 ?        S<   juil.12   0:00  \_ [loop28]
+root      7079  0.0  0.0      0     0 ?        S<   juil.19   0:00  \_ [loop22]
+root      9795  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/29:1-mm]
+root     18754  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/31:2-rc]
+root     21686  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/34:2-ev]
+root     27195  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/31:0-mm]
+root     28317  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/12:1-rc]
+root     30731  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/29:0-cg]
+root     30744  0.0  0.0      0     0 ?        I    juil.20   0:04  \_ [kworker/0:1-eve]
+root     32421  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/24:2-mm]
+root     35854  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/30:2-rc]
+root     38289  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/9:2-rcu]
+root     41568  0.0  0.0      0     0 ?        I    juil.20   0:00  \_ [kworker/36:1-rc]
+root     43825  0.0  0.0      0     0 ?        I    00:15   0:00  \_ [kworker/14:2-rc]
+root     44206  0.0  0.0      0     0 ?        I    00:19   0:00  \_ [kworker/22:1-ev]
+root     44620  0.0  0.0      0     0 ?        I    00:22   0:00  \_ [kworker/39:2-rc]
+root     45037  0.0  0.0      0     0 ?        I    00:26   0:00  \_ [kworker/14:1-ev]
+root     47047  0.0  0.0      0     0 ?        I    00:42   0:00  \_ [kworker/18:2-rc]
+root     48160  0.0  0.0      0     0 ?        I    00:52   0:00  \_ [kworker/16:0-rc]
+root      4085  0.0  0.0      0     0 ?        I    01:26   0:00  \_ [kworker/35:1-rc]
+root      4619  0.0  0.0      0     0 ?        I    01:32   0:00  \_ [kworker/19:2-rc]
+root      5290  0.0  0.0      0     0 ?        I    01:37   0:00  \_ [kworker/16:1-ev]
+root      5489  0.0  0.0      0     0 ?        I    01:40   0:00  \_ [kworker/32:0-mm]
+root      5966  0.0  0.0      0     0 ?        I    01:43   0:00  \_ [kworker/27:1-ev]
+root      8212  0.0  0.0      0     0 ?        I    02:02   0:00  \_ [kworker/0:2-cgr]
+root      8247  0.0  0.0      0     0 ?        I    02:02   0:00  \_ [kworker/45:2-rc]
+root      8628  0.0  0.0      0     0 ?        I    02:06   0:00  \_ [kworker/38:1-mm]
+root      8629  0.0  0.0      0     0 ?        I    02:06   0:00  \_ [kworker/20:0-rc]
+root     10543  0.0  0.0      0     0 ?        I    02:21   0:00  \_ [kworker/46:1-mm]
+root     11141  0.0  0.0      0     0 ?        I    02:28   0:00  \_ [kworker/41:1-rc]
+root     11494  0.0  0.0      0     0 ?        I    02:31   0:00  \_ [kworker/23:2-rc]
+root     12580  0.0  0.0      0     0 ?        I    02:39   0:00  \_ [kworker/28:2-rc]
+root     12960  0.0  0.0      0     0 ?        I    02:43   0:00  \_ [kworker/1:1-rcu]
+root     13346  0.0  0.0      0     0 ?        I    02:46   0:00  \_ [kworker/44:1-rc]
+root     13764  0.0  0.0      0     0 ?        I    02:50   0:00  \_ [kworker/37:1-rc]
+root     13765  0.0  0.0      0     0 ?        I    02:50   0:00  \_ [kworker/15:0-rc]
+root     15848  0.0  0.0      0     0 ?        I    03:08   0:00  \_ [kworker/41:2-mm]
+root     16200  0.0  0.0      0     0 ?        I    03:10   0:00  \_ [kworker/21:1-rc]
+root     16564  0.0  0.0      0     0 ?        I    03:13   0:00  \_ [kworker/44:2-ev]
+root     16565  0.0  0.0      0     0 ?        I    03:13   0:00  \_ [kworker/42:0-rc]
+root     16934  0.0  0.0      0     0 ?        I    03:17   0:00  \_ [kworker/26:1-rc]
+root     17688  0.0  0.0      0     0 ?        I    03:23   0:00  \_ [kworker/13:2-rc]
+root     18102  0.0  0.0      0     0 ?        I    03:27   0:00  \_ [kworker/21:2-mm]
+root     18515  0.0  0.0      0     0 ?        I    03:31   0:00  \_ [kworker/5:2-rcu]
+root     19462  0.0  0.0      0     0 ?        I    03:39   0:00  \_ [kworker/20:1-ev]
+root     19463  0.0  0.0      0     0 ?        I    03:39   0:00  \_ [kworker/30:0-mm]
+root     19819  0.0  0.0      0     0 ?        I    03:43   0:00  \_ [kworker/35:2-mm]
+root     19820  0.0  0.0      0     0 ?        I    03:43   0:00  \_ [kworker/9:0-eve]
+root     20174  0.0  0.0      0     0 ?        I    03:45   0:00  \_ [kworker/22:2-ev]
+root     20183  0.0  0.0      0     0 ?        I    03:45   0:00  \_ [kworker/37:2-mm]
+root     21265  0.0  0.0      0     0 ?        I    03:54   0:00  \_ [kworker/11:0-mm]
+root     21449  0.0  0.0      0     0 ?        I    03:54   0:00  \_ [kworker/24:0-cg]
+root     21652  0.0  0.0      0     0 ?        I    03:57   0:00  \_ [kworker/34:1]
+root     21653  0.0  0.0      0     0 ?        I    03:57   0:00  \_ [kworker/42:2-mm]
+root     22419  0.0  0.0      0     0 ?        I    04:04   0:00  \_ [kworker/u97:0-e]
+root     22860  0.0  0.0      0     0 ?        I    04:08   0:00  \_ [kworker/36:2-ev]
+root     22861  0.0  0.0      0     0 ?        I    04:08   0:00  \_ [kworker/40:1-mm]
+root     23333  0.0  0.0      0     0 ?        I    04:12   0:00  \_ [kworker/12:2-mm]
+root     23808  0.0  0.0      0     0 ?        I    04:16   0:00  \_ [kworker/43:0-rc]
+root     23809  0.0  0.0      0     0 ?        I    04:16   0:00  \_ [kworker/1:0-eve]
+root     24168  0.0  0.0      0     0 ?        I    04:21   0:00  \_ [kworker/25:1-rc]
+root     24169  0.0  0.0      0     0 ?        I    04:21   0:00  \_ [kworker/45:0-mm]
+root     24399  0.0  0.0      0     0 ?        I    04:21   0:00  \_ [kworker/23:0-mm]
+root     24521  0.0  0.0      0     0 ?        I    04:23   0:00  \_ [kworker/17:2-rc]
+root     24522  0.0  0.0      0     0 ?        I    04:23   0:00  \_ [kworker/27:0]
+root     24878  0.0  0.0      0     0 ?        I    04:25   0:00  \_ [kworker/43:2-mm]
+root     24879  0.0  0.0      0     0 ?        I    04:25   0:00  \_ [kworker/47:1-rc]
+root     25243  0.0  0.0      0     0 ?        I    04:28   0:00  \_ [kworker/3:1-eve]
+root     25607  0.0  0.0      0     0 ?        I    04:32   0:00  \_ [kworker/33:1-ev]
+root     25986  0.0  0.0      0     0 ?        I    04:35   0:00  \_ [kworker/13:1-mm]
+root     26364  0.0  0.0      0     0 ?        I    04:39   0:00  \_ [kworker/33:2]
+root     26365  0.0  0.0      0     0 ?        I    04:39   0:00  \_ [kworker/7:0-rcu]
+root     26735  0.0  0.0      0     0 ?        I    04:41   0:00  \_ [kworker/32:2-cg]
+root     26785  0.0  0.0      0     0 ?        I    04:42   0:00  \_ [kworker/38:2]
+root     26786  0.0  0.0      0     0 ?        I    04:42   0:00  \_ [kworker/26:0-mm]
+root     27201  0.0  0.0      0     0 ?        I    04:46   0:00  \_ [kworker/46:2]
+root     27675  0.0  0.0      0     0 ?        I    04:50   0:00  \_ [kworker/5:1-eve]
+root     27676  0.0  0.0      0     0 ?        I    04:50   0:00  \_ [kworker/3:2]
+root     27745  0.0  0.0      0     0 ?        I    04:51   0:00  \_ [kworker/u98:0-e]
+root     28098  0.0  0.0      0     0 ?        I    04:53   0:00  \_ [kworker/u96:2-p]
+root     28151  0.0  0.0      0     0 ?        I    04:54   0:00  \_ [kworker/15:1-mm]
+root     28154  0.0  0.0      0     0 ?        I    04:54   0:00  \_ [kworker/u97:2-e]
+root     28506  0.0  0.0      0     0 ?        I    04:58   0:00  \_ [kworker/17:1-mm]
+root     28860  0.0  0.0      0     0 ?        I    05:01   0:00  \_ [kworker/25:0-mm]
+root     29211  0.0  0.0      0     0 ?        I    05:03   0:00  \_ [kworker/19:0-mm]
+root     30315  0.0  0.0      0     0 ?        I    05:13   0:00  \_ [kworker/47:2-rc]
+root     30316  0.0  0.0      0     0 ?        I    05:13   0:00  \_ [kworker/40:0]
+root     30570  0.0  0.0      0     0 ?        I    05:14   0:00  \_ [kworker/u98:1-e]
+root     30579  0.0  0.0      0     0 ?        I    05:14   0:00  \_ [kworker/u97:1-e]
+root     30696  0.0  0.0      0     0 ?        I    05:16   0:00  \_ [kworker/7:1-mm_]
+root     30697  0.0  0.0      0     0 ?        I    05:16   0:00  \_ [kworker/39:1-mm]
+root     31088  0.0  0.0      0     0 ?        I    05:20   0:00  \_ [kworker/u98:2-e]
+root     31115  0.0  0.0      0     0 ?        I    05:20   0:00  \_ [kworker/11:1]
+root     31116  0.0  0.0      0     0 ?        I    05:20   0:00  \_ [kworker/18:0-mm]
+root     31472  0.0  0.0      0     0 ?        I    05:22   0:00  \_ [kworker/u96:1-p]
+root     31529  0.0  0.0      0     0 ?        I    05:24   0:00  \_ [kworker/28:1-mm]
+root     31986  0.0  0.0      0     0 ?        I    05:27   0:00  \_ [kworker/u96:0-i]
+root     32001  0.0  0.0      0     0 ?        I    05:27   0:00  \_ [kworker/47:0-ev]
+root         1  0.0  0.0 225784  9628 ?        Ss   juil.03   0:21 /sbin/init splash
+root       727  0.0  0.0 221964 128604 ?       S<s  juil.03   0:51 /lib/systemd/systemd-journald
+root       738  0.0  0.0  35340  5060 ?        Ss   juil.03   0:02 /lib/systemd/systemd-udevd
+systemd+  1110  0.0  0.0  70628  5880 ?        Ss   juil.03   0:10 /lib/systemd/systemd-resolved
+systemd+  1113  0.0  0.0 145968  5376 ?        Ssl  juil.03   0:01 /lib/systemd/systemd-timesyncd
+syslog    1292  0.0  0.0 263048  5168 ?        Ssl  juil.03   0:13 /usr/sbin/rsyslogd -n
+root      1294  0.0  0.0   4560   784 ?        Ss   juil.03   0:00 /usr/sbin/acpid
+root      1300  0.0  0.0 434332  9260 ?        Ssl  juil.03   0:00 /usr/sbin/ModemManager --filter-policy=strict
+root      1306  0.0  0.0 111024  4064 ?        Ssl  juil.03  18:53 /usr/sbin/irqbalance --foreground
+root      1308  0.0  0.0 287844  7352 ?        Ssl  juil.03   0:25 /usr/lib/accountsservice/accounts-daemon
+root      1310  0.0  0.0  70928  6480 ?        Ss   juil.03   0:03 /lib/systemd/systemd-logind
+message+  1313  0.0  0.0  51688  6172 ?        Ss   juil.03   0:26 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      1357  0.0  0.0 698836 17988 ?        Ssl  juil.03   0:45 /usr/sbin/NetworkManager --no-daemon
+root      1505  0.0  0.0  25996  6248 ?        S    juil.03   0:00  \_ /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /run/dhclient-eno4.pid -lf /var/lib/NetworkManager/dhclient-3570b4c8-c824-3167-8ddc-61870cde55e4-eno4.lease -cf /var/lib/NetworkManager/dhclient-eno4.conf eno4
+root      1358  0.0  0.0  31328  3132 ?        Ss   juil.03   0:01 /usr/sbin/cron -f
+root      1359  0.0  0.0 171096 17568 ?        Ssl  juil.03   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root      1360  0.0  0.0  45240  5292 ?        Ss   juil.03   0:04 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+root      1361  0.0  0.0 503748 12224 ?        Ssl  juil.03   2:13 /usr/lib/udisks2/udisksd
+avahi     1363  0.0  0.0  47296  3716 ?        Ss   juil.03   0:03 avahi-daemon: running [server-24cores.local]
+avahi     1377  0.0  0.0  47084   336 ?        S    juil.03   0:00  \_ avahi-daemon: chroot helper
+root      1373  0.0  0.0 296448 10148 ?        Ssl  juil.03   0:22 /usr/lib/policykit-1/polkitd --no-debug
+root      1402  0.0  0.0 187248 19920 ?        Ssl  juil.03   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root      1414  0.0  0.0 301084  8604 ?        Ssl  juil.03   0:00 /usr/sbin/gdm3
+root      1440  0.0  0.0 264760  8756 ?        Sl   juil.03   0:00  \_ gdm-session-worker [pam/gdm-autologin]
+montima+  1464  0.0  0.0 205032  6060 tty1     Ssl+ juil.03   0:00      \_ /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+montima+  1466  0.0  0.0 2802288 89040 tty1    Sl+  juil.03   0:09          \_ /usr/lib/xorg/Xorg vt1 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+montima+  1631  0.0  0.0 551948 13976 tty1     Sl+  juil.03   0:00          \_ /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+montima+  1757  0.0  0.0  11316   316 ?        Ss   juil.03   0:03              \_ /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+montima+  2011  0.0  0.2 9342344 276668 tty1   Sl+  juil.03  16:34              \_ /usr/bin/gnome-shell
+montima+  2133  0.0  0.0 354388  7620 tty1     Sl   juil.03   0:00              |   \_ ibus-daemon --xim --panel disable
+montima+  2137  0.0  0.0 273644  6632 tty1     Sl   juil.03   0:00              |       \_ /usr/lib/ibus/ibus-dconf
+montima+  2417  0.0  0.0 197788  6608 tty1     Sl   juil.03   0:00              |       \_ /usr/lib/ibus/ibus-engine-simple
+montima+  2215  0.0  0.0 509916 21928 tty1     Sl+  juil.03   0:01              \_ /usr/lib/gnome-settings-daemon/gsd-power
+montima+  2218  0.0  0.0 342240 10296 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-print-notifications
+montima+  2219  0.0  0.0 416244  5804 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-rfkill
+montima+  2220  0.0  0.0 268632  5124 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+montima+  2228  0.0  0.0 445880 10004 tty1     Sl+  juil.03   0:05              \_ /usr/lib/gnome-settings-daemon/gsd-sharing
+montima+  2232  0.0  0.0 370968  9228 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-smartcard
+montima+  2236  0.0  0.0 327876  8128 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-sound
+montima+  2238  0.0  0.0 421168 20904 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-wacom
+montima+  2245  0.0  0.0 487388 21908 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-xsettings
+montima+  2257  0.0  0.0 336472 20196 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-clipboard
+montima+  2258  0.0  0.0 271056  5848 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+montima+  2259  0.0  0.0 462640 13612 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-datetime
+montima+  2265  0.0  0.0 507788 25084 tty1     Sl+  juil.03  14:58              \_ /usr/lib/gnome-settings-daemon/gsd-color
+montima+  2267  0.0  0.0 499340 21832 tty1     Sl+  juil.03   0:01              \_ /usr/lib/gnome-settings-daemon/gsd-keyboard
+montima+  2268  0.0  0.0 357344  7716 tty1     Sl+  juil.03   0:33              \_ /usr/lib/gnome-settings-daemon/gsd-housekeeping
+montima+  2271  0.0  0.0 271056  5808 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-mouse
+montima+  2273  0.0  0.0 935320 23328 tty1     Sl+  juil.03   0:00              \_ /usr/lib/gnome-settings-daemon/gsd-media-keys
+montima+  2314  0.0  0.0 3874964 111588 tty1   Sl+  juil.03   0:02              \_ /usr/lib/gnome-initial-setup/gnome-initial-setup --existing-user
+montima+  2318  0.0  0.0 271936  6288 tty1     Sl+  juil.03   0:01              \_ /usr/lib/gnome-disk-utility/gsd-disk-utility-notify
+montima+  2331  0.0  0.0 792284 58932 tty1     Sl+  juil.03   0:01              \_ nautilus-desktop
+montima+  2975  0.0  0.2 1344440 340332 tty1   SLl+ juil.03   0:56              \_ /usr/bin/gnome-software --gapplication-service
+montima+  2978  0.0  0.0 589676 27008 tty1     Sl+  juil.03   0:20              \_ update-notifier
+montima+  4327  0.0  0.0 797216 34708 tty1     Sl+  juil.03   0:01              \_ /usr/lib/deja-dup/deja-dup-monitor
+root      1424  0.0  0.0  72304  6384 ?        Ss   juil.03   0:00 /usr/sbin/sshd -D
+root      6769  0.0  0.0 110080  7236 ?        Ss   juil.03   0:00  \_ sshd: montimage [priv]
+montima+  6844  0.0  0.0 110080  3732 ?        S    juil.03   0:01  |   \_ sshd: montimage@pts/0
+montima+  6845  0.0  0.0  24700  5840 pts/0    Ss+  juil.03   0:00  |       \_ -bash
+root     48447  0.0  0.0 110080  7336 ?        Ss   juil.17   0:00  \_ sshd: montimage [priv]
+montima+ 48494  0.0  0.0 110080  4236 ?        S    juil.17   0:02  |   \_ sshd: montimage@pts/1
+montima+ 48495  0.0  0.0  32764 13916 pts/1    Ss+  juil.17   0:02  |       \_ -bash
+root     11957  0.0  0.0 110080  7348 ?        Ss   juil.19   0:00  \_ sshd: montimage [priv]
+montima+ 12004  0.0  0.0 110080  3700 ?        S    juil.19   0:00  |   \_ sshd: montimage@pts/2
+montima+ 12005  0.0  0.0  24568  5740 pts/2    Ss+  juil.19   0:00  |       \_ -bash
+root     12713  0.0  0.0 110080  7108 ?        Ss   juil.19   0:00  \_ sshd: montimage [priv]
+montima+ 12761  0.0  0.0 110080  3436 ?        S    juil.19   0:01  |   \_ sshd: montimage@pts/4
+montima+ 12762  0.0  0.0  24568  5664 pts/4    Ss+  juil.19   0:00  |       \_ -bash
+root      2428  0.0  0.0 110080  7268 ?        Ss   juil.20   0:00  \_ sshd: montimage [priv]
+montima+  2494  0.0  0.0 110080  3368 ?        S    juil.20   0:00      \_ sshd: montimage@pts/5
+montima+  2495  0.0  0.0  24568  5768 pts/5    Ss+  juil.20   0:00          \_ -bash
+montima+  1446  0.0  0.0  77000  8188 ?        Ss   juil.03   0:00 /lib/systemd/systemd --user
+montima+  1447  0.0  0.0 114108  2748 ?        S    juil.03   0:00  \_ (sd-pam)
+montima+  1621  0.0  0.0  50784  5156 ?        Ss   juil.03   0:00  \_ /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+montima+  1808  0.0  0.0 349292  6212 ?        Ssl  juil.03   0:00  \_ /usr/lib/at-spi2-core/at-spi-bus-launcher
+montima+  1813  0.0  0.0  49932  4256 ?        S    juil.03   0:00  |   \_ /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+montima+  1815  0.0  0.0 220784  6824 ?        Sl   juil.03   0:00  \_ /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+montima+  1991  0.0  0.0 284872  7004 ?        Ssl  juil.03   0:00  \_ /usr/lib/gvfs/gvfsd
+montima+  2353  0.0  0.0 361140  7420 ?        Sl   juil.03   0:00  |   \_ /usr/lib/gvfs/gvfsd-trash --spawner :1.21 /org/gtk/gvfs/exec_spaw/0
+montima+  1996  0.0  0.0 416116  5332 ?        Sl   juil.03   0:00  \_ /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+montima+  2141  0.0  0.0 271456  5984 ?        Sl   juil.03   0:00  \_ /usr/lib/ibus/ibus-portal
+montima+  2145  0.0  0.0 264460  5220 ?        Ssl  juil.03   0:00  \_ /usr/libexec/xdg-permission-store
+montima+  2156  0.0  0.0 690316 21084 ?        Sl   juil.03   0:00  \_ /usr/lib/gnome-shell/gnome-shell-calendar-server
+montima+  2162  0.0  0.0 1365068 25772 ?       Ssl  juil.03   0:00  \_ /usr/lib/evolution/evolution-source-registry
+montima+  2168  0.0  0.0 187908  5020 ?        Sl   juil.03   0:00  \_ /usr/lib/dconf/dconf-service
+montima+  2179  0.0  0.0 299588  9644 ?        Ssl  juil.03   0:54  \_ /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+montima+  2183  0.0  0.0 371728  7772 ?        Ssl  juil.03   0:00  \_ /usr/lib/gvfs/gvfs-afc-volume-monitor
+montima+  2186  0.0  0.0 783872 33628 ?        Sl   juil.03   0:00  \_ /usr/lib/gnome-online-accounts/goa-daemon
+montima+  2191  0.0  0.0 268772  4728 ?        Ssl  juil.03   0:00  \_ /usr/lib/gvfs/gvfs-mtp-volume-monitor
+montima+  2195  0.0  0.0 281696  6680 ?        Ssl  juil.03   0:00  \_ /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+montima+  2199  0.0  0.0 266944  5980 ?        Ssl  juil.03   0:00  \_ /usr/lib/gvfs/gvfs-goa-volume-monitor
+montima+  2210  0.0  0.0 296260  7940 ?        Sl   juil.03   0:03  \_ /usr/lib/gnome-online-accounts/goa-identity-service
+montima+  2344  0.0  0.0 885352 67656 ?        Ssl  juil.03   0:00  \_ /usr/lib/evolution/evolution-calendar-factory
+montima+  2415  0.0  0.0 1129012 62740 ?       Sl   juil.03   0:01  |   \_ /usr/lib/evolution/evolution-calendar-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx2344x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/2344/2
+montima+  2432  0.0  0.0 725624 24140 ?        Ssl  juil.03   0:00  \_ /usr/lib/evolution/evolution-addressbook-factory
+montima+  2444  0.0  0.0 1010140 26468 ?       Sl   juil.03   0:01      \_ /usr/lib/evolution/evolution-addressbook-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.AddressBookx2432x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/AddressBook/2432/2
+montima+  1460  0.0  0.0 281292  6776 ?        SLl  juil.03   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+root      2019  0.0  0.0 315216  8448 ?        Ssl  juil.03   0:00 /usr/lib/upower/upowerd
+montima+  2072  0.0  0.0 1188004 13136 ?       S<l  juil.03   0:00 /usr/bin/pulseaudio --start --log-target=syslog
+rtkit     2073  0.0  0.0 183516  3036 ?        SNsl juil.03   0:20 /usr/lib/rtkit/rtkit-daemon
+montima+  2139  0.0  0.0 336868 20680 tty1     Sl   juil.03   0:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+root      2169  0.0  0.0 289772  6816 ?        Ssl  juil.03   0:00 /usr/lib/x86_64-linux-gnu/boltd
+root      2216  0.0  0.0 441356 41656 ?        Ssl  juil.03   0:22 /usr/lib/packagekit/packagekitd
+montima+  2308  0.0  0.0 501680 12488 tty1     Sl+  juil.03   0:00 /usr/lib/gnome-settings-daemon/gsd-printer
+colord    2309  0.0  0.0 317900 14096 ?        Ssl  juil.03   0:00 /usr/lib/colord/colord
+whoopsie  2477  0.0  0.0 388488 12528 ?        Ssl  juil.03   0:02 /usr/bin/whoopsie -f
+kernoops  2478  0.0  0.0  56944  2360 ?        Ss   juil.03   2:17 /usr/sbin/kerneloops --test
+kernoops  2480  0.0  0.0  56944  2472 ?        Ss   juil.03   2:17 /usr/sbin/kerneloops
+montima+  2985  0.0  0.0   4636   872 tty1     S+   juil.03   0:00 /bin/sh -c /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+montima+  2987  0.0  0.0 525968 55908 tty1     Sl+  juil.03   0:00  \_ /usr/bin/python3 /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+montima+  4370  0.0  0.1 1001432 178556 tty1   SNl+ juil.03   0:31 /usr/bin/python3 /usr/bin/update-manager --no-update --no-focus-on-map
+root      5144  0.0  0.0 3187252 57756 ?       Ssl  juil.03   4:19 /usr/lib/snapd/snapd
+montima+ 48004  0.0  0.0   4636   776 tty1     S+   juil.17   0:00 /bin/sh -c /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+montima+ 48005  0.0  0.0 525892 56312 tty1     Sl+  juil.17   0:00  \_ /usr/bin/python3 /usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+montima+  8607  0.0  0.0  33680  3352 ?        Ss   juil.19   0:24 SCREEN -R hn
+montima+  8608  0.0  0.0  24676  5660 pts/3    Ss   juil.19   0:00  \_ /bin/bash
+root      2781  0.0  0.0  67324  4508 pts/3    S+   juil.20   0:00      \_ sudo ./run-test-campaign.sh
+root      2783  0.0  0.0  14748  3716 pts/3    S+   juil.20   0:01      |   \_ /bin/bash -x ./run-test-campaign.sh
+root     32084  0.2  0.0  14748  3732 pts/3    S+   05:29   0:00      |       \_ /bin/bash -x ./setup-testbed.sh
+root     32145  1.2  0.0 383484 22292 pts/3    S<l+ 05:29   0:00      |       |   \_ /home/montimage/huunghia/mosaico/bmv2/targets/simple_switch/.libs/simple_switch --queue 2 --ll_queue 64 --BE_queue 128 --log-file /dev/null --log-level error -i 1@eno1 -i 2@eno3 -i 3@l4s-mon-nic switch-l4s.json
+root     32147  0.0  0.0  14748  2080 pts/3    S+   05:29   0:00      |       |   \_ /bin/bash -x ./setup-testbed.sh
+root     32148  3.2  0.0  45092 13284 pts/3    S+   05:29   0:00      |       |   |   \_ /usr/bin/python3 /home/montimage/.local/bin/psrecord 32145 --log log/cpu_mem_int_yes_pid_32145.txt --duration 320 --interval 1 --include-children
+root     32228  0.0  0.0  22540  6256 pts/3    S+   05:29   0:00      |       |   \_ tcpdump --snapshot-length=128 -i eno1 -w eno1-data.pcap tcp or udp
+root     32229  0.0  0.0  22540  6316 pts/3    S+   05:29   0:00      |       |   \_ tcpdump --snapshot-length=128 -i eno3 -w eno3-data.pcap tcp or udp
+root     32230  0.0  0.0  22540  6364 pts/3    S+   05:29   0:00      |       |   \_ tcpdump --snapshot-length=176 -i l4s-mon-nic -w l4s-mon-nic-int.pcap tcp or udp
+root     32237  0.0  0.0  23076  3228 pts/3    S+   05:29   0:00      |       |   \_ mmt-probe -c ./mmt-probe.conf -i l4s-mon-nic
+root     32239 24.0  0.0 541736 25580 pts/3    S+   05:29   0:00      |       |   |   \_ mmt-probe -c ./mmt-probe.conf -i l4s-mon-nic
+root     32240  0.0  0.0  14748  3732 pts/3    S+   05:29   0:00      |       |   \_ bash -x /home/montimage/huunghia/mosaico/testbed/measure--picoquic/start-monitoring.sh
+root     32258  0.0  0.0  42192  4676 pts/3    R+   05:29   0:00      |       |       \_ ps auxf
+root     32085  0.0  0.0   9196   840 pts/3    S+   05:29   0:00      |       \_ tee log/script.log
+montima+  2782  0.0  0.0   9196  2220 pts/3    S+   juil.20   0:12      \_ tee log-2.txt
+root     42994  0.0  0.0 100604  8064 ?        Ss   00:08   0:00 /usr/sbin/cupsd -l
+root     42995  0.0  0.0 303676 11012 ?        Ssl  00:08   0:00 /usr/sbin/cups-browsed
++ run-on-host 192.168.1.111 ps auxf
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- ps auxf
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           2  0.0  0.0      0     0 ?        S    Apr19   0:06 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [netns]
+root           8  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/0:0H-events_highpri]
+root          10  0.0  0.0      0     0 ?        I<   Apr19   5:51  \_ [kworker/0:1H-events_highpri]
+root          11  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [mm_percpu_wq]
+root          12  0.0  0.0      0     0 ?        S    Apr19   0:35  \_ [ksoftirqd/0]
+root          13  0.0  0.0      0     0 ?        I    Apr19  11:32  \_ [rcu_sched]
+root          14  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/0]
+root          15  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/0]
+root          16  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/1]
+root          17  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/1]
+root          18  0.0  0.0      0     0 ?        S    Apr19   2:30  \_ [ksoftirqd/1]
+root          20  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/1:0H-events_highpri]
+root          21  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/2]
+root          22  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/2]
+root          23  0.0  0.0      0     0 ?        S    Apr19   0:12  \_ [ksoftirqd/2]
+root          25  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/2:0H-events_highpri]
+root          26  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/3]
+root          27  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/3]
+root          28  0.0  0.0      0     0 ?        S    Apr19   0:42  \_ [ksoftirqd/3]
+root          30  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/3:0H-kblockd]
+root          31  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [kdevtmpfs]
+root          32  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [inet_frag_wq]
+root          33  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [kauditd]
+root          35  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [oom_reaper]
+root          36  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [writeback]
+root          37  0.0  0.0      0     0 ?        S    Apr19   7:26  \_ [kcompactd0]
+root          61  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kblockd]
+root          63  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ata_sff]
+root          64  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [md]
+root          66  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [rpciod]
+root          67  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/u9:0]
+root          68  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [xprtiod]
+root          69  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [cfg80211]
+root          70  0.0  0.0      0     0 ?        S    Apr19   0:09  \_ [kswapd0]
+root          71  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [nfsiod]
+root          73  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [acpi_thermal_pm]
+root          75  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [scsi_eh_0]
+root          76  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [scsi_tmf_0]
+root          77  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [scsi_eh_1]
+root          78  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [scsi_tmf_1]
+root          79  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [scsi_eh_2]
+root          80  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [scsi_tmf_2]
+root          82  0.0  0.0      0     0 ?        I<   Apr19   2:13  \_ [kworker/2:1H-kblockd]
+root          84  0.0  0.0      0     0 ?        I<   Apr19   6:21  \_ [kworker/3:1H-events_highpri]
+root          86  0.0  0.0      0     0 ?        I<   Apr19   6:52  \_ [kworker/1:1H-events_highpri]
+root          88  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [mld]
+root          89  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ipv6_addrconf]
+root         170  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kdmflush]
+root         243  0.0  0.0      0     0 ?        S    Apr19   1:39  \_ [jbd2/dm-0-8]
+root         244  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ext4-rsv-conver]
+root         587  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [jbd2/sda2-8]
+root         588  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ext4-rsv-conver]
+root     1134908  0.0  0.0      0     0 ?        I    01:53   0:01  \_ [kworker/u8:0-loop0]
+root     1164267  0.0  0.0      0     0 ?        I    02:23   0:00  \_ [kworker/3:1-events]
+root     1194773  0.0  0.0      0     0 ?        I    02:55   0:00  \_ [kworker/2:0-events]
+root     1202465  0.0  0.0      0     0 ?        I    03:03   0:00  \_ [kworker/u8:2-ext4-rsv-conversion]
+root     1206634  0.0  0.0      0     0 ?        I    03:10   0:00  \_ [kworker/0:0-ata_sff]
+root     1211145  0.0  0.0      0     0 ?        I    03:15   0:00  \_ [kworker/0:2-events]
+root     1211146  0.0  0.0      0     0 ?        I    03:15   0:00  \_ [kworker/1:2-cgroup_destroy]
+root     1214937  0.0  0.0      0     0 ?        I    03:19   0:00  \_ [kworker/2:1-cgroup_destroy]
+root     1215096  0.0  0.0      0     0 ?        I    03:19   0:00  \_ [kworker/3:0-events]
+root     1217098  0.0  0.0      0     0 ?        I    03:21   0:00  \_ [kworker/1:1-cgroup_destroy]
+root     1218957  0.0  0.0      0     0 ?        I    03:23   0:00  \_ [kworker/u8:3-writeback]
+root     1221151  0.0  0.0      0     0 ?        I    03:25   0:00  \_ [kworker/2:2-cgroup_destroy]
+root     1221210  0.0  0.0      0     0 ?        I    03:25   0:00  \_ [kworker/3:2-events]
+root     1223879  0.0  0.0      0     0 ?        I    03:26   0:00  \_ [kworker/0:1-ata_sff]
+root     1224275  0.0  0.0      0     0 ?        I    03:27   0:00  \_ [kworker/1:0-events]
+root           1  0.0  0.2 169368 11360 ?        Ss   Apr19  23:39 /sbin/init maybe-ubiquity
+root         318  0.0  5.3 306468 216608 ?       S<s  Apr19  12:43 /lib/systemd/systemd-journald
+root         351  0.0  0.1  19596  4584 ?        Ss   Apr19   2:00 /lib/systemd/systemd-udevd
+systemd+     598  0.0  0.1  90888  4572 ?        Ssl  Apr19   0:25 /lib/systemd/systemd-timesyncd
+systemd+     606  0.0  0.1  19204  5088 ?        Ss   Apr19   1:07 /lib/systemd/systemd-networkd
+systemd+     608  0.0  0.2  24552  8408 ?        Ss   Apr19   1:12 /lib/systemd/systemd-resolved
+root         622  0.0  0.0   3932  2528 ?        Ss   Apr19   0:18 /usr/sbin/cron -f
+message+     623  0.0  0.1   8104  4392 ?        Ss   Apr19  27:58 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         630  0.0  0.0  81832  3320 ?        Ssl  Apr19   6:25 /usr/sbin/irqbalance --foreground
+root         631  0.0  0.2  26976  9908 ?        Ss   Apr19   0:13 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         632  0.0  0.1 236432  6660 ?        Ssl  Apr19   5:13 /usr/lib/policykit-1/polkitd --no-debug
+syslog       635  0.0  0.1 224352  4284 ?        Ssl  Apr19   3:17 /usr/sbin/rsyslogd -n -iNONE
+root         638  0.0  0.1  17988  7300 ?        Ss   Apr19  13:58 /lib/systemd/systemd-logind
+root         642  0.0  0.2 395584  8900 ?        Ssl  Apr19   5:57 /usr/lib/udisks2/udisksd
+daemon       644  0.0  0.0   3804  2060 ?        Ss   Apr19   0:00 /usr/sbin/atd -f
+root         662  0.0  0.0   2972  1648 tty1     Ss+  Apr19   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         668  0.0  0.3 105280 12404 ?        Ssl  Apr19   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         681  0.0  0.1  12188  6472 ?        Ss   Apr19   1:48 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root     1225095  2.0  0.2  13804  8956 ?        Ss   03:29   0:00  \_ sshd: montimage [priv]
+montima+ 1225172  0.0  0.1  13940  5376 ?        S    03:29   0:00      \_ sshd: montimage@notty
+montima+ 1225173  0.0  0.0   6152  3004 ?        Rs   03:29   0:00          \_ ps auxf
+root         685  0.0  0.2 245080  8188 ?        Ssl  Apr19   4:18 /usr/sbin/ModemManager
+root      444987  0.0  0.9 1171288 37820 ?       Ssl  Jun01  11:12 /usr/lib/snapd/snapd
+root      814510  0.0  0.1 232988  7296 ?        Ssl  Jun29   3:34 /usr/lib/accountsservice/accounts-daemon
+montima+ 1224852  0.5  0.2  18904  9452 ?        Ss   03:29   0:00 /lib/systemd/systemd --user
+montima+ 1224853  0.0  0.1 170584  4236 ?        S    03:29   0:00  \_ (sd-pam)
++ run-on-host 192.168.1.110 ps auxf
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- ps auxf
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           2  0.0  0.0      0     0 ?        S    Apr19   0:06 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [netns]
+root           8  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/0:0H-events_highpri]
+root          10  0.0  0.0      0     0 ?        I<   Apr19   6:06  \_ [kworker/0:1H-events_highpri]
+root          11  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [mm_percpu_wq]
+root          12  0.0  0.0      0     0 ?        S    Apr19   0:34  \_ [ksoftirqd/0]
+root          13  0.0  0.0      0     0 ?        I    Apr19  10:30  \_ [rcu_sched]
+root          14  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/0]
+root          15  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/0]
+root          16  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/1]
+root          17  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/1]
+root          18  0.0  0.0      0     0 ?        S    Apr19   3:43  \_ [ksoftirqd/1]
+root          20  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/1:0H-events_highpri]
+root          21  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/2]
+root          22  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/2]
+root          23  0.0  0.0      0     0 ?        S    Apr19   0:11  \_ [ksoftirqd/2]
+root          25  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/2:0H-events_highpri]
+root          26  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [cpuhp/3]
+root          27  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [migration/3]
+root          28  0.0  0.0      0     0 ?        S    Apr19   0:42  \_ [ksoftirqd/3]
+root          30  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/3:0H-events_highpri]
+root          31  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [kdevtmpfs]
+root          32  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [inet_frag_wq]
+root          33  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [kauditd]
+root          35  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [oom_reaper]
+root          36  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [writeback]
+root          37  0.0  0.0      0     0 ?        S    Apr19   7:06  \_ [kcompactd0]
+root          62  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kblockd]
+root          63  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ata_sff]
+root          64  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [md]
+root          66  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [rpciod]
+root          67  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kworker/u9:0]
+root          68  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [xprtiod]
+root          69  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [cfg80211]
+root          70  0.0  0.0      0     0 ?        S    Apr19   0:05  \_ [kswapd0]
+root          71  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [nfsiod]
+root          73  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [acpi_thermal_pm]
+root          74  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [scsi_eh_0]
+root          75  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [scsi_tmf_0]
+root          76  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [scsi_eh_1]
+root          77  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [scsi_tmf_1]
+root          78  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [scsi_eh_2]
+root          79  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [scsi_tmf_2]
+root          82  0.0  0.0      0     0 ?        I<   Apr19   2:24  \_ [kworker/2:1H-kblockd]
+root          85  0.0  0.0      0     0 ?        I<   Apr19   6:51  \_ [kworker/1:1H-events_highpri]
+root          87  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [mld]
+root          88  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ipv6_addrconf]
+root         133  0.0  0.0      0     0 ?        I<   Apr19   6:00  \_ [kworker/3:1H-events_highpri]
+root         161  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [kdmflush]
+root         235  0.0  0.0      0     0 ?        S    Apr19   1:36  \_ [jbd2/dm-0-8]
+root         236  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ext4-rsv-conver]
+root         576  0.0  0.0      0     0 ?        S    Apr19   0:00  \_ [jbd2/sda2-8]
+root         577  0.0  0.0      0     0 ?        I<   Apr19   0:00  \_ [ext4-rsv-conver]
+root      435216  0.0  0.0      0     0 ?        I    02:13   0:02  \_ [kworker/1:1-mm_percpu_wq]
+root      453275  0.0  0.0      0     0 ?        I    02:41   0:00  \_ [kworker/3:0-events]
+root      453276  0.0  0.0      0     0 ?        I    02:42   0:00  \_ [kworker/2:2-mm_percpu_wq]
+root      464411  0.0  0.0      0     0 ?        I    02:58   0:00  \_ [kworker/u8:1-events_unbound]
+root      465389  0.0  0.0      0     0 ?        I    02:59   0:00  \_ [kworker/u8:2-loop0]
+root      466619  0.0  0.0      0     0 ?        I    03:01   0:00  \_ [kworker/0:0-events]
+root      472231  0.0  0.0      0     0 ?        I    03:10   0:00  \_ [kworker/u8:0-ext4-rsv-conversion]
+root      477459  0.0  0.0      0     0 ?        I    03:19   0:00  \_ [kworker/0:2-cgroup_destroy]
+root      477934  0.0  0.0      0     0 ?        I    03:20   0:00  \_ [kworker/1:2-cgroup_destroy]
+root      477935  0.0  0.0      0     0 ?        I    03:20   0:00  \_ [kworker/3:1-ata_sff]
+root      480259  0.0  0.0      0     0 ?        I    03:23   0:00  \_ [kworker/2:0-events]
+root      480988  0.0  0.0      0     0 ?        I    03:25   0:00  \_ [kworker/0:1-events]
+root      482285  0.0  0.0      0     0 ?        I    03:25   0:00  \_ [kworker/3:2-ata_sff]
+root      482370  0.0  0.0      0     0 ?        I    03:27   0:00  \_ [kworker/1:0-cgroup_destroy]
+root           1  0.0  0.2 169356 11880 ?        Ss   Apr19  21:43 /sbin/init maybe-ubiquity
+root         310  0.0  7.4 401052 300144 ?       S<s  Apr19  14:45 /lib/systemd/systemd-journald
+root         342  0.0  0.1  19596  5232 ?        Ss   Apr19   2:03 /lib/systemd/systemd-udevd
+root      483565  1.0  0.0  19596  4016 ?        S    03:29   0:00  \_ /lib/systemd/systemd-udevd
+systemd+     589  0.0  0.1  90888  5480 ?        Ssl  Apr19   0:29 /lib/systemd/systemd-timesyncd
+systemd+     597  0.0  0.1  19204  6964 ?        Ss   Apr19   1:08 /lib/systemd/systemd-networkd
+systemd+     599  0.0  0.3  24552 12300 ?        Ss   Apr19   1:24 /lib/systemd/systemd-resolved
+root         614  0.0  0.0   3932  2508 ?        Ss   Apr19   0:18 /usr/sbin/cron -f
+message+     615  0.0  0.1   7916  4764 ?        Ss   Apr19  26:26 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         624  0.0  0.0  81832  3580 ?        Ssl  Apr19   6:25 /usr/sbin/irqbalance --foreground
+root         625  0.0  0.4  26976 18068 ?        Ss   Apr19   0:13 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         626  0.0  0.2 236432  8884 ?        Ssl  Apr19   4:52 /usr/lib/policykit-1/polkitd --no-debug
+syslog       628  0.0  0.1 224352  5928 ?        Ssl  Apr19   6:37 /usr/sbin/rsyslogd -n -iNONE
+root         636  0.0  0.1  18028  7688 ?        Ss   Apr19  13:05 /lib/systemd/systemd-logind
+root         638  0.0  0.2 395592 12040 ?        Ssl  Apr19   5:40 /usr/lib/udisks2/udisksd
+daemon       639  0.0  0.0   3804  2148 ?        Ss   Apr19   0:00 /usr/sbin/atd -f
+root         650  0.0  0.0   2972  1912 tty1     Ss+  Apr19   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         663  0.0  0.5 105280 20468 ?        Ssl  Apr19   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         664  0.0  0.1  12188  6748 ?        Ss   Apr19   1:41 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root      523349  0.0  0.2  13960  8992 ?        Ss   Jun01   0:00  \_ sshd: montimage [priv]
+montima+  523467  0.0  0.1  13960  5864 ?        S    Jun01   0:02  |   \_ sshd: montimage@pts/1
+montima+  523468  0.0  0.1   8372  6176 pts/1    Ss+  Jun01   0:00  |       \_ -bash
+root     2402615  0.0  0.2  13804  8792 ?        Ss   Jul17   0:00  \_ sshd: montimage [priv]
+montima+ 2402739  0.0  0.1  13944  6024 ?        S    Jul17   0:00  |   \_ sshd: montimage@pts/0
+montima+ 2402740  0.0  0.1   7308  5204 pts/0    Ss+  Jul17   0:00  |       \_ -bash
+root      483574  2.0  0.2  13804  8872 ?        Ss   03:29   0:00  \_ sshd: montimage [priv]
+montima+  483651  0.0  0.1  13944  5376 ?        S    03:29   0:00      \_ sshd: montimage@notty
+montima+  483652  0.0  0.0   6152  3016 ?        Rs   03:29   0:00          \_ ps auxf
+root         680  0.0  0.2 245076 11640 ?        Ssl  Apr19   4:04 /usr/sbin/ModemManager
+montima+  238540  0.0  0.2  18944  8668 ?        Ss   May25   0:31 /lib/systemd/systemd --user
+montima+  238541  0.0  0.1 170640  4680 ?        S    May25   0:00  \_ (sd-pam)
+root      542451  0.0  0.9 1245020 37952 ?       Ssl  Jun02  10:55 /usr/lib/snapd/snapd
+root     1289829  0.0  0.1 232964  7296 ?        Ssl  Jun30   2:59 /usr/lib/accountsservice/accounts-daemon
++ run-on-host 192.168.1.111 'rm -rf /tmp/hn; mkdir /tmp/hn'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'rm -rf /tmp/hn; mkdir /tmp/hn'
++ run-on-host 192.168.1.110 'rm -rf /tmp/hn; mkdir /tmp/hn'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'rm -rf /tmp/hn; mkdir /tmp/hn'
++ rebuild_attacker
+++ get_picoquic_path unrespECN
+++ flow_type=unrespECN
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ unrespECN == \u\n\r\e\s\p\E\C\N ]]
+++ picoquic_path=picoquic/picoquic-unrespECN
+++ echo picoquic/picoquic-unrespECN
++ picoquic_path=picoquic/picoquic-unrespECN
++ echo 'Rebuild attack client and server using power_attack=0.1'
+Rebuild attack client and server using power_attack=0.1
+++ cat /tmp/rebuild/unrespECN
++ LAST_POWER_ATTACK=0.1
++ [[ 0.1 == \0\.\1 ]]
++ echo 'power attack has not changed since last built ==> do not rebuild picoquic'
+power attack has not changed since last built ==> do not rebuild picoquic
++ rebuild_cl_legit
+++ get_picoquic_path cl_legit
+++ flow_type=cl_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ cl_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ cl_legit == \c\l\_\l\e\g\i\t ]]
+++ picoquic_path=picoquic/picoquic-classic-legit
+++ echo picoquic/picoquic-classic-legit
++ picoquic_path=picoquic/picoquic-classic-legit
++ file=/tmp/rebuild/cl_legit
++ echo 'Rebuild cl legit client and server'
+Rebuild cl legit client and server
++ [[ -f /tmp/rebuild/cl_legit ]]
++ echo '/tmp/rebuild/cl_legit is existing ==> do not rebuild picoquic'
+/tmp/rebuild/cl_legit is existing ==> do not rebuild picoquic
++ rebuild_ll_legit
+++ get_picoquic_path ll_legit
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
++ picoquic_path=picoquic/picoquic-legit
++ file=/tmp/rebuild/ll_legit
++ echo 'Rebuild ll legit client and server'
+Rebuild ll legit client and server
++ [[ -f /tmp/rebuild/ll_legit ]]
++ echo '/tmp/rebuild/ll_legit is existing ==> do not rebuild picoquic'
+/tmp/rebuild/ll_legit is existing ==> do not rebuild picoquic
++ NIC=enp0s8
++ run-on-host 192.168.1.111 ifconfig enp0s8
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- ifconfig enp0s8
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.1.13  netmask 255.255.255.0  broadcast 10.0.1.255
+        inet6 fe80::a00:27ff:feb8:ce67  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:b8:ce:67  txqueuelen 1000  (Ethernet)
+        RX packets 161166716  bytes 142773932798 (142.7 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 416026314  bytes 461415543930 (461.4 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
++ run-on-host 192.168.1.110 ifconfig enp0s8
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- ifconfig enp0s8
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.13  netmask 255.255.255.0  broadcast 10.0.0.255
+        inet6 fe80::a00:27ff:fe09:2751  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:09:27:51  txqueuelen 1000  (Ethernet)
+        RX packets 326604411  bytes 345847709380 (345.8 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 160679109  bytes 142642714320 (142.6 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+++ get_nic_stat 192.168.1.111 enp0s8 tx_packets
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=tx_packets
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/tx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/tx_packets
++ SERVER_TX_PACKETS_BEGIN=416026314
+++ get_nic_stat 192.168.1.111 enp0s8 rx_packets
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=rx_packets
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/rx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/rx_packets
++ SERVER_RX_PACKETS_BEGIN=161166716
+++ get_nic_stat 192.168.1.110 enp0s8 tx_packets
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=tx_packets
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/tx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/tx_packets
++ CLIENT_TX_PACKETS_BEGIN=160679109
+++ get_nic_stat 192.168.1.110 enp0s8 rx_packets
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=rx_packets
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/rx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/rx_packets
++ CLIENT_RX_PACKETS_BEGIN=326604411
+++ get_nic_stat 192.168.1.111 enp0s8 tx_bytes
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=tx_bytes
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/tx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/tx_bytes
++ SERVER_TX_BYTES_BEGIN=461415543930
+++ get_nic_stat 192.168.1.111 enp0s8 rx_bytes
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=rx_bytes
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/rx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/rx_bytes
++ SERVER_RX_BYTES_BEGIN=142773932798
+++ get_nic_stat 192.168.1.110 enp0s8 tx_bytes
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=tx_bytes
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/tx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/tx_bytes
++ CLIENT_TX_BYTES_BEGIN=142642714320
+++ get_nic_stat 192.168.1.110 enp0s8 rx_bytes
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=rx_bytes
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/rx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/rx_bytes
++ CLIENT_RX_BYTES_BEGIN=345847709380
++ date
+vendredi 21 juillet 2023, 05:29:37 (UTC+0200)
++ start-flows-and-wait-to-finish
++ FLOWS_CFG=()
++ declare -a FLOWS_CFG
++ max_duration=0
++ index=0
++ IFS=';'
++ read -ra CONF
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ echo ' - 1 starting unrespECN,30,60,10000'
+ - 1 starting unrespECN,30,60,10000
++ [[ unrespECN,30,60,10000 == '' ]]
++ IFS=,
++ read -r flow_type start_time duration port
++ [[ unrespECN == '' ]]
++ [[ 30 == '' ]]
++ [[ 60 == '' ]]
++ [[ 10000 == '' ]]
++ [[ 30 == ?(-)+([0-9]) ]]
++ [[ 60 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ timeout=100
++ max_duration=100
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ echo ' - 2 starting ll_legit,0,120,3000'
+ - 2 starting ll_legit,0,120,3000
++ [[ ll_legit,0,120,3000 == '' ]]
++ IFS=,
++ read -r flow_type start_time duration port
++ start_flow 1 unrespECN 30 60 10000
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ [[ 120 == '' ]]
++ [[ 3000 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ local index=1
++ local flow_type=unrespECN
++ local start_time=30
++ timeout=130
++ local duration=60
++ local port=10000
++ max_duration=130
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ echo ' - 3 starting ll_legit,0,120,3001'
+ - 3 starting ll_legit,0,120,3001
++ [[ ll_legit,0,120,3001 == '' ]]
++ IFS=,
++ read -r flow_type start_time duration port
++ start_flow 2 ll_legit 0 120 3000
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ [[ 120 == '' ]]
++ [[ 3001 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
+++ get_picoquic_path unrespECN
+++ flow_type=unrespECN
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ unrespECN == \u\n\r\e\s\p\E\C\N ]]
+++ picoquic_path=picoquic/picoquic-unrespECN
+++ echo picoquic/picoquic-unrespECN
++ timeout=130
++ local index=2
++ local flow_type=ll_legit
++ max_duration=130
++ local start_time=0
++ for conf in "${CONF[@]}"
++ local duration=120
++ (( index+=1 ))
++ local port=3000
++ echo ' - 4 starting ll_legit,0,120,3002'
+ - 4 starting ll_legit,0,120,3002
++ [[ ll_legit,0,120,3002 == '' ]]
++ IFS=,
++ read -r flow_type start_time duration port
++ start_flow 3 ll_legit 0 120 3001
++ picoquic_path=picoquic/picoquic-unrespECN
++ screen_name=unrespECN-10000
++ run-on-host 192.168.1.111 'screen -X -S svr-unrespECN-10000 stuff '\''^C'\'''
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ '[' 2 -lt 2 ']'
++ [[ 120 == '' ]]
++ [[ 3002 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ hostname=192.168.1.111
++ [[ 120 == ?(-)+([0-9]) ]]
++ shift
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-unrespECN-10000 stuff '\''^C'\'''
+++ get_picoquic_path ll_legit
+++ flow_type=ll_legit
++ local index=3
+++ picoquic_path=picoquic/picoquic-legit
++ local flow_type=ll_legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
++ timeout=130
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
++ local start_time=0
++ local duration=120
+++ echo picoquic/picoquic-legit
++ local port=3001
++ max_duration=130
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ echo ' - 5 starting ll_legit,0,120,3003'
+ - 5 starting ll_legit,0,120,3003
++ [[ ll_legit,0,120,3003 == '' ]]
++ IFS=,
++ read -r flow_type start_time duration port
++ start_flow 4 ll_legit 0 120 3002
++ picoquic_path=picoquic/picoquic-legit
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ screen_name=ll_legit-3000
++ [[ 120 == '' ]]
++ [[ 3003 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3000 stuff '\''^C'\'''
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
+++ get_picoquic_path ll_legit
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3000 stuff '\''^C'\'''
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
++ local index=4
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
++ local flow_type=ll_legit
+++ echo picoquic/picoquic-legit
++ local start_time=0
++ local duration=120
++ timeout=130
++ local port=3002
++ max_duration=130
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ echo ' - 6 starting ll_legit,0,120,3004'
+ - 6 starting ll_legit,0,120,3004
++ [[ ll_legit,0,120,3004 == '' ]]
++ IFS=,
++ start_flow 5 ll_legit 0 120 3003
++ read -r flow_type start_time duration port
++ picoquic_path=picoquic/picoquic-legit
++ screen_name=ll_legit-3001
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3001 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ [[ 120 == '' ]]
++ hostname=192.168.1.111
++ [[ 3004 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ shift
+++ get_picoquic_path ll_legit
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3001 stuff '\''^C'\'''
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
++ local index=5
+++ echo picoquic/picoquic-legit
++ local flow_type=ll_legit
++ local start_time=0
++ local duration=120
++ local port=3003
++ timeout=130
++ max_duration=130
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ echo ' - 7 starting ll_legit,0,120,3005'
+ - 7 starting ll_legit,0,120,3005
++ [[ ll_legit,0,120,3005 == '' ]]
++ IFS=,
++ read -r flow_type start_time duration port
++ start_flow 6 ll_legit 0 120 3004
++ picoquic_path=picoquic/picoquic-legit
++ screen_name=ll_legit-3002
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3002 stuff '\''^C'\'''
++ [[ 120 == '' ]]
++ [[ 3005 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
+++ get_picoquic_path ll_legit
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3002 stuff '\''^C'\'''
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
++ timeout=130
++ max_duration=130
++ local index=6
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ local flow_type=ll_legit
++ echo ' - 8 starting ll_legit,0,120,3006'
++ local start_time=0
+ - 8 starting ll_legit,0,120,3006
++ local duration=120
++ [[ ll_legit,0,120,3006 == '' ]]
++ local port=3004
++ IFS=,
++ read -r flow_type start_time duration port
++ start_flow 7 ll_legit 0 120 3005
++ picoquic_path=picoquic/picoquic-legit
++ screen_name=ll_legit-3003
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3003 stuff '\''^C'\'''
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ [[ 120 == '' ]]
++ [[ 3006 == '' ]]
++ '[' 2 -lt 2 ']'
++ [[ 0 == ?(-)+([0-9]) ]]
++ [[ 120 == ?(-)+([0-9]) ]]
++ hostname=192.168.1.111
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3003 stuff '\''^C'\'''
+++ get_picoquic_path ll_legit
++ timeout=130
++ max_duration=130
+++ flow_type=ll_legit
++ for conf in "${CONF[@]}"
+++ picoquic_path=picoquic/picoquic-legit
++ (( index+=1 ))
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
++ echo ' - 9 starting ll_legit,0,120,3007'
+ - 9 starting ll_legit,0,120,3007
+++ echo picoquic/picoquic-legit
++ [[ ll_legit,0,120,3007 == '' ]]
++ IFS=,
++ read -r flow_type start_time duration port
++ start_flow 8 ll_legit 0 120 3006
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ [[ 120 == '' ]]
++ [[ 3007 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ picoquic_path=picoquic/picoquic-legit
++ screen_name=ll_legit-3004
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3004 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ timeout=130
++ [[ 192.168.1.111 == \x ]]
++ max_duration=130
++ local index=8
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3004 stuff '\''^C'\'''
++ echo ' - 10 starting ll_legit,0,120,3008'
++ local flow_type=ll_legit
+ - 10 starting ll_legit,0,120,3008
++ local start_time=0
++ [[ ll_legit,0,120,3008 == '' ]]
++ local duration=120
++ IFS=,
++ read -r flow_type start_time duration port
++ local port=3006
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ [[ 120 == '' ]]
++ [[ 3008 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ start_flow 9 ll_legit 0 120 3007
++ timeout=130
++ max_duration=130
++ for conf in "${CONF[@]}"
++ (( index+=1 ))
+++ get_picoquic_path ll_legit
++ echo ' - 11 starting ll_legit,0,120,3009'
+ - 11 starting ll_legit,0,120,3009
++ [[ ll_legit,0,120,3009 == '' ]]
+++ flow_type=ll_legit
++ IFS=,
++ read -r flow_type start_time duration port
+++ picoquic_path=picoquic/picoquic-legit
++ start_flow 10 ll_legit 0 120 3008
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
++ [[ ll_legit == '' ]]
++ [[ 0 == '' ]]
++ [[ 120 == '' ]]
++ [[ 3009 == '' ]]
++ [[ 0 == ?(-)+([0-9]) ]]
++ [[ 120 == ?(-)+([0-9]) ]]
++ FLOWS_CFG+=("{\"type\":\"$flow_type\", \"start_time\": $start_time, \"duration\": $duration, \"serer_port\": $port}")
++ local index=9
++ picoquic_path=picoquic/picoquic-legit
++ local flow_type=ll_legit
++ local start_time=0
++ screen_name=ll_legit-3006
++ local duration=120
++ local port=3007
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3006 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ timeout=130
++ local index=10
++ [[ 192.168.1.111 == \x ]]
++ max_duration=130
++ local flow_type=ll_legit
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3006 stuff '\''^C'\'''
++ local start_time=0
++ date
++ local duration=120
++ local port=3008
++ start_flow 11 ll_legit 0 120 3009
++ local index=7
++ local flow_type=ll_legit
++ local start_time=0
++ local duration=120
++ local port=3005
+++ get_picoquic_path ll_legit
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
+++ get_picoquic_path ll_legit
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
++ picoquic_path=picoquic/picoquic-legit
++ local index=11
++ screen_name=ll_legit-3008
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3008 stuff '\''^C'\'''
++ local flow_type=ll_legit
++ local start_time=0
+++ get_picoquic_path ll_legit
++ '[' 2 -lt 2 ']'
++ local duration=120
++ hostname=192.168.1.111
+vendredi 21 juillet 2023, 05:29:37 (UTC+0200)
++ local port=3009
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3008 stuff '\''^C'\'''
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
++ cat
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
++ screen_name=ll_legit-3007
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3007 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3007 stuff '\''^C'\'''
++ picoquic_path=picoquic/picoquic-legit
++ screen_name=ll_legit-3005
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3005 stuff '\''^C'\'''
+++ get_picoquic_path ll_legit
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3005 stuff '\''^C'\'''
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
+++ IFS=,
++ picoquic_path=picoquic/picoquic-legit
++ screen_name=ll_legit-3009
+++ echo '{"type":"unrespECN", "start_time": 30, "duration": 60, "serer_port": 10000},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3000},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3001},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3002},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3003},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3004},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3005},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3006},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3007},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3008},{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3009}'
++ run-on-host 192.168.1.111 'screen -X -S svr-ll_legit-3009 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S svr-ll_legit-3009 stuff '\''^C'\'''
++ date
+vendredi 21 juillet 2023, 05:29:37 (UTC+0200)
++ echo 'sleep 130 to wait for all flows'
+sleep 130 to wait for all flows
++ sleep 130
+ssh_exchange_identification: Connection closed by remote host
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3009 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3009 stuff '\''^C'\'''
+ssh_exchange_identification: Connection closed by remote host
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:37 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+ssh_exchange_identification: Connection closed by remote host
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3009 -L -Logfile /tmp/hn/ll_legit-3009 -dm timeout --signal=9 130 ./start_picoserver.sh 3009'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3009 -L -Logfile /tmp/hn/ll_legit-3009 -dm timeout --signal=9 130 ./start_picoserver.sh 3009'
+ssh_exchange_identification: read: Connection reset by peer
++ sleep 2
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3005 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3005 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3006 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3006 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3003 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3003 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3002 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3002 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3008 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3008 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3000 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3000 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3004 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3004 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3007 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3007 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-unrespECN-10000 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-unrespECN-10000 stuff '\''^C'\'''
+No screen session found.
++ run-on-host 192.168.1.111 'screen -X -S cli-ll_legit-3001 stuff '\''^C'\'''
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'screen -X -S cli-ll_legit-3001 stuff '\''^C'\'''
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3009 -L -Logfile /tmp/hn/ll_legit-3009 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3009 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3009 -L -Logfile /tmp/hn/ll_legit-3009 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3009 /tmp/ index-1000MB.htm'
++ date
+vendredi 21 juillet 2023, 05:29:40 (UTC+0200)
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:40 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:40 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:40 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+No screen session found.
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:40 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:40 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:40 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:41 (UTC+0200)
++ sleep 0
+No screen session found.
++ server_duration=70
++ date
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+vendredi 21 juillet 2023, 05:29:41 (UTC+0200)
++ sleep 30
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:41 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
+No screen session found.
++ server_duration=130
++ date
+vendredi 21 juillet 2023, 05:29:41 (UTC+0200)
++ sleep 0
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-legit/server_files/index-1000MB.htm
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3006 -L -Logfile /tmp/hn/ll_legit-3006 -dm timeout --signal=9 130 ./start_picoserver.sh 3006'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3006 -L -Logfile /tmp/hn/ll_legit-3006 -dm timeout --signal=9 130 ./start_picoserver.sh 3006'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3003 -L -Logfile /tmp/hn/ll_legit-3003 -dm timeout --signal=9 130 ./start_picoserver.sh 3003'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3003 -L -Logfile /tmp/hn/ll_legit-3003 -dm timeout --signal=9 130 ./start_picoserver.sh 3003'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3005 -L -Logfile /tmp/hn/ll_legit-3005 -dm timeout --signal=9 130 ./start_picoserver.sh 3005'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3005 -L -Logfile /tmp/hn/ll_legit-3005 -dm timeout --signal=9 130 ./start_picoserver.sh 3005'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3004 -L -Logfile /tmp/hn/ll_legit-3004 -dm timeout --signal=9 130 ./start_picoserver.sh 3004'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3004 -L -Logfile /tmp/hn/ll_legit-3004 -dm timeout --signal=9 130 ./start_picoserver.sh 3004'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3002 -L -Logfile /tmp/hn/ll_legit-3002 -dm timeout --signal=9 130 ./start_picoserver.sh 3002'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3002 -L -Logfile /tmp/hn/ll_legit-3002 -dm timeout --signal=9 130 ./start_picoserver.sh 3002'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3000 -L -Logfile /tmp/hn/ll_legit-3000 -dm timeout --signal=9 130 ./start_picoserver.sh 3000'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3000 -L -Logfile /tmp/hn/ll_legit-3000 -dm timeout --signal=9 130 ./start_picoserver.sh 3000'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3007 -L -Logfile /tmp/hn/ll_legit-3007 -dm timeout --signal=9 130 ./start_picoserver.sh 3007'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3007 -L -Logfile /tmp/hn/ll_legit-3007 -dm timeout --signal=9 130 ./start_picoserver.sh 3007'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3008 -L -Logfile /tmp/hn/ll_legit-3008 -dm timeout --signal=9 130 ./start_picoserver.sh 3008'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3008 -L -Logfile /tmp/hn/ll_legit-3008 -dm timeout --signal=9 130 ./start_picoserver.sh 3008'
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3001 -L -Logfile /tmp/hn/ll_legit-3001 -dm timeout --signal=9 130 ./start_picoserver.sh 3001'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && screen -S svr-ll_legit-3001 -L -Logfile /tmp/hn/ll_legit-3001 -dm timeout --signal=9 130 ./start_picoserver.sh 3001'
++ sleep 2
++ sleep 2
++ sleep 2
++ sleep 2
++ sleep 2
++ sleep 2
++ sleep 2
++ sleep 2
++ sleep 2
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3003 -L -Logfile /tmp/hn/ll_legit-3003 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3003 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3003 -L -Logfile /tmp/hn/ll_legit-3003 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3003 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3006 -L -Logfile /tmp/hn/ll_legit-3006 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3006 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3006 -L -Logfile /tmp/hn/ll_legit-3006 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3006 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3000 -L -Logfile /tmp/hn/ll_legit-3000 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3000 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3000 -L -Logfile /tmp/hn/ll_legit-3000 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3000 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3002 -L -Logfile /tmp/hn/ll_legit-3002 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3002 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3002 -L -Logfile /tmp/hn/ll_legit-3002 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3002 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3007 -L -Logfile /tmp/hn/ll_legit-3007 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3007 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3007 -L -Logfile /tmp/hn/ll_legit-3007 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3007 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3005 -L -Logfile /tmp/hn/ll_legit-3005 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3005 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3005 -L -Logfile /tmp/hn/ll_legit-3005 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3005 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3001 -L -Logfile /tmp/hn/ll_legit-3001 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3001 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3001 -L -Logfile /tmp/hn/ll_legit-3001 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3001 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3004 -L -Logfile /tmp/hn/ll_legit-3004 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3004 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3004 -L -Logfile /tmp/hn/ll_legit-3004 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3004 /tmp/ index-1000MB.htm'
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3008 -L -Logfile /tmp/hn/ll_legit-3008 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3008 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && screen -S cli-ll_legit-3008 -L -Logfile /tmp/hn/ll_legit-3008 -dm timeout --signal=9 120 ./build/picoquic_sample client 10.0.1.13 3008 /tmp/ index-1000MB.htm'
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:29:47 (UTC+0200)
++ run-on-host 192.168.1.111 truncate -s 1000MB picoquic/picoquic-unrespECN/server_files/index-1000MB.htm
++ '[' 5 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- truncate -s 1000MB picoquic/picoquic-unrespECN/server_files/index-1000MB.htm
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-unrespECN && screen -S svr-unrespECN-10000 -L -Logfile /tmp/hn/unrespECN-10000 -dm timeout --signal=9 70 ./start_picoserver.sh 10000'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-unrespECN && screen -S svr-unrespECN-10000 -L -Logfile /tmp/hn/unrespECN-10000 -dm timeout --signal=9 70 ./start_picoserver.sh 10000'
++ sleep 2
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-unrespECN && screen -S cli-unrespECN-10000 -L -Logfile /tmp/hn/unrespECN-10000 -dm timeout --signal=9 60 ./build/picoquic_sample client 10.0.1.13 10000 /tmp/ index-1000MB.htm'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-unrespECN && screen -S cli-unrespECN-10000 -L -Logfile /tmp/hn/unrespECN-10000 -dm timeout --signal=9 60 ./build/picoquic_sample client 10.0.1.13 10000 /tmp/ index-1000MB.htm'
++ date
+vendredi 21 juillet 2023, 05:30:15 (UTC+0200)
++ date
+vendredi 21 juillet 2023, 05:31:47 (UTC+0200)
++ echo 'terminated all flows'
+terminated all flows
++ run-on-host 192.168.1.111 ifconfig enp0s8
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- ifconfig enp0s8
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.1.13  netmask 255.255.255.0  broadcast 10.0.1.255
+        inet6 fe80::a00:27ff:feb8:ce67  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:b8:ce:67  txqueuelen 1000  (Ethernet)
+        RX packets 161196067  bytes 142776861558 (142.7 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 416128305  bytes 461547204966 (461.5 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
++ run-on-host 192.168.1.110 ifconfig enp0s8
++ '[' 3 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- ifconfig enp0s8
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.13  netmask 255.255.255.0  broadcast 10.0.0.255
+        inet6 fe80::a00:27ff:fe09:2751  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:09:27:51  txqueuelen 1000  (Ethernet)
+        RX packets 326698041  bytes 345968557258 (345.9 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 160708457  bytes 142645641490 (142.6 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+++ get_nic_stat 192.168.1.111 enp0s8 tx_packets
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=tx_packets
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/tx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/tx_packets
++ SERVER_TX_PACKETS_END=416128411
+++ get_nic_stat 192.168.1.111 enp0s8 rx_packets
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=rx_packets
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/rx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/rx_packets
++ SERVER_RX_PACKETS_END=161196069
+++ get_nic_stat 192.168.1.110 enp0s8 tx_packets
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=tx_packets
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/tx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/tx_packets
++ CLIENT_TX_PACKETS_END=160708461
+++ get_nic_stat 192.168.1.110 enp0s8 rx_packets
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=rx_packets
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/rx_packets
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/rx_packets
++ CLIENT_RX_PACKETS_END=326698177
+++ get_nic_stat 192.168.1.111 enp0s8 tx_bytes
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=tx_bytes
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/tx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/tx_bytes
++ SERVER_TX_BYTES_END=461547449497
+++ get_nic_stat 192.168.1.111 enp0s8 rx_bytes
+++ HOST=192.168.1.111
+++ NIC=enp0s8
+++ STAT=rx_bytes
+++ run-on-host 192.168.1.111 cat /sys/class/net/enp0s8/statistics/rx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.111
+++ shift
+++ [[ 192.168.1.111 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- cat /sys/class/net/enp0s8/statistics/rx_bytes
++ SERVER_RX_BYTES_END=142776864012
+++ get_nic_stat 192.168.1.110 enp0s8 tx_bytes
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=tx_bytes
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/tx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/tx_bytes
++ CLIENT_TX_BYTES_END=142645643320
+++ get_nic_stat 192.168.1.110 enp0s8 rx_bytes
+++ HOST=192.168.1.110
+++ NIC=enp0s8
+++ STAT=rx_bytes
+++ run-on-host 192.168.1.110 cat /sys/class/net/enp0s8/statistics/rx_bytes
+++ '[' 3 -lt 2 ']'
+++ hostname=192.168.1.110
+++ shift
+++ [[ 192.168.1.110 == \x ]]
+++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- cat /sys/class/net/enp0s8/statistics/rx_bytes
++ CLIENT_RX_BYTES_END=345968731980
++ cat
++ tee /home/montimage/huunghia/mosaico/testbed/measure--picoquic/../log/stat_nic.json
+{
+"server_tx_packets": 102097,
+"client_rx_packets": 93766,
+
+"client_tx_packets": 29352,
+"server_rx_packets": 29353,
+
+"server_tx_bytes": 131905567,
+"client_rx_bytes": 121022600,
+
+"client_tx_bytes": 2929000,
+"server_rx_bytes": 2931214
+}
++ echo 'Execution log of clients:'
+Execution log of clients:
++ run-on-host 192.168.1.110 'cat /tmp/hn/*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cat /tmp/hn/*'
+Starting connection to 10.0.1.13, port 3000
+Initial connection ID: 4d15a981137dd451
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3001
+Initial connection ID: 0994bcbaa842547f
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3002
+Initial connection ID: 264b7571474f47b1
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3003
+Initial connection ID: 4fc31637748b648a
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3004
+Initial connection ID: 9d5c2896eca51226
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3005
+Initial connection ID: a542e7ddca38dbec
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3006
+Initial connection ID: b531254ca34aae72
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3007
+Initial connection ID: 61a282a8f0b9e67a
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3008
+Initial connection ID: aa03bdc2a3d4a570
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
+Starting connection to 10.0.1.13, port 3009
+Initial connection ID: 8edadea9f8023e35
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection closed.
+index-1000MB.htm: unknown status, received 0 bytes
+Starting connection to 10.0.1.13, port 10000
+Initial connection ID: 3598a600111dcd44
+Opened stream 0 for file index-1000MB.htm
+Waiting for packets.
+Connection to the server completed, almost ready.
+Connection to the server confirmed.
++ echo 'Execution log of servers:'
+Execution log of servers:
++ run-on-host 192.168.1.111 'cat /tmp/hn/*'
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cat /tmp/hn/*'
+spawn ./build/picoquic_sample server 3000 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3000
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3001 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3001
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3002 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3002
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3003 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3003
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3004 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3004
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3005 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3005
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3006 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3006
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3007 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3007
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 3008 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 3008
+Enter PEM pass phrase:spawn ./build/picoquic_sample server 10000 ./ca-cert.pem ./server-key.pem ./server_files
+Starting Picoquic Sample server on port 10000
+Enter PEM pass phrase:+ copy_log unrespECN
++ flow_type=unrespECN
+++ get_picoquic_path unrespECN
+++ flow_type=unrespECN
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ unrespECN == \u\n\r\e\s\p\E\C\N ]]
+++ picoquic_path=picoquic/picoquic-unrespECN
+++ echo picoquic/picoquic-unrespECN
++ picoquic_path=picoquic/picoquic-unrespECN
++ mkdir -p /home/montimage/huunghia/mosaico/testbed/measure--picoquic/../log/qlog/unrespECN
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-unrespECN && tar -czf - *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-unrespECN && tar -czf - *.qlog *.log '
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-unrespECN && tar -czf - *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-unrespECN && tar -czf - *.qlog *.log '
+tar: *.qlog: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-unrespECN && rm -rf *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-unrespECN && rm -rf *.qlog *.log '
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-unrespECN && rm -rf *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-unrespECN && rm -rf *.qlog *.log '
++ copy_log cl_legit
++ flow_type=cl_legit
+++ get_picoquic_path cl_legit
+++ flow_type=cl_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ cl_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ cl_legit == \c\l\_\l\e\g\i\t ]]
+++ picoquic_path=picoquic/picoquic-classic-legit
+++ echo picoquic/picoquic-classic-legit
++ picoquic_path=picoquic/picoquic-classic-legit
++ mkdir -p /home/montimage/huunghia/mosaico/testbed/measure--picoquic/../log/qlog/cl_legit
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-classic-legit && tar -czf - *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-classic-legit && tar -czf - *.qlog *.log '
+tar: *.qlog: Cannot stat: No such file or directory
+tar: *.log: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-classic-legit && tar -czf - *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-classic-legit && tar -czf - *.qlog *.log '
+tar: *.qlog: Cannot stat: No such file or directory
+tar: *.log: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-classic-legit && rm -rf *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-classic-legit && rm -rf *.qlog *.log '
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-classic-legit && rm -rf *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-classic-legit && rm -rf *.qlog *.log '
++ copy_log ll_legit
++ flow_type=ll_legit
+++ get_picoquic_path ll_legit
+++ flow_type=ll_legit
+++ picoquic_path=picoquic/picoquic-legit
+++ [[ ll_legit == \u\n\r\e\s\p\E\C\N ]]
+++ [[ ll_legit == \c\l\_\l\e\g\i\t ]]
+++ echo picoquic/picoquic-legit
++ picoquic_path=picoquic/picoquic-legit
++ mkdir -p /home/montimage/huunghia/mosaico/testbed/measure--picoquic/../log/qlog/ll_legit
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && tar -czf - *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && tar -czf - *.qlog *.log '
+tar: *.log: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && tar -czf - *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && tar -czf - *.qlog *.log '
++ run-on-host 192.168.1.111 'cd picoquic/picoquic-legit && rm -rf *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.111
++ shift
++ [[ 192.168.1.111 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.111 -- 'cd picoquic/picoquic-legit && rm -rf *.qlog *.log '
++ run-on-host 192.168.1.110 'cd picoquic/picoquic-legit && rm -rf *.qlog *.log '
++ '[' 2 -lt 2 ']'
++ hostname=192.168.1.110
++ shift
++ [[ 192.168.1.110 == \x ]]
++ ssh -o StrictHostKeyChecking=accept-new -i /home/montimage/.ssh/id_rsa montimage@192.168.1.110 -- 'cd picoquic/picoquic-legit && rm -rf *.qlog *.log '
++ date
+vendredi 21 juillet 2023, 05:32:08 (UTC+0200)
++ log 'end experiment'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230721-053208 ' 'end experiment'
+20230721-053208  end experiment
++ killall -2 simple_switch
++ sleep 2
+Attaching to process 32145
++ stop-monitoring
++ cd -- /home/montimage/huunghia/mosaico/testbed/log
++ log 'stop tcpdump and mmt-probe'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230721-053210 ' 'stop tcpdump and mmt-probe'
+20230721-053210  stop tcpdump and mmt-probe
++ killall --signal SIGINT tcpdump
+123050 packets captured
+123050 packets received by filter
+0 packets dropped by kernel
+131477 packets captured
+131477 packets received by filter
+0 packets dropped by kernel
+123050 packets captured
+123050 packets received by filter
+0 packets dropped by kernel
++ killall --signal SIGINT mmt-probe
++ sleep 2
++ tar -czf pcap.tar.gz eno1-data.pcap eno3-data.pcap l4s-mon-nic-int.pcap
++ rm eno1-data.pcap eno3-data.pcap l4s-mon-nic-int.pcap
++ log 'processing MMT files ...'
+++ now
+++ date +%Y%m%d-%H%M%S
++ echo '20230721-053214 ' 'processing MMT files ...'
+20230721-053214  processing MMT files ...
++ combine-mmt-csv-files data.csv
++ OUTPUT=data.csv
+++ echo 'report-id,probe-id,source,timestamp,report-name,int.hop_queue_ids,	"meta.packet_index",
+	"meta.packet_len",
+	"ip.src", 
+	"ip.dst", 
+	"ip.proto_tos", 
+	"ip.ecn",
+	"ip.identification", 
+	"udp.src_port","udp.dest_port","udp.len",
+	"tcp.src_port","tcp.dest_port","tcp.payload_len","tcp.seq_nb","tcp.ack_nb","tcp.tsval","tcp.tsecr",
+	"quic_ietf.header_form",
+	"quic_ietf.spin_bit",
+	"quic_ietf.rtt",
+	"int.hop_latencies", 
+	"int.hop_queue_occups",
+	"int.hop_ingress_times", 
+	"int.hop_egress_times",
+	"int.hop_l4s_mark", 
+	"int.hop_l4s_drop",
+	"int.mark_probability"'
+++ tr -d '"'
+++ tr -d '\n'
+++ tr -d '[:blank:]'
++ HEADER=report-id,probe-id,source,timestamp,report-name,int.hop_queue_ids,meta.packet_index,meta.packet_len,ip.src,ip.dst,ip.proto_tos,ip.ecn,ip.identification,udp.src_port,udp.dest_port,udp.len,tcp.src_port,tcp.dest_port,tcp.payload_len,tcp.seq_nb,tcp.ack_nb,tcp.tsval,tcp.tsecr,quic_ietf.header_form,quic_ietf.spin_bit,quic_ietf.rtt,int.hop_latencies,int.hop_queue_occups,int.hop_ingress_times,int.hop_egress_times,int.hop_l4s_mark,int.hop_l4s_drop,int.mark_probability
++ echo report-id,probe-id,source,timestamp,report-name,int.hop_queue_ids,meta.packet_index,meta.packet_len,ip.src,ip.dst,ip.proto_tos,ip.ecn,ip.identification,udp.src_port,udp.dest_port,udp.len,tcp.src_port,tcp.dest_port,tcp.payload_len,tcp.seq_nb,tcp.ack_nb,tcp.tsval,tcp.tsecr,quic_ietf.header_form,quic_ietf.spin_bit,quic_ietf.rtt,int.hop_latencies,int.hop_queue_occups,int.hop_ingress_times,int.hop_egress_times,int.hop_l4s_mark,int.hop_l4s_drop,int.mark_probability
+++ find . -name '1*.csv'
++ for f in $(find . -name '1*.csv')
++ echo ' ./1689910164.478795_0_data-int.csv'
+ ./1689910164.478795_0_data-int.csv
++ cat ./1689910164.478795_0_data-int.csv
++ grep '^1000,'
++ rm -- ./1689910164.478795_0_data-int.csv
++ tar -czf data.csv.tar.gz data.csv
++ python3 /home/montimage/huunghia/mosaico/testbed/monitoring-mmt-tcpdump.processing.py data.csv
+Processing data.csv
+ --> writing to ./new_data.csv
++ tar -czf new_data.csv.tar.gz new_data.csv
++ python3 /home/montimage/huunghia/mosaico/testbed/monitoring-mmt-tcpdump.plot.py new_data.csv
+Processing new_data.csv
+number of avail ticks: 12177
+['total', '10.0.0.13:42368 -> 10.0.1.13:3009', '10.0.0.13:51315 -> 10.0.1.13:3000', '10.0.1.13:3000 -> 10.0.0.13:51315', '10.0.0.13:35841 -> 10.0.1.13:3003', '10.0.1.13:3003 -> 10.0.0.13:35841', '10.0.0.13:56205 -> 10.0.1.13:3006', '10.0.0.13:56604 -> 10.0.1.13:3002', '10.0.0.13:59842 -> 10.0.1.13:3001', '10.0.1.13:3006 -> 10.0.0.13:56205', '10.0.1.13:3002 -> 10.0.0.13:56604', '10.0.0.13:52510 -> 10.0.1.13:3005', '10.0.1.13:3001 -> 10.0.0.13:59842', '10.0.0.13:56583 -> 10.0.1.13:3007', '10.0.1.13:3005 -> 10.0.0.13:52510', '10.0.0.13:45396 -> 10.0.1.13:3004', '10.0.1.13:3007 -> 10.0.0.13:56583', '10.0.0.13:37790 -> 10.0.1.13:3008', '10.0.1.13:3004 -> 10.0.0.13:45396', '10.0.1.13:3008 -> 10.0.0.13:37790', '10.0.0.13:54988 -> 10.0.1.13:10000', '10.0.1.13:10000 -> 10.0.0.13:54988']
+number of ticks to draw: 13141
+write to new_data.csv.png
+{'total': {'mean': 10742.93, 'median': 11106.0, 'sum': 130805940, 'max': 16109, 'unit': 'bytes/ms'}, '10.0.0.13:42368 -> 10.0.1.13:3009': {'mean': 3.66, 'median': 0.0, 'sum': 44550, 'max': 1350, 'unit': 'bytes/ms'}, '10.0.0.13:51315 -> 10.0.1.13:3000': {'mean': 50.45, 'median': 0.0, 'sum': 614250, 'max': 2430, 'unit': 'bytes/ms'}, '10.0.1.13:3000 -> 10.0.0.13:51315': {'mean': 730.31, 'median': 0.0, 'sum': 8892283, 'max': 12150, 'unit': 'bytes/ms'}, '10.0.0.13:35841 -> 10.0.1.13:3003': {'mean': 32.85, 'median': 0.0, 'sum': 400002, 'max': 1691, 'unit': 'bytes/ms'}, '10.0.1.13:3003 -> 10.0.0.13:35841': {'mean': 695.21, 'median': 0.0, 'sum': 8464921, 'max': 8100, 'unit': 'bytes/ms'}, '10.0.0.13:56205 -> 10.0.1.13:3006': {'mean': 32.64, 'median': 0.0, 'sum': 397445, 'max': 2120, 'unit': 'bytes/ms'}, '10.0.0.13:56604 -> 10.0.1.13:3002': {'mean': 32.33, 'median': 0.0, 'sum': 393620, 'max': 1691, 'unit': 'bytes/ms'}, '10.0.0.13:59842 -> 10.0.1.13:3001': {'mean': 31.34, 'median': 0.0, 'sum': 381575, 'max': 1691, 'unit': 'bytes/ms'}, '10.0.1.13:3006 -> 10.0.0.13:56205': {'mean': 685.54, 'median': 0.0, 'sum': 8347194, 'max': 8100, 'unit': 'bytes/ms'}, '10.0.1.13:3002 -> 10.0.0.13:56604': {'mean': 684.65, 'median': 0.0, 'sum': 8336266, 'max': 8100, 'unit': 'bytes/ms'}, '10.0.0.13:52510 -> 10.0.1.13:3005': {'mean': 33.01, 'median': 0.0, 'sum': 401882, 'max': 2120, 'unit': 'bytes/ms'}, '10.0.1.13:3001 -> 10.0.0.13:59842': {'mean': 662.55, 'median': 0.0, 'sum': 8067156, 'max': 8100, 'unit': 'bytes/ms'}, '10.0.0.13:56583 -> 10.0.1.13:3007': {'mean': 31.4, 'median': 0.0, 'sum': 382298, 'max': 2122, 'unit': 'bytes/ms'}, '10.0.1.13:3005 -> 10.0.0.13:52510': {'mean': 694.15, 'median': 0.0, 'sum': 8451932, 'max': 8100, 'unit': 'bytes/ms'}, '10.0.0.13:45396 -> 10.0.1.13:3004': {'mean': 31.86, 'median': 0.0, 'sum': 387959, 'max': 2120, 'unit': 'bytes/ms'}, '10.0.1.13:3007 -> 10.0.0.13:56583': {'mean': 662.9, 'median': 0.0, 'sum': 8071464, 'max': 8100, 'unit': 'bytes/ms'}, '10.0.0.13:37790 -> 10.0.1.13:3008': {'mean': 32.82, 'median': 0.0, 'sum': 399587, 'max': 2120, 'unit': 'bytes/ms'}, '10.0.1.13:3004 -> 10.0.0.13:45396': {'mean': 674.05, 'median': 0.0, 'sum': 8207270, 'max': 10953, 'unit': 'bytes/ms'}, '10.0.1.13:3008 -> 10.0.0.13:37790': {'mean': 687.41, 'median': 0.0, 'sum': 8369867, 'max': 8100, 'unit': 'bytes/ms'}, '10.0.0.13:54988 -> 10.0.1.13:10000': {'mean': 61.92, 'median': 0.0, 'sum': 753990, 'max': 1538, 'unit': 'bytes/ms'}, '10.0.1.13:10000 -> 10.0.0.13:54988': {'mean': 4191.89, 'median': 1350.0, 'sum': 51040429, 'max': 12150, 'unit': 'bytes/ms'}}
+
+
+|traffic type|lim bw-Mbps|mean bw-Mbps|  dura-s|# stepmark|mean lq delay-ms|med lq dlay-ms|mean w0 lq delay-ms|med w0 lq dlay-ms|mean tot dlay-ms|med tot dlay-ms|mean pkt-byte|# packets|
+|          ? |         ? |      8.594 |131.410 |   107618 |         82.610 |       66.513 |            30.464 |          33.469 |        113.075 |        99.983 |     1063.048|  123048 |
+
+
++ rm data.csv new_data.csv
