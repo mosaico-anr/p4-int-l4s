@@ -1,0 +1,7 @@
+{
+	"server":       "10.0.1.13",
+	"client":       "10.0.0.13",
+	"bandwidth":    "10 Mbps",
+	"power-attack": 1,
+	"flows":        [{"type":"unrespECN", "start_time": 30, "duration": 60, "serer_port": 10000},{"type":"cl_legit", "start_time": 0, "duration": 120, "serer_port": 2000}]
+}
