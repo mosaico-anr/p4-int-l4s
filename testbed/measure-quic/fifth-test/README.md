@@ -55,7 +55,8 @@ unrespECN,0,120,1000; unrespECN, 5,60,1001; unrespECN,10,60,1002; unrespECN,15,6
 
 # Folder structure
 
-- [`traffic-summary-all.txt`](https://github.com/mosaico-anr/p4-int-l4s/blob/main/testbed/measure-quic/fifth-test/traffic-summary-all.txt) summaries the result
+- [`traffic-summary-all.txt`](https://github.com/mosaico-anr/p4-int-l4s/blob/main/testbed/measure-quic/fifth-test/traffic-summary-all.txt) summaries the result before cleaning invalid tests
+- [`traffic-summary.txt`](https://raw.githubusercontent.com/mosaico-anr/p4-int-l4s/main/testbed/measure-quic/fifth-test/traffic-summary.txt) summaries the result in this folder
 - Each round of test is in `round-x` folder:
    - Each test in a round is in `index-bandwidth-attack_power-flows-date-time` folder:
       - File `XMbps.txt` : Mahimahi parameter to limit bandwidth to `X` Mbps
