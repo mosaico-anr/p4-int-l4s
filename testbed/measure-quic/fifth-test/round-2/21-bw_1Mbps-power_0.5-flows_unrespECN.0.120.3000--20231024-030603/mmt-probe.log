@@ -1,0 +1,62 @@
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: Create a new sub-process 9183 for main processing
+mmt-probe: MMT-Probe v1.5.12 (871ed6c3 - Sep 28 2023 15:45:23) is running on pid 9183
+mmt-probe: Modules: DPI, PCAP, REPORT, SOCKET
+mmt-probe: MMT-DPI 1.7.10 (6dc79073)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+1,3,"l4s-mon-nic",1698109296.310822,"1.5.12 (871ed6c3 - Sep 28 2023 15:45:23)","1.7.10 (6dc79073)"
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8,0,8,0,880,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 186,0,186,0,125224,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 529,0,529,0,415209,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 880,0,880,0,708049,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 1226,0,1226,0,1000207,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 1561,0,1560,0,1292953,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 1917,0,1917,0,1674115,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2277,0,2277,0,2073721,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2633,0,2632,0,2466577,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 3000,0,3000,0,2868283,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 3366,0,3365,0,3271792,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 3728,0,3727,0,3677628,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 4087,0,4087,0,4083249,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 4449,0,4449,0,4496388,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 4808,0,4807,0,4906521,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 5169,0,5169,0,5318433,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 5534,0,5533,0,5732804,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 5905,0,5904,0,6148877,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 6279,0,6279,0,6564406,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 6648,0,6648,0,6981675,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 7012,0,7011,0,7397274,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 7373,0,7372,0,7811457,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 7736,0,7736,0,8226069,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8098,0,8096,0,8637705,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8460,0,8460,0,9050954,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8771,0,8771,0,9417323,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8933,0,8933,0,9631471,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8948,0,8948,0,9640597,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8949,0,8949,0,9640663,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8950,0,8950,0,9640729,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 8950 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 8950 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 9183 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye

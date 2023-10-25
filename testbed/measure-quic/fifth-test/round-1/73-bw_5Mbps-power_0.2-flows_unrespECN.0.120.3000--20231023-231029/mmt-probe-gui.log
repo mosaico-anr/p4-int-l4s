@@ -1,0 +1,63 @@
+mmt-probe: Loaded configuration from '/opt/mmt/probe/mmt-probe.conf'
+mmt-probe: Create a new sub-process 31589 for main processing
+mmt-probe: MMT-Probe v1.5.12 (871ed6c3 - Sep 28 2023 15:45:23) is running on pid 31589
+mmt-probe: Modules: DPI, PCAP, REPORT, SOCKET
+mmt-probe: MMT-DPI 1.7.10 (6dc79073)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+mmt-probe: Set timeout for pcap capture: 1
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 0,0,0,0,0,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2,0,2,0,220,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 640,0,638,0,572876,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2252,0,2249,0,2150027,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 3989,0,3987,0,4168349,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 5759,0,5756,0,6263155,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 7514,0,7513,0,8320294,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 9254,0,9253,0,10331740,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 10974,0,10972,0,12296881,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 12684,0,12681,0,14235159,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 14377,0,14375,0,16133034,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 16051,0,16049,0,17984678,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 17710,0,17708,0,19800590,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 19355,0,19353,0,21583042,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 20985,0,20983,0,23321304,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 22599,0,22596,0,25027236,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 24219,0,24218,0,26750106,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 25838,0,25836,0,28462788,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 27459,0,27456,0,30187746,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 29062,0,29060,0,31867164,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 30678,0,30676,0,33568571,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 32274,0,32272,0,35231204,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 33877,0,33876,0,36899849,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 35466,0,35465,0,38533684,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 37039,0,37037,0,40125613,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 38598,0,38595,0,41676900,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 39630,0,39630,0,42726492,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 39815,0,39815,0,42972366,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 39820,0,39820,0,42978360,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 39820,0,39820,0,42978360,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 39820,0,39820,0,42978360,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 39820 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 39820 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 31589 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye
