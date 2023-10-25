@@ -1,7 +1,0 @@
-{
-	"server":       "10.0.1.13",
-	"client":       "10.0.0.13",
-	"bandwidth":    "10 Mbps",
-	"power-attack": 0,
-	"flows":        [{"type":"ll_legit", "start_time": 0, "duration": 120, "serer_port": 3000},{"type":"ll_legit", "start_time": 5, "duration": 60, "serer_port": 3001},{"type":"ll_legit", "start_time": 10, "duration": 60, "serer_port": 3002},{"type":"ll_legit", "start_time": 15, "duration": 60, "serer_port": 3003},{"type":"ll_legit", "start_time": 20, "duration": 60, "serer_port": 3004},{"type":"ll_legit", "start_time": 25, "duration": 60, "serer_port": 3005},{"type":"ll_legit", "start_time": 30, "duration": 60, "serer_port": 3006},{"type":"ll_legit", "start_time": 35, "duration": 60, "serer_port": 3007},{"type":"ll_legit", "start_time": 40, "duration": 60, "serer_port": 3008},{"type":"ll_legit", "start_time": 45, "duration": 60, "serer_port": 3009}]
-}
