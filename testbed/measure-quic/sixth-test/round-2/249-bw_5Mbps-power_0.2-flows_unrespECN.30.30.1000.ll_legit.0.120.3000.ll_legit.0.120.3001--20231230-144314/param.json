@@ -1,0 +1,7 @@
+{
+	"server":       "10.0.1.13",
+	"client":       "10.0.0.13",
+	"bandwidth":    "5 Mbps",
+	"power-attack": 0.2,
+	"flows":        [{"type":"unrespECN", "start_time": 30, "duration": 30, "server_port": 1000},{"type":"ll_legit", "start_time": 0, "duration": 120, "server_port": 3000},{"type":"ll_legit", "start_time": 0, "duration": 120, "server_port": 3001}]
+}

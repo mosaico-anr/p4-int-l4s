@@ -1,0 +1,46 @@
+mmt-probe: Loaded configuration from './mmt-probe.conf'
+mmt-probe: Create a new sub-process 27804 for main processing
+mmt-probe: MMT-Probe v1.5.12 (eb34507 - Nov 10 2023 14:10:58) is running on pid 27804
+mmt-probe: Modules: DPI, PCAP, REPORT, REDIS
+mmt-probe: MMT-DPI 1.7.10 (6dc79073)
+mmt-probe: Starting PCAP mode to analyze 'l4s-mon-nic' using the main thread
+mmt-probe: Set timeout for pcap capture: 1
+mmt-probe: 5,0,5,0,580,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 10,0,10,0,1160,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 15,0,15,0,1740,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 172,0,172,0,109596,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 593,0,593,0,415399,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 951,0,951,0,714141,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 1301,0,1301,0,1012891,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 1652,0,1652,0,1310597,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 1998,0,1998,0,1608735,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2362,0,2360,0,1915306,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 2716,0,2716,0,2220959,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 3083,0,3082,0,2525656,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 3437,0,3437,0,2829877,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 3789,0,3789,0,3134179,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 4150,0,4149,0,3440317,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 4520,0,4520,0,3747068,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 4865,0,4864,0,4043703,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 5216,0,5216,0,4342759,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 5564,0,5564,0,4641203,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 5914,0,5914,0,4939861,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 6252,0,6252,0,5237972,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 6611,0,6610,0,5539068,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 6967,0,6967,0,5838847,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 7314,0,7314,0,6137011,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 7669,0,7669,0,6437723,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8024,0,8024,0,6739632,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8375,0,8374,0,7037093,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8660,0,8660,0,7278238,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8686,0,8686,0,7303632,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8691,0,8691,0,7304212,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8696,0,8696,0,7304792,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: 8701,0,8701,0,7305372,0% dropped by NIC 0.0000, by MMT 0.0000
+mmt-probe: Received SIGINT. Main processing process is releasing resource ...
+mmt-probe: Normally reached to the end of pcap file
+mmt-probe: MMT processed 8702 packets, dropped 0 packets (0.00%)
+mmt-probe: System received 8702 packets, dropped 0 (0.00% = 0.00% by NIC + 0.00% by kernel)
+mmt-probe: Child process 27804 return code: 0
+mmt-probe: Exit normally MMT-Probe
+Bye
